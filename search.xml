@@ -1,35 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在Hexo上写文章">在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
+<h2 id="Hello-World">Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>爬虫基础</title>
     <url>/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="http基本原理"><a class="markdownIt-Anchor" href="#http基本原理"></a> HTTP基本原理</h1>
+    <content><![CDATA[<h1 id="HTTP基本原理">HTTP基本原理</h1>
 <blockquote>
 <p>参考资料：</p>
 <ul>
 <li><a href="https://www.runoob.com/http/http-tutorial.html">HTTP 教程 | 菜鸟教程 (runoob.com)</a></li>
 </ul>
 </blockquote>
-<hr />
-<h2 id="uri和url"><a class="markdownIt-Anchor" href="#uri和url"></a> URI和URL</h2>
+<hr>
+<h2 id="URI和URL">URI和URL</h2>
 <p>URI:统一资源标识符</p>
 <p>URL:统一资源定位符</p>
 <p>URN:统一资源名称</p>
 <blockquote>
 <p>现在互联网，URN用得很少，一般网页链接🔗称为URL</p>
 </blockquote>
-<hr />
-<h2 id="超文本"><a class="markdownIt-Anchor" href="#超文本"></a> 超文本</h2>
+<hr>
+<h2 id="超文本">超文本</h2>
 <p>网页源代码HTML称为超文本</p>
-<hr />
-<h2 id="http和https"><a class="markdownIt-Anchor" href="#http和https"></a> HTTP和HTTPS</h2>
+<hr>
+<h2 id="HTTP和HTTPS">HTTP和HTTPS</h2>
 <p>HTTP:超文本传输协议</p>
 <p>HTTPS:HTTP下加入SSL层</p>
-<hr />
-<h2 id="http-请求过程"><a class="markdownIt-Anchor" href="#http-请求过程"></a> HTTP 请求过程</h2>
-<img title="" data-src="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp" alt="" data-align="inline">
+<hr>
+<h2 id="HTTP-请求过程">HTTP 请求过程</h2>
+<img title="" src="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp" alt="" data-align="inline">
 <p><strong>我们利用浏览器”检查“工具的网络来观察这个过程</strong></p>
-<img title="" data-src="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png" alt="" data-align="inline">
+<img title="" src="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png" alt="" data-align="inline">
 <ul>
 <li>
 <p>General部分</p>
@@ -58,8 +73,8 @@
 <p>Request Header:请求头</p>
 </li>
 </ul>
-<hr />
-<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
+<hr>
+<h2 id="请求">请求</h2>
 <blockquote>
 <p>请求由客户端发出，分为4部分</p>
 <blockquote>
@@ -79,7 +94,7 @@
 </ul>
 </blockquote>
 </blockquote>
-<h3 id="请求方法"><a class="markdownIt-Anchor" href="#请求方法"></a> 请求方法</h3>
+<h3 id="请求方法">请求方法</h3>
 <p>常见的为：GET和POST</p>
 <blockquote>
 <p>GET 与POST区别</p>
@@ -93,10 +108,10 @@
 </ul>
 </blockquote>
 <p>其他请求方法</p>
-<img title="" data-src="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png" alt="" data-align="inline">
-<h3 id="请求的网址"><a class="markdownIt-Anchor" href="#请求的网址"></a> 请求的网址</h3>
+<img title="" src="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png" alt="" data-align="inline">
+<h3 id="请求的网址">请求的网址</h3>
 <p>请求的网址即URL</p>
-<h3 id="请求头"><a class="markdownIt-Anchor" href="#请求头"></a> 请求头</h3>
+<h3 id="请求头">请求头</h3>
 <ul>
 <li>
 <p>Accept:请求报头域，指定客户端接收哪些类型的信息</p>
@@ -120,11 +135,11 @@
 <p>Content-Type:内容类型，一般是指网页中存在的Content-Type，用于定义网络文件的类型和网页的编码，决定文件接收方将以什么形式、什么编码读取这个文件</p>
 </li>
 </ul>
-<h3 id="请求体"><a class="markdownIt-Anchor" href="#请求体"></a> 请求体</h3>
+<h3 id="请求体">请求体</h3>
 <p>请求体承载的是POST的表单数据，对于GET，请求为空</p>
-<hr />
-<h2 id="响应"><a class="markdownIt-Anchor" href="#响应"></a> 响应</h2>
-<h3 id="响应状态码"><a class="markdownIt-Anchor" href="#响应状态码"></a> 响应状态码</h3>
+<hr>
+<h2 id="响应">响应</h2>
+<h3 id="响应状态码">响应状态码</h3>
 <p>常见的 HTTP 状态码：</p>
 <ul>
 <li>200 - 请求成功</li>
@@ -133,13 +148,13 @@
 <li>500 - 内部服务器错误</li>
 </ul>
 <p>其它可以参考<a href="https://www.runoob.com/http/http-status-codes.html">HTTP 状态码 | 菜鸟教程</a></p>
-<h3 id="响应头"><a class="markdownIt-Anchor" href="#响应头"></a> 响应头</h3>
+<h3 id="响应头">响应头</h3>
 <p>响应头包含服务器对请求的应答信息，如Content-Type、Sever、Set-Cookie</p>
-<h3 id="响应体"><a class="markdownIt-Anchor" href="#响应体"></a> 响应体</h3>
+<h3 id="响应体">响应体</h3>
 <p>响应体包含响应的正文数据</p>
-<hr />
-<h1 id="网页基础"><a class="markdownIt-Anchor" href="#网页基础"></a> 网页基础</h1>
-<h2 id="网页组成"><a class="markdownIt-Anchor" href="#网页组成"></a> 网页组成</h2>
+<hr>
+<h1 id="网页基础">网页基础</h1>
+<h2 id="网页组成">网页组成</h2>
 <p>网页是由HTML、CSS、JavaScript组成</p>
 <p><em><strong>如果想学爬虫，必须要点Web基础</strong></em></p>
 ]]></content>
@@ -149,21 +164,6 @@
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
-<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
       </tags>
   </entry>
 </search>
