@@ -7,8 +7,9 @@
 <blockquote>
 <p>STL的代码从广义上讲分为三类：algorithm（算法）、container（容器）和iterator（迭代器），几乎所有的代码都采用了模板类和模板函数的方式，这相比于传统的由函数和类组成的库来说。</p>
 </blockquote>
-<p>用STL我们就不用反复实现一些代码，提高开发效率。</p>
-<h2 id="vector动态数组"><a class="markdownIt-Anchor" href="#vector动态数组"></a> Vector动态数组</h2>
+<p>用STL我们就不用反复实现一些代码，提高开发效率。当然这个需要**<mark>数据结构基础</mark>。**</p>
+<hr />
+<h2 id="vector动态数组"><a class="markdownIt-Anchor" href="#vector动态数组"></a> vector动态数组</h2>
 <h3 id="头文件"><a class="markdownIt-Anchor" href="#头文件"></a> 头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure>
 <h3 id="初始化"><a class="markdownIt-Anchor" href="#初始化"></a> 初始化</h3>
@@ -72,6 +73,7 @@
 </table>
 <h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">5</span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">num</span><span class="params">(<span class="number">5</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(vector&lt;<span class="type">int</span>&gt;::iterator it=num.<span class="built_in">begin</span>();it!=num.<span class="built_in">end</span>();it++)</span><br><span class="line">        cout&lt;&lt;*it&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
 <h2 id="stack栈"><a class="markdownIt-Anchor" href="#stack栈"></a> stack栈</h2>
 <h3 id="头文件-2"><a class="markdownIt-Anchor" href="#头文件-2"></a> 头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br></pre></td></tr></table></figure>
@@ -110,6 +112,50 @@
 </table>
 <h3 id="代码-2"><a class="markdownIt-Anchor" href="#代码-2"></a> 代码</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    stack&lt;<span class="type">int</span>&gt;a;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">while</span>(!a.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        i=a.<span class="built_in">top</span>();</span><br><span class="line">        cout&lt;&lt;i&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        a.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="queue队列"><a class="markdownIt-Anchor" href="#queue队列"></a> queue队列</h2>
+<h3 id="头文件-3"><a class="markdownIt-Anchor" href="#头文件-3"></a> 头文件</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="初始化-3"><a class="markdownIt-Anchor" href="#初始化-3"></a> 初始化</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt;<span class="type">int</span>&gt;ans;</span><br></pre></td></tr></table></figure>
+<h3 id="方法函数-3"><a class="markdownIt-Anchor" href="#方法函数-3"></a> 方法函数</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">front()</td>
+<td style="text-align:center">返回队首</td>
+</tr>
+<tr>
+<td style="text-align:center">back()</td>
+<td style="text-align:center">返回队尾元素</td>
+</tr>
+<tr>
+<td style="text-align:center">pop()</td>
+<td style="text-align:center">出队</td>
+</tr>
+<tr>
+<td style="text-align:center">push()</td>
+<td style="text-align:center">进队</td>
+</tr>
+<tr>
+<td style="text-align:center">size()</td>
+<td style="text-align:center">元素个数</td>
+</tr>
+<tr>
+<td style="text-align:center">empty()</td>
+<td style="text-align:center">空队为空</td>
+</tr>
+</tbody>
+</table>
+<h3 id="代码-3"><a class="markdownIt-Anchor" href="#代码-3"></a> 代码</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt;a;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        a.<span class="built_in">push</span>(i);</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">while</span>(!a.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        i=a.<span class="built_in">front</span>();</span><br><span class="line">        cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        a.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
 ]]></content>
       <categories>
         <category>C++</category>
@@ -117,6 +163,21 @@
       <tags>
         <tag>C++</tag>
         <tag>STL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++编程</title>
+    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
+<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
+<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>OP编程</tag>
       </tags>
   </entry>
   <entry>
@@ -368,21 +429,6 @@
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++编程</title>
-    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>OP编程</tag>
       </tags>
   </entry>
 </search>
