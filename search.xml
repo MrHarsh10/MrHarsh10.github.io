@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
+<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++编程</title>
+    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
+<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
+<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>OP编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++的STL</title>
     <url>/2022/08/10/C-%E7%9A%84STL/</url>
     <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
@@ -66,7 +96,7 @@
 <td style="text-align:center">删除[f,i)的所有元素</td>
 </tr>
 <tr>
-<td style="text-align:center">a.sort(a.begin(),a.end())</td>
+<td style="text-align:center">sort(a.begin(),a.end())</td>
 <td style="text-align:center">排序</td>
 </tr>
 </tbody>
@@ -156,6 +186,57 @@
 <h3 id="代码-3"><a class="markdownIt-Anchor" href="#代码-3"></a> 代码</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt;a;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        a.<span class="built_in">push</span>(i);</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">while</span>(!a.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        i=a.<span class="built_in">front</span>();</span><br><span class="line">        cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        a.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />
+<h2 id="deque双队列"><a class="markdownIt-Anchor" href="#deque双队列"></a> deque双队列</h2>
+<h3 id="头文件-4"><a class="markdownIt-Anchor" href="#头文件-4"></a> 头文件</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;deque&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="初始化-4"><a class="markdownIt-Anchor" href="#初始化-4"></a> 初始化</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">deque&lt;<span class="type">int</span>&gt;ans;</span><br></pre></td></tr></table></figure>
+<h3 id="方法函数-4"><a class="markdownIt-Anchor" href="#方法函数-4"></a> 方法函数</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">push_back()<br/>push_front()</td>
+<td style="text-align:center">入队</td>
+</tr>
+<tr>
+<td style="text-align:center">back()<br/>front()</td>
+<td style="text-align:center">访问</td>
+</tr>
+<tr>
+<td style="text-align:center">pop_back()<br/>pop_back()</td>
+<td style="text-align:center">出队</td>
+</tr>
+<tr>
+<td style="text-align:center">erase(iterator f,iterator l)</td>
+<td style="text-align:center">删除</td>
+</tr>
+<tr>
+<td style="text-align:center">empty()</td>
+<td style="text-align:center">空为真</td>
+</tr>
+<tr>
+<td style="text-align:center">size()</td>
+<td style="text-align:center">元素数量</td>
+</tr>
+<tr>
+<td style="text-align:center">clear()</td>
+<td style="text-align:center">清空</td>
+</tr>
+<tr>
+<td style="text-align:center">sort(iterator f,iterator l)</td>
+<td style="text-align:center">排序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="代码-4"><a class="markdownIt-Anchor" href="#代码-4"></a> 代码</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;algorithm&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">deque&lt;<span class="type">int</span>&gt;a;</span><br><span class="line"><span class="type">int</span> b[<span class="number">5</span>]=&#123;<span class="number">3</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">6</span>,<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">    a.<span class="built_in">push_front</span>(b[i]);</span><br><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>(),a.<span class="built_in">end</span>());</span><br><span class="line"><span class="type">int</span> i;</span><br><span class="line"><span class="keyword">while</span>(!a.<span class="built_in">empty</span>())</span><br><span class="line">&#123;</span><br><span class="line">    i=a.<span class="built_in">back</span>();</span><br><span class="line">    cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    a.<span class="built_in">pop_back</span>();</span><br><span class="line">&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
 ]]></content>
       <categories>
         <category>C++</category>
@@ -163,21 +244,6 @@
       <tags>
         <tag>C++</tag>
         <tag>STL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++编程</title>
-    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>OP编程</tag>
       </tags>
   </entry>
   <entry>
@@ -263,21 +329,6 @@
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
-<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
