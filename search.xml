@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
+<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++的STL</title>
     <url>/2022/08/10/C-%E7%9A%84STL/</url>
     <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
@@ -116,7 +131,7 @@
 <h2 id="queue队列"><a class="markdownIt-Anchor" href="#queue队列"></a> queue队列</h2>
 <h3 id="头文件-3"><a class="markdownIt-Anchor" href="#头文件-3"></a> 头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="初始化-3"><a class="markdownIt-Anchor" href="#初始化-3"></a> 初始化</h2>
+<h3 id="初始化-3"><a class="markdownIt-Anchor" href="#初始化-3"></a> 初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt;<span class="type">int</span>&gt;ans;</span><br></pre></td></tr></table></figure>
 <h3 id="方法函数-3"><a class="markdownIt-Anchor" href="#方法函数-3"></a> 方法函数</h3>
 <table>
@@ -398,7 +413,7 @@
 </tbody>
 </table>
 <h3 id="代码-7"><a class="markdownIt-Anchor" href="#代码-7"></a> 代码</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    set&lt;<span class="type">int</span>&gt;a;</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">8</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">3</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">9</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">7</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">6</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=a.<span class="built_in">begin</span>();it!=a.<span class="built_in">end</span>();it++)</span><br><span class="line">        cout&lt;&lt;*it&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//结果为3 5 6 7 8 9</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    set&lt;<span class="type">int</span>&gt;a;</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">8</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">3</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">9</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">7</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">6</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=a.<span class="built_in">begin</span>();it!=a.<span class="built_in">end</span>();it++)</span><br><span class="line">        cout&lt;&lt;*it&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//结果为3 5 6 7 8 9</span></span><br></pre></td></tr></table></figure>
 <hr />
 <h2 id="pair"><a class="markdownIt-Anchor" href="#pair"></a> pair</h2>
 <p>pair只含有两个元素，可以看作是只有两个元素的结构体.</p>
@@ -409,21 +424,6 @@
       <tags>
         <tag>C++</tag>
         <tag>STL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
-<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
