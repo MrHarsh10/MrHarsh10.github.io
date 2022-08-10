@@ -1,6 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++的STL</title>
+    <url>/2022/08/10/C-%E7%9A%84STL/</url>
+    <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
+<blockquote>
+<p>STL的代码从广义上讲分为三类：algorithm（算法）、container（容器）和iterator（迭代器），几乎所有的代码都采用了模板类和模板函数的方式，这相比于传统的由函数和类组成的库来说。</p>
+</blockquote>
+<h2 id="vector动态数组"><a class="markdownIt-Anchor" href="#vector动态数组"></a> Vector动态数组</h2>
+<h3 id="头文件"><a class="markdownIt-Anchor" href="#头文件"></a> 头文件</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="初始化"><a class="markdownIt-Anchor" href="#初始化"></a> 初始化</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; ans;<span class="comment">//int的型的数组</span></span><br><span class="line">vector&lt;structure&gt; ans;<span class="comment">//一个structure结构体的数组</span></span><br><span class="line"><span class="comment">//指定长度的初始化</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">short</span>&gt; <span class="title">ans</span><span class="params">(n)</span></span>;</span><br><span class="line"><span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">ans</span><span class="params">(n,<span class="number">2</span>)</span></span>;<span class="comment">//长度为n,全为2的数组</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">shaow</span><span class="params">(ans)</span></span>;<span class="comment">//拷贝初始化，类型长度需相同</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; a&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//二维</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;ans[<span class="number">5</span>];<span class="comment">//行为固定的5，列为动态可变</span></span><br><span class="line">vector&lt;vectot&lt;<span class="type">int</span>&gt; &gt;num;<span class="comment">//行列均可以变</span></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt; &gt; <span class="built_in">a</span>(n + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(m + <span class="number">1</span>, <span class="number">0</span>));<span class="comment">//固定n+1行m+1列初始值为0的二维数组</span></span><br></pre></td></tr></table></figure>
+<h3 id="访问遍历"><a class="markdownIt-Anchor" href="#访问遍历"></a> 访问遍历</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">5</span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">num</span><span class="params">(<span class="number">5</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">    cout&lt;&lt;num[<span class="number">2</span>];<span class="comment">//访问下标为2的元素</span></span><br><span class="line"><span class="comment">//智能指针遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i: num)</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;num.<span class="built_in">size</span>();i++)</span><br><span class="line">        cout&lt;&lt;num[i]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法函数"><a class="markdownIt-Anchor" href="#方法函数"></a> 方法函数</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>函数</strong></th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a.empty()</td>
+<td style="text-align:center">判断是否为空，空为真</td>
+</tr>
+<tr>
+<td style="text-align:center">a.begin()</td>
+<td style="text-align:center">返回首元素的迭代器</td>
+</tr>
+<tr>
+<td style="text-align:center">a.end()</td>
+<td style="text-align:center">返回末位元素的迭代器</td>
+</tr>
+<tr>
+<td style="text-align:center">a.size()</td>
+<td style="text-align:center">返回数据个数</td>
+</tr>
+<tr>
+<td style="text-align:center">a.insert(it,x)</td>
+<td style="text-align:center">先任意迭代器插入一个元素</td>
+</tr>
+<tr>
+<td style="text-align:center">a.pop_back()</td>
+<td style="text-align:center">删除最后一个元素</td>
+</tr>
+<tr>
+<td style="text-align:center">a.front()</td>
+<td style="text-align:center">返回第一个数据</td>
+</tr>
+<tr>
+<td style="text-align:center">a.clear()</td>
+<td style="text-align:center">清除元素</td>
+</tr>
+<tr>
+<td style="text-align:center">a.resize(n,v)</td>
+<td style="text-align:center">改变数组大小为n,赋值为v</td>
+</tr>
+<tr>
+<td style="text-align:center">a.erase(f,l)</td>
+<td style="text-align:center">删除[f,i)的所有元素</td>
+</tr>
+<tr>
+<td style="text-align:center">a.sort(a.begin(),a.end())</td>
+<td style="text-align:center">排序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">5</span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">num</span><span class="params">(<span class="number">5</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(vector&lt;<span class="type">int</span>&gt;::iterator it=num.<span class="built_in">begin</span>();it!=num.<span class="built_in">end</span>();it++)</span><br><span class="line">        cout&lt;&lt;*it&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="stack栈"><a class="markdownIt-Anchor" href="#stack栈"></a> stack栈</h2>
+<h3 id="头文件-2"><a class="markdownIt-Anchor" href="#头文件-2"></a> 头文件</h3>
+<pre><code>#include &lt;stack&gt;
+</code></pre>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>STL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++编程</title>
     <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
@@ -113,80 +197,6 @@
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++的STL</title>
-    <url>/2022/08/10/C-%E7%9A%84STL/</url>
-    <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
-<blockquote>
-<p>STL的代码从广义上讲分为三类：algorithm（算法）、container（容器）和iterator（迭代器），几乎所有的代码都采用了模板类和模板函数的方式，这相比于传统的由函数和类组成的库来说。</p>
-</blockquote>
-<h2 id="vector动态数组"><a class="markdownIt-Anchor" href="#vector动态数组"></a> Vector动态数组</h2>
-<h3 id="头文件"><a class="markdownIt-Anchor" href="#头文件"></a> 头文件</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="初始化"><a class="markdownIt-Anchor" href="#初始化"></a> 初始化</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; ans;<span class="comment">//int的型的数组</span></span><br><span class="line">vector&lt;structure&gt; ans;<span class="comment">//一个structure结构体的数组</span></span><br><span class="line"><span class="comment">//指定长度的初始化</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">short</span>&gt; <span class="title">ans</span><span class="params">(n)</span></span>;</span><br><span class="line"><span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">ans</span><span class="params">(n,<span class="number">2</span>)</span></span>;<span class="comment">//长度为n,全为2的数组</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">shaow</span><span class="params">(ans)</span></span>;<span class="comment">//拷贝初始化，类型长度需相同</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; a&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//二维</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;ans[<span class="number">5</span>];<span class="comment">//行为固定的5，列为动态可变</span></span><br><span class="line">vector&lt;vectot&lt;<span class="type">int</span>&gt; &gt;num;<span class="comment">//行列均可以变</span></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt; &gt; <span class="built_in">a</span>(n + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(m + <span class="number">1</span>, <span class="number">0</span>));<span class="comment">//固定n+1行m+1列初始值为0的二维数组</span></span><br></pre></td></tr></table></figure>
-<h3 id="访问遍历"><a class="markdownIt-Anchor" href="#访问遍历"></a> 访问遍历</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">5</span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">num</span><span class="params">(<span class="number">5</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">    cout&lt;&lt;num[<span class="number">2</span>];<span class="comment">//访问下标为2的元素</span></span><br><span class="line"><span class="comment">//智能指针遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i: num)</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;num.<span class="built_in">size</span>();i++)</span><br><span class="line">        cout&lt;&lt;num[i]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方法函数"><a class="markdownIt-Anchor" href="#方法函数"></a> 方法函数</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>函数</strong></th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">a.empty()</td>
-<td style="text-align:center">判断是否为空，空为真</td>
-</tr>
-<tr>
-<td style="text-align:center">a.begin()</td>
-<td style="text-align:center">返回首元素的迭代器</td>
-</tr>
-<tr>
-<td style="text-align:center">a.end()</td>
-<td style="text-align:center">返回末位元素的迭代器</td>
-</tr>
-<tr>
-<td style="text-align:center">a.size()</td>
-<td style="text-align:center">返回数据个数</td>
-</tr>
-<tr>
-<td style="text-align:center">a.insert(it,x)</td>
-<td style="text-align:center">先任意迭代器插入一个元素</td>
-</tr>
-<tr>
-<td style="text-align:center">a.pop_back()</td>
-<td style="text-align:center">删除最后一个元素</td>
-</tr>
-<tr>
-<td style="text-align:center">a.front()</td>
-<td style="text-align:center">返回第一个数据</td>
-</tr>
-<tr>
-<td style="text-align:center">a.clear()</td>
-<td style="text-align:center">清除元素</td>
-</tr>
-<tr>
-<td style="text-align:center">a.resize(n,v)</td>
-<td style="text-align:center">改变数组大小为n,赋值为v</td>
-</tr>
-<tr>
-<td style="text-align:center">a.erase(f,l)</td>
-<td style="text-align:center">删除[f,i)的所有元素</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>STL</tag>
       </tags>
   </entry>
   <entry>
