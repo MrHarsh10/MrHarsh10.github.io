@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++编程</title>
-    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>OP编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++的STL</title>
     <url>/2022/08/10/C-%E7%9A%84STL/</url>
     <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
@@ -690,6 +675,21 @@
       </tags>
   </entry>
   <entry>
+    <title>C++编程</title>
+    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
+<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
+<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>OP编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/08/08/hello-world/</url>
     <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
@@ -702,6 +702,49 @@
       </categories>
       <tags>
         <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>requests的使用</title>
+    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
+<ul>
+<li>
+<p>post(‘url’)</p>
+</li>
+<li>
+<p>put(‘url’)</p>
+</li>
+<li>
+<p>delete(‘url’)</p>
+</li>
+<li>
+<p>head(‘url’)</p>
+</li>
+<li>
+<p>options(‘url’)</p>
+</li>
+<li>
+<p>get(‘url’)</p>
+</li>
+</ul>
+<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
+<p>下载图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
+<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<p>文件上传</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
