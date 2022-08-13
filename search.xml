@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++编程</title>
+    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
+<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
+<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>OP编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++的STL</title>
     <url>/2022/08/10/C-%E7%9A%84STL/</url>
     <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
@@ -675,21 +690,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++编程</title>
-    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>OP编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2022/08/08/hello-world/</url>
     <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
@@ -757,19 +757,19 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, url, data=<span class="literal">None</span>, headers=&#123;&#125;,</span></span><br><span class="line"><span class="params">                 origin_req_host=<span class="literal">None</span>, unverifiable=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 method=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
 <ul>
 <li>
-<p>URL:请求URL</p>
+<p><strong>URL:请求URL</strong></p>
 </li>
 <li>
-<p>data:必须为bytes(),如果是字典可以用urllib.parse.urlencode()</p>
+<p><strong>data:必须为bytes(),如果是字典可以用urllib.parse.urlencode()</strong></p>
 </li>
 <li>
-<p>headers:为一个字典</p>
+<p><strong>headers:为一个字典</strong></p>
 </li>
 <li>
-<p>origin_req_host：表示这个请求是否是无法验证的</p>
+<p><strong>origin_req_host：表示这个请求是否是无法验证的</strong></p>
 </li>
 <li>
-<p>method:请求方法</p>
+<p><strong>method:请求方法</strong></p>
 </li>
 </ul>
 </blockquote>
@@ -812,7 +812,38 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urljoin</span><br><span class="line"><span class="built_in">print</span>(urljoin(<span class="string">&#x27;http://www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>))</span><br></pre></td></tr></table></figure>
 <h3 id="urlencode"><a class="markdownIt-Anchor" href="#urlencode"></a> urlencode</h3>
 <p>在GET中加参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">params=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;s&#x27;</span>,</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;2&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">base_url=<span class="string">&#x27;http//www.baidu.com&#x27;</span></span><br><span class="line">urll=base_url+urlencode(params)</span><br><span class="line"><span class="built_in">print</span>(urll)</span><br></pre></td></tr></table></figure>
+<h3 id="parse_qs"><a class="markdownIt-Anchor" href="#parse_qs"></a> parse_qs()</h3>
+<p>反序列化</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit,parse_qs</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(parse_qs(result.query))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="quote"><a class="markdownIt-Anchor" href="#quote"></a> quote()</h3>
+<p>将内容转为URL编码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin</span><br><span class="line">keyword=<span class="string">&#x27;python&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;http://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br></pre></td></tr></table></figure>
+<h3 id="unquote"><a class="markdownIt-Anchor" href="#unquote"></a> unquote()</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin,unquote</span><br><span class="line">keyword=<span class="string">&#x27;你好&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;https://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br><span class="line"><span class="built_in">print</span>(unquote(url))</span><br></pre></td></tr></table></figure>
+<h2 id="robots协议"><a class="markdownIt-Anchor" href="#robots协议"></a> Robots协议</h2>
+<h3 id="robotparser"><a class="markdownIt-Anchor" href="#robotparser"></a> robotparser()</h3>
+<ul>
+<li>
+<p><strong>set_ur()</strong>:设置Robots.txt链接</p>
+</li>
+<li>
+<p><strong>read()</strong>:读取robots.txt并分析</p>
+</li>
+<li>
+<p><strong>parse()</strong>:解析robots.txt文件</p>
+</li>
+<li>
+<p><strong>can_fetch()</strong>:传入User-Agent和URL,判读是否可爬取</p>
+</li>
+<li>
+<p><strong>mtime()</strong>:返回上次抓取的时间</p>
+</li>
+<li>
+<p><strong>modified()</strong>:设置当前时间为上次抓取时间</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.robotparser <span class="keyword">import</span> RobotFileParser</span><br><span class="line">rp=RobotFileParser()</span><br><span class="line">rp.set_url(<span class="string">&#x27;https://www.bilibili.com/robots.txt&#x27;</span>)</span><br><span class="line">rp.read()</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;Yisouspider&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;*&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>爬虫</category>
