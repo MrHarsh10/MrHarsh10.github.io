@@ -24,29 +24,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.mrharsh.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="广阔天地，大有作为。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Github仓库">
-<meta property="og:url" content="http://www.mrharsh.top/repository/index.html">
+    <meta name="description" content="Qt工具类的整理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Qt工具类">
+<meta property="og:url" content="http://www.mrharsh.top/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/index.html">
 <meta property="og:site_name" content="Mr Harsh的广阔天地">
-<meta property="og:description" content="广阔天地，大有作为。">
+<meta property="og:description" content="Qt工具类的整理">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-08T11:11:17.332Z">
-<meta property="article:modified_time" content="2022-08-08T11:11:17.332Z">
+<meta property="article:published_time" content="2022-08-14T02:34:48.000Z">
+<meta property="article:modified_time" content="2022-08-14T03:38:00.633Z">
 <meta property="article:author" content="MrHarsh">
-<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="Qt">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://www.mrharsh.top/repository/">
+<link rel="canonical" href="http://www.mrharsh.top/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"none","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"http://www.mrharsh.top/repository/index.html","path":"repository/index.html","title":"Github仓库"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.mrharsh.top/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/","path":"2022/08/14/Qt工具类/","title":"Qt工具类"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Github仓库 | Mr Harsh的广阔天地
-</title>
+<title>Qt工具类 | Mr Harsh的广阔天地</title>
   
 
 
@@ -136,7 +136,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -149,6 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text"> 字符串类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.1.</span> <span class="nav-text"> 操作字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.2.</span> <span class="nav-text"> 查询字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.3.</span> <span class="nav-text"> 字符串转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text"> </span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -217,34 +218,154 @@
 </noscript>
 
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
 
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
+  
 
-<h1 class="post-title" itemprop="name headline">Github仓库
-</h1>
 
-<div class="post-meta-container">
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.mrharsh.top/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/08/08/WJ12zxk8fsVMiAj.jpg">
+      <meta itemprop="name" content="MrHarsh">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr Harsh的广阔天地">
+      <meta itemprop="description" content="广阔天地，大有作为。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Qt工具类 | Mr Harsh的广阔天地">
+      <meta itemprop="description" content="Qt工具类的整理">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Qt工具类
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-08-14 10:34:48 / 修改时间：11:38:00" itemprop="dateCreated datePublished" datetime="2022-08-14T10:34:48+08:00">2022-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Qt/" itemprop="url" rel="index"><span itemprop="name">Qt</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
-</header>
+            <div class="post-description">Qt工具类的整理</div>
+        </div>
+      </header>
 
-      
-      
-      <div class="post-body">
-          
-      </div>
-      
-      
-      
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="字符串类"><a class="markdownIt-Anchor" href="#字符串类"></a> 字符串类</h1>
+<h2 id="操作字符串"><a class="markdownIt-Anchor" href="#操作字符串"></a> 操作字符串</h2>
+<ol>
+<li>
+<p>“+”</p>
+</li>
+<li>
+<p>QString::append()</p>
+</li>
+<li>
+<p>QString::sprintf()</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QString str;</span><br><span class="line">str.<span class="built_in">sprintf</span>(<span class="string">&quot; %s &quot;</span>,<span class="string">&quot;hi&quot;</span>); </span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>QString::arg()</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QString str;</span><br><span class="line">str=<span class="built_in">QString</span>(<span class="string">&quot;%1 a %2&quot;</span>).<span class="built_in">arg</span>(<span class="string">&quot;1&quot;</span>).<span class="built_in">arg</span>(<span class="string">&quot;2&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>组合字符串</p>
+<blockquote>
+<p>insert()        插入字符串</p>
+<p>prepend()    开头插入</p>
+<p>replace()     替代</p>
+<p>QString::trimmed()    移除两端的空白字符</p>
+<p>QString::simplified() 移除两端的空白字符,使用单个空格字符代替空白字符</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="查询字符串"><a class="markdownIt-Anchor" href="#查询字符串"></a> 查询字符串</h2>
+<ol>
+<li>
+<p>QString::startsWith()</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QString str=<span class="string">&quot;sddsa&quot;</span></span><br><span class="line">str.<span class="built_in">startsWith</span>(<span class="string">&quot;s&quot;</span>,Qt::CaseSensitive);<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>QString::endsWith() 结尾</p>
+</li>
+<li>
+<p>QString::contains() 包含</p>
+</li>
+<li>
+<p>操作符 &gt;=&lt;</p>
+</li>
+</ol>
+<h2 id="字符串转换"><a class="markdownIt-Anchor" href="#字符串转换"></a> 字符串转换</h2>
+<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
+
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Qt/" rel="tag"># Qt</a>
+              <a href="/tags/C/" rel="tag"># C++</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/13/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="正则表达式">
+                  <i class="fa fa-chevron-left"></i> 正则表达式
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
 </div>
