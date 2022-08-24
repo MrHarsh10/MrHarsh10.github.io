@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-mac-osx.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.mrharsh.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="PDF.js viewer                                                                                                     Thumbnails                                                Doc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mr Harsh的广阔天地">
+<meta property="og:url" content="http://www.mrharsh.top/lib/pdf/web/viewer.html">
+<meta property="og:site_name" content="Mr Harsh的广阔天地">
+<meta property="og:description" content="PDF.js viewer                                                                                                     Thumbnails                                                Doc">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-24T14:11:15.908Z">
+<meta property="article:modified_time" content="2022-08-24T14:11:15.908Z">
+<meta property="article:author" content="MrHarsh">
+<meta property="article:tag" content="个人博客">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://www.mrharsh.top/lib/pdf/web/viewer">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://www.mrharsh.top/lib/pdf/web/viewer.html","path":"lib/pdf/web/viewer.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | Mr Harsh的广阔天地
+</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mr Harsh的广阔天地</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">广阔天地，大有作为。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrHarsh"
+      src="https://s2.loli.net/2022/08/08/WJ12zxk8fsVMiAj.jpg">
+  <p class="site-author-name" itemprop="name">MrHarsh</p>
+  <div class="site-description" itemprop="description">广阔天地，大有作为。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MrHarsh10" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MrHarsh10" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1845296099@qq.com" title="E-Mail → mailto:1845296099@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_36831734" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_36831734" rel="noopener" target="_blank"><i class="fa fa-rss fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/MrHarsh10" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/lib/">LIB</a></li>
+            <li><a href="/lib/pdf/">PDF</a></li>
+            <li><a href="/lib/pdf/web/">WEB</a></li>
+            <li>VIEWER</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <!DOCTYPE html>
+<!--
+Copyright 2012 Mozilla Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Adobe CMap resources are covered by their own copyright but the same license:
+
+    Copyright 1990-2015 Adobe Systems Incorporated.
+
+See https://github.com/adobe-type-tools/cmap-resources
+-->
+<html dir="ltr" mozdisallowselectionprint>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <title>PDF.js viewer</title>
+
+    <link rel="stylesheet" href="viewer.css">
+
+<!-- This snippet is used in production (included from viewer.html) -->
+<link rel="resource" type="application/l10n" href="locale/locale.properties">
+<script src="../build/pdf.js"></script>
+
+  <script src="viewer.js"></script>
+
+  </head>
+
+  <body tabindex="1">
+    <div id="outerContainer">
+
+      <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div id="sidebarViewButtons" class="splitToolbarButton toggled" role="radiogroup">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs" role="radio" aria-checked="true" aria-controls="thumbnailView">
+                 <span data-l10n-id="thumbs_label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline" role="radio" aria-checked="false" aria-controls="outlineView">
+                 <span data-l10n-id="document_outline_label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments" role="radio" aria-checked="false" aria-controls="attachmentsView">
+                 <span data-l10n-id="attachments_label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers" role="radio" aria-checked="false" aria-controls="layersView">
+                 <span data-l10n-id="layers_label">Layers</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer" class="hidden">
+              <div class="verticalToolbarSeparator"></div>
+
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
+                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarContent">
+          <div id="thumbnailView">
+          </div>
+          <div id="outlineView" class="hidden">
+          </div>
+          <div id="attachmentsView" class="hidden">
+          </div>
+          <div id="layersView" class="hidden">
+          </div>
+        </div>
+        <div id="sidebarResizer"></div>
+      </div>  <!-- sidebarContainer -->
+
+      <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+          <div id="findbarInputContainer">
+            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input" aria-invalid="false">
+            <div class="splitToolbarButton">
+              <button id="findPrevious" class="toolbarButton" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+                <span data-l10n-id="find_previous_label">Previous</span>
+              </button>
+              <div class="splitToolbarButtonSeparator"></div>
+              <button id="findNext" class="toolbarButton" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+                <span data-l10n-id="find_next_label">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="findbarOptionsOneContainer">
+            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight All</label>
+            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match Case</label>
+          </div>
+          <div id="findbarOptionsTwoContainer">
+            <input type="checkbox" id="findMatchDiacritics" class="toolbarField" tabindex="96">
+            <label for="findMatchDiacritics" class="toolbarLabel" data-l10n-id="find_match_diacritics_label">Match Diacritics</label>
+            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="97">
+            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole Words</label>
+          </div>
+
+          <div id="findbarMessageContainer" aria-live="polite">
+            <span id="findResultsCount" class="toolbarLabel"></span>
+            <span id="findMsg" class="toolbarLabel"></span>
+          </div>
+        </div>  <!-- findbar -->
+
+        <div class="editorParamsToolbar hidden doorHangerRight" id="editorFreeTextParamsToolbar">
+          <div class="editorParamsToolbarContainer">
+            <div class="editorParamsSetter">
+              <label for="editorFreeTextColor" class="editorParamsLabel" data-l10n-id="editor_free_text_color">Color</label>
+              <input type="color" id="editorFreeTextColor" class="editorParamsColor" tabindex="100">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorFreeTextFontSize" class="editorParamsLabel" data-l10n-id="editor_free_text_size">Size</label>
+              <input type="range" id="editorFreeTextFontSize" class="editorParamsSlider" value="10" min="5" max="100" step="1" tabindex="101">
+            </div>
+          </div>
+        </div>
+
+        <div class="editorParamsToolbar hidden doorHangerRight" id="editorInkParamsToolbar">
+          <div class="editorParamsToolbarContainer">
+            <div class="editorParamsSetter">
+              <label for="editorInkColor" class="editorParamsLabel" data-l10n-id="editor_ink_color">Color</label>
+              <input type="color" id="editorInkColor" class="editorParamsColor" tabindex="102">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorInkThickness" class="editorParamsLabel" data-l10n-id="editor_ink_thickness">Thickness</label>
+              <input type="range" id="editorInkThickness" class="editorParamsSlider" value="1" min="1" max="20" step="1" tabindex="103">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorInkOpacity" class="editorParamsLabel" data-l10n-id="editor_ink_opacity">Opacity</label>
+              <input type="range" id="editorInkOpacity" class="editorParamsSlider" value="100" min="1" max="100" step="1" tabindex="104">
+            </div>
+          </div>
+        </div>
+
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+          <div id="secondaryToolbarButtonContainer">
+            <button id="secondaryPresentationMode" class="secondaryToolbarButton visibleLargeView" title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+            </button>
+
+            <button id="secondaryOpenFile" class="secondaryToolbarButton visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
+              <span data-l10n-id="open_file_label">Open</span>
+            </button>
+
+            <button id="secondaryPrint" class="secondaryToolbarButton visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
+              <span data-l10n-id="print_label">Print</span>
+            </button>
+
+            <button id="secondaryDownload" class="secondaryToolbarButton visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
+              <span data-l10n-id="download_label">Download</span>
+            </button>
+
+            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+              <span data-l10n-id="bookmark_label">Current View</span>
+            </a>
+
+            <div class="horizontalToolbarSeparator visibleLargeView"></div>
+
+            <button id="firstPage" class="secondaryToolbarButton" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
+              <span data-l10n-id="first_page_label">Go to First Page</span>
+            </button>
+            <button id="lastPage" class="secondaryToolbarButton" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
+              <span data-l10n-id="last_page_label">Go to Last Page</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="pageRotateCw" class="secondaryToolbarButton" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+            </button>
+            <button id="pageRotateCcw" class="secondaryToolbarButton" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
+              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="cursorToolButtons" role="radiogroup">
+              <button id="cursorSelectTool" class="secondaryToolbarButton toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool" role="radio" aria-checked="true">
+                <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+              </button>
+              <button id="cursorHandTool" class="secondaryToolbarButton" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool" role="radio" aria-checked="false">
+                <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="scrollModeButtons" role="radiogroup">
+              <button id="scrollPage" class="secondaryToolbarButton" title="Use Page Scrolling" tabindex="62" data-l10n-id="scroll_page" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_page_label">Page Scrolling</span>
+              </button>
+              <button id="scrollVertical" class="secondaryToolbarButton toggled" title="Use Vertical Scrolling" tabindex="63" data-l10n-id="scroll_vertical" role="radio" aria-checked="true">
+                <span data-l10n-id="scroll_vertical_label" >Vertical Scrolling</span>
+              </button>
+              <button id="scrollHorizontal" class="secondaryToolbarButton" title="Use Horizontal Scrolling" tabindex="64" data-l10n-id="scroll_horizontal" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+              </button>
+              <button id="scrollWrapped" class="secondaryToolbarButton" title="Use Wrapped Scrolling" tabindex="65" data-l10n-id="scroll_wrapped" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="spreadModeButtons" role="radiogroup">
+              <button id="spreadNone" class="secondaryToolbarButton toggled" title="Do not join page spreads" tabindex="66" data-l10n-id="spread_none" role="radio" aria-checked="true">
+                <span data-l10n-id="spread_none_label">No Spreads</span>
+              </button>
+              <button id="spreadOdd" class="secondaryToolbarButton" title="Join page spreads starting with odd-numbered pages" tabindex="67" data-l10n-id="spread_odd" role="radio" aria-checked="false">
+                <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+              </button>
+              <button id="spreadEven" class="secondaryToolbarButton" title="Join page spreads starting with even-numbered pages" tabindex="68" data-l10n-id="spread_even" role="radio" aria-checked="false">
+                <span data-l10n-id="spread_even_label">Even Spreads</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="documentProperties" class="secondaryToolbarButton" title="Document Properties…" tabindex="69" data-l10n-id="document_properties" aria-controls="documentPropertiesDialog">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
+            </button>
+          </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+          <div id="toolbarContainer">
+            <div id="toolbarViewer">
+              <div id="toolbarViewerLeft">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
+                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                </button>
+                <div class="toolbarButtonSpacer"></div>
+                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
+                  <span data-l10n-id="findbar_label">Find</span>
+                </button>
+                <div class="splitToolbarButton hiddenSmallView">
+                  <button class="toolbarButton" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                    <span data-l10n-id="previous_label">Previous</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button class="toolbarButton" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                    <span data-l10n-id="next_label">Next</span>
+                  </button>
+                </div>
+                <input type="number" id="pageNumber" class="toolbarField" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+                <span id="numPages" class="toolbarLabel"></span>
+              </div>
+              <div id="toolbarViewerRight">
+                <button id="presentationMode" class="toolbarButton hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
+                  <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+                </button>
+
+                <button id="openFile" class="toolbarButton hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
+                  <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="print" class="toolbarButton hiddenMediumView" title="Print" tabindex="33" data-l10n-id="print">
+                  <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="download" class="toolbarButton hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
+                  <span data-l10n-id="download_label">Download</span>
+                </button>
+                <a href="#" id="viewBookmark" class="toolbarButton hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                  <span data-l10n-id="bookmark_label">Current View</span>
+                </a>
+
+                <div class="verticalToolbarSeparator hiddenSmallView"></div>
+
+                <div id="editorModeButtons" class="splitToolbarButton toggled hidden" role="radiogroup">
+                  <button id="editorNone" class="toolbarButton toggled" disabled="disabled" title="Disable Annotation Editing" role="radio" aria-checked="true" tabindex="36" data-l10n-id="editor_none">
+                    <span data-l10n-id="editor_none_label">Disable Editing</span>
+                  </button>
+                  <button id="editorFreeText" class="toolbarButton" disabled="disabled" title="Add FreeText Annotation" role="radio" aria-checked="false" tabindex="37" data-l10n-id="editor_free_text">
+                    <span data-l10n-id="editor_free_text_label">FreeText Annotation</span>
+                  </button>
+                  <button id="editorInk" class="toolbarButton" disabled="disabled" title="Add Ink Annotation" role="radio" aria-checked="false" tabindex="38" data-l10n-id="editor_ink">
+                    <span data-l10n-id="editor_ink_label">Ink Annotation</span>
+                  </button>
+                </div>
+
+                <!-- Should be visible when the "editorModeButtons" are visible. -->
+                <div id="editorModeSeparator" class="verticalToolbarSeparator hidden"></div>
+
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="48" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
+                  <span data-l10n-id="tools_label">Tools</span>
+                </button>
+              </div>
+              <div id="toolbarViewerMiddle">
+                <div class="splitToolbarButton">
+                  <button id="zoomOut" class="toolbarButton" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
+                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button id="zoomIn" class="toolbarButton" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
+                    <span data-l10n-id="zoom_in_label">Zoom In</span>
+                   </button>
+                </div>
+                <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 50 }'>50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 75 }'>75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 100 }'>100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 200 }'>200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 300 }'>300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 400 }'>400%</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div id="loadingBar">
+              <div class="progress">
+                <div class="glimmer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewerContainer" tabindex="0">
+          <div id="viewer" class="pdfViewer"></div>
+        </div>
+
+        <div id="errorWrapper" hidden='true'>
+          <div id="errorMessageLeft">
+            <span id="errorMessage"></span>
+            <button id="errorShowMore" data-l10n-id="error_more_info">
+              More Information
+            </button>
+            <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
+              Less Information
+            </button>
+          </div>
+          <div id="errorMessageRight">
+            <button id="errorClose" data-l10n-id="error_close">
+              Close
+            </button>
+          </div>
+          <div id="errorSpacer"></div>
+          <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
+        </div>
+      </div> <!-- mainContainer -->
+
+      <div id="dialogContainer">
+        <dialog id="passwordDialog">
+          <div class="row">
+            <label for="password" id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</label>
+          </div>
+          <div class="row">
+            <input type="password" id="password" class="toolbarField">
+          </div>
+          <div class="buttonRow">
+            <button id="passwordCancel" class="dialogButton"><span data-l10n-id="password_cancel">Cancel</span></button>
+            <button id="passwordSubmit" class="dialogButton"><span data-l10n-id="password_ok">OK</span></button>
+          </div>
+        </dialog>
+        <dialog id="documentPropertiesDialog">
+          <div class="row">
+            <span id="fileNameLabel" data-l10n-id="document_properties_file_name">File name:</span>
+            <p id="fileNameField" aria-labelledby="fileNameLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="fileSizeLabel" data-l10n-id="document_properties_file_size">File size:</span>
+            <p id="fileSizeField" aria-labelledby="fileSizeLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="titleLabel" data-l10n-id="document_properties_title">Title:</span>
+            <p id="titleField" aria-labelledby="titleLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="authorLabel" data-l10n-id="document_properties_author">Author:</span>
+            <p id="authorField" aria-labelledby="authorLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="subjectLabel" data-l10n-id="document_properties_subject">Subject:</span>
+            <p id="subjectField" aria-labelledby="subjectLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="keywordsLabel" data-l10n-id="document_properties_keywords">Keywords:</span>
+            <p id="keywordsField" aria-labelledby="keywordsLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="creationDateLabel" data-l10n-id="document_properties_creation_date">Creation Date:</span>
+            <p id="creationDateField" aria-labelledby="creationDateLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="modificationDateLabel" data-l10n-id="document_properties_modification_date">Modification Date:</span>
+            <p id="modificationDateField" aria-labelledby="modificationDateLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="creatorLabel" data-l10n-id="document_properties_creator">Creator:</span>
+            <p id="creatorField" aria-labelledby="creatorLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="producerLabel" data-l10n-id="document_properties_producer">PDF Producer:</span>
+            <p id="producerField" aria-labelledby="producerLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="versionLabel" data-l10n-id="document_properties_version">PDF Version:</span>
+            <p id="versionField" aria-labelledby="versionLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="pageCountLabel" data-l10n-id="document_properties_page_count">Page Count:</span>
+            <p id="pageCountField" aria-labelledby="pageCountLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="pageSizeLabel" data-l10n-id="document_properties_page_size">Page Size:</span>
+            <p id="pageSizeField" aria-labelledby="pageSizeLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="linearizedLabel" data-l10n-id="document_properties_linearized">Fast Web View:</span>
+            <p id="linearizedField" aria-labelledby="linearizedLabel">-</p>
+          </div>
+          <div class="buttonRow">
+            <button id="documentPropertiesClose" class="dialogButton"><span data-l10n-id="document_properties_close">Close</span></button>
+          </div>
+        </dialog>
+        <dialog id="printServiceDialog" style="min-width: 200px;">
+          <div class="row">
+            <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+          </div>
+          <div class="row">
+            <progress value="0" max="100"></progress>
+            <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }' class="relative-progress">0%</span>
+          </div>
+          <div class="buttonRow">
+            <button id="printCancel" class="dialogButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
+          </div>
+        </dialog>
+      </div>  <!-- dialogContainer -->
+
+    </div> <!-- outerContainer -->
+    <div id="printContainer"></div>
+
+    <input type="file" id="fileInput" class="hidden">
+  </body>
+</html>
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/lib/">LIB</a></li>
+            <li><a href="/lib/pdf/">PDF</a></li>
+            <li><a href="/lib/pdf/web/">WEB</a></li>
+            <li>VIEWER</li>
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user-circle"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrHarsh</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.3/mermaid.min.js","integrity":"sha256-TIYL00Rhw/8WaoUhYTLX9SKIEFdXxg+yMWSLVUbhiLg="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.0/katex.min.css" integrity="sha256-uik/hNqHWZldXh/0K35nqOSCff9F61/ZOFReqNOBgB0=" crossorigin="anonymous">
+
+
+
+</body>
+</html>
