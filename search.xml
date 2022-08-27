@@ -923,6 +923,98 @@
       </tags>
   </entry>
   <entry>
+    <title>requests库的使用</title>
+    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
+<ul>
+<li>
+<p>post(‘url’)</p>
+</li>
+<li>
+<p>put(‘url’)</p>
+</li>
+<li>
+<p>delete(‘url’)</p>
+</li>
+<li>
+<p>head(‘url’)</p>
+</li>
+<li>
+<p>options(‘url’)</p>
+</li>
+<li>
+<p>get(‘url’)</p>
+</li>
+</ul>
+<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
+<p>下载图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
+<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<p>文件上传</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>刷题笔记㈠</title>
+    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
+    <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
+<h1 id="面试题-0805-递归乘法-力扣leetcode"><a class="markdownIt-Anchor" href="#面试题-0805-递归乘法-力扣leetcode"></a> <a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
+<blockquote>
+<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="2119-反转两次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#2119-反转两次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>老实人真会反转两次</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-offer-58-ii-左旋转字符串-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-58-ii-左旋转字符串-力扣leetcode"></a> <a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>越界处理用取模</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="136-只出现一次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#136-只出现一次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
+<p>本题采用异或运算</p>
+<blockquote>
+<p><strong>异或运算性质</strong></p>
+<blockquote>
+<ol>
+<li>a^a=0；</li>
+<li>a^0=a;</li>
+<li>a<sup>b=b</sup>a</li>
+</ol>
+</blockquote>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="268-丢失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#268-丢失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>求和做减法</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>urllib库的使用</title>
     <url>/2022/08/09/urllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
@@ -1072,95 +1164,14 @@
       </tags>
   </entry>
   <entry>
-    <title>requests库的使用</title>
-    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
-<ul>
-<li>
-<p>post(‘url’)</p>
-</li>
-<li>
-<p>put(‘url’)</p>
-</li>
-<li>
-<p>delete(‘url’)</p>
-</li>
-<li>
-<p>head(‘url’)</p>
-</li>
-<li>
-<p>options(‘url’)</p>
-</li>
-<li>
-<p>get(‘url’)</p>
-</li>
-</ul>
-<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
-<p>下载图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
-<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<p>文件上传</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-]]></content>
+    <title>计算机网络三级笔记</title>
+    <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%89%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>爬虫</category>
+        <category>计算机网络</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>刷题笔记㈠</title>
-    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
-    <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
-<h1 id="面试题-0805-递归乘法-力扣leetcode"><a class="markdownIt-Anchor" href="#面试题-0805-递归乘法-力扣leetcode"></a> <a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
-<blockquote>
-<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="2119-反转两次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#2119-反转两次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>老实人真会反转两次</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-offer-58-ii-左旋转字符串-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-58-ii-左旋转字符串-力扣leetcode"></a> <a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>越界处理用取模</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="136-只出现一次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#136-只出现一次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
-<p>本题采用异或运算</p>
-<blockquote>
-<p><strong>异或运算性质</strong></p>
-<blockquote>
-<ol>
-<li>a^a=0；</li>
-<li>a^0=a;</li>
-<li>a<sup>b=b</sup>a</li>
-</ol>
-</blockquote>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="268-丢失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#268-丢失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>求和做减法</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>算法</tag>
+        <tag>计算机网路</tag>
       </tags>
   </entry>
   <entry>
@@ -1312,17 +1323,6 @@
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络三级笔记</title>
-    <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%89%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网路</tag>
       </tags>
   </entry>
 </search>
