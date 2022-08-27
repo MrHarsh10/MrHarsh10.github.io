@@ -1,6 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Django笔记</title>
+    <url>/2022/08/24/Django%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="创建项目">创建项目</h1>
+<blockquote>
+<p><a href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial01/">编写你的第一个 Django 应用，第 1 部分 | Django 文档 | Django (djangoproject.com)</a></p>
+</blockquote>
+<p>在Git Bash下输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">django-admin startproject mysite</span><br></pre></td></tr></table></figure>
+<p>就会生成如下文件结构</p>
+<blockquote>
+<p>mysite/<br>
+<a href="http://manage.py">manage.py</a><br>
+mysite/<br>
+<strong>init</strong>.py<br>
+<a href="http://settings.py">settings.py</a><br>
+<a href="http://urls.py">urls.py</a><br>
+<a href="http://asgi.py">asgi.py</a><br>
+<a href="http://wsgi.py">wsgi.py</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Qt工具类</title>
+    <url>/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="字符串类">字符串类</h1>
+<h2 id="操作字符串">操作字符串</h2>
+<ol>
+<li>
+<p>“+”</p>
+</li>
+<li>
+<p>QString::append()</p>
+</li>
+<li>
+<p>QString::sprintf()</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str;</span><br><span class="line">str.<span class="built_in">sprintf</span>(<span class="string">&quot; %s &quot;</span>,<span class="string">&quot;hi&quot;</span>); </span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>QString::arg()</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str;</span><br><span class="line">str=<span class="built_in">QString</span>(<span class="string">&quot;%1 a %2&quot;</span>).<span class="built_in">arg</span>(<span class="string">&quot;1&quot;</span>).<span class="built_in">arg</span>(<span class="string">&quot;2&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>组合字符串</p>
+<blockquote>
+<p>insert()        插入字符串</p>
+<p>prepend()    开头插入</p>
+<p>replace()     替代</p>
+<p>QString::trimmed()    移除两端的空白字符</p>
+<p>QString::simplified() 移除两端的空白字符,使用单个空格字符代替空白字符</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="查询字符串">查询字符串</h2>
+<ol>
+<li>
+<p>QString::startsWith()</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str=<span class="string">&quot;sddsa&quot;</span></span><br><span class="line">str.<span class="built_in">startsWith</span>(<span class="string">&quot;s&quot;</span>,Qt::CaseSensitive);<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>QString::endsWith() 结尾</p>
+</li>
+<li>
+<p>QString::contains() 包含</p>
+</li>
+<li>
+<p>操作符 &gt;=&lt;</p>
+</li>
+</ol>
+<h2 id="字符串转换">字符串转换</h2>
+<ul>
+<li>
+<p>toInt()</p>
+</li>
+<li>
+<p>toAscii</p>
+</li>
+<li>
+<p>toLatin1()</p>
+</li>
+<li>
+<p>toUtf8()</p>
+</li>
+<li>
+<p>toLocal8Bit()</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str=<span class="string">&quot;welcome to you&quot;</span>;</span><br><span class="line">QByteArray b=str.<span class="built_in">toAscii</span>();</span><br><span class="line">qDebug&lt;&lt;b;</span><br><span class="line">b.<span class="built_in">append</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line"><span class="built_in">qDebug</span>()&lt;&lt;ba.<span class="built_in">data</span>();</span><br></pre></td></tr></table></figure>
+<h1 id="容器类">容器类</h1>
+<h2 id="QList类">QList类</h2>
+<ul>
+<li>
+<p>QList::append()</p>
+</li>
+<li>
+<p>QList::prepend()</p>
+</li>
+<li>
+<p>QList::insert()</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QList&lt;QString&gt;list;</span><br><span class="line"><span class="function">QString <span class="title">str</span><span class="params">(<span class="string">&quot;sdsd&quot;</span>)</span></span>;</span><br><span class="line">list&lt;&lt;str;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="QLinkedList类">QLinkedList类</h2>
+<p>QLinkedList是一个链式列表，以非连续的内存块保存</p>
+<h2 id="QVector类">QVector类</h2>
+<p>相邻的内存储存给定数据类型的一组数值</p>
+<h2 id="Java风格迭代器遍历容器">Java风格迭代器遍历容器</h2>
+<center>*两种不同类型的Java风格迭代器数据类型*</center>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">容器类</th>
+<th style="text-align:center">只读迭代器类</th>
+<th>读写迭代器类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">QList<T>,QQueue<t></td>
+<td style="text-align:center">QListIterator<T></td>
+<td>QMutableListIterator<T></td>
+</tr>
+<tr>
+<td style="text-align:center">QLinkedList<T></td>
+<td style="text-align:center">QLinkedListIterator<T></td>
+<td>QMutableLinkedListIterator<T></td>
+</tr>
+<tr>
+<td style="text-align:center">QVector<T>,QStack<T></td>
+<td style="text-align:center">QVectorIterator<T></td>
+<td>QMutableVectorIterator<T></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QCoreApplication&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QDebug&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">QCoreApplication <span class="title">a</span><span class="params">(argc,argv)</span></span>;</span><br><span class="line">    QList&lt;<span class="type">int</span>&gt;list;</span><br><span class="line">    list&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="number">2</span>&lt;&lt;<span class="number">3</span>&lt;&lt;<span class="number">4</span>&lt;&lt;<span class="number">5</span>;</span><br><span class="line">    QListIterator&lt;<span class="type">int</span>&gt;<span class="built_in">i</span>(list);</span><br><span class="line">    <span class="keyword">for</span>(;i.<span class="built_in">hasNext</span>();)</span><br><span class="line">        <span class="built_in">qDebug</span>()&lt;&lt;i.next;</span><br><span class="line">    <span class="keyword">return</span> a.exec;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="QListIterator">QListIterator</h3>
+<ul>
+<li>
+<p>QListIterator::toBack()</p>
+</li>
+<li>
+<p>QListIterator::hasPrevious()</p>
+</li>
+<li>
+<p>QListIterator::previous()</p>
+</li>
+<li>
+<p>QListIterator::toFront()</p>
+</li>
+<li>
+<p>QListIterator::peeknext()</p>
+</li>
+<li>
+<p>QListIterator::peekPrevious()</p>
+</li>
+<li>
+<p>QListIterator::findNext()</p>
+</li>
+<li>
+<p>QListIterator::findPrevious()</p>
+</li>
+</ul>
+<h2 id="STL风格迭代器遍历容器">STL风格迭代器遍历容器</h2>
+<CENTER>STL风格迭代器数据类型*</CENTER>
+<table>
+<thead>
+<tr>
+<th>容器类</th>
+<th>只读迭代器类</th>
+<th>读写迭代器类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QList<T></td>
+<td>QListIterator::const_iterator</td>
+<td>QListIterator::iterator</td>
+</tr>
+<tr>
+<td>QLinkedList<T></td>
+<td>QLinkedListIterator::const_iterator</td>
+<td>QLinkedListIterator<T>::iterator</td>
+</tr>
+<tr>
+<td>QVector<T>,QStack<T></td>
+<td>QVectorIterator::const_iterator</td>
+<td>QVector<T>::iterator</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>Qt</category>
+      </categories>
+      <tags>
+        <tag>Qt</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在Hexo上写文章">在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
+<h2 id="Hello-World">Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python爬虫：爬取豆瓣电影榜Top250</title>
     <url>/2022/08/16/Python%E7%88%AC%E8%99%AB%EF%BC%9A%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%A6%9CTop250/</url>
     <content><![CDATA[<h1 id="前言">前言</h1>
@@ -23,6 +244,230 @@
 <h1 id="结果">结果</h1>
 <img src="https://s2.loli.net/2022/08/17/4GgyqDRSI9ljcNv.png" title="" alt="" data-align="center">
 <center>非常基础的爬虫入门例子</center>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++编程</title>
+    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="从C到C">从C到C++</h2>
+<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
+<h2 id="输入输出">输入输出</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="内联函数">内联函数</h2>
+<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
+<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="函数模板">函数模板</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="引用和引用形参">引用和引用形参</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>OP编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>刷题笔记㈠</title>
+    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
+    <content><![CDATA[<h1 id="额，感觉这很奇怪，下次不写了"><em>额，感觉这很奇怪，下次不写了</em></h1>
+<h1 id="面试题-08-05-递归乘法-力扣（LeetCode）"><a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
+<h2 id="思路：">思路：</h2>
+<blockquote>
+<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="2119-反转两次的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>老实人真会反转两次</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-Offer-58-II-左旋转字符串-力扣（LeetCode）"><a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>越界处理用取模</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="136-只出现一次的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
+<p>本题采用异或运算</p>
+<blockquote>
+<p><strong>异或运算性质</strong></p>
+<blockquote>
+<ol>
+<li>a^a=0；</li>
+<li>a^0=a;</li>
+<li>a^b=b^a</li>
+</ol>
+</blockquote>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="268-丢失的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>求和做减法</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-Offer-53-II-0～n-1中缺失的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫基础</title>
+    <url>/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="HTTP基本原理">HTTP基本原理</h1>
+<blockquote>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://www.runoob.com/http/http-tutorial.html">HTTP 教程 | 菜鸟教程 (runoob.com)</a></li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="URI和URL">URI和URL</h2>
+<p>URI:统一资源标识符</p>
+<p>URL:统一资源定位符</p>
+<p>URN:统一资源名称</p>
+<blockquote>
+<p>现在互联网，URN用得很少，一般网页链接🔗称为URL</p>
+</blockquote>
+<hr>
+<h2 id="超文本">超文本</h2>
+<p>网页源代码HTML称为超文本</p>
+<hr>
+<h2 id="HTTP和HTTPS">HTTP和HTTPS</h2>
+<p>HTTP:超文本传输协议</p>
+<p>HTTPS:HTTP下加入SSL层</p>
+<hr>
+<h2 id="HTTP-请求过程">HTTP 请求过程</h2>
+<img title="" src="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp" alt="" data-align="inline">
+<p><strong>我们利用浏览器”检查“工具的网络来观察这个过程</strong></p>
+<img title="" src="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png" alt="" data-align="inline">
+<ul>
+<li>
+<p>General部分</p>
+<ul>
+<li>
+<p>Request URL:请求的URL</p>
+</li>
+<li>
+<p>Request Method:请求方法</p>
+</li>
+<li>
+<p>Status Code: 响应状态码</p>
+</li>
+<li>
+<p>Remote Address:远程服务器的地址和端口</p>
+</li>
+<li>
+<p>Referrer Policy:Referrer判别策略</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Response Header:响应头</p>
+</li>
+<li>
+<p>Request Header:请求头</p>
+</li>
+</ul>
+<hr>
+<h2 id="请求">请求</h2>
+<blockquote>
+<p>请求由客户端发出，分为4部分</p>
+<blockquote>
+<ul>
+<li>
+<p>请求方法:Request Method</p>
+</li>
+<li>
+<p>请求网址:Request URL</p>
+</li>
+<li>
+<p>请求头:Request Headers</p>
+</li>
+<li>
+<p>请求体:Request Body</p>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="请求方法">请求方法</h3>
+<p>常见的为：GET和POST</p>
+<blockquote>
+<p>GET 与POST区别</p>
+<ul>
+<li>
+<p>GET的参数在URL里面，而POST请求的数据以表单传输，包含在请求体</p>
+</li>
+<li>
+<p>GET的数据只有1024字节，而POST没有限制</p>
+</li>
+</ul>
+</blockquote>
+<p>其他请求方法</p>
+<img title="" src="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png" alt="" data-align="inline">
+<h3 id="请求的网址">请求的网址</h3>
+<p>请求的网址即URL</p>
+<h3 id="请求头">请求头</h3>
+<ul>
+<li>
+<p>Accept:请求报头域，指定客户端接收哪些类型的信息</p>
+</li>
+<li>
+<p>Accept-Language:指定客户端可接受语言类型</p>
+</li>
+<li>
+<p>Host:指定请求资源的主机IP和端口</p>
+</li>
+<li>
+<p>Cookie:储存在用户本地终端上的数据,特定的 web文档关联在一起, 保存了该客户机访问这个Web 文档时的信息, 当客户机再次访问这个 Web 文档时这些信息可供该文档使用。</p>
+</li>
+<li>
+<p>Referer:标识请求是从那个页面发过来的</p>
+</li>
+<li>
+<p>User-Agent:一个特殊字符串头，使得服务器能够识别客户使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎、浏览器语言、浏览器插件等。</p>
+</li>
+<li>
+<p>Content-Type:内容类型，一般是指网页中存在的Content-Type，用于定义网络文件的类型和网页的编码，决定文件接收方将以什么形式、什么编码读取这个文件</p>
+</li>
+</ul>
+<h3 id="请求体">请求体</h3>
+<p>请求体承载的是POST的表单数据，对于GET，请求为空</p>
+<hr>
+<h2 id="响应">响应</h2>
+<h3 id="响应状态码">响应状态码</h3>
+<p>常见的 HTTP 状态码：</p>
+<ul>
+<li>200 - 请求成功</li>
+<li>301 - 资源（网页等）被永久转移到其它URL</li>
+<li>404 - 请求的资源（网页等）不存在</li>
+<li>500 - 内部服务器错误</li>
+</ul>
+<p>其它可以参考<a href="https://www.runoob.com/http/http-status-codes.html">HTTP 状态码 | 菜鸟教程</a></p>
+<h3 id="响应头">响应头</h3>
+<p>响应头包含服务器对请求的应答信息，如Content-Type、Sever、Set-Cookie</p>
+<h3 id="响应体">响应体</h3>
+<p>响应体包含响应的正文数据</p>
+<hr>
+<h1 id="网页基础">网页基础</h1>
+<h2 id="网页组成">网页组成</h2>
+<p>网页是由HTML、CSS、JavaScript组成</p>
+<p><em><strong>如果想学爬虫，必须要点Web基础</strong></em></p>
 ]]></content>
       <categories>
         <category>爬虫</category>
@@ -707,340 +1152,14 @@
       </tags>
   </entry>
   <entry>
-    <title>Django笔记</title>
-    <url>/2022/08/24/Django%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="创建项目">创建项目</h1>
-<blockquote>
-<p><a href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial01/">编写你的第一个 Django 应用，第 1 部分 | Django 文档 | Django (djangoproject.com)</a></p>
-</blockquote>
-<p>在Git Bash下输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">django-admin startproject mysite</span><br></pre></td></tr></table></figure>
-<p>就会生成如下文件结构</p>
-<blockquote>
-<p>mysite/<br>
-<a href="http://manage.py">manage.py</a><br>
-mysite/<br>
-<strong>init</strong>.py<br>
-<a href="http://settings.py">settings.py</a><br>
-<a href="http://urls.py">urls.py</a><br>
-<a href="http://asgi.py">asgi.py</a><br>
-<a href="http://wsgi.py">wsgi.py</a></p>
-</blockquote>
-]]></content>
+    <title>计算机网络三级笔记</title>
+    <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%89%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>Django</category>
+        <category>计算机网络</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>Django</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Qt工具类</title>
-    <url>/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="字符串类">字符串类</h1>
-<h2 id="操作字符串">操作字符串</h2>
-<ol>
-<li>
-<p>“+”</p>
-</li>
-<li>
-<p>QString::append()</p>
-</li>
-<li>
-<p>QString::sprintf()</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str;</span><br><span class="line">str.<span class="built_in">sprintf</span>(<span class="string">&quot; %s &quot;</span>,<span class="string">&quot;hi&quot;</span>); </span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>QString::arg()</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str;</span><br><span class="line">str=<span class="built_in">QString</span>(<span class="string">&quot;%1 a %2&quot;</span>).<span class="built_in">arg</span>(<span class="string">&quot;1&quot;</span>).<span class="built_in">arg</span>(<span class="string">&quot;2&quot;</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>组合字符串</p>
-<blockquote>
-<p>insert()        插入字符串</p>
-<p>prepend()    开头插入</p>
-<p>replace()     替代</p>
-<p>QString::trimmed()    移除两端的空白字符</p>
-<p>QString::simplified() 移除两端的空白字符,使用单个空格字符代替空白字符</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="查询字符串">查询字符串</h2>
-<ol>
-<li>
-<p>QString::startsWith()</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str=<span class="string">&quot;sddsa&quot;</span></span><br><span class="line">str.<span class="built_in">startsWith</span>(<span class="string">&quot;s&quot;</span>,Qt::CaseSensitive);<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>QString::endsWith() 结尾</p>
-</li>
-<li>
-<p>QString::contains() 包含</p>
-</li>
-<li>
-<p>操作符 &gt;=&lt;</p>
-</li>
-</ol>
-<h2 id="字符串转换">字符串转换</h2>
-<ul>
-<li>
-<p>toInt()</p>
-</li>
-<li>
-<p>toAscii</p>
-</li>
-<li>
-<p>toLatin1()</p>
-</li>
-<li>
-<p>toUtf8()</p>
-</li>
-<li>
-<p>toLocal8Bit()</p>
-</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str=<span class="string">&quot;welcome to you&quot;</span>;</span><br><span class="line">QByteArray b=str.<span class="built_in">toAscii</span>();</span><br><span class="line">qDebug&lt;&lt;b;</span><br><span class="line">b.<span class="built_in">append</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line"><span class="built_in">qDebug</span>()&lt;&lt;ba.<span class="built_in">data</span>();</span><br></pre></td></tr></table></figure>
-<h1 id="容器类">容器类</h1>
-<h2 id="QList类">QList类</h2>
-<ul>
-<li>
-<p>QList::append()</p>
-</li>
-<li>
-<p>QList::prepend()</p>
-</li>
-<li>
-<p>QList::insert()</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QList&lt;QString&gt;list;</span><br><span class="line"><span class="function">QString <span class="title">str</span><span class="params">(<span class="string">&quot;sdsd&quot;</span>)</span></span>;</span><br><span class="line">list&lt;&lt;str;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="QLinkedList类">QLinkedList类</h2>
-<p>QLinkedList是一个链式列表，以非连续的内存块保存</p>
-<h2 id="QVector类">QVector类</h2>
-<p>相邻的内存储存给定数据类型的一组数值</p>
-<h2 id="Java风格迭代器遍历容器">Java风格迭代器遍历容器</h2>
-<center>*两种不同类型的Java风格迭代器数据类型*</center>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">容器类</th>
-<th style="text-align:center">只读迭代器类</th>
-<th>读写迭代器类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">QList<T>,QQueue<t></td>
-<td style="text-align:center">QListIterator<T></td>
-<td>QMutableListIterator<T></td>
-</tr>
-<tr>
-<td style="text-align:center">QLinkedList<T></td>
-<td style="text-align:center">QLinkedListIterator<T></td>
-<td>QMutableLinkedListIterator<T></td>
-</tr>
-<tr>
-<td style="text-align:center">QVector<T>,QStack<T></td>
-<td style="text-align:center">QVectorIterator<T></td>
-<td>QMutableVectorIterator<T></td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QCoreApplication&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QDebug&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">QCoreApplication <span class="title">a</span><span class="params">(argc,argv)</span></span>;</span><br><span class="line">    QList&lt;<span class="type">int</span>&gt;list;</span><br><span class="line">    list&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="number">2</span>&lt;&lt;<span class="number">3</span>&lt;&lt;<span class="number">4</span>&lt;&lt;<span class="number">5</span>;</span><br><span class="line">    QListIterator&lt;<span class="type">int</span>&gt;<span class="built_in">i</span>(list);</span><br><span class="line">    <span class="keyword">for</span>(;i.<span class="built_in">hasNext</span>();)</span><br><span class="line">        <span class="built_in">qDebug</span>()&lt;&lt;i.next;</span><br><span class="line">    <span class="keyword">return</span> a.exec;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="QListIterator">QListIterator</h3>
-<ul>
-<li>
-<p>QListIterator::toBack()</p>
-</li>
-<li>
-<p>QListIterator::hasPrevious()</p>
-</li>
-<li>
-<p>QListIterator::previous()</p>
-</li>
-<li>
-<p>QListIterator::toFront()</p>
-</li>
-<li>
-<p>QListIterator::peeknext()</p>
-</li>
-<li>
-<p>QListIterator::peekPrevious()</p>
-</li>
-<li>
-<p>QListIterator::findNext()</p>
-</li>
-<li>
-<p>QListIterator::findPrevious()</p>
-</li>
-</ul>
-<h2 id="STL风格迭代器遍历容器">STL风格迭代器遍历容器</h2>
-<CENTER>STL风格迭代器数据类型*</CENTER>
-<table>
-<thead>
-<tr>
-<th>容器类</th>
-<th>只读迭代器类</th>
-<th>读写迭代器类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>QList<T></td>
-<td>QListIterator::const_iterator</td>
-<td>QListIterator::iterator</td>
-</tr>
-<tr>
-<td>QLinkedList<T></td>
-<td>QLinkedListIterator::const_iterator</td>
-<td>QLinkedListIterator<T>::iterator</td>
-</tr>
-<tr>
-<td>QVector<T>,QStack<T></td>
-<td>QVectorIterator::const_iterator</td>
-<td>QVector<T>::iterator</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>Qt</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Qt</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++编程</title>
-    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从C到C">从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h2 id="输入输出">输入输出</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="内联函数">内联函数</h2>
-<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
-<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="函数模板">函数模板</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="引用和引用形参">引用和引用形参</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>OP编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在Hexo上写文章">在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
-<h2 id="Hello-World">Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>requests库的使用</title>
-    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="请求">请求</h2>
-<ul>
-<li>
-<p>post(‘url’)</p>
-</li>
-<li>
-<p>put(‘url’)</p>
-</li>
-<li>
-<p>delete(‘url’)</p>
-</li>
-<li>
-<p>head(‘url’)</p>
-</li>
-<li>
-<p>options(‘url’)</p>
-</li>
-<li>
-<p>get(‘url’)</p>
-</li>
-</ul>
-<h3 id="GET请求">GET请求</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
-<p>下载图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
-<h3 id="POST请求">POST请求</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<p>文件上传</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<h3 id="会话维持">会话维持</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>刷题笔记㈠</title>
-    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
-    <content><![CDATA[<h1 id="额，感觉这很奇怪，下次不写了"><em>额，感觉这很奇怪，下次不写了</em></h1>
-<h1 id="面试题-08-05-递归乘法-力扣（LeetCode）"><a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
-<h2 id="思路：">思路：</h2>
-<blockquote>
-<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="2119-反转两次的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>老实人真会反转两次</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-Offer-58-II-左旋转字符串-力扣（LeetCode）"><a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>越界处理用取模</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="136-只出现一次的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
-<p>本题采用异或运算</p>
-<blockquote>
-<p><strong>异或运算性质</strong></p>
-<blockquote>
-<ol>
-<li>a^a=0；</li>
-<li>a^0=a;</li>
-<li>a^b=b^a</li>
-</ol>
-</blockquote>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="268-丢失的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>求和做减法</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-Offer-53-II-0～n-1中缺失的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>算法</tag>
+        <tag>计算机网路</tag>
       </tags>
   </entry>
   <entry>
@@ -1193,147 +1312,39 @@ mysite/<br>
       </tags>
   </entry>
   <entry>
-    <title>爬虫基础</title>
-    <url>/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="HTTP基本原理">HTTP基本原理</h1>
-<blockquote>
-<p>参考资料：</p>
-<ul>
-<li><a href="https://www.runoob.com/http/http-tutorial.html">HTTP 教程 | 菜鸟教程 (runoob.com)</a></li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="URI和URL">URI和URL</h2>
-<p>URI:统一资源标识符</p>
-<p>URL:统一资源定位符</p>
-<p>URN:统一资源名称</p>
-<blockquote>
-<p>现在互联网，URN用得很少，一般网页链接🔗称为URL</p>
-</blockquote>
-<hr>
-<h2 id="超文本">超文本</h2>
-<p>网页源代码HTML称为超文本</p>
-<hr>
-<h2 id="HTTP和HTTPS">HTTP和HTTPS</h2>
-<p>HTTP:超文本传输协议</p>
-<p>HTTPS:HTTP下加入SSL层</p>
-<hr>
-<h2 id="HTTP-请求过程">HTTP 请求过程</h2>
-<img title="" src="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp" alt="" data-align="inline">
-<p><strong>我们利用浏览器”检查“工具的网络来观察这个过程</strong></p>
-<img title="" src="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png" alt="" data-align="inline">
+    <title>requests库的使用</title>
+    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="请求-2">请求</h2>
 <ul>
 <li>
-<p>General部分</p>
-<ul>
-<li>
-<p>Request URL:请求的URL</p>
+<p>post(‘url’)</p>
 </li>
 <li>
-<p>Request Method:请求方法</p>
+<p>put(‘url’)</p>
 </li>
 <li>
-<p>Status Code: 响应状态码</p>
+<p>delete(‘url’)</p>
 </li>
 <li>
-<p>Remote Address:远程服务器的地址和端口</p>
+<p>head(‘url’)</p>
 </li>
 <li>
-<p>Referrer Policy:Referrer判别策略</p>
+<p>options(‘url’)</p>
+</li>
+<li>
+<p>get(‘url’)</p>
 </li>
 </ul>
-</li>
-<li>
-<p>Response Header:响应头</p>
-</li>
-<li>
-<p>Request Header:请求头</p>
-</li>
-</ul>
-<hr>
-<h2 id="请求-2">请求</h2>
-<blockquote>
-<p>请求由客户端发出，分为4部分</p>
-<blockquote>
-<ul>
-<li>
-<p>请求方法:Request Method</p>
-</li>
-<li>
-<p>请求网址:Request URL</p>
-</li>
-<li>
-<p>请求头:Request Headers</p>
-</li>
-<li>
-<p>请求体:Request Body</p>
-</li>
-</ul>
-</blockquote>
-</blockquote>
-<h3 id="请求方法">请求方法</h3>
-<p>常见的为：GET和POST</p>
-<blockquote>
-<p>GET 与POST区别</p>
-<ul>
-<li>
-<p>GET的参数在URL里面，而POST请求的数据以表单传输，包含在请求体</p>
-</li>
-<li>
-<p>GET的数据只有1024字节，而POST没有限制</p>
-</li>
-</ul>
-</blockquote>
-<p>其他请求方法</p>
-<img title="" src="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png" alt="" data-align="inline">
-<h3 id="请求的网址">请求的网址</h3>
-<p>请求的网址即URL</p>
-<h3 id="请求头">请求头</h3>
-<ul>
-<li>
-<p>Accept:请求报头域，指定客户端接收哪些类型的信息</p>
-</li>
-<li>
-<p>Accept-Language:指定客户端可接受语言类型</p>
-</li>
-<li>
-<p>Host:指定请求资源的主机IP和端口</p>
-</li>
-<li>
-<p>Cookie:储存在用户本地终端上的数据,特定的 web文档关联在一起, 保存了该客户机访问这个Web 文档时的信息, 当客户机再次访问这个 Web 文档时这些信息可供该文档使用。</p>
-</li>
-<li>
-<p>Referer:标识请求是从那个页面发过来的</p>
-</li>
-<li>
-<p>User-Agent:一个特殊字符串头，使得服务器能够识别客户使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎、浏览器语言、浏览器插件等。</p>
-</li>
-<li>
-<p>Content-Type:内容类型，一般是指网页中存在的Content-Type，用于定义网络文件的类型和网页的编码，决定文件接收方将以什么形式、什么编码读取这个文件</p>
-</li>
-</ul>
-<h3 id="请求体">请求体</h3>
-<p>请求体承载的是POST的表单数据，对于GET，请求为空</p>
-<hr>
-<h2 id="响应">响应</h2>
-<h3 id="响应状态码">响应状态码</h3>
-<p>常见的 HTTP 状态码：</p>
-<ul>
-<li>200 - 请求成功</li>
-<li>301 - 资源（网页等）被永久转移到其它URL</li>
-<li>404 - 请求的资源（网页等）不存在</li>
-<li>500 - 内部服务器错误</li>
-</ul>
-<p>其它可以参考<a href="https://www.runoob.com/http/http-status-codes.html">HTTP 状态码 | 菜鸟教程</a></p>
-<h3 id="响应头">响应头</h3>
-<p>响应头包含服务器对请求的应答信息，如Content-Type、Sever、Set-Cookie</p>
-<h3 id="响应体">响应体</h3>
-<p>响应体包含响应的正文数据</p>
-<hr>
-<h1 id="网页基础">网页基础</h1>
-<h2 id="网页组成">网页组成</h2>
-<p>网页是由HTML、CSS、JavaScript组成</p>
-<p><em><strong>如果想学爬虫，必须要点Web基础</strong></em></p>
+<h3 id="GET请求">GET请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
+<p>下载图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
+<h3 id="POST请求">POST请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<p>文件上传</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<h3 id="会话维持">会话维持</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>爬虫</category>
@@ -1341,17 +1352,6 @@ mysite/<br>
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络三级笔记</title>
-    <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%89%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网路</tag>
       </tags>
   </entry>
 </search>
