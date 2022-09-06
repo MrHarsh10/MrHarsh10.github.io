@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/tags/Python/</loc>
+        <lastmod>2022-09-06T16:06:33.549Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/tags/OpenCV/</loc>
+        <lastmod>2022-09-06T16:06:33.549Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/tags/OP%E7%BC%96%E7%A8%8B/</loc>
         <lastmod>2022-09-02T15:24:24.191Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,13 +39,6 @@
 
     <url>
         <loc>http://www.helicunzai.cn/tags/%E7%88%AC%E8%99%AB/</loc>
-        <lastmod>2022-08-16T17:16:23.767Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/tags/Python/</loc>
         <lastmod>2022-08-16T17:16:23.767Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
