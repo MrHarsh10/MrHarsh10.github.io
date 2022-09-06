@@ -718,6 +718,7 @@
     <url>/2022/09/06/OpenCV-Python/</url>
     <content><![CDATA[<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install opencv-python</span><br><span class="line">pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
+<hr />
 <h1 id="opencv主要模块"><a class="markdownIt-Anchor" href="#opencv主要模块"></a> OpenCV主要模块</h1>
 <blockquote>
 <h3 id="core"><a class="markdownIt-Anchor" href="#core"></a> core</h3>
@@ -750,6 +751,7 @@
 <h3 id="videoio"><a class="markdownIt-Anchor" href="#videoio"></a> videoio</h3>
 <p>视频输入/输出模块，主要用于读取、写入视频 或者图像序列</p>
 </blockquote>
+<hr />
 <h1 id="图片基本操作"><a class="markdownIt-Anchor" href="#图片基本操作"></a> 图片基本操作</h1>
 <h2 id="摄像头采集图片"><a class="markdownIt-Anchor" href="#摄像头采集图片"></a> 摄像头采集图片</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引入OpenCV库</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用摄像头进行拍照 VideoCapture(0)0为默认摄像头</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 获取一帧图片</span></span><br><span class="line"><span class="comment"># 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">ret, img = cap.read()</span><br><span class="line"><span class="comment"># 释放捕获对象</span></span><br><span class="line">cap.release()</span><br></pre></td></tr></table></figure>
@@ -806,6 +808,7 @@
 <p>同样的，对于<code>BGR</code>到<code>HSV</code>的转换，使用<code>cv2.COLOR_BGR2HSV</code>类型。</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2, requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062216524.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">img2=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理前&#x27;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理后&#x27;</span>,img2)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;test.jpg&#x27;</span>,img2) </span><br></pre></td></tr></table></figure>
+<hr />
 <h1 id="人脸识别应用"><a class="markdownIt-Anchor" href="#人脸识别应用"></a> 人脸识别应用</h1>
 <blockquote>
 <h3 id="类harr特征"><a class="markdownIt-Anchor" href="#类harr特征"></a> 类Harr特征</h3>
@@ -1057,21 +1060,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
-<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>requests库的使用</title>
     <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
@@ -1112,6 +1100,21 @@
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
+<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
