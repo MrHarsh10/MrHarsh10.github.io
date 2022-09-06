@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>http://www.mrharsh.top/post-sitemap.xml</loc>
+        <loc>http://example.com/post-sitemap.xml</loc>
         <lastmod>2022-09-02T15:24:24.191Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://www.mrharsh.top/page-sitemap.xml</loc>
+        <loc>http://example.com/page-sitemap.xml</loc>
         <lastmod>2022-08-24T14:11:15.908Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://www.mrharsh.top/category-sitemap.xml</loc>
+        <loc>http://example.com/category-sitemap.xml</loc>
         <lastmod>2022-09-02T15:24:24.191Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://www.mrharsh.top/tag-sitemap.xml</loc>
+        <loc>http://example.com/tag-sitemap.xml</loc>
         <lastmod>2022-09-02T15:24:24.191Z</lastmod>
     </sitemap>
 
