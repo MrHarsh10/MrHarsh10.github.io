@@ -2,42 +2,42 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://example.com/</loc>
+        <loc>http://www.helicunzai.cn/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
 
     <url>
-        <loc>http://example.com/categories/C/</loc>
+        <loc>http://www.helicunzai.cn/categories/C/</loc>
         <lastmod>2022-09-02T15:24:24.191Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://example.com/categories/%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E7%25BD%2591%25E7%25BB%259C/</loc>
+        <loc>http://www.helicunzai.cn/categories/%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E7%25BD%2591%25E7%25BB%259C/</loc>
         <lastmod>2022-08-31T15:20:29.787Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://example.com/categories/%25E7%2588%25AC%25E8%2599%25AB/</loc>
+        <loc>http://www.helicunzai.cn/categories/%25E7%2588%25AC%25E8%2599%25AB/</loc>
         <lastmod>2022-08-16T17:16:23.767Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://example.com/categories/Qt/</loc>
+        <loc>http://www.helicunzai.cn/categories/Qt/</loc>
         <lastmod>2022-08-15T09:19:44.404Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://example.com/categories/%25E9%259A%258F%25E6%2583%25B3/</loc>
+        <loc>http://www.helicunzai.cn/categories/%25E9%259A%258F%25E6%2583%25B3/</loc>
         <lastmod>2022-08-08T14:03:31.441Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

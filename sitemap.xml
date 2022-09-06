@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>http://example.com/post-sitemap.xml</loc>
+        <loc>http://www.helicunzai.cn/post-sitemap.xml</loc>
         <lastmod>2022-09-02T15:24:24.191Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://example.com/page-sitemap.xml</loc>
+        <loc>http://www.helicunzai.cn/page-sitemap.xml</loc>
         <lastmod>2022-08-24T14:11:15.908Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://example.com/category-sitemap.xml</loc>
+        <loc>http://www.helicunzai.cn/category-sitemap.xml</loc>
         <lastmod>2022-09-02T15:24:24.191Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://example.com/tag-sitemap.xml</loc>
+        <loc>http://www.helicunzai.cn/tag-sitemap.xml</loc>
         <lastmod>2022-09-02T15:24:24.191Z</lastmod>
     </sitemap>
 
