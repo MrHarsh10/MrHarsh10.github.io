@@ -21,16 +21,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="将半只脚伸入水深火热的CV">
+    <meta name="description" content="试一试水深火热的CV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenCV的基本操作">
 <meta property="og:url" content="http://www.helicunzai.cn/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Mr Harsh的广阔天地">
-<meta property="og:description" content="将半只脚伸入水深火热的CV">
+<meta property="og:description" content="试一试水深火热的CV">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png">
 <meta property="article:published_time" content="2022-09-10T03:40:54.000Z">
-<meta property="article:modified_time" content="2022-09-10T13:31:48.016Z">
+<meta property="article:modified_time" content="2022-09-10T14:16:16.123Z">
 <meta property="article:author" content="Mr Harsh">
 <meta property="article:tag" content="OpenCV">
 <meta property="article:tag" content="Python">
@@ -148,7 +148,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A8%A1%E5%9D%97imgcodecs"><span class="nav-number">1.</span> <span class="nav-text"> 图像输入输出模块imgcodecs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E5%9B%BE%E5%83%8F%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text"> 读取图像文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E7%85%A7%E7%89%87%E7%9A%84%E9%AB%98%E5%BA%A6%E4%B8%8E%E5%AE%BD%E5%BA%A6"><span class="nav-number">1.2.</span> <span class="nav-text"> 读取照片的高度与宽度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E7%85%A7%E7%89%87"><span class="nav-number">1.3.</span> <span class="nav-text"> 保存照片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#opencv%E7%95%8C%E9%9D%A2%E7%BC%96%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> OpenCV界面编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text"> 新建窗口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flags"><span class="nav-number">2.1.1.</span> <span class="nav-text"> flags</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E7%AA%97%E5%8F%A3%E6%98%BE%E7%A4%BA%E5%A4%9A%E5%9B%BE%E7%89%87"><span class="nav-number">3.</span> <span class="nav-text"> 单窗口显示多图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%94%80%E6%AF%81%E7%AA%97%E5%8F%A3"><span class="nav-number">4.</span> <span class="nav-text"> 销毁窗口</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A8%A1%E5%9D%97imgcodecs"><span class="nav-number">1.</span> <span class="nav-text"> 图像输入输出模块imgcodecs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E5%9B%BE%E5%83%8F%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text"> 读取图像文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E7%85%A7%E7%89%87%E7%9A%84%E9%AB%98%E5%BA%A6%E4%B8%8E%E5%AE%BD%E5%BA%A6"><span class="nav-number">1.2.</span> <span class="nav-text"> 读取照片的高度与宽度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E7%85%A7%E7%89%87"><span class="nav-number">1.3.</span> <span class="nav-text"> 保存照片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#opencv%E7%95%8C%E9%9D%A2%E7%BC%96%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> OpenCV界面编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text"> 新建窗口函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E7%AA%97%E5%8F%A3%E6%98%BE%E7%A4%BA%E5%A4%9A%E5%9B%BE%E7%89%87"><span class="nav-number">3.</span> <span class="nav-text"> 单窗口显示多图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%94%80%E6%AF%81%E7%AA%97%E5%8F%A3"><span class="nav-number">4.</span> <span class="nav-text"> 销毁窗口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text"> 鼠标事件</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -241,7 +241,7 @@
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="OpenCV的基本操作 | Mr Harsh的广阔天地">
-      <meta itemprop="description" content="将半只脚伸入水深火热的CV">
+      <meta itemprop="description" content="试一试水深火热的CV">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -257,7 +257,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-09-10 11:40:54 / 修改时间：21:31:48" itemprop="dateCreated datePublished" datetime="2022-09-10T11:40:54+08:00">2022-09-10</time>
+      <time title="创建时间：2022-09-10 11:40:54 / 修改时间：22:16:16" itemprop="dateCreated datePublished" datetime="2022-09-10T11:40:54+08:00">2022-09-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -279,7 +279,7 @@
     </span>
 </div>
 
-            <div class="post-description">将半只脚伸入水深火热的CV</div>
+            <div class="post-description">试一试水深火热的CV</div>
         </div>
       </header>
 
@@ -311,7 +311,7 @@
 <h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
 <blockquote>
-<h3 id="flags"><a class="markdownIt-Anchor" href="#flags"></a> flags</h3>
+<p>flags</p>
 <ul>
 <li>
 <p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
@@ -325,8 +325,53 @@
 <h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
 <p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" alt="" /></p>
+<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" title="" alt="" data-align="center">
 <h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
+<ul>
+<li>
+<p>cv2.destroyWindow(winname)</p>
+</li>
+<li>
+<p>cv2.destroyAllWindows(winname)</p>
+</li>
+<li>
+<p>cv2.resizeWindow(winname,width,height)</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
+<p>OpenCV使用setMousecallback设定</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>鼠标事件event</p>
+<blockquote>
+<p>enum<br />
+{<br />
+EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
+EVENT_LBUTTONDOWN    =1,   //按下左键<br />
+EVENT_RBUTTONDOWN    =2,   //按下右键<br />
+EVENT_MBUTTONDOWN    =3,   //按下中键<br />
+EVENT_LBUTTONUP      =4,   //放开左键<br />
+EVENT_RBUTTONUP      =5,   //放开右键<br />
+EVENT_MBUTTONUP      =6,   //放开中键<br />
+EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
+EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
+EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
+EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
+};</p>
+</blockquote>
+<p>鼠标事件flags</p>
+<blockquote>
+<p>enum<br />
+{<br />
+CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
+CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
+CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
+CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
+CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
+CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
+};</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
