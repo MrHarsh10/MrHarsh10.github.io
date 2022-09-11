@@ -1,49 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++编程基础</title>
-    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h1 id="万能头文件"><a class="markdownIt-Anchor" href="#万能头文件"></a> 万能头文件</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="最简单的c程序"><a class="markdownIt-Anchor" href="#最简单的c程序"></a> 最简单的C++程序</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>
-<p>C++规定main函数必须声明为int型。</p>
-</li>
-<li>
-<p>cout为输出流对象</p>
-</li>
-</ol>
-<h2 id="输入输出"><a class="markdownIt-Anchor" href="#输入输出"></a> 输入输出</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="内联函数"><a class="markdownIt-Anchor" href="#内联函数"></a> 内联函数</h2>
-<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
-<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="函数模板"><a class="markdownIt-Anchor" href="#函数模板"></a> 函数模板</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="引用和引用形参"><a class="markdownIt-Anchor" href="#引用和引用形参"></a> 引用和引用形参</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
-<h1 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>默认参数必须写在一般参数的后面</strong></li>
-</ul>
-<h1 id="一元作用域运算符"><a class="markdownIt-Anchor" href="#一元作用域运算符"></a> 一元作用域运算符::</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>OP编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++的STL</title>
     <url>/2022/08/10/C-%E7%9A%84STL/</url>
     <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
@@ -718,6 +675,271 @@
       </tags>
   </entry>
   <entry>
+    <title>C++编程基础</title>
+    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
+<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
+<h1 id="万能头文件"><a class="markdownIt-Anchor" href="#万能头文件"></a> 万能头文件</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="最简单的c程序"><a class="markdownIt-Anchor" href="#最简单的c程序"></a> 最简单的C++程序</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>
+<p>C++规定main函数必须声明为int型。</p>
+</li>
+<li>
+<p>cout为输出流对象</p>
+</li>
+</ol>
+<h2 id="输入输出"><a class="markdownIt-Anchor" href="#输入输出"></a> 输入输出</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="内联函数"><a class="markdownIt-Anchor" href="#内联函数"></a> 内联函数</h2>
+<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
+<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="函数模板"><a class="markdownIt-Anchor" href="#函数模板"></a> 函数模板</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="引用和引用形参"><a class="markdownIt-Anchor" href="#引用和引用形参"></a> 引用和引用形参</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
+<h1 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>默认参数必须写在一般参数的后面</strong></li>
+</ul>
+<h1 id="一元作用域运算符"><a class="markdownIt-Anchor" href="#一元作用域运算符"></a> 一元作用域运算符::</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>OP编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV:数组矩阵</title>
+    <url>/2022/09/11/OpenCV-%E6%95%B0%E7%BB%84%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<h1 id="ndarray对象"><a class="markdownIt-Anchor" href="#ndarray对象"></a> ndarray对象</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">array</span>(<span class="params">p_object, dtype=<span class="literal">None</span>, *args, **kwargs</span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],ndmin=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],dtype=<span class="built_in">complex</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="numpy数据类型"><a class="markdownIt-Anchor" href="#numpy数据类型"></a> NumPy数据类型</h1>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool_</td>
+<td>布尔型数据类型（True 或者 False）</td>
+</tr>
+<tr>
+<td>int_</td>
+<td>默认的整数类型（类似于 C 语言中的 long，int32 或 int64）</td>
+</tr>
+<tr>
+<td>intc</td>
+<td>与 C 的 int 类型一样，一般是 int32 或 int 64</td>
+</tr>
+<tr>
+<td>intp</td>
+<td>用于索引的整数类型（类似于 C 的 ssize_t，一般情况下仍然是 int32 或 int64）</td>
+</tr>
+<tr>
+<td>int8</td>
+<td>字节（-128 to 127）</td>
+</tr>
+<tr>
+<td>int16</td>
+<td>整数（-32768 to 32767）</td>
+</tr>
+<tr>
+<td>int32</td>
+<td>整数（-2147483648 to 2147483647）</td>
+</tr>
+<tr>
+<td>int64</td>
+<td>整数（-9223372036854775808 to 9223372036854775807）</td>
+</tr>
+<tr>
+<td>uint8</td>
+<td>无符号整数（0 to 255）</td>
+</tr>
+<tr>
+<td>uint16</td>
+<td>无符号整数（0 to 65535）</td>
+</tr>
+<tr>
+<td>uint32</td>
+<td>无符号整数（0 to 4294967295）</td>
+</tr>
+<tr>
+<td>uint64</td>
+<td>无符号整数（0 to 18446744073709551615）</td>
+</tr>
+<tr>
+<td>float_</td>
+<td>float64 类型的简写</td>
+</tr>
+<tr>
+<td>float16</td>
+<td>半精度浮点数，包括：1 个符号位，5 个指数位，10 个尾数位</td>
+</tr>
+<tr>
+<td>float32</td>
+<td>单精度浮点数，包括：1 个符号位，8 个指数位，23 个尾数位</td>
+</tr>
+<tr>
+<td>float64</td>
+<td>双精度浮点数，包括：1 个符号位，11 个指数位，52 个尾数位</td>
+</tr>
+<tr>
+<td>complex_</td>
+<td>complex128 类型的简写，即 128 位复数</td>
+</tr>
+<tr>
+<td>complex64</td>
+<td>复数，表示双 32 位浮点数（实数部分和虚数部分）</td>
+</tr>
+<tr>
+<td>complex128</td>
+<td>复数，表示双 64 位浮点数（实数部分和虚数部分）</td>
+</tr>
+</tbody>
+</table>
+<p>numpy 的数值类型实际上是 dtype 对象的实例，并对应唯一的字符，包括 np.bool_，np.int32，np.float32，等等。</p>
+<h1 id="新建数组"><a class="markdownIt-Anchor" href="#新建数组"></a> 新建数组</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.empty([<span class="number">3</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>为随机值，未初始化</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.zeros([<span class="number">3</span>,<span class="number">2</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.ones([<span class="number">3</span>,<span class="number">2</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<h1 id="从已有的数组创建数组"><a class="markdownIt-Anchor" href="#从已有的数组创建数组"></a> 从已有的数组创建数组</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>]]</span><br><span class="line">a=np.asarray(x)</span><br><span class="line"><span class="built_in">print</span>(a.shape)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">str</span>=<span class="string">b&#x27;hello&#x27;</span></span><br><span class="line">a=np.frombuffer(<span class="built_in">str</span>,dtype=<span class="string">&#x27;S1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">list</span>=<span class="built_in">range</span>(<span class="number">20</span>)</span><br><span class="line">it=<span class="built_in">iter</span>(<span class="built_in">list</span>)</span><br><span class="line">x=np.fromiter(it,dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<h1 id="从数值范围创建数组"><a class="markdownIt-Anchor" href="#从数值范围创建数组"></a> 从数值范围创建数组</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java编程</title>
+    <url>/2022/09/01/Java%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>OpenCV的基本操作</title>
+    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
+<h2 id="读取图像文件"><a class="markdownIt-Anchor" href="#读取图像文件"></a> 读取图像文件</h2>
+<p>读取图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第二个参数指定图片被读取的方式：</p>
+<ul>
+<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
+<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
+<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
+</ul>
+<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>读取失败返回None</p>
+<h2 id="读取照片的高度与宽度"><a class="markdownIt-Anchor" href="#读取照片的高度与宽度"></a> 读取照片的高度与宽度</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
+<h2 id="保存照片"><a class="markdownIt-Anchor" href="#保存照片"></a> 保存照片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="opencv界面编程"><a class="markdownIt-Anchor" href="#opencv界面编程"></a> OpenCV界面编程</h1>
+<h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>flags</p>
+<ul>
+<li>
+<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
+</li>
+<li>
+<p>cv2.WINDOW_NORMAL</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
+<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" title="" alt="" data-align="center">
+<h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
+<ul>
+<li>
+<p>cv2.destroyWindow(winname)</p>
+</li>
+<li>
+<p>cv2.destroyAllWindows(winname)</p>
+</li>
+<li>
+<p>cv2.resizeWindow(winname,width,height)</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
+<p>OpenCV使用setMousecallback设定</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
+<p>鼠标事件event</p>
+<blockquote>
+<p>enum<br />
+{<br />
+EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
+EVENT_LBUTTONDOWN    =1,   //按下左键<br />
+EVENT_RBUTTONDOWN    =2,   //按下右键<br />
+EVENT_MBUTTONDOWN    =3,   //按下中键<br />
+EVENT_LBUTTONUP      =4,   //放开左键<br />
+EVENT_RBUTTONUP      =5,   //放开右键<br />
+EVENT_MBUTTONUP      =6,   //放开中键<br />
+EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
+EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
+EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
+EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
+};</p>
+</blockquote>
+<p>鼠标事件flags</p>
+<blockquote>
+<p>enum<br />
+{<br />
+CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
+CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
+CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
+CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
+CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
+CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
+};</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102320942.png" alt="" /></p>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCV-Python:简单实现人脸识别</title>
     <url>/2022/09/06/OpenCV-Python/</url>
     <content><![CDATA[<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
@@ -849,218 +1071,8 @@
         <category>OpenCV</category>
       </categories>
       <tags>
-        <tag>OpenCV</tag>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java编程</title>
-    <url>/2022/09/01/Java%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>OpenCV的基本操作</title>
-    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
-<h2 id="读取图像文件"><a class="markdownIt-Anchor" href="#读取图像文件"></a> 读取图像文件</h2>
-<p>读取图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>第二个参数指定图片被读取的方式：</p>
-<ul>
-<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
-<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
-<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
-</ul>
-<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>读取失败返回None</p>
-<h2 id="读取照片的高度与宽度"><a class="markdownIt-Anchor" href="#读取照片的高度与宽度"></a> 读取照片的高度与宽度</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
-<h2 id="保存照片"><a class="markdownIt-Anchor" href="#保存照片"></a> 保存照片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="opencv界面编程"><a class="markdownIt-Anchor" href="#opencv界面编程"></a> OpenCV界面编程</h1>
-<h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>flags</p>
-<ul>
-<li>
-<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
-</li>
-<li>
-<p>cv2.WINDOW_NORMAL</p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
-<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" title="" alt="" data-align="center">
-<h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
-<ul>
-<li>
-<p>cv2.destroyWindow(winname)</p>
-</li>
-<li>
-<p>cv2.destroyAllWindows(winname)</p>
-</li>
-<li>
-<p>cv2.resizeWindow(winname,width,height)</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
-<p>OpenCV使用setMousecallback设定</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
-<p>鼠标事件event</p>
-<blockquote>
-<p>enum<br />
-{<br />
-EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
-EVENT_LBUTTONDOWN    =1,   //按下左键<br />
-EVENT_RBUTTONDOWN    =2,   //按下右键<br />
-EVENT_MBUTTONDOWN    =3,   //按下中键<br />
-EVENT_LBUTTONUP      =4,   //放开左键<br />
-EVENT_RBUTTONUP      =5,   //放开右键<br />
-EVENT_MBUTTONUP      =6,   //放开中键<br />
-EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
-EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
-EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
-EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
-};</p>
-</blockquote>
-<p>鼠标事件flags</p>
-<blockquote>
-<p>enum<br />
-{<br />
-CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
-CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
-CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
-CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
-CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
-CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
-};</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102320942.png" alt="" /></p>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
         <tag>OpenCV</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV:数组矩阵</title>
-    <url>/2022/09/11/OpenCV-%E6%95%B0%E7%BB%84%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<h1 id="ndarray对象"><a class="markdownIt-Anchor" href="#ndarray对象"></a> ndarray对象</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">array</span>(<span class="params">p_object, dtype=<span class="literal">None</span>, *args, **kwargs</span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],ndmin=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],dtype=<span class="built_in">complex</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="numpy数据类型"><a class="markdownIt-Anchor" href="#numpy数据类型"></a> NumPy数据类型</h1>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>bool_</td>
-<td>布尔型数据类型（True 或者 False）</td>
-</tr>
-<tr>
-<td>int_</td>
-<td>默认的整数类型（类似于 C 语言中的 long，int32 或 int64）</td>
-</tr>
-<tr>
-<td>intc</td>
-<td>与 C 的 int 类型一样，一般是 int32 或 int 64</td>
-</tr>
-<tr>
-<td>intp</td>
-<td>用于索引的整数类型（类似于 C 的 ssize_t，一般情况下仍然是 int32 或 int64）</td>
-</tr>
-<tr>
-<td>int8</td>
-<td>字节（-128 to 127）</td>
-</tr>
-<tr>
-<td>int16</td>
-<td>整数（-32768 to 32767）</td>
-</tr>
-<tr>
-<td>int32</td>
-<td>整数（-2147483648 to 2147483647）</td>
-</tr>
-<tr>
-<td>int64</td>
-<td>整数（-9223372036854775808 to 9223372036854775807）</td>
-</tr>
-<tr>
-<td>uint8</td>
-<td>无符号整数（0 to 255）</td>
-</tr>
-<tr>
-<td>uint16</td>
-<td>无符号整数（0 to 65535）</td>
-</tr>
-<tr>
-<td>uint32</td>
-<td>无符号整数（0 to 4294967295）</td>
-</tr>
-<tr>
-<td>uint64</td>
-<td>无符号整数（0 to 18446744073709551615）</td>
-</tr>
-<tr>
-<td>float_</td>
-<td>float64 类型的简写</td>
-</tr>
-<tr>
-<td>float16</td>
-<td>半精度浮点数，包括：1 个符号位，5 个指数位，10 个尾数位</td>
-</tr>
-<tr>
-<td>float32</td>
-<td>单精度浮点数，包括：1 个符号位，8 个指数位，23 个尾数位</td>
-</tr>
-<tr>
-<td>float64</td>
-<td>双精度浮点数，包括：1 个符号位，11 个指数位，52 个尾数位</td>
-</tr>
-<tr>
-<td>complex_</td>
-<td>complex128 类型的简写，即 128 位复数</td>
-</tr>
-<tr>
-<td>complex64</td>
-<td>复数，表示双 32 位浮点数（实数部分和虚数部分）</td>
-</tr>
-<tr>
-<td>complex128</td>
-<td>复数，表示双 64 位浮点数（实数部分和虚数部分）</td>
-</tr>
-</tbody>
-</table>
-<p>numpy 的数值类型实际上是 dtype 对象的实例，并对应唯一的字符，包括 np.bool_，np.int32，np.float32，等等。</p>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1108,49 +1120,6 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </categories>
       <tags>
         <tag>随想</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>requests库的使用</title>
-    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
-<ul>
-<li>
-<p>post(‘url’)</p>
-</li>
-<li>
-<p>put(‘url’)</p>
-</li>
-<li>
-<p>delete(‘url’)</p>
-</li>
-<li>
-<p>head(‘url’)</p>
-</li>
-<li>
-<p>options(‘url’)</p>
-</li>
-<li>
-<p>get(‘url’)</p>
-</li>
-</ul>
-<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
-<p>下载图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
-<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<p>文件上传</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -1328,6 +1297,198 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       <tags>
         <tag>C++</tag>
         <tag>Qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>requests库的使用</title>
+    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
+<ul>
+<li>
+<p>post(‘url’)</p>
+</li>
+<li>
+<p>put(‘url’)</p>
+</li>
+<li>
+<p>delete(‘url’)</p>
+</li>
+<li>
+<p>head(‘url’)</p>
+</li>
+<li>
+<p>options(‘url’)</p>
+</li>
+<li>
+<p>get(‘url’)</p>
+</li>
+</ul>
+<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
+<p>下载图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
+<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<p>文件上传</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>urllib库的使用</title>
+    <url>/2022/08/09/urllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
+<p>urllib是Python内置的HTTP请求模块，其包含以下四个模块</p>
+<ul>
+<li>
+<p>request:HTTP请求模块</p>
+</li>
+<li>
+<p>error:异常处理模块</p>
+</li>
+<li>
+<p>parse:工具模块，拆分、解析、合并</p>
+</li>
+<li>
+<p>robotparser:识别网站robots.txt文件，判断哪些网站可以爬。</p>
+</li>
+</ul>
+<h2 id="请求发送"><a class="markdownIt-Anchor" href="#请求发送"></a> 请求发送</h2>
+<ol>
+<li>
+<h3 id="urlopen"><a class="markdownIt-Anchor" href="#urlopen"></a> urlopen()</h3>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">response=urllib.request.urlopen(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))<span class="comment">#read可以返回网页内容， 网页编码为UTF-8需要用decode,不然会有转义字符</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response)) <span class="comment">#类型</span></span><br><span class="line"><span class="built_in">print</span>(response.status) <span class="comment">#获取响应状态码</span></span><br><span class="line"><span class="built_in">print</span>(response.getheaders()) <span class="comment">#获取响应头rs())</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/08/09/rbAdLaeVoSgvB8m.png" alt="运行结果" /></p>
+<ul>
+<li>
+<p>data参数</p>
+<p>data参数为可选，使用需要，使用bytes()转换为字节流编码格式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span>  urllib.parse</span><br><span class="line">data=<span class="built_in">bytes</span>(urllib.parse.urlencode(&#123;<span class="string">&#x27;B&#x27;</span>:<span class="string">&#x27;1&#x27;</span>&#125;),encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">response=urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf8&#x27;</span>))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="https://s2.loli.net/2022/08/09/29Nm7Q6FEt3B4Kh.png" title="" alt="运行结果" data-align="right">
+<p>我们的数据出现在了form字段里，这是我们用POST方法传递的数据</p>
+<ul>
+<li>
+<p>timeout参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=urllib.request.urlopen(<span class="string">&#x27;http://www.google.com&#x27;</span>,timeout=<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(e.reason,socket.timeout):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;TIME OUT&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>
+<h3 id="request"><a class="markdownIt-Anchor" href="#request"></a> Request()</h3>
+<blockquote>
+<p><a href="https://docs.python.org/3/library/urllib.request.html">urllib.request — Extensible library for opening URLs — Python 3.10.6 documentation</a></p>
+</blockquote>
+<p>Request能实现更多参数的请求</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, url, data=<span class="literal">None</span>, headers=&#123;&#125;,</span></span><br><span class="line"><span class="params">                 origin_req_host=<span class="literal">None</span>, unverifiable=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 method=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><strong>URL:请求URL</strong></p>
+</li>
+<li>
+<p><strong>data:必须为bytes(),如果是字典可以用urllib.parse.urlencode()</strong></p>
+</li>
+<li>
+<p><strong>headers:为一个字典</strong></p>
+</li>
+<li>
+<p><strong>origin_req_host：表示这个请求是否是无法验证的</strong></p>
+</li>
+<li>
+<p><strong>method:请求方法</strong></p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,parse</span><br><span class="line">url=<span class="string">&#x27;http://httpbin.org/post&#x27;</span></span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">&#x27;Host&#x27;</span>:<span class="string">&#x27;httpbin.org&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.47&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">dict</span>=&#123;<span class="string">&#x27;b&#x27;</span>:<span class="number">1</span>&#125;</span><br><span class="line">data=<span class="built_in">bytes</span>(parse.urlencode(<span class="built_in">dict</span>),encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">data=<span class="built_in">bytes</span>(parse.urlencode(&#123;<span class="string">&#x27;B&#x27;</span>:<span class="string">&#x27;1&#x27;</span>&#125;),encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">req=request.Request(url,data=data,headers=headers,method=<span class="string">&#x27;POST&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">另一种请求头的添加方式</span></span><br><span class="line"><span class="string">req=request.Request(url=url,data=data,method=&#x27;POST&#x27;)</span></span><br><span class="line"><span class="string">req.add_header(&#x27;Host&#x27;,&#x27;httpbin.org&#x27;,)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">response=request.urlopen(req)</span><br><span class="line"><span class="built_in">print</span>(response.read().deco</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="进阶用法"><a class="markdownIt-Anchor" href="#进阶用法"></a> 进阶用法</h2>
+<h3 id="handler"><a class="markdownIt-Anchor" href="#handler"></a> Handler</h3>
+<p>现在我们介绍Handler</p>
+<p>比如：</p>
+<blockquote>
+<p>HTTPDefaultErrorHandler:用于处理响应错误，错误会抛出HTTPError类型的异常</p>
+<p>HTTPRedirectHandler:处理重定向</p>
+<p>HTTPCookieProcesser:处理Cookies</p>
+<p>ProxyHandler:设置代理，默认代理为空</p>
+<p>HTTPPasswordMgr:用于管理密码，维护了用户名和密码</p>
+<p>HTTPBasicAuthHandler:用于管理认证</p>
+</blockquote>
+<h3 id="cookies"><a class="markdownIt-Anchor" href="#cookies"></a> Cookies</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">filename=<span class="string">&#x27;cookies.txt&#x27;</span></span><br><span class="line">cookie=http.cookiejar.MozillaCookieJar(filename)</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line">cookie.save(ignore_discard=<span class="literal">True</span>,ignore_expires=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.CookieJar()</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie:</span><br><span class="line">    <span class="built_in">print</span>(item.</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.LWPCookieJar()</span><br><span class="line">cookie.load(<span class="string">&#x27;cookies.txt&#x27;</span>,ignore_expires=<span class="number">1</span>,ignore_discard=<span class="number">1</span>)</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read.decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="异常处理"><a class="markdownIt-Anchor" href="#异常处理"></a> 异常处理</h2>
+<h3 id="urlerror"><a class="markdownIt-Anchor" href="#urlerror"></a> URLError</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br></pre></td></tr></table></figure>
+<h3 id="httperror"><a class="markdownIt-Anchor" href="#httperror"></a> HTTPError</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line">    <span class="built_in">print</span>(e.code)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<p>URLError是HTTPError的父类</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line">    <span class="built_in">print</span>(e.code)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;SUCCESS!!&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="解析链接"><a class="markdownIt-Anchor" href="#解析链接"></a> 解析链接</h2>
+<h3 id="urlparse"><a class="markdownIt-Anchor" href="#urlparse"></a> urlparse</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line">result=urlparse(<span class="string">&#x27;https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E6%88%96%E5%B0%86%E9%9D%A2%E4%B8%B4%E6%9C%80%E9%AB%9830%E5%B9%B4%E5%88%91%E6%9C%9F&amp;tn=baiduhome_pg&amp;usm=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rsv_pq=beff06110014fb0c&amp;oq=%E9%BB%91%E5%B1%B1%E5%8F%91%E7%94%9F%E6%9E%AA%E5%87%BB%E4%BA%8B%E4%BB%B6%E8%87%B411%E6%AD%BB6%E4%BC%A4&amp;rsv_t=203cnvqhWV3frPIJkl4SxrljZIVFGNv6ZJkChXgM4YBU2qiBwG0dd0rTfPGYEJdqPkDg&amp;rqid=beff06110014fb0c&amp;rsf=a7183c00b74706d91bca215ee108b466_1_15_2&amp;rsv_dl=0_right_fyb_pchot_20811&amp;sa=0_right_fyb_pchot_20811&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+<h3 id="urlunparse"><a class="markdownIt-Anchor" href="#urlunparse"></a> urlunparse()</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunparse</span><br><span class="line">data=[<span class="string">&#x27;https&#x27;</span>,<span class="string">&#x27;wwww.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>,<span class="string">&#x27;user&#x27;</span>,<span class="string">&#x27;a=6&#x27;</span>,<span class="string">&#x27;comment&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(urlunparse(data))</span><br></pre></td></tr></table></figure>
+<h3 id="urlsplit"><a class="markdownIt-Anchor" href="#urlsplit"></a> urlsplit</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
+<h3 id="urlunsplit"><a class="markdownIt-Anchor" href="#urlunsplit"></a> urlunsplit()</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunsplit</span><br><span class="line">data=[<span class="string">&#x27;http&#x27;</span>,<span class="string">&#x27;www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>,<span class="string">&#x27;a=0&#x27;</span>,<span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(urlunsplit(data))</span><br></pre></td></tr></table></figure>
+<h3 id="urljoin"><a class="markdownIt-Anchor" href="#urljoin"></a> urljoin()</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urljoin</span><br><span class="line"><span class="built_in">print</span>(urljoin(<span class="string">&#x27;http://www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="urlencode"><a class="markdownIt-Anchor" href="#urlencode"></a> urlencode</h3>
+<p>在GET中加参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">params=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;s&#x27;</span>,</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;2&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">base_url=<span class="string">&#x27;http//www.baidu.com&#x27;</span></span><br><span class="line">urll=base_url+urlencode(params)</span><br><span class="line"><span class="built_in">print</span>(urll)</span><br></pre></td></tr></table></figure>
+<h3 id="parse_qs"><a class="markdownIt-Anchor" href="#parse_qs"></a> parse_qs()</h3>
+<p>反序列化</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit,parse_qs</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(parse_qs(result.query))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="quote"><a class="markdownIt-Anchor" href="#quote"></a> quote()</h3>
+<p>将内容转为URL编码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin</span><br><span class="line">keyword=<span class="string">&#x27;python&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;http://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br></pre></td></tr></table></figure>
+<h3 id="unquote"><a class="markdownIt-Anchor" href="#unquote"></a> unquote()</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin,unquote</span><br><span class="line">keyword=<span class="string">&#x27;你好&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;https://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br><span class="line"><span class="built_in">print</span>(unquote(url))</span><br></pre></td></tr></table></figure>
+<h2 id="robots协议"><a class="markdownIt-Anchor" href="#robots协议"></a> Robots协议</h2>
+<h3 id="robotparser"><a class="markdownIt-Anchor" href="#robotparser"></a> robotparser()</h3>
+<ul>
+<li>
+<p><strong>set_ur()</strong>:设置Robots.txt链接</p>
+</li>
+<li>
+<p><strong>read()</strong>:读取robots.txt并分析</p>
+</li>
+<li>
+<p><strong>parse()</strong>:解析robots.txt文件</p>
+</li>
+<li>
+<p><strong>can_fetch()</strong>:传入User-Agent和URL,判读是否可爬取</p>
+</li>
+<li>
+<p><strong>mtime()</strong>:返回上次抓取的时间</p>
+</li>
+<li>
+<p><strong>modified()</strong>:设置当前时间为上次抓取时间</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.robotparser <span class="keyword">import</span> RobotFileParser</span><br><span class="line">rp=RobotFileParser()</span><br><span class="line">rp.set_url(<span class="string">&#x27;https://www.bilibili.com/robots.txt&#x27;</span>)</span><br><span class="line">rp.read()</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;Yisouspider&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;*&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -1521,155 +1682,6 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <h2 id="网页组成"><a class="markdownIt-Anchor" href="#网页组成"></a> 网页组成</h2>
 <p>网页是由HTML、CSS、JavaScript组成</p>
 <p><em><strong>如果想学爬虫，必须要点Web基础</strong></em></p>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>urllib库的使用</title>
-    <url>/2022/08/09/urllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
-<p>urllib是Python内置的HTTP请求模块，其包含以下四个模块</p>
-<ul>
-<li>
-<p>request:HTTP请求模块</p>
-</li>
-<li>
-<p>error:异常处理模块</p>
-</li>
-<li>
-<p>parse:工具模块，拆分、解析、合并</p>
-</li>
-<li>
-<p>robotparser:识别网站robots.txt文件，判断哪些网站可以爬。</p>
-</li>
-</ul>
-<h2 id="请求发送"><a class="markdownIt-Anchor" href="#请求发送"></a> 请求发送</h2>
-<ol>
-<li>
-<h3 id="urlopen"><a class="markdownIt-Anchor" href="#urlopen"></a> urlopen()</h3>
-</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">response=urllib.request.urlopen(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))<span class="comment">#read可以返回网页内容， 网页编码为UTF-8需要用decode,不然会有转义字符</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response)) <span class="comment">#类型</span></span><br><span class="line"><span class="built_in">print</span>(response.status) <span class="comment">#获取响应状态码</span></span><br><span class="line"><span class="built_in">print</span>(response.getheaders()) <span class="comment">#获取响应头rs())</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/08/09/rbAdLaeVoSgvB8m.png" alt="运行结果" /></p>
-<ul>
-<li>
-<p>data参数</p>
-<p>data参数为可选，使用需要，使用bytes()转换为字节流编码格式</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span>  urllib.parse</span><br><span class="line">data=<span class="built_in">bytes</span>(urllib.parse.urlencode(&#123;<span class="string">&#x27;B&#x27;</span>:<span class="string">&#x27;1&#x27;</span>&#125;),encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">response=urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf8&#x27;</span>))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<img src="https://s2.loli.net/2022/08/09/29Nm7Q6FEt3B4Kh.png" title="" alt="运行结果" data-align="right">
-<p>我们的数据出现在了form字段里，这是我们用POST方法传递的数据</p>
-<ul>
-<li>
-<p>timeout参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=urllib.request.urlopen(<span class="string">&#x27;http://www.google.com&#x27;</span>,timeout=<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(e.reason,socket.timeout):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;TIME OUT&#x27;</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol start="2">
-<li>
-<h3 id="request"><a class="markdownIt-Anchor" href="#request"></a> Request()</h3>
-<blockquote>
-<p><a href="https://docs.python.org/3/library/urllib.request.html">urllib.request — Extensible library for opening URLs — Python 3.10.6 documentation</a></p>
-</blockquote>
-<p>Request能实现更多参数的请求</p>
-<blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, url, data=<span class="literal">None</span>, headers=&#123;&#125;,</span></span><br><span class="line"><span class="params">                 origin_req_host=<span class="literal">None</span>, unverifiable=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 method=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p><strong>URL:请求URL</strong></p>
-</li>
-<li>
-<p><strong>data:必须为bytes(),如果是字典可以用urllib.parse.urlencode()</strong></p>
-</li>
-<li>
-<p><strong>headers:为一个字典</strong></p>
-</li>
-<li>
-<p><strong>origin_req_host：表示这个请求是否是无法验证的</strong></p>
-</li>
-<li>
-<p><strong>method:请求方法</strong></p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,parse</span><br><span class="line">url=<span class="string">&#x27;http://httpbin.org/post&#x27;</span></span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">&#x27;Host&#x27;</span>:<span class="string">&#x27;httpbin.org&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.47&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">dict</span>=&#123;<span class="string">&#x27;b&#x27;</span>:<span class="number">1</span>&#125;</span><br><span class="line">data=<span class="built_in">bytes</span>(parse.urlencode(<span class="built_in">dict</span>),encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">data=<span class="built_in">bytes</span>(parse.urlencode(&#123;<span class="string">&#x27;B&#x27;</span>:<span class="string">&#x27;1&#x27;</span>&#125;),encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">req=request.Request(url,data=data,headers=headers,method=<span class="string">&#x27;POST&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">另一种请求头的添加方式</span></span><br><span class="line"><span class="string">req=request.Request(url=url,data=data,method=&#x27;POST&#x27;)</span></span><br><span class="line"><span class="string">req.add_header(&#x27;Host&#x27;,&#x27;httpbin.org&#x27;,)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">response=request.urlopen(req)</span><br><span class="line"><span class="built_in">print</span>(response.read().deco</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="进阶用法"><a class="markdownIt-Anchor" href="#进阶用法"></a> 进阶用法</h2>
-<h3 id="handler"><a class="markdownIt-Anchor" href="#handler"></a> Handler</h3>
-<p>现在我们介绍Handler</p>
-<p>比如：</p>
-<blockquote>
-<p>HTTPDefaultErrorHandler:用于处理响应错误，错误会抛出HTTPError类型的异常</p>
-<p>HTTPRedirectHandler:处理重定向</p>
-<p>HTTPCookieProcesser:处理Cookies</p>
-<p>ProxyHandler:设置代理，默认代理为空</p>
-<p>HTTPPasswordMgr:用于管理密码，维护了用户名和密码</p>
-<p>HTTPBasicAuthHandler:用于管理认证</p>
-</blockquote>
-<h3 id="cookies"><a class="markdownIt-Anchor" href="#cookies"></a> Cookies</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">filename=<span class="string">&#x27;cookies.txt&#x27;</span></span><br><span class="line">cookie=http.cookiejar.MozillaCookieJar(filename)</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line">cookie.save(ignore_discard=<span class="literal">True</span>,ignore_expires=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.CookieJar()</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie:</span><br><span class="line">    <span class="built_in">print</span>(item.</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.LWPCookieJar()</span><br><span class="line">cookie.load(<span class="string">&#x27;cookies.txt&#x27;</span>,ignore_expires=<span class="number">1</span>,ignore_discard=<span class="number">1</span>)</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read.decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
-<h2 id="异常处理"><a class="markdownIt-Anchor" href="#异常处理"></a> 异常处理</h2>
-<h3 id="urlerror"><a class="markdownIt-Anchor" href="#urlerror"></a> URLError</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br></pre></td></tr></table></figure>
-<h3 id="httperror"><a class="markdownIt-Anchor" href="#httperror"></a> HTTPError</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line">    <span class="built_in">print</span>(e.code)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-<p>URLError是HTTPError的父类</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line">    <span class="built_in">print</span>(e.code)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;SUCCESS!!&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="解析链接"><a class="markdownIt-Anchor" href="#解析链接"></a> 解析链接</h2>
-<h3 id="urlparse"><a class="markdownIt-Anchor" href="#urlparse"></a> urlparse</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line">result=urlparse(<span class="string">&#x27;https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E6%88%96%E5%B0%86%E9%9D%A2%E4%B8%B4%E6%9C%80%E9%AB%9830%E5%B9%B4%E5%88%91%E6%9C%9F&amp;tn=baiduhome_pg&amp;usm=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rsv_pq=beff06110014fb0c&amp;oq=%E9%BB%91%E5%B1%B1%E5%8F%91%E7%94%9F%E6%9E%AA%E5%87%BB%E4%BA%8B%E4%BB%B6%E8%87%B411%E6%AD%BB6%E4%BC%A4&amp;rsv_t=203cnvqhWV3frPIJkl4SxrljZIVFGNv6ZJkChXgM4YBU2qiBwG0dd0rTfPGYEJdqPkDg&amp;rqid=beff06110014fb0c&amp;rsf=a7183c00b74706d91bca215ee108b466_1_15_2&amp;rsv_dl=0_right_fyb_pchot_20811&amp;sa=0_right_fyb_pchot_20811&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-<h3 id="urlunparse"><a class="markdownIt-Anchor" href="#urlunparse"></a> urlunparse()</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunparse</span><br><span class="line">data=[<span class="string">&#x27;https&#x27;</span>,<span class="string">&#x27;wwww.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>,<span class="string">&#x27;user&#x27;</span>,<span class="string">&#x27;a=6&#x27;</span>,<span class="string">&#x27;comment&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(urlunparse(data))</span><br></pre></td></tr></table></figure>
-<h3 id="urlsplit"><a class="markdownIt-Anchor" href="#urlsplit"></a> urlsplit</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
-<h3 id="urlunsplit"><a class="markdownIt-Anchor" href="#urlunsplit"></a> urlunsplit()</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunsplit</span><br><span class="line">data=[<span class="string">&#x27;http&#x27;</span>,<span class="string">&#x27;www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>,<span class="string">&#x27;a=0&#x27;</span>,<span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(urlunsplit(data))</span><br></pre></td></tr></table></figure>
-<h3 id="urljoin"><a class="markdownIt-Anchor" href="#urljoin"></a> urljoin()</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urljoin</span><br><span class="line"><span class="built_in">print</span>(urljoin(<span class="string">&#x27;http://www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>))</span><br></pre></td></tr></table></figure>
-<h3 id="urlencode"><a class="markdownIt-Anchor" href="#urlencode"></a> urlencode</h3>
-<p>在GET中加参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">params=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;s&#x27;</span>,</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;2&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">base_url=<span class="string">&#x27;http//www.baidu.com&#x27;</span></span><br><span class="line">urll=base_url+urlencode(params)</span><br><span class="line"><span class="built_in">print</span>(urll)</span><br></pre></td></tr></table></figure>
-<h3 id="parse_qs"><a class="markdownIt-Anchor" href="#parse_qs"></a> parse_qs()</h3>
-<p>反序列化</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit,parse_qs</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(parse_qs(result.query))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="quote"><a class="markdownIt-Anchor" href="#quote"></a> quote()</h3>
-<p>将内容转为URL编码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin</span><br><span class="line">keyword=<span class="string">&#x27;python&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;http://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br></pre></td></tr></table></figure>
-<h3 id="unquote"><a class="markdownIt-Anchor" href="#unquote"></a> unquote()</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin,unquote</span><br><span class="line">keyword=<span class="string">&#x27;你好&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;https://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br><span class="line"><span class="built_in">print</span>(unquote(url))</span><br></pre></td></tr></table></figure>
-<h2 id="robots协议"><a class="markdownIt-Anchor" href="#robots协议"></a> Robots协议</h2>
-<h3 id="robotparser"><a class="markdownIt-Anchor" href="#robotparser"></a> robotparser()</h3>
-<ul>
-<li>
-<p><strong>set_ur()</strong>:设置Robots.txt链接</p>
-</li>
-<li>
-<p><strong>read()</strong>:读取robots.txt并分析</p>
-</li>
-<li>
-<p><strong>parse()</strong>:解析robots.txt文件</p>
-</li>
-<li>
-<p><strong>can_fetch()</strong>:传入User-Agent和URL,判读是否可爬取</p>
-</li>
-<li>
-<p><strong>mtime()</strong>:返回上次抓取的时间</p>
-</li>
-<li>
-<p><strong>modified()</strong>:设置当前时间为上次抓取时间</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.robotparser <span class="keyword">import</span> RobotFileParser</span><br><span class="line">rp=RobotFileParser()</span><br><span class="line">rp.set_url(<span class="string">&#x27;https://www.bilibili.com/robots.txt&#x27;</span>)</span><br><span class="line">rp.read()</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;Yisouspider&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;*&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>爬虫</category>
