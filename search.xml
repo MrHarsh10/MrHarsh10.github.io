@@ -675,11 +675,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java编程</title>
-    <url>/2022/09/01/Java%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>C++编程基础</title>
     <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
@@ -723,135 +718,9 @@
       </tags>
   </entry>
   <entry>
-    <title>OpenCV:数组矩阵</title>
-    <url>/2022/09/11/OpenCV-%E6%95%B0%E7%BB%84%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<h1 id="ndarray对象"><a class="markdownIt-Anchor" href="#ndarray对象"></a> ndarray对象</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">array</span>(<span class="params">p_object, dtype=<span class="literal">None</span>, *args, **kwargs</span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],ndmin=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],dtype=<span class="built_in">complex</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="numpy数据类型"><a class="markdownIt-Anchor" href="#numpy数据类型"></a> NumPy数据类型</h1>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>bool_</td>
-<td>布尔型数据类型（True 或者 False）</td>
-</tr>
-<tr>
-<td>int_</td>
-<td>默认的整数类型（类似于 C 语言中的 long，int32 或 int64）</td>
-</tr>
-<tr>
-<td>intc</td>
-<td>与 C 的 int 类型一样，一般是 int32 或 int 64</td>
-</tr>
-<tr>
-<td>intp</td>
-<td>用于索引的整数类型（类似于 C 的 ssize_t，一般情况下仍然是 int32 或 int64）</td>
-</tr>
-<tr>
-<td>int8</td>
-<td>字节（-128 to 127）</td>
-</tr>
-<tr>
-<td>int16</td>
-<td>整数（-32768 to 32767）</td>
-</tr>
-<tr>
-<td>int32</td>
-<td>整数（-2147483648 to 2147483647）</td>
-</tr>
-<tr>
-<td>int64</td>
-<td>整数（-9223372036854775808 to 9223372036854775807）</td>
-</tr>
-<tr>
-<td>uint8</td>
-<td>无符号整数（0 to 255）</td>
-</tr>
-<tr>
-<td>uint16</td>
-<td>无符号整数（0 to 65535）</td>
-</tr>
-<tr>
-<td>uint32</td>
-<td>无符号整数（0 to 4294967295）</td>
-</tr>
-<tr>
-<td>uint64</td>
-<td>无符号整数（0 to 18446744073709551615）</td>
-</tr>
-<tr>
-<td>float_</td>
-<td>float64 类型的简写</td>
-</tr>
-<tr>
-<td>float16</td>
-<td>半精度浮点数，包括：1 个符号位，5 个指数位，10 个尾数位</td>
-</tr>
-<tr>
-<td>float32</td>
-<td>单精度浮点数，包括：1 个符号位，8 个指数位，23 个尾数位</td>
-</tr>
-<tr>
-<td>float64</td>
-<td>双精度浮点数，包括：1 个符号位，11 个指数位，52 个尾数位</td>
-</tr>
-<tr>
-<td>complex_</td>
-<td>complex128 类型的简写，即 128 位复数</td>
-</tr>
-<tr>
-<td>complex64</td>
-<td>复数，表示双 32 位浮点数（实数部分和虚数部分）</td>
-</tr>
-<tr>
-<td>complex128</td>
-<td>复数，表示双 64 位浮点数（实数部分和虚数部分）</td>
-</tr>
-</tbody>
-</table>
-<p>numpy 的数值类型实际上是 dtype 对象的实例，并对应唯一的字符，包括 np.bool_，np.int32，np.float32，等等。</p>
-<h1 id="新建数组"><a class="markdownIt-Anchor" href="#新建数组"></a> 新建数组</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.empty([<span class="number">3</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>为随机值，未初始化</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.zeros([<span class="number">3</span>,<span class="number">2</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.ones([<span class="number">3</span>,<span class="number">2</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<h1 id="从已有的数组创建数组"><a class="markdownIt-Anchor" href="#从已有的数组创建数组"></a> 从已有的数组创建数组</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>]]</span><br><span class="line">a=np.asarray(x)</span><br><span class="line"><span class="built_in">print</span>(a.shape)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">str</span>=<span class="string">b&#x27;hello&#x27;</span></span><br><span class="line">a=np.frombuffer(<span class="built_in">str</span>,dtype=<span class="string">&#x27;S1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">list</span>=<span class="built_in">range</span>(<span class="number">20</span>)</span><br><span class="line">it=<span class="built_in">iter</span>(<span class="built_in">list</span>)</span><br><span class="line">x=np.fromiter(it,dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<h1 id="从数值范围创建数组"><a class="markdownIt-Anchor" href="#从数值范围创建数组"></a> 从数值范围创建数组</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.arange(<span class="number">12</span>,dtype=<span class="built_in">float</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">9</span>,<span class="number">10</span>,dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.logspace(<span class="number">0</span>,<span class="number">9</span>,<span class="number">10</span>,base=<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<h1 id="切片与索引"><a class="markdownIt-Anchor" href="#切片与索引"></a> 切片与索引</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">15</span>)</span><br><span class="line">a=<span class="built_in">slice</span>(<span class="number">2</span>,<span class="number">10</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(x[a])</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">15</span>)</span><br><span class="line">a=x[<span class="number">2</span>:<span class="number">12</span>:<span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]])</span><br><span class="line"><span class="built_in">print</span>(x[...,<span class="number">1</span>])<span class="comment">#第二列</span></span><br><span class="line"><span class="built_in">print</span>(x[<span class="number">1</span>,...])<span class="comment">#第二行</span></span><br><span class="line"><span class="built_in">print</span>(x[...,<span class="number">1</span>:])<span class="comment">#第二列及以下</span></span><br></pre></td></tr></table></figure>
-<h1 id="高级索引"><a class="markdownIt-Anchor" href="#高级索引"></a> 高级索引</h1>
-<h2 id="整数数组索引"><a class="markdownIt-Anchor" href="#整数数组索引"></a> 整数数组索引</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment">#获取(0,0),(1,1),(2,0)</span></span><br><span class="line">x=np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">y=x[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]]</span><br><span class="line"><span class="built_in">print</span>(y)      </span><br><span class="line">/*</span><br><span class="line">[<span class="number">1</span> <span class="number">4</span> <span class="number">5</span>]</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<h2 id="布尔索引"><a class="markdownIt-Anchor" href="#布尔索引"></a> 布尔索引</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">1</span>,<span class="number">50</span>)</span><br><span class="line"><span class="built_in">print</span>(x[x&gt;<span class="number">10</span>])    </span><br><span class="line">/*</span><br><span class="line">[<span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span> <span class="number">16</span> <span class="number">17</span> <span class="number">18</span> <span class="number">19</span> <span class="number">20</span> <span class="number">21</span> <span class="number">22</span> <span class="number">23</span> <span class="number">24</span> <span class="number">25</span> <span class="number">26</span> <span class="number">27</span> <span class="number">28</span> <span class="number">29</span> <span class="number">30</span> <span class="number">31</span> <span class="number">32</span> <span class="number">33</span> <span class="number">34</span></span><br><span class="line"> <span class="number">35</span> <span class="number">36</span> <span class="number">37</span> <span class="number">38</span> <span class="number">39</span> <span class="number">40</span> <span class="number">41</span> <span class="number">42</span> <span class="number">43</span> <span class="number">44</span> <span class="number">45</span> <span class="number">46</span> <span class="number">47</span> <span class="number">48</span> <span class="number">49</span>]</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<h2 id="花式索引"><a class="markdownIt-Anchor" href="#花式索引"></a> 花式索引</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">32</span>).reshape(<span class="number">4</span>,<span class="number">8</span>)</span><br><span class="line"><span class="built_in">print</span>(x[[<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>]])    </span><br><span class="line">/*</span><br><span class="line">[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [<span class="number">16</span> <span class="number">17</span> <span class="number">18</span> <span class="number">19</span> <span class="number">20</span> <span class="number">21</span> <span class="number">22</span> <span class="number">23</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]]</span><br><span class="line">*/ </span><br></pre></td></tr></table></figure>
-<h1 id="迭代数组"><a class="markdownIt-Anchor" href="#迭代数组"></a> 迭代数组</h1>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
-      </tags>
+    <title>Java编程</title>
+    <url>/2022/09/01/Java%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>OpenCV-Python:简单实现人脸识别</title>
@@ -985,8 +854,152 @@
         <category>OpenCV</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>OpenCV</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV:数组矩阵</title>
+    <url>/2022/09/11/OpenCV-%E6%95%B0%E7%BB%84%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<h1 id="ndarray对象"><a class="markdownIt-Anchor" href="#ndarray对象"></a> ndarray对象</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">array</span>(<span class="params">p_object, dtype=<span class="literal">None</span>, *args, **kwargs</span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],ndmin=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],dtype=<span class="built_in">complex</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="numpy数据类型"><a class="markdownIt-Anchor" href="#numpy数据类型"></a> NumPy数据类型</h1>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool_</td>
+<td>布尔型数据类型（True 或者 False）</td>
+</tr>
+<tr>
+<td>int_</td>
+<td>默认的整数类型（类似于 C 语言中的 long，int32 或 int64）</td>
+</tr>
+<tr>
+<td>intc</td>
+<td>与 C 的 int 类型一样，一般是 int32 或 int 64</td>
+</tr>
+<tr>
+<td>intp</td>
+<td>用于索引的整数类型（类似于 C 的 ssize_t，一般情况下仍然是 int32 或 int64）</td>
+</tr>
+<tr>
+<td>int8</td>
+<td>字节（-128 to 127）</td>
+</tr>
+<tr>
+<td>int16</td>
+<td>整数（-32768 to 32767）</td>
+</tr>
+<tr>
+<td>int32</td>
+<td>整数（-2147483648 to 2147483647）</td>
+</tr>
+<tr>
+<td>int64</td>
+<td>整数（-9223372036854775808 to 9223372036854775807）</td>
+</tr>
+<tr>
+<td>uint8</td>
+<td>无符号整数（0 to 255）</td>
+</tr>
+<tr>
+<td>uint16</td>
+<td>无符号整数（0 to 65535）</td>
+</tr>
+<tr>
+<td>uint32</td>
+<td>无符号整数（0 to 4294967295）</td>
+</tr>
+<tr>
+<td>uint64</td>
+<td>无符号整数（0 to 18446744073709551615）</td>
+</tr>
+<tr>
+<td>float_</td>
+<td>float64 类型的简写</td>
+</tr>
+<tr>
+<td>float16</td>
+<td>半精度浮点数，包括：1 个符号位，5 个指数位，10 个尾数位</td>
+</tr>
+<tr>
+<td>float32</td>
+<td>单精度浮点数，包括：1 个符号位，8 个指数位，23 个尾数位</td>
+</tr>
+<tr>
+<td>float64</td>
+<td>双精度浮点数，包括：1 个符号位，11 个指数位，52 个尾数位</td>
+</tr>
+<tr>
+<td>complex_</td>
+<td>complex128 类型的简写，即 128 位复数</td>
+</tr>
+<tr>
+<td>complex64</td>
+<td>复数，表示双 32 位浮点数（实数部分和虚数部分）</td>
+</tr>
+<tr>
+<td>complex128</td>
+<td>复数，表示双 64 位浮点数（实数部分和虚数部分）</td>
+</tr>
+</tbody>
+</table>
+<p>numpy 的数值类型实际上是 dtype 对象的实例，并对应唯一的字符，包括 np.bool_，np.int32，np.float32，等等。</p>
+<h1 id="新建数组"><a class="markdownIt-Anchor" href="#新建数组"></a> 新建数组</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.empty([<span class="number">3</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>为随机值，未初始化</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.zeros([<span class="number">3</span>,<span class="number">2</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.ones([<span class="number">3</span>,<span class="number">2</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<h1 id="从已有的数组创建数组"><a class="markdownIt-Anchor" href="#从已有的数组创建数组"></a> 从已有的数组创建数组</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>]]</span><br><span class="line">a=np.asarray(x)</span><br><span class="line"><span class="built_in">print</span>(a.shape)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">str</span>=<span class="string">b&#x27;hello&#x27;</span></span><br><span class="line">a=np.frombuffer(<span class="built_in">str</span>,dtype=<span class="string">&#x27;S1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">list</span>=<span class="built_in">range</span>(<span class="number">20</span>)</span><br><span class="line">it=<span class="built_in">iter</span>(<span class="built_in">list</span>)</span><br><span class="line">x=np.fromiter(it,dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<h1 id="从数值范围创建数组"><a class="markdownIt-Anchor" href="#从数值范围创建数组"></a> 从数值范围创建数组</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.arange(<span class="number">12</span>,dtype=<span class="built_in">float</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">9</span>,<span class="number">10</span>,dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.logspace(<span class="number">0</span>,<span class="number">9</span>,<span class="number">10</span>,base=<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<h1 id="切片与索引"><a class="markdownIt-Anchor" href="#切片与索引"></a> 切片与索引</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">15</span>)</span><br><span class="line">a=<span class="built_in">slice</span>(<span class="number">2</span>,<span class="number">10</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(x[a])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">15</span>)</span><br><span class="line">a=x[<span class="number">2</span>:<span class="number">12</span>:<span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]])</span><br><span class="line"><span class="built_in">print</span>(x[...,<span class="number">1</span>])<span class="comment">#第二列</span></span><br><span class="line"><span class="built_in">print</span>(x[<span class="number">1</span>,...])<span class="comment">#第二行</span></span><br><span class="line"><span class="built_in">print</span>(x[...,<span class="number">1</span>:])<span class="comment">#第二列及以下</span></span><br></pre></td></tr></table></figure>
+<h1 id="高级索引"><a class="markdownIt-Anchor" href="#高级索引"></a> 高级索引</h1>
+<h2 id="整数数组索引"><a class="markdownIt-Anchor" href="#整数数组索引"></a> 整数数组索引</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment">#获取(0,0),(1,1),(2,0)</span></span><br><span class="line">x=np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">y=x[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]]</span><br><span class="line"><span class="built_in">print</span>(y)      </span><br><span class="line">/*</span><br><span class="line">[<span class="number">1</span> <span class="number">4</span> <span class="number">5</span>]</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<h2 id="布尔索引"><a class="markdownIt-Anchor" href="#布尔索引"></a> 布尔索引</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">1</span>,<span class="number">50</span>)</span><br><span class="line"><span class="built_in">print</span>(x[x&gt;<span class="number">10</span>])    </span><br><span class="line">/*</span><br><span class="line">[<span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span> <span class="number">16</span> <span class="number">17</span> <span class="number">18</span> <span class="number">19</span> <span class="number">20</span> <span class="number">21</span> <span class="number">22</span> <span class="number">23</span> <span class="number">24</span> <span class="number">25</span> <span class="number">26</span> <span class="number">27</span> <span class="number">28</span> <span class="number">29</span> <span class="number">30</span> <span class="number">31</span> <span class="number">32</span> <span class="number">33</span> <span class="number">34</span></span><br><span class="line"> <span class="number">35</span> <span class="number">36</span> <span class="number">37</span> <span class="number">38</span> <span class="number">39</span> <span class="number">40</span> <span class="number">41</span> <span class="number">42</span> <span class="number">43</span> <span class="number">44</span> <span class="number">45</span> <span class="number">46</span> <span class="number">47</span> <span class="number">48</span> <span class="number">49</span>]</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<h2 id="花式索引"><a class="markdownIt-Anchor" href="#花式索引"></a> 花式索引</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">32</span>).reshape(<span class="number">4</span>,<span class="number">8</span>)</span><br><span class="line"><span class="built_in">print</span>(x[[<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>]])    </span><br><span class="line">/*</span><br><span class="line">[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [<span class="number">16</span> <span class="number">17</span> <span class="number">18</span> <span class="number">19</span> <span class="number">20</span> <span class="number">21</span> <span class="number">22</span> <span class="number">23</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]]</span><br><span class="line">*/ </span><br></pre></td></tr></table></figure>
+<h1 id="迭代数组"><a class="markdownIt-Anchor" href="#迭代数组"></a> 迭代数组</h1>
+<h2 id="迭代对象nditer"><a class="markdownIt-Anchor" href="#迭代对象nditer"></a> 迭代对象nditer</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">6</span>).reshape(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> np.nditer(x):</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">&quot;,&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="控制遍历顺序"><a class="markdownIt-Anchor" href="#控制遍历顺序"></a> 控制遍历顺序</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">6</span>).reshape(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> np.nditer(x,order=<span class="string">&#x27;F&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">&quot;,&quot;</span>)     </span><br><span class="line">/*</span><br><span class="line"><span class="number">0</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">6</span>).reshape(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> np.nditer(x,order=<span class="string">&#x27;C&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">&quot;,&quot;</span>)      </span><br><span class="line">/*</span><br><span class="line"><span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<h2 id="修改数组中元素的值"><a class="markdownIt-Anchor" href="#修改数组中元素的值"></a> 修改数组中元素的值</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> np.nditer(x,op_flags=[<span class="string">&#x27;readwrite&#x27;</span>]):</span><br><span class="line">    i[...]=<span class="number">2</span>*i</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+<h2 id="使用外部循环"><a class="markdownIt-Anchor" href="#使用外部循环"></a> 使用外部循环</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> np.nditer(x,flags=[<span class="string">&#x27;external_loop&#x27;</span>],order=<span class="string">&#x27;F&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">&#x27;,&#x27;</span>)    </span><br><span class="line">/*</span><br><span class="line">[ <span class="number">0</span> <span class="number">20</span> <span class="number">40</span>],[ <span class="number">5</span> <span class="number">25</span> <span class="number">45</span>],[<span class="number">10</span> <span class="number">30</span> <span class="number">50</span>],[<span class="number">15</span> <span class="number">35</span> <span class="number">55</span>],</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<h2 id="广播迭代"><a class="markdownIt-Anchor" href="#广播迭代"></a> 广播迭代</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">b=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> np.nditer([x,b]):</span><br><span class="line">    <span class="built_in">print</span>(i,j)</span><br></pre></td></tr></table></figure>
+<h1 id="数组操作"><a class="markdownIt-Anchor" href="#数组操作"></a> 数组操作</h1>
+<h2 id="修改数组形状"><a class="markdownIt-Anchor" href="#修改数组形状"></a> 修改数组形状</h2>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1019,6 +1032,107 @@
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV的基本操作</title>
+    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
+<h2 id="读取图像文件"><a class="markdownIt-Anchor" href="#读取图像文件"></a> 读取图像文件</h2>
+<p>读取图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第二个参数指定图片被读取的方式：</p>
+<ul>
+<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
+<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
+<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
+</ul>
+<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>读取失败返回None</p>
+<h2 id="读取照片的高度与宽度"><a class="markdownIt-Anchor" href="#读取照片的高度与宽度"></a> 读取照片的高度与宽度</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
+<h2 id="保存照片"><a class="markdownIt-Anchor" href="#保存照片"></a> 保存照片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="opencv界面编程"><a class="markdownIt-Anchor" href="#opencv界面编程"></a> OpenCV界面编程</h1>
+<h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>flags</p>
+<ul>
+<li>
+<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
+</li>
+<li>
+<p>cv2.WINDOW_NORMAL</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
+<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" title="" alt="" data-align="center">
+<h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
+<ul>
+<li>
+<p>cv2.destroyWindow(winname)</p>
+</li>
+<li>
+<p>cv2.destroyAllWindows(winname)</p>
+</li>
+<li>
+<p>cv2.resizeWindow(winname,width,height)</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
+<p>OpenCV使用setMousecallback设定</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
+<p>鼠标事件event</p>
+<blockquote>
+<p>enum<br />
+{<br />
+EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
+EVENT_LBUTTONDOWN    =1,   //按下左键<br />
+EVENT_RBUTTONDOWN    =2,   //按下右键<br />
+EVENT_MBUTTONDOWN    =3,   //按下中键<br />
+EVENT_LBUTTONUP      =4,   //放开左键<br />
+EVENT_RBUTTONUP      =5,   //放开右键<br />
+EVENT_MBUTTONUP      =6,   //放开中键<br />
+EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
+EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
+EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
+EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
+};</p>
+</blockquote>
+<p>鼠标事件flags</p>
+<blockquote>
+<p>enum<br />
+{<br />
+CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
+CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
+CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
+CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
+CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
+CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
+};</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102320942.png" alt="" /></p>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1196,122 +1310,6 @@
       <tags>
         <tag>C++</tag>
         <tag>Qt</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV的基本操作</title>
-    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
-<h2 id="读取图像文件"><a class="markdownIt-Anchor" href="#读取图像文件"></a> 读取图像文件</h2>
-<p>读取图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>第二个参数指定图片被读取的方式：</p>
-<ul>
-<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
-<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
-<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
-</ul>
-<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>读取失败返回None</p>
-<h2 id="读取照片的高度与宽度"><a class="markdownIt-Anchor" href="#读取照片的高度与宽度"></a> 读取照片的高度与宽度</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
-<h2 id="保存照片"><a class="markdownIt-Anchor" href="#保存照片"></a> 保存照片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="opencv界面编程"><a class="markdownIt-Anchor" href="#opencv界面编程"></a> OpenCV界面编程</h1>
-<h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>flags</p>
-<ul>
-<li>
-<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
-</li>
-<li>
-<p>cv2.WINDOW_NORMAL</p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
-<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" title="" alt="" data-align="center">
-<h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
-<ul>
-<li>
-<p>cv2.destroyWindow(winname)</p>
-</li>
-<li>
-<p>cv2.destroyAllWindows(winname)</p>
-</li>
-<li>
-<p>cv2.resizeWindow(winname,width,height)</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
-<p>OpenCV使用setMousecallback设定</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
-<p>鼠标事件event</p>
-<blockquote>
-<p>enum<br />
-{<br />
-EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
-EVENT_LBUTTONDOWN    =1,   //按下左键<br />
-EVENT_RBUTTONDOWN    =2,   //按下右键<br />
-EVENT_MBUTTONDOWN    =3,   //按下中键<br />
-EVENT_LBUTTONUP      =4,   //放开左键<br />
-EVENT_RBUTTONUP      =5,   //放开右键<br />
-EVENT_MBUTTONUP      =6,   //放开中键<br />
-EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
-EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
-EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
-EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
-};</p>
-</blockquote>
-<p>鼠标事件flags</p>
-<blockquote>
-<p>enum<br />
-{<br />
-CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
-CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
-CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
-CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
-CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
-CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
-};</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102320942.png" alt="" /></p>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
-<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
@@ -1504,6 +1502,21 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
+<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
