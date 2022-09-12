@@ -675,6 +675,11 @@
       </tags>
   </entry>
   <entry>
+    <title>Java编程</title>
+    <url>/2022/09/01/Java%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>C++编程基础</title>
     <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="从C到C">从C到C++</h2>
@@ -715,273 +720,6 @@
       <tags>
         <tag>C++</tag>
         <tag>OP编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java编程</title>
-    <url>/2022/09/01/Java%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>OpenCV:图像处理</title>
-    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1 id="颜色变换cvtColor">颜色变换cvtColor</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt=""></p>
-<h1 id="画基本图形">画基本图形</h1>
-<h2 id="画矩形">画矩形</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画圆">画圆</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画椭圆">画椭圆</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV-Python:简单实现人脸识别</title>
-    <url>/2022/09/06/OpenCV-Python/</url>
-    <content><![CDATA[<h1 id="安装">安装</h1>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install opencv-python</span><br><span class="line">pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="OpenCV主要模块">OpenCV主要模块</h1>
-<blockquote>
-<h3 id="core">core</h3>
-<p>核心功能模块。该模块主要包含 OpenCV库的基础结构以及基本操作，例如OpenCV基础数据结构、绘图函数、数组操作相关函数、动态数据结构等calib3d：<br>
-这个模块名称是有 calibration（校准）和 3D 两个术语的缩写组合而成。包含了相机标定与立体视觉等功能，例如物体位姿估计、三维重建、摄像头标定等</p>
-<h3 id="dnn">dnn</h3>
-<p>深度学习模块。该模块是 OpenCV4版的一个特色，主要包括：构建神经网络、加载序列化网络模型等。但这一模块目前仅适用与正向传递计算（测试网络），原则上不支持反向计算（训练网络）。</p>
-<h3 id="feature2d">feature2d</h3>
-<p>该模块是由 feature（特征）和 2D 两个术语的缩写组合而成的，其功能主要为处理图像特征点，例如特征检测、描述、匹配等</p>
-<h3 id="flann">flann</h3>
-<p>快速近似最邻近库（Fast Library for Approximate Nearest Neighbors）。该模块是高维的近似近邻快速搜索算法库，主要包含快速近似近邻搜索、聚类等</p>
-<h3 id="gapi">gapi</h3>
-<p>该模块是 OpenCV4.0 中新增模块，旨在加速常规的图像处理。与其他模块相比，这个模块主要充当框架，而不是某些特定的计算机视觉算法</p>
-<h3 id="highgui">highgui</h3>
-<p>高层 GUI，包含创建和操作显示图像的窗口、处理鼠标事件及键盘命令、提高图形交互可视化界面等</p>
-<h3 id="imgcodecs">imgcodecs</h3>
-<p>图像文件读取与保存模块，主要用于图像文件读取与保存</p>
-<h3 id="imgproc">imgproc</h3>
-<p>该模块名称是由 image（图像）和 process（处理）两个组合而成。是重要的图像处理模块，主要包含：图像滤波、几何变换、直方图、特征检测、目标检测等</p>
-<h3 id="ml">ml</h3>
-<p>机器学习模块，主要包括：统计分类、回归、数据聚类等</p>
-<h3 id="objdetect">objdetect</h3>
-<p>目标检测模块，主要用于图像的目标检测，如检测 Haar 特征</p>
-<h3 id="photo">photo</h3>
-<p>计算摄像模块，只要包含图像修复、去燥等</p>
-<h3 id="stitching">stitching</h3>
-<p>图像拼接模块，主要包含：特征点寻找与匹配图像、估计旋转、自动校准、接缝估计等图像拼接过程的相关内容</p>
-<h3 id="video">video</h3>
-<p>视频分析模块，主要包含：运动估计、背景分离、对象跟踪等视频处理等</p>
-<h3 id="videoio">videoio</h3>
-<p>视频输入/输出模块，主要用于读取、写入视频 或者图像序列</p>
-</blockquote>
-<hr>
-<h1 id="图片基本操作">图片基本操作</h1>
-<h2 id="摄像头采集图片">摄像头采集图片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引入OpenCV库</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用摄像头进行拍照 VideoCapture(0)0为默认摄像头</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 获取一帧图片</span></span><br><span class="line"><span class="comment"># 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">ret, img = cap.read()</span><br><span class="line"><span class="comment"># 释放捕获对象</span></span><br><span class="line">cap.release()</span><br></pre></td></tr></table></figure>
-<h2 id="读取图片">读取图片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path, 标记)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>第二个参数指定图片被读取的方式：</p>
-<ul>
-<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
-<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
-<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
-</ul>
-<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="显示图像">显示图像</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()    </span><br><span class="line"><span class="comment">## 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imshow(窗口名称, 图片对象) </span><br></pre></td></tr></table></figure>
-<h2 id="保存图片">保存图片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()</span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.imwrite(<span class="string">&#x27;2.png&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()</span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.imwrite(<span class="string">&#x27;2.png&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imwrite(path, 图片对象)</span><br></pre></td></tr></table></figure>
-<h2 id="色彩空间">色彩空间</h2>
-<blockquote>
-<p><code>色彩空间（Color space）</code>是对色彩的组织方式，是坐标系统和子空间的阐述，位于系统的每种颜色都有单个点表示。</p>
-</blockquote>
-<h3 id="RGB">RGB</h3>
-<p><code>OpenCV</code>中默认的色彩空间是<code>BGR</code>。<code>BGR</code>与<code>RGB</code>的区别只是三个颜色信道的位置发生了变化，实际上原理相同。</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062203833.png" alt=""></p>
-<h3 id="HSV与HSL色彩空间">HSV与HSL色彩空间</h3>
-<blockquote>
-<p>为了更好的数字化处理颜色，提出了<code>HSV</code>，<code>HSL</code>两个色彩空间。</p>
-<p><code>HSV</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>， <code>V</code>是<code>明度(value)</code>。</p>
-<p><code>HSL</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>，<code>L</code>是<code>亮度(lightness)</code>。</p>
-</blockquote>
-<h3 id="灰度空间">灰度空间</h3>
-<blockquote>
-<p>在<code>OpenCV</code>的灰度空间中，和一般的色彩空间相同，每一个颜色都有三个量，但是只有第一个亮度有值，所以表示为<code>（亮度，0，0）</code>。</p>
-<p>其中，亮度是根据如下灰度公式计算而得：<code>Gray = R*0.299 + G*0.587 + B*0.114</code></p>
-</blockquote>
-<h3 id="色彩空间转换">色彩空间转换</h3>
-<p>经常用到的是以下两种：</p>
-<ol>
-<li><code>BGR</code>空间到<code>Gray</code>空间 的转换；</li>
-<li><code>BGR</code>空间到<code>HSV</code>空间 的转换。</li>
-</ol>
-<p>使用的函数为：<code>cv2.cvtColor()</code>。</p>
-<p>它的函数声明为：</p>
-<ol>
-<li><code>cv2.cvtColor(图片对象，转换类型)</code></li>
-</ol>
-<blockquote>
-<p>对于<code>BGR</code>到<code>Gray</code>的转换，使<code>cv2.COLOR_BGR2GRAY</code>类型。</p>
-<p>同样的，对于<code>BGR</code>到<code>HSV</code>的转换，使用<code>cv2.COLOR_BGR2HSV</code>类型。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2, requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062216524.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">img2=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理前&#x27;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理后&#x27;</span>,img2)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;test.jpg&#x27;</span>,img2) </span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="人脸识别应用">人脸识别应用</h1>
-<blockquote>
-<h3 id="类Harr特征">类Harr特征</h3>
-<p>图像中的特征通常是指，图片的像素点经过一系列的运算之后得到的结果，这些结果可能是向量、矩阵和多维数据等等。类<code>Harr</code>特征是一种反映图像的灰度变化的，像素分模块求差值的一种特征。</p>
-<h4 id="Harr特征类别">Harr特征类别</h4>
-<p>可分为三类：边缘特征、线性特征、中心特征和对角线特征</p>
-<h3 id="边缘特征">边缘特征</h3>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070002088.jpg" alt=""></p>
-<h3 id="线性特征">线性特征</h3>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070003931.jpg" alt=""></p>
-<h3 id="中心特征和对角线特征">中心特征和对角线特征</h3>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070004843.jpg" alt=""></p>
-</blockquote>
-<h3 id="使用Harr分类器检测人脸">使用Harr分类器检测人脸</h3>
-<p><code>OpenCV</code> 中的人脸训练模型格式为 <code>XML</code>，可以从 <a href="https://github.com/opencv/opencv/tree/master/data/haarcascades">https://github.com/opencv/opencv/tree/master/data/haarcascades</a> 。在此我们使用<code>Harrcascade_frontalface_default.xml</code>模型检测人脸。</p>
-<p>声明分类器：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">CascadeClassifier(path)</span><br></pre></td></tr></table></figure>
-<p>调用分类函数：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">detectMultiScale(img,scaleFactor, minNeighbors, minSize)`</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参数说明：</p>
-<ol>
-<li>图片对象：待识别图片对象；</li>
-<li><code>scaleFactor</code>：图像缩放比例；</li>
-<li><code>minNeighbors</code>：对特征检测点周边多少有效点同时检测，这样可避免因选取的特征检测点太小而导致遗漏；</li>
-<li><code>minSize</code>：特征检测点的最小尺寸，可选参数。</li>
-</ol>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;1.png&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">grayimg=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line">faces = face_cascade.detectMultiScale(grayimg, <span class="number">1.2</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    <span class="built_in">print</span>((x,y,w,h))</span><br><span class="line">    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;out.jpg&#x27;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062357868.png" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062358009.jpg" alt=""></p>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV的基本操作</title>
-    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs">图像输入输出模块imgcodecs</h1>
-<h2 id="读取图像文件">读取图像文件</h2>
-<p>读取图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>第二个参数指定图片被读取的方式：</p>
-<ul>
-<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
-<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
-<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
-</ul>
-<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>读取失败返回None</p>
-<h2 id="读取照片的高度与宽度">读取照片的高度与宽度</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
-<h2 id="保存照片">保存照片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="OpenCV界面编程">OpenCV界面编程</h1>
-<h2 id="新建窗口函数">新建窗口函数</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>flags</p>
-<ul>
-<li>
-<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
-</li>
-<li>
-<p>cv2.WINDOW_NORMAL</p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="单窗口显示多图片">单窗口显示多图片</h1>
-<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" title="" alt="" data-align="center">
-<h1 id="销毁窗口">销毁窗口</h1>
-<ul>
-<li>
-<p>cv2.destroyWindow(winname)</p>
-</li>
-<li>
-<p>cv2.destroyAllWindows(winname)</p>
-</li>
-<li>
-<p>cv2.resizeWindow(winname,width,height)</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="鼠标事件">鼠标事件</h1>
-<p>OpenCV使用setMousecallback设定</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
-<p>鼠标事件event</p>
-<blockquote>
-<p>enum<br>
-{<br>
-EVENT_MOUSEMOVE      =0,   //鼠标移动<br>
-EVENT_LBUTTONDOWN    =1,   //按下左键<br>
-EVENT_RBUTTONDOWN    =2,   //按下右键<br>
-EVENT_MBUTTONDOWN    =3,   //按下中键<br>
-EVENT_LBUTTONUP      =4,   //放开左键<br>
-EVENT_RBUTTONUP      =5,   //放开右键<br>
-EVENT_MBUTTONUP      =6,   //放开中键<br>
-EVENT_LBUTTONDBLCLK  =7,   //左键双击<br>
-EVENT_RBUTTONDBLCLK  =8,   //右键双击<br>
-EVENT_MBUTTONDBLCLK  =9,   //中键双击<br>
-EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br>
-};</p>
-</blockquote>
-<p>鼠标事件flags</p>
-<blockquote>
-<p>enum<br>
-{<br>
-CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br>
-CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br>
-CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br>
-CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br>
-CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br>
-CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br>
-};</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="滑动条事件">滑动条事件</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102320942.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1119,15 +857,277 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">b=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> np.nditer([x,b]):</span><br><span class="line">    <span class="built_in">print</span>(i,j)</span><br></pre></td></tr></table></figure>
 <h1 id="数组操作">数组操作</h1>
 <h2 id="修改数组形状">修改数组形状</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> x.flat:</span><br><span class="line">    <span class="built_in">print</span>(j,end=<span class="string">&quot; &quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> x.flat:</span><br><span class="line">    <span class="built_in">print</span>(j,end=<span class="string">&quot; &quot;</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="反转数组">反转数组</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(np.transpose(x))</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>OpenCV</category>
       </categories>
       <tags>
-        <tag>OpenCV</tag>
         <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV:简单实现人脸识别</title>
+    <url>/2022/09/06/OpenCV-Python/</url>
+    <content><![CDATA[<h1 id="安装">安装</h1>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install opencv-python</span><br><span class="line">pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="OpenCV主要模块">OpenCV主要模块</h1>
+<blockquote>
+<h3 id="core">core</h3>
+<p>核心功能模块。该模块主要包含 OpenCV库的基础结构以及基本操作，例如OpenCV基础数据结构、绘图函数、数组操作相关函数、动态数据结构等calib3d：<br>
+这个模块名称是有 calibration（校准）和 3D 两个术语的缩写组合而成。包含了相机标定与立体视觉等功能，例如物体位姿估计、三维重建、摄像头标定等</p>
+<h3 id="dnn">dnn</h3>
+<p>深度学习模块。该模块是 OpenCV4版的一个特色，主要包括：构建神经网络、加载序列化网络模型等。但这一模块目前仅适用与正向传递计算（测试网络），原则上不支持反向计算（训练网络）。</p>
+<h3 id="feature2d">feature2d</h3>
+<p>该模块是由 feature（特征）和 2D 两个术语的缩写组合而成的，其功能主要为处理图像特征点，例如特征检测、描述、匹配等</p>
+<h3 id="flann">flann</h3>
+<p>快速近似最邻近库（Fast Library for Approximate Nearest Neighbors）。该模块是高维的近似近邻快速搜索算法库，主要包含快速近似近邻搜索、聚类等</p>
+<h3 id="gapi">gapi</h3>
+<p>该模块是 OpenCV4.0 中新增模块，旨在加速常规的图像处理。与其他模块相比，这个模块主要充当框架，而不是某些特定的计算机视觉算法</p>
+<h3 id="highgui">highgui</h3>
+<p>高层 GUI，包含创建和操作显示图像的窗口、处理鼠标事件及键盘命令、提高图形交互可视化界面等</p>
+<h3 id="imgcodecs">imgcodecs</h3>
+<p>图像文件读取与保存模块，主要用于图像文件读取与保存</p>
+<h3 id="imgproc">imgproc</h3>
+<p>该模块名称是由 image（图像）和 process（处理）两个组合而成。是重要的图像处理模块，主要包含：图像滤波、几何变换、直方图、特征检测、目标检测等</p>
+<h3 id="ml">ml</h3>
+<p>机器学习模块，主要包括：统计分类、回归、数据聚类等</p>
+<h3 id="objdetect">objdetect</h3>
+<p>目标检测模块，主要用于图像的目标检测，如检测 Haar 特征</p>
+<h3 id="photo">photo</h3>
+<p>计算摄像模块，只要包含图像修复、去燥等</p>
+<h3 id="stitching">stitching</h3>
+<p>图像拼接模块，主要包含：特征点寻找与匹配图像、估计旋转、自动校准、接缝估计等图像拼接过程的相关内容</p>
+<h3 id="video">video</h3>
+<p>视频分析模块，主要包含：运动估计、背景分离、对象跟踪等视频处理等</p>
+<h3 id="videoio">videoio</h3>
+<p>视频输入/输出模块，主要用于读取、写入视频 或者图像序列</p>
+</blockquote>
+<hr>
+<h1 id="图片基本操作">图片基本操作</h1>
+<h2 id="摄像头采集图片">摄像头采集图片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引入OpenCV库</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用摄像头进行拍照 VideoCapture(0)0为默认摄像头</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 获取一帧图片</span></span><br><span class="line"><span class="comment"># 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">ret, img = cap.read()</span><br><span class="line"><span class="comment"># 释放捕获对象</span></span><br><span class="line">cap.release()</span><br></pre></td></tr></table></figure>
+<h2 id="读取图片">读取图片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path, 标记)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第二个参数指定图片被读取的方式：</p>
+<ul>
+<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
+<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
+<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
+</ul>
+<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="显示图像">显示图像</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()    </span><br><span class="line"><span class="comment">## 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imshow(窗口名称, 图片对象) </span><br></pre></td></tr></table></figure>
+<h2 id="保存图片">保存图片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()</span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.imwrite(<span class="string">&#x27;2.png&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()</span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.imwrite(<span class="string">&#x27;2.png&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imwrite(path, 图片对象)</span><br></pre></td></tr></table></figure>
+<h2 id="色彩空间">色彩空间</h2>
+<blockquote>
+<p><code>色彩空间（Color space）</code>是对色彩的组织方式，是坐标系统和子空间的阐述，位于系统的每种颜色都有单个点表示。</p>
+</blockquote>
+<h3 id="RGB">RGB</h3>
+<p><code>OpenCV</code>中默认的色彩空间是<code>BGR</code>。<code>BGR</code>与<code>RGB</code>的区别只是三个颜色信道的位置发生了变化，实际上原理相同。</p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062203833.png" alt=""></p>
+<h3 id="HSV与HSL色彩空间">HSV与HSL色彩空间</h3>
+<blockquote>
+<p>为了更好的数字化处理颜色，提出了<code>HSV</code>，<code>HSL</code>两个色彩空间。</p>
+<p><code>HSV</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>， <code>V</code>是<code>明度(value)</code>。</p>
+<p><code>HSL</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>，<code>L</code>是<code>亮度(lightness)</code>。</p>
+</blockquote>
+<h3 id="灰度空间">灰度空间</h3>
+<blockquote>
+<p>在<code>OpenCV</code>的灰度空间中，和一般的色彩空间相同，每一个颜色都有三个量，但是只有第一个亮度有值，所以表示为<code>（亮度，0，0）</code>。</p>
+<p>其中，亮度是根据如下灰度公式计算而得：<code>Gray = R*0.299 + G*0.587 + B*0.114</code></p>
+</blockquote>
+<h3 id="色彩空间转换">色彩空间转换</h3>
+<p>经常用到的是以下两种：</p>
+<ol>
+<li><code>BGR</code>空间到<code>Gray</code>空间 的转换；</li>
+<li><code>BGR</code>空间到<code>HSV</code>空间 的转换。</li>
+</ol>
+<p>使用的函数为：<code>cv2.cvtColor()</code>。</p>
+<p>它的函数声明为：</p>
+<ol>
+<li><code>cv2.cvtColor(图片对象，转换类型)</code></li>
+</ol>
+<blockquote>
+<p>对于<code>BGR</code>到<code>Gray</code>的转换，使<code>cv2.COLOR_BGR2GRAY</code>类型。</p>
+<p>同样的，对于<code>BGR</code>到<code>HSV</code>的转换，使用<code>cv2.COLOR_BGR2HSV</code>类型。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2, requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062216524.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">img2=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理前&#x27;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理后&#x27;</span>,img2)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;test.jpg&#x27;</span>,img2) </span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="人脸识别应用">人脸识别应用</h1>
+<blockquote>
+<h3 id="类Harr特征">类Harr特征</h3>
+<p>图像中的特征通常是指，图片的像素点经过一系列的运算之后得到的结果，这些结果可能是向量、矩阵和多维数据等等。类<code>Harr</code>特征是一种反映图像的灰度变化的，像素分模块求差值的一种特征。</p>
+<h4 id="Harr特征类别">Harr特征类别</h4>
+<p>可分为三类：边缘特征、线性特征、中心特征和对角线特征</p>
+<h3 id="边缘特征">边缘特征</h3>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070002088.jpg" alt=""></p>
+<h3 id="线性特征">线性特征</h3>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070003931.jpg" alt=""></p>
+<h3 id="中心特征和对角线特征">中心特征和对角线特征</h3>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070004843.jpg" alt=""></p>
+</blockquote>
+<h3 id="使用Harr分类器检测人脸">使用Harr分类器检测人脸</h3>
+<p><code>OpenCV</code> 中的人脸训练模型格式为 <code>XML</code>，可以从 <a href="https://github.com/opencv/opencv/tree/master/data/haarcascades">https://github.com/opencv/opencv/tree/master/data/haarcascades</a> 。在此我们使用<code>Harrcascade_frontalface_default.xml</code>模型检测人脸。</p>
+<p>声明分类器：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">CascadeClassifier(path)</span><br></pre></td></tr></table></figure>
+<p>调用分类函数：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">detectMultiScale(img,scaleFactor, minNeighbors, minSize)`</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参数说明：</p>
+<ol>
+<li>图片对象：待识别图片对象；</li>
+<li><code>scaleFactor</code>：图像缩放比例；</li>
+<li><code>minNeighbors</code>：对特征检测点周边多少有效点同时检测，这样可避免因选取的特征检测点太小而导致遗漏；</li>
+<li><code>minSize</code>：特征检测点的最小尺寸，可选参数。</li>
+</ol>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;1.png&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">grayimg=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line">faces = face_cascade.detectMultiScale(grayimg, <span class="number">1.2</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    <span class="built_in">print</span>((x,y,w,h))</span><br><span class="line">    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;out.jpg&#x27;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062357868.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062358009.jpg" alt=""></p>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV:图像处理</title>
+    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h1 id="颜色变换cvtColor">颜色变换cvtColor</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt=""></p>
+<h1 id="画基本图形">画基本图形</h1>
+<h2 id="画矩形">画矩形</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画圆">画圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画椭圆">画椭圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV的基本操作</title>
+    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs">图像输入输出模块imgcodecs</h1>
+<h2 id="读取图像文件">读取图像文件</h2>
+<p>读取图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第二个参数指定图片被读取的方式：</p>
+<ul>
+<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
+<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
+<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
+</ul>
+<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>读取失败返回None</p>
+<h2 id="读取照片的高度与宽度">读取照片的高度与宽度</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
+<h2 id="保存照片">保存照片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="OpenCV界面编程">OpenCV界面编程</h1>
+<h2 id="新建窗口函数">新建窗口函数</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>flags</p>
+<ul>
+<li>
+<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
+</li>
+<li>
+<p>cv2.WINDOW_NORMAL</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="单窗口显示多图片">单窗口显示多图片</h1>
+<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" title="" alt="" data-align="center">
+<h1 id="销毁窗口">销毁窗口</h1>
+<ul>
+<li>
+<p>cv2.destroyWindow(winname)</p>
+</li>
+<li>
+<p>cv2.destroyAllWindows(winname)</p>
+</li>
+<li>
+<p>cv2.resizeWindow(winname,width,height)</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="鼠标事件">鼠标事件</h1>
+<p>OpenCV使用setMousecallback设定</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
+<p>鼠标事件event</p>
+<blockquote>
+<p>enum<br>
+{<br>
+EVENT_MOUSEMOVE      =0,   //鼠标移动<br>
+EVENT_LBUTTONDOWN    =1,   //按下左键<br>
+EVENT_RBUTTONDOWN    =2,   //按下右键<br>
+EVENT_MBUTTONDOWN    =3,   //按下中键<br>
+EVENT_LBUTTONUP      =4,   //放开左键<br>
+EVENT_RBUTTONUP      =5,   //放开右键<br>
+EVENT_MBUTTONUP      =6,   //放开中键<br>
+EVENT_LBUTTONDBLCLK  =7,   //左键双击<br>
+EVENT_RBUTTONDBLCLK  =8,   //右键双击<br>
+EVENT_MBUTTONDBLCLK  =9,   //中键双击<br>
+EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br>
+};</p>
+</blockquote>
+<p>鼠标事件flags</p>
+<blockquote>
+<p>enum<br>
+{<br>
+CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br>
+CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br>
+CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br>
+CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br>
+CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br>
+CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br>
+};</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="滑动条事件">滑动条事件</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102320942.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
       </tags>
   </entry>
   <entry>
@@ -1160,183 +1160,6 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br>
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Qt工具类</title>
-    <url>/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="字符串类">字符串类</h1>
-<h2 id="操作字符串">操作字符串</h2>
-<ol>
-<li>
-<p>“+”</p>
-</li>
-<li>
-<p>QString::append()</p>
-</li>
-<li>
-<p>QString::sprintf()</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str;</span><br><span class="line">str.<span class="built_in">sprintf</span>(<span class="string">&quot; %s &quot;</span>,<span class="string">&quot;hi&quot;</span>); </span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>QString::arg()</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str;</span><br><span class="line">str=<span class="built_in">QString</span>(<span class="string">&quot;%1 a %2&quot;</span>).<span class="built_in">arg</span>(<span class="string">&quot;1&quot;</span>).<span class="built_in">arg</span>(<span class="string">&quot;2&quot;</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>组合字符串</p>
-<blockquote>
-<p>insert()        插入字符串</p>
-<p>prepend()    开头插入</p>
-<p>replace()     替代</p>
-<p>QString::trimmed()    移除两端的空白字符</p>
-<p>QString::simplified() 移除两端的空白字符,使用单个空格字符代替空白字符</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="查询字符串">查询字符串</h2>
-<ol>
-<li>
-<p>QString::startsWith()</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str=<span class="string">&quot;sddsa&quot;</span></span><br><span class="line">str.<span class="built_in">startsWith</span>(<span class="string">&quot;s&quot;</span>,Qt::CaseSensitive);<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>QString::endsWith() 结尾</p>
-</li>
-<li>
-<p>QString::contains() 包含</p>
-</li>
-<li>
-<p>操作符 &gt;=&lt;</p>
-</li>
-</ol>
-<h2 id="字符串转换">字符串转换</h2>
-<ul>
-<li>
-<p>toInt()</p>
-</li>
-<li>
-<p>toAscii</p>
-</li>
-<li>
-<p>toLatin1()</p>
-</li>
-<li>
-<p>toUtf8()</p>
-</li>
-<li>
-<p>toLocal8Bit()</p>
-</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str=<span class="string">&quot;welcome to you&quot;</span>;</span><br><span class="line">QByteArray b=str.<span class="built_in">toAscii</span>();</span><br><span class="line">qDebug&lt;&lt;b;</span><br><span class="line">b.<span class="built_in">append</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line"><span class="built_in">qDebug</span>()&lt;&lt;ba.<span class="built_in">data</span>();</span><br></pre></td></tr></table></figure>
-<h1 id="容器类">容器类</h1>
-<h2 id="QList类">QList类</h2>
-<ul>
-<li>
-<p>QList::append()</p>
-</li>
-<li>
-<p>QList::prepend()</p>
-</li>
-<li>
-<p>QList::insert()</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QList&lt;QString&gt;list;</span><br><span class="line"><span class="function">QString <span class="title">str</span><span class="params">(<span class="string">&quot;sdsd&quot;</span>)</span></span>;</span><br><span class="line">list&lt;&lt;str;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="QLinkedList类">QLinkedList类</h2>
-<p>QLinkedList是一个链式列表，以非连续的内存块保存</p>
-<h2 id="QVector类">QVector类</h2>
-<p>相邻的内存储存给定数据类型的一组数值</p>
-<h2 id="Java风格迭代器遍历容器">Java风格迭代器遍历容器</h2>
-<center>*两种不同类型的Java风格迭代器数据类型*</center>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">容器类</th>
-<th style="text-align:center">只读迭代器类</th>
-<th>读写迭代器类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">QList<T>,QQueue<t></td>
-<td style="text-align:center">QListIterator<T></td>
-<td>QMutableListIterator<T></td>
-</tr>
-<tr>
-<td style="text-align:center">QLinkedList<T></td>
-<td style="text-align:center">QLinkedListIterator<T></td>
-<td>QMutableLinkedListIterator<T></td>
-</tr>
-<tr>
-<td style="text-align:center">QVector<T>,QStack<T></td>
-<td style="text-align:center">QVectorIterator<T></td>
-<td>QMutableVectorIterator<T></td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QCoreApplication&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QDebug&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">QCoreApplication <span class="title">a</span><span class="params">(argc,argv)</span></span>;</span><br><span class="line">    QList&lt;<span class="type">int</span>&gt;list;</span><br><span class="line">    list&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="number">2</span>&lt;&lt;<span class="number">3</span>&lt;&lt;<span class="number">4</span>&lt;&lt;<span class="number">5</span>;</span><br><span class="line">    QListIterator&lt;<span class="type">int</span>&gt;<span class="built_in">i</span>(list);</span><br><span class="line">    <span class="keyword">for</span>(;i.<span class="built_in">hasNext</span>();)</span><br><span class="line">        <span class="built_in">qDebug</span>()&lt;&lt;i.next;</span><br><span class="line">    <span class="keyword">return</span> a.exec;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="QListIterator">QListIterator</h3>
-<ul>
-<li>
-<p>QListIterator::toBack()</p>
-</li>
-<li>
-<p>QListIterator::hasPrevious()</p>
-</li>
-<li>
-<p>QListIterator::previous()</p>
-</li>
-<li>
-<p>QListIterator::toFront()</p>
-</li>
-<li>
-<p>QListIterator::peeknext()</p>
-</li>
-<li>
-<p>QListIterator::peekPrevious()</p>
-</li>
-<li>
-<p>QListIterator::findNext()</p>
-</li>
-<li>
-<p>QListIterator::findPrevious()</p>
-</li>
-</ul>
-<h2 id="STL风格迭代器遍历容器">STL风格迭代器遍历容器</h2>
-<CENTER>STL风格迭代器数据类型*</CENTER>
-<table>
-<thead>
-<tr>
-<th>容器类</th>
-<th>只读迭代器类</th>
-<th>读写迭代器类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>QList<T></td>
-<td>QListIterator::const_iterator</td>
-<td>QListIterator::iterator</td>
-</tr>
-<tr>
-<td>QLinkedList<T></td>
-<td>QLinkedListIterator::const_iterator</td>
-<td>QLinkedListIterator<T>::iterator</td>
-</tr>
-<tr>
-<td>QVector<T>,QStack<T></td>
-<td>QVectorIterator::const_iterator</td>
-<td>QVector<T>::iterator</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>Qt</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Qt</tag>
       </tags>
   </entry>
   <entry>
@@ -1544,6 +1367,183 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br>
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Qt工具类</title>
+    <url>/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="字符串类">字符串类</h1>
+<h2 id="操作字符串">操作字符串</h2>
+<ol>
+<li>
+<p>“+”</p>
+</li>
+<li>
+<p>QString::append()</p>
+</li>
+<li>
+<p>QString::sprintf()</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str;</span><br><span class="line">str.<span class="built_in">sprintf</span>(<span class="string">&quot; %s &quot;</span>,<span class="string">&quot;hi&quot;</span>); </span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>QString::arg()</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str;</span><br><span class="line">str=<span class="built_in">QString</span>(<span class="string">&quot;%1 a %2&quot;</span>).<span class="built_in">arg</span>(<span class="string">&quot;1&quot;</span>).<span class="built_in">arg</span>(<span class="string">&quot;2&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>组合字符串</p>
+<blockquote>
+<p>insert()        插入字符串</p>
+<p>prepend()    开头插入</p>
+<p>replace()     替代</p>
+<p>QString::trimmed()    移除两端的空白字符</p>
+<p>QString::simplified() 移除两端的空白字符,使用单个空格字符代替空白字符</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="查询字符串">查询字符串</h2>
+<ol>
+<li>
+<p>QString::startsWith()</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str=<span class="string">&quot;sddsa&quot;</span></span><br><span class="line">str.<span class="built_in">startsWith</span>(<span class="string">&quot;s&quot;</span>,Qt::CaseSensitive);<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>QString::endsWith() 结尾</p>
+</li>
+<li>
+<p>QString::contains() 包含</p>
+</li>
+<li>
+<p>操作符 &gt;=&lt;</p>
+</li>
+</ol>
+<h2 id="字符串转换">字符串转换</h2>
+<ul>
+<li>
+<p>toInt()</p>
+</li>
+<li>
+<p>toAscii</p>
+</li>
+<li>
+<p>toLatin1()</p>
+</li>
+<li>
+<p>toUtf8()</p>
+</li>
+<li>
+<p>toLocal8Bit()</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str=<span class="string">&quot;welcome to you&quot;</span>;</span><br><span class="line">QByteArray b=str.<span class="built_in">toAscii</span>();</span><br><span class="line">qDebug&lt;&lt;b;</span><br><span class="line">b.<span class="built_in">append</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line"><span class="built_in">qDebug</span>()&lt;&lt;ba.<span class="built_in">data</span>();</span><br></pre></td></tr></table></figure>
+<h1 id="容器类">容器类</h1>
+<h2 id="QList类">QList类</h2>
+<ul>
+<li>
+<p>QList::append()</p>
+</li>
+<li>
+<p>QList::prepend()</p>
+</li>
+<li>
+<p>QList::insert()</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QList&lt;QString&gt;list;</span><br><span class="line"><span class="function">QString <span class="title">str</span><span class="params">(<span class="string">&quot;sdsd&quot;</span>)</span></span>;</span><br><span class="line">list&lt;&lt;str;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="QLinkedList类">QLinkedList类</h2>
+<p>QLinkedList是一个链式列表，以非连续的内存块保存</p>
+<h2 id="QVector类">QVector类</h2>
+<p>相邻的内存储存给定数据类型的一组数值</p>
+<h2 id="Java风格迭代器遍历容器">Java风格迭代器遍历容器</h2>
+<center>*两种不同类型的Java风格迭代器数据类型*</center>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">容器类</th>
+<th style="text-align:center">只读迭代器类</th>
+<th>读写迭代器类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">QList<T>,QQueue<t></td>
+<td style="text-align:center">QListIterator<T></td>
+<td>QMutableListIterator<T></td>
+</tr>
+<tr>
+<td style="text-align:center">QLinkedList<T></td>
+<td style="text-align:center">QLinkedListIterator<T></td>
+<td>QMutableLinkedListIterator<T></td>
+</tr>
+<tr>
+<td style="text-align:center">QVector<T>,QStack<T></td>
+<td style="text-align:center">QVectorIterator<T></td>
+<td>QMutableVectorIterator<T></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QCoreApplication&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QDebug&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">QCoreApplication <span class="title">a</span><span class="params">(argc,argv)</span></span>;</span><br><span class="line">    QList&lt;<span class="type">int</span>&gt;list;</span><br><span class="line">    list&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="number">2</span>&lt;&lt;<span class="number">3</span>&lt;&lt;<span class="number">4</span>&lt;&lt;<span class="number">5</span>;</span><br><span class="line">    QListIterator&lt;<span class="type">int</span>&gt;<span class="built_in">i</span>(list);</span><br><span class="line">    <span class="keyword">for</span>(;i.<span class="built_in">hasNext</span>();)</span><br><span class="line">        <span class="built_in">qDebug</span>()&lt;&lt;i.next;</span><br><span class="line">    <span class="keyword">return</span> a.exec;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="QListIterator">QListIterator</h3>
+<ul>
+<li>
+<p>QListIterator::toBack()</p>
+</li>
+<li>
+<p>QListIterator::hasPrevious()</p>
+</li>
+<li>
+<p>QListIterator::previous()</p>
+</li>
+<li>
+<p>QListIterator::toFront()</p>
+</li>
+<li>
+<p>QListIterator::peeknext()</p>
+</li>
+<li>
+<p>QListIterator::peekPrevious()</p>
+</li>
+<li>
+<p>QListIterator::findNext()</p>
+</li>
+<li>
+<p>QListIterator::findPrevious()</p>
+</li>
+</ul>
+<h2 id="STL风格迭代器遍历容器">STL风格迭代器遍历容器</h2>
+<CENTER>STL风格迭代器数据类型*</CENTER>
+<table>
+<thead>
+<tr>
+<th>容器类</th>
+<th>只读迭代器类</th>
+<th>读写迭代器类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QList<T></td>
+<td>QListIterator::const_iterator</td>
+<td>QListIterator::iterator</td>
+</tr>
+<tr>
+<td>QLinkedList<T></td>
+<td>QLinkedListIterator::const_iterator</td>
+<td>QLinkedListIterator<T>::iterator</td>
+</tr>
+<tr>
+<td>QVector<T>,QStack<T></td>
+<td>QVectorIterator::const_iterator</td>
+<td>QVector<T>::iterator</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>Qt</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Qt</tag>
       </tags>
   </entry>
   <entry>

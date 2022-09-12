@@ -9,16 +9,24 @@
 
 
     <url>
-        <loc>http://www.helicunzai.cn/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
-        <lastmod>2022-09-12T09:16:58.327Z</lastmod>
+        <loc>http://www.helicunzai.cn/2022/09/11/OpenCV-%E6%95%B0%E7%BB%84%E7%9F%A9%E9%98%B5/</loc>
+        <lastmod>2022-09-12T09:26:32.118Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://www.helicunzai.cn/2022/09/11/OpenCV-%E6%95%B0%E7%BB%84%E7%9F%A9%E9%98%B5/</loc>
-        <lastmod>2022-09-12T08:50:39.340Z</lastmod>
+        <loc>http://www.helicunzai.cn/2022/09/06/OpenCV-Python/</loc>
+        <lastmod>2022-09-12T09:26:25.580Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
+        <lastmod>2022-09-12T09:16:58.327Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -35,14 +43,6 @@
     <url>
         <loc>http://www.helicunzai.cn/2022/08/10/C-%E7%BC%96%E7%A8%8B/</loc>
         <lastmod>2022-09-07T15:26:55.620Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/2022/09/06/OpenCV-Python/</loc>
-        <lastmod>2022-09-06T16:26:01.363Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
