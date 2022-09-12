@@ -3,20 +3,20 @@
   <entry>
     <title>C++的STL</title>
     <url>/2022/08/10/C-%E7%9A%84STL/</url>
-    <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
+    <content><![CDATA[<h2 id="开始">开始</h2>
 <blockquote>
 <p>STL的代码从广义上讲分为三类：algorithm（算法）、container（容器）和iterator（迭代器），几乎所有的代码都采用了模板类和模板函数的方式，这相比于传统的由函数和类组成的库来说。</p>
 </blockquote>
 <p>用STL我们就不用反复实现一些代码，提高开发效率。当然这个需要<mark>数据结构基础</mark></p>
-<hr />
-<h2 id="vector动态数组"><a class="markdownIt-Anchor" href="#vector动态数组"></a> vector动态数组</h2>
-<h3 id="头文件"><a class="markdownIt-Anchor" href="#头文件"></a> 头文件</h3>
+<hr>
+<h2 id="vector动态数组">vector动态数组</h2>
+<h3 id="头文件">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="初始化"><a class="markdownIt-Anchor" href="#初始化"></a> 初始化</h3>
+<h3 id="初始化">初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; ans;<span class="comment">//int的型的数组</span></span><br><span class="line">vector&lt;structure&gt; ans;<span class="comment">//一个structure结构体的数组</span></span><br><span class="line"><span class="comment">//指定长度的初始化</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">short</span>&gt; <span class="title">ans</span><span class="params">(n)</span></span>;</span><br><span class="line"><span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">ans</span><span class="params">(n,<span class="number">2</span>)</span></span>;<span class="comment">//长度为n,全为2的数组</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">shaow</span><span class="params">(ans)</span></span>;<span class="comment">//拷贝初始化，类型长度需相同</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; a&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//二维</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;ans[<span class="number">5</span>];<span class="comment">//行为固定的5，列为动态可变</span></span><br><span class="line">vector&lt;vectot&lt;<span class="type">int</span>&gt; &gt;num;<span class="comment">//行列均可以变</span></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt; &gt; <span class="built_in">a</span>(n + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(m + <span class="number">1</span>, <span class="number">0</span>));<span class="comment">//固定n+1行m+1列初始值为0的二维数组</span></span><br></pre></td></tr></table></figure>
-<h3 id="访问遍历"><a class="markdownIt-Anchor" href="#访问遍历"></a> 访问遍历</h3>
+<h3 id="访问遍历">访问遍历</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">5</span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">num</span><span class="params">(<span class="number">5</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">    cout&lt;&lt;num[<span class="number">2</span>];<span class="comment">//访问下标为2的元素</span></span><br><span class="line"><span class="comment">//智能指针遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i: num)</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;num.<span class="built_in">size</span>();i++)</span><br><span class="line">        cout&lt;&lt;num[i]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方法函数"><a class="markdownIt-Anchor" href="#方法函数"></a> 方法函数</h3>
+<h3 id="方法函数">方法函数</h3>
 <table>
 <thead>
 <tr>
@@ -75,15 +75,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
+<h3 id="代码">代码</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">5</span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">num</span><span class="params">(<span class="number">5</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(vector&lt;<span class="type">int</span>&gt;::iterator it=num.<span class="built_in">begin</span>();it!=num.<span class="built_in">end</span>();it++)</span><br><span class="line">        cout&lt;&lt;*it&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
-<h2 id="stack栈"><a class="markdownIt-Anchor" href="#stack栈"></a> stack栈</h2>
-<h3 id="头文件-2"><a class="markdownIt-Anchor" href="#头文件-2"></a> 头文件</h3>
+<hr>
+<h2 id="stack栈">stack栈</h2>
+<h3 id="头文件-2">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="初始化-2"><a class="markdownIt-Anchor" href="#初始化-2"></a> 初始化</h3>
+<h3 id="初始化-2">初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">stack&lt;<span class="type">int</span>&gt;ans;</span><br></pre></td></tr></table></figure>
-<h3 id="方法函数-2"><a class="markdownIt-Anchor" href="#方法函数-2"></a> 方法函数</h3>
+<h3 id="方法函数-2">方法函数</h3>
 <table>
 <thead>
 <tr>
@@ -114,15 +114,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="代码-2"><a class="markdownIt-Anchor" href="#代码-2"></a> 代码</h3>
+<h3 id="代码-2">代码</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    stack&lt;<span class="type">int</span>&gt;a;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">while</span>(!a.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        i=a.<span class="built_in">top</span>();</span><br><span class="line">        cout&lt;&lt;i&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        a.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
-<h2 id="queue队列"><a class="markdownIt-Anchor" href="#queue队列"></a> queue队列</h2>
-<h3 id="头文件-3"><a class="markdownIt-Anchor" href="#头文件-3"></a> 头文件</h3>
+<hr>
+<h2 id="queue队列">queue队列</h2>
+<h3 id="头文件-3">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="初始化-3"><a class="markdownIt-Anchor" href="#初始化-3"></a> 初始化</h3>
+<h3 id="初始化-3">初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt;<span class="type">int</span>&gt;ans;</span><br></pre></td></tr></table></figure>
-<h3 id="方法函数-3"><a class="markdownIt-Anchor" href="#方法函数-3"></a> 方法函数</h3>
+<h3 id="方法函数-3">方法函数</h3>
 <table>
 <thead>
 <tr>
@@ -157,15 +157,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="代码-3"><a class="markdownIt-Anchor" href="#代码-3"></a> 代码</h3>
+<h3 id="代码-3">代码</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt;a;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        a.<span class="built_in">push</span>(i);</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">while</span>(!a.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        i=a.<span class="built_in">front</span>();</span><br><span class="line">        cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        a.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
-<h2 id="deque双队列"><a class="markdownIt-Anchor" href="#deque双队列"></a> deque双队列</h2>
-<h3 id="头文件-4"><a class="markdownIt-Anchor" href="#头文件-4"></a> 头文件</h3>
+<hr>
+<h2 id="deque双队列">deque双队列</h2>
+<h3 id="头文件-4">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;deque&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="初始化-4"><a class="markdownIt-Anchor" href="#初始化-4"></a> 初始化</h3>
+<h3 id="初始化-4">初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">deque&lt;<span class="type">int</span>&gt;ans;</span><br></pre></td></tr></table></figure>
-<h3 id="方法函数-4"><a class="markdownIt-Anchor" href="#方法函数-4"></a> 方法函数</h3>
+<h3 id="方法函数-4">方法函数</h3>
 <table>
 <thead>
 <tr>
@@ -208,15 +208,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="代码-4"><a class="markdownIt-Anchor" href="#代码-4"></a> 代码</h3>
+<h3 id="代码-4">代码</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;algorithm&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">deque&lt;<span class="type">int</span>&gt;a;</span><br><span class="line"><span class="type">int</span> b[<span class="number">5</span>]=&#123;<span class="number">3</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">6</span>,<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">    a.<span class="built_in">push_front</span>(b[i]);</span><br><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>(),a.<span class="built_in">end</span>());</span><br><span class="line"><span class="type">int</span> i;</span><br><span class="line"><span class="keyword">while</span>(!a.<span class="built_in">empty</span>())</span><br><span class="line">&#123;</span><br><span class="line">    i=a.<span class="built_in">back</span>();</span><br><span class="line">    cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    a.<span class="built_in">pop_back</span>();</span><br><span class="line">&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
-<h2 id="priority_queue优先队列"><a class="markdownIt-Anchor" href="#priority_queue优先队列"></a> priority_queue优先队列</h2>
-<h3 id="头文件-5"><a class="markdownIt-Anchor" href="#头文件-5"></a> 头文件</h3>
+<hr>
+<h2 id="priority-queue优先队列">priority_queue优先队列</h2>
+<h3 id="头文件-5">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="头文件-6"><a class="markdownIt-Anchor" href="#头文件-6"></a> 头文件</h3>
+<h3 id="头文件-6">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line">priority_queue&lt;Type, Container, Functional&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="方法函数-5"><a class="markdownIt-Anchor" href="#方法函数-5"></a> 方法函数</h3>
+<h3 id="方法函数-5">方法函数</h3>
 <table>
 <thead>
 <tr>
@@ -247,16 +247,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="代码-5"><a class="markdownIt-Anchor" href="#代码-5"></a> 代码</h3>
+<h3 id="代码-5">代码</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>&gt; a;</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt; &gt; c;  <span class="comment">//这样就是小顶堆</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a.<span class="built_in">push</span>(i);</span><br><span class="line">        c.<span class="built_in">push</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!a.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; a.<span class="built_in">top</span>() &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        a.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">while</span> (!c.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; c.<span class="built_in">top</span>() &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        c.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
-<h2 id="map映射"><a class="markdownIt-Anchor" href="#map映射"></a> map映射</h2>
-<h3 id="头文件-7"><a class="markdownIt-Anchor" href="#头文件-7"></a> 头文件</h3>
+<hr>
+<h2 id="map映射">map映射</h2>
+<h3 id="头文件-7">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;map&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="初始化-5"><a class="markdownIt-Anchor" href="#初始化-5"></a> 初始化</h3>
+<h3 id="初始化-5">初始化</h3>
 <pre><code>map&lt;string,int&gt;a;
 </code></pre>
-<h3 id="函数方法"><a class="markdownIt-Anchor" href="#函数方法"></a> 函数方法</h3>
+<h3 id="函数方法">函数方法</h3>
 <table>
 <thead>
 <tr>
@@ -331,14 +331,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="代码-6"><a class="markdownIt-Anchor" href="#代码-6"></a> 代码</h3>
+<h3 id="代码-6">代码</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">map&lt;<span class="type">int</span>,string&gt;a;</span><br><span class="line">a[<span class="number">1</span>]=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">a[<span class="number">2</span>]=<span class="string">&quot;hi&quot;</span>;</span><br><span class="line">cout&lt;&lt;a[<span class="number">1</span>];</span><br><span class="line">cout&lt;&lt;endl;</span><br><span class="line">    map&lt;<span class="type">int</span>,string&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span>(it=a.<span class="built_in">begin</span>();it!=a.<span class="built_in">end</span>();it++)</span><br><span class="line">        cout&lt;&lt;it-&gt;first&lt;&lt;<span class="string">&#x27;:&#x27;</span>&lt;&lt;it-&gt;second&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i:a)</span><br><span class="line">        cout&lt;&lt;i.first&lt;&lt;<span class="string">&quot;:&quot;</span>&lt;&lt;i.second&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
-<h2 id="set集合"><a class="markdownIt-Anchor" href="#set集合"></a> set集合</h2>
+<hr>
+<h2 id="set集合">set集合</h2>
 <p>集合不重合且有序</p>
-<h3 id="头文件-8"><a class="markdownIt-Anchor" href="#头文件-8"></a> 头文件</h3>
+<h3 id="头文件-8">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="方法函数-6"><a class="markdownIt-Anchor" href="#方法函数-6"></a> 方法函数</h3>
+<h3 id="方法函数-6">方法函数</h3>
 <table>
 <thead>
 <tr>
@@ -401,20 +401,20 @@
 </tr>
 </tbody>
 </table>
-<h3 id="代码-7"><a class="markdownIt-Anchor" href="#代码-7"></a> 代码</h3>
+<h3 id="代码-7">代码</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    set&lt;<span class="type">int</span>&gt;a;</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">8</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">3</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">9</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">7</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">6</span>);</span><br><span class="line">    a.<span class="built_in">insert</span>(<span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=a.<span class="built_in">begin</span>();it!=a.<span class="built_in">end</span>();it++)</span><br><span class="line">        cout&lt;&lt;*it&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//结果为3 5 6 7 8 9</span></span><br></pre></td></tr></table></figure>
-<hr />
-<h2 id="pair对组"><a class="markdownIt-Anchor" href="#pair对组"></a> pair对组</h2>
+<hr>
+<h2 id="pair对组">pair对组</h2>
 <p>pair只含有两个元素，可以看作是只有两个元素的结构体.</p>
-<h3 id="头文件-9"><a class="markdownIt-Anchor" href="#头文件-9"></a> 头文件</h3>
+<h3 id="头文件-9">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;utility&gt;</span></span></span><br></pre></td></tr></table></figure>
-<hr />
-<h2 id="字符串"><a class="markdownIt-Anchor" href="#字符串"></a> 字符串</h2>
-<h3 id="头文件-10"><a class="markdownIt-Anchor" href="#头文件-10"></a> 头文件</h3>
+<hr>
+<h2 id="字符串">字符串</h2>
+<h3 id="头文件-10">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="初始化-6"><a class="markdownIt-Anchor" href="#初始化-6"></a> 初始化</h3>
+<h3 id="初始化-6">初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">string str1; <span class="comment">//生成空字符串</span></span><br><span class="line"><span class="function">string <span class="title">str2</span><span class="params">(<span class="string">&quot;123456789&quot;</span>)</span></span>; <span class="comment">//生成&quot;1234456789&quot;的复制品 </span></span><br><span class="line"><span class="function">string <span class="title">str3</span><span class="params">(<span class="string">&quot;12345&quot;</span>, <span class="number">0</span>, <span class="number">3</span>)</span></span>;<span class="comment">//结果为&quot;123&quot; ，从0位置开始，长度为3</span></span><br><span class="line"><span class="function">string <span class="title">str4</span><span class="params">(<span class="string">&quot;123456&quot;</span>, <span class="number">5</span>)</span></span>; <span class="comment">//结果为&quot;12345&quot; ，长度为5</span></span><br><span class="line"><span class="function">string <span class="title">str5</span><span class="params">(<span class="number">5</span>, <span class="string">&#x27;2&#x27;</span>)</span></span>; <span class="comment">//结果为&quot;22222&quot; ,构造5个字符&#x27;2&#x27;连接而成的字符串</span></span><br><span class="line"><span class="function">string <span class="title">str6</span><span class="params">(str2, <span class="number">2</span>)</span></span>; <span class="comment">//结果为&quot;3456789&quot;，截取第三个元素（2对应第三位）到最后</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="函数方法-2"><a class="markdownIt-Anchor" href="#函数方法-2"></a> 函数方法</h3>
+<h3 id="函数方法-2">函数方法</h3>
 <table>
 <thead>
 <tr>
@@ -513,13 +513,13 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="bitsei位组"><a class="markdownIt-Anchor" href="#bitsei位组"></a> bitsei位组</h2>
-<h3 id="头文件-11"><a class="markdownIt-Anchor" href="#头文件-11"></a> 头文件</h3>
+<hr>
+<h2 id="bitsei位组">bitsei位组</h2>
+<h3 id="头文件-11">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bitset&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="初始化-7"><a class="markdownIt-Anchor" href="#初始化-7"></a> 初始化</h3>
+<h3 id="初始化-7">初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">bitset &lt; n &gt;a; <span class="comment">//a有n位，每位都为0</span></span><br><span class="line">bitset &lt; n &gt;<span class="built_in">a</span>(b);</span><br><span class="line">bitset &lt; n &gt;<span class="built_in">a</span>(s,pos,n);<span class="comment">//a是s中从位置pos开始的n个位的副本</span></span><br><span class="line">bitset &lt; n &gt;<span class="built_in">a</span>(s);</span><br></pre></td></tr></table></figure>
-<h3 id="函数方法-3"><a class="markdownIt-Anchor" href="#函数方法-3"></a> 函数方法</h3>
+<h3 id="函数方法-3">函数方法</h3>
 <table>
 <thead>
 <tr>
@@ -577,15 +577,15 @@
 <blockquote>
 <p>bitset也支持位运算</p>
 </blockquote>
-<hr />
-<h2 id="array数组"><a class="markdownIt-Anchor" href="#array数组"></a> array数组</h2>
-<h3 id="头文件-12"><a class="markdownIt-Anchor" href="#头文件-12"></a> 头文件</h3>
+<hr>
+<h2 id="array数组">array数组</h2>
+<h3 id="头文件-12">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;array&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="初始化-8"><a class="markdownIt-Anchor" href="#初始化-8"></a> 初始化</h3>
+<h3 id="初始化-8">初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">array&lt;<span class="type">int</span>, 100&gt; a;<span class="comment">//声明一个大小为100的int型数组</span></span><br><span class="line">array&lt;<span class="type">int</span>, 100&gt; a&#123;&#125;;<span class="comment">//声明一个大小为100的int型数组，初始值均为0</span></span><br><span class="line">array&lt;<span class="type">int</span>, 100&gt; a&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;<span class="comment">//始化部分值，其余全部为0</span></span><br><span class="line">array&lt;<span class="type">int</span>, 100&gt; a = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="访问遍历-2"><a class="markdownIt-Anchor" href="#访问遍历-2"></a> 访问遍历</h3>
+<h3 id="访问遍历-2">访问遍历</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">array&lt;<span class="type">int</span>, 4&gt; a = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) </span><br><span class="line">    cout &lt;&lt; a[i] &lt;&lt; <span class="string">&quot; \n&quot;</span>[i == <span class="number">3</span>];</span><br><span class="line"><span class="comment">//迭代器</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i : a)</span><br><span class="line">    cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line"><span class="comment">//at访问</span></span><br><span class="line">array&lt;<span class="type">int</span>, 4&gt; a = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line"><span class="type">int</span> res = a.<span class="built_in">at</span>(<span class="number">1</span>) + a.<span class="built_in">at</span>(<span class="number">2</span>);</span><br><span class="line">cout &lt;&lt; res &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(a) = x;<span class="comment">//将a数组下标为1位置处的值改为x</span></span><br></pre></td></tr></table></figure>
-<h3 id="方法函数-7"><a class="markdownIt-Anchor" href="#方法函数-7"></a> 方法函数</h3>
+<h3 id="方法函数-7">方法函数</h3>
 <table>
 <thead>
 <tr>
@@ -652,18 +652,18 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="tuple元组"><a class="markdownIt-Anchor" href="#tuple元组"></a> tuple元组</h2>
-<h3 id="头文件-13"><a class="markdownIt-Anchor" href="#头文件-13"></a> 头文件</h3>
+<hr>
+<h2 id="tuple元组">tuple元组</h2>
+<h3 id="头文件-13">头文件</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;tuple&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="初始化-9"><a class="markdownIt-Anchor" href="#初始化-9"></a> 初始化</h3>
+<h3 id="初始化-9">初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">tuple&lt;<span class="type">int</span>, <span class="type">int</span>, string&gt; t1;<span class="comment">//声明一个空的tuple三元组</span></span><br><span class="line">t1 = <span class="built_in">make_tuple</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="string">&quot;hahaha&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="function">tuple&lt;<span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>&gt; <span class="title">t2</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> p = <span class="built_in">make_pair</span>(<span class="string">&quot;wang&quot;</span>, <span class="number">1</span>);</span><br><span class="line">tuple&lt;string, <span class="type">int</span>&gt; t3 &#123;p&#125;; <span class="comment">//将pair对象赋给tuple对象</span></span><br></pre></td></tr></table></figure>
-<h3 id="操作"><a class="markdownIt-Anchor" href="#操作"></a> 操作</h3>
-<h4 id="读取修改"><a class="markdownIt-Anchor" href="#读取修改"></a> 读取修改</h4>
+<h3 id="操作">操作</h3>
+<h4 id="读取修改">读取修改</h4>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> first = <span class="built_in">get</span>&lt;<span class="number">0</span>&gt;(t);</span><br><span class="line"><span class="built_in">get</span>&lt;<span class="number">0</span>&gt;(t) = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<h4 id="获取元素个数"><a class="markdownIt-Anchor" href="#获取元素个数"></a> 获取元素个数</h4>
+<h4 id="获取元素个数">获取元素个数</h4>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">tuple&lt;<span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>&gt; <span class="title">t</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span></span>;</span><br><span class="line">cout &lt;&lt; tuple_size&lt;<span class="keyword">decltype</span>(t)&gt;::value &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
-<h4 id="解包"><a class="markdownIt-Anchor" href="#解包"></a> 解包</h4>
+<h4 id="解包">解包</h4>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> one, three;</span><br><span class="line">string two; </span><br><span class="line"><span class="function">tuple&lt;<span class="type">int</span>, string, <span class="type">int</span>&gt; <span class="title">t</span><span class="params">(<span class="number">1</span>, <span class="string">&quot;hahaha&quot;</span>, <span class="number">3</span>)</span></span>;</span><br><span class="line"><span class="built_in">tie</span>(one, two, three) = t;</span><br><span class="line">cout &lt;&lt; one &lt;&lt; two &lt;&lt; three &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 1hahaha3</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
@@ -677,11 +677,11 @@
   <entry>
     <title>C++编程基础</title>
     <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
+    <content><![CDATA[<h2 id="从C到C">从C到C++</h2>
 <p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h1 id="万能头文件"><a class="markdownIt-Anchor" href="#万能头文件"></a> 万能头文件</h1>
+<h1 id="万能头文件">万能头文件</h1>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="最简单的c程序"><a class="markdownIt-Anchor" href="#最简单的c程序"></a> 最简单的C++程序</h2>
+<h2 id="最简单的C-程序">最简单的C++程序</h2>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
 <li>
@@ -691,22 +691,22 @@
 <p>cout为输出流对象</p>
 </li>
 </ol>
-<h2 id="输入输出"><a class="markdownIt-Anchor" href="#输入输出"></a> 输入输出</h2>
+<h2 id="输入输出">输入输出</h2>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="内联函数"><a class="markdownIt-Anchor" href="#内联函数"></a> 内联函数</h2>
+<h2 id="内联函数">内联函数</h2>
 <p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
 <p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="函数模板"><a class="markdownIt-Anchor" href="#函数模板"></a> 函数模板</h2>
+<h2 id="函数模板">函数模板</h2>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="引用和引用形参"><a class="markdownIt-Anchor" href="#引用和引用形参"></a> 引用和引用形参</h2>
+<h2 id="引用和引用形参">引用和引用形参</h2>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
-<h1 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h1>
+<h1 id="参数传递">参数传递</h1>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>默认参数必须写在一般参数的后面</strong></li>
 </ul>
-<h1 id="一元作用域运算符"><a class="markdownIt-Anchor" href="#一元作用域运算符"></a> 一元作用域运算符::</h1>
+<h1 id="一元作用域运算符">一元作用域运算符::</h1>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
@@ -723,48 +723,73 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>OpenCV:图像处理</title>
+    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h1 id="颜色变换cvtColor">颜色变换cvtColor</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt=""></p>
+<h1 id="画基本图形">画基本图形</h1>
+<h2 id="画矩形">画矩形</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画圆">画圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画椭圆">画椭圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCV-Python:简单实现人脸识别</title>
     <url>/2022/09/06/OpenCV-Python/</url>
-    <content><![CDATA[<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
+    <content><![CDATA[<h1 id="安装">安装</h1>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install opencv-python</span><br><span class="line">pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
-<hr />
-<h1 id="opencv主要模块"><a class="markdownIt-Anchor" href="#opencv主要模块"></a> OpenCV主要模块</h1>
+<hr>
+<h1 id="OpenCV主要模块">OpenCV主要模块</h1>
 <blockquote>
-<h3 id="core"><a class="markdownIt-Anchor" href="#core"></a> core</h3>
-<p>核心功能模块。该模块主要包含 OpenCV库的基础结构以及基本操作，例如OpenCV基础数据结构、绘图函数、数组操作相关函数、动态数据结构等calib3d：<br />
+<h3 id="core">core</h3>
+<p>核心功能模块。该模块主要包含 OpenCV库的基础结构以及基本操作，例如OpenCV基础数据结构、绘图函数、数组操作相关函数、动态数据结构等calib3d：<br>
 这个模块名称是有 calibration（校准）和 3D 两个术语的缩写组合而成。包含了相机标定与立体视觉等功能，例如物体位姿估计、三维重建、摄像头标定等</p>
-<h3 id="dnn"><a class="markdownIt-Anchor" href="#dnn"></a> dnn</h3>
+<h3 id="dnn">dnn</h3>
 <p>深度学习模块。该模块是 OpenCV4版的一个特色，主要包括：构建神经网络、加载序列化网络模型等。但这一模块目前仅适用与正向传递计算（测试网络），原则上不支持反向计算（训练网络）。</p>
-<h3 id="feature2d"><a class="markdownIt-Anchor" href="#feature2d"></a> feature2d</h3>
+<h3 id="feature2d">feature2d</h3>
 <p>该模块是由 feature（特征）和 2D 两个术语的缩写组合而成的，其功能主要为处理图像特征点，例如特征检测、描述、匹配等</p>
-<h3 id="flann"><a class="markdownIt-Anchor" href="#flann"></a> flann</h3>
+<h3 id="flann">flann</h3>
 <p>快速近似最邻近库（Fast Library for Approximate Nearest Neighbors）。该模块是高维的近似近邻快速搜索算法库，主要包含快速近似近邻搜索、聚类等</p>
-<h3 id="gapi"><a class="markdownIt-Anchor" href="#gapi"></a> gapi</h3>
+<h3 id="gapi">gapi</h3>
 <p>该模块是 OpenCV4.0 中新增模块，旨在加速常规的图像处理。与其他模块相比，这个模块主要充当框架，而不是某些特定的计算机视觉算法</p>
-<h3 id="highgui"><a class="markdownIt-Anchor" href="#highgui"></a> highgui</h3>
+<h3 id="highgui">highgui</h3>
 <p>高层 GUI，包含创建和操作显示图像的窗口、处理鼠标事件及键盘命令、提高图形交互可视化界面等</p>
-<h3 id="imgcodecs"><a class="markdownIt-Anchor" href="#imgcodecs"></a> imgcodecs</h3>
+<h3 id="imgcodecs">imgcodecs</h3>
 <p>图像文件读取与保存模块，主要用于图像文件读取与保存</p>
-<h3 id="imgproc"><a class="markdownIt-Anchor" href="#imgproc"></a> imgproc</h3>
+<h3 id="imgproc">imgproc</h3>
 <p>该模块名称是由 image（图像）和 process（处理）两个组合而成。是重要的图像处理模块，主要包含：图像滤波、几何变换、直方图、特征检测、目标检测等</p>
-<h3 id="ml"><a class="markdownIt-Anchor" href="#ml"></a> ml</h3>
+<h3 id="ml">ml</h3>
 <p>机器学习模块，主要包括：统计分类、回归、数据聚类等</p>
-<h3 id="objdetect"><a class="markdownIt-Anchor" href="#objdetect"></a> objdetect</h3>
+<h3 id="objdetect">objdetect</h3>
 <p>目标检测模块，主要用于图像的目标检测，如检测 Haar 特征</p>
-<h3 id="photo"><a class="markdownIt-Anchor" href="#photo"></a> photo</h3>
+<h3 id="photo">photo</h3>
 <p>计算摄像模块，只要包含图像修复、去燥等</p>
-<h3 id="stitching"><a class="markdownIt-Anchor" href="#stitching"></a> stitching</h3>
+<h3 id="stitching">stitching</h3>
 <p>图像拼接模块，主要包含：特征点寻找与匹配图像、估计旋转、自动校准、接缝估计等图像拼接过程的相关内容</p>
-<h3 id="video"><a class="markdownIt-Anchor" href="#video"></a> video</h3>
+<h3 id="video">video</h3>
 <p>视频分析模块，主要包含：运动估计、背景分离、对象跟踪等视频处理等</p>
-<h3 id="videoio"><a class="markdownIt-Anchor" href="#videoio"></a> videoio</h3>
+<h3 id="videoio">videoio</h3>
 <p>视频输入/输出模块，主要用于读取、写入视频 或者图像序列</p>
 </blockquote>
-<hr />
-<h1 id="图片基本操作"><a class="markdownIt-Anchor" href="#图片基本操作"></a> 图片基本操作</h1>
-<h2 id="摄像头采集图片"><a class="markdownIt-Anchor" href="#摄像头采集图片"></a> 摄像头采集图片</h2>
+<hr>
+<h1 id="图片基本操作">图片基本操作</h1>
+<h2 id="摄像头采集图片">摄像头采集图片</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引入OpenCV库</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用摄像头进行拍照 VideoCapture(0)0为默认摄像头</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 获取一帧图片</span></span><br><span class="line"><span class="comment"># 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">ret, img = cap.read()</span><br><span class="line"><span class="comment"># 释放捕获对象</span></span><br><span class="line">cap.release()</span><br></pre></td></tr></table></figure>
-<h2 id="读取图片"><a class="markdownIt-Anchor" href="#读取图片"></a> 读取图片</h2>
+<h2 id="读取图片">读取图片</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path, 标记)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>第二个参数指定图片被读取的方式：</p>
@@ -776,32 +801,32 @@
 <p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="显示图像"><a class="markdownIt-Anchor" href="#显示图像"></a> 显示图像</h2>
+<h2 id="显示图像">显示图像</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()    </span><br><span class="line"><span class="comment">## 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imshow(窗口名称, 图片对象) </span><br></pre></td></tr></table></figure>
-<h2 id="保存图片"><a class="markdownIt-Anchor" href="#保存图片"></a> 保存图片</h2>
+<h2 id="保存图片">保存图片</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()</span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.imwrite(<span class="string">&#x27;2.png&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()</span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.imwrite(<span class="string">&#x27;2.png&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imwrite(path, 图片对象)</span><br></pre></td></tr></table></figure>
-<h2 id="色彩空间"><a class="markdownIt-Anchor" href="#色彩空间"></a> 色彩空间</h2>
+<h2 id="色彩空间">色彩空间</h2>
 <blockquote>
 <p><code>色彩空间（Color space）</code>是对色彩的组织方式，是坐标系统和子空间的阐述，位于系统的每种颜色都有单个点表示。</p>
 </blockquote>
-<h3 id="rgb"><a class="markdownIt-Anchor" href="#rgb"></a> RGB</h3>
+<h3 id="RGB">RGB</h3>
 <p><code>OpenCV</code>中默认的色彩空间是<code>BGR</code>。<code>BGR</code>与<code>RGB</code>的区别只是三个颜色信道的位置发生了变化，实际上原理相同。</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062203833.png" alt="" /></p>
-<h3 id="hsv与hsl色彩空间"><a class="markdownIt-Anchor" href="#hsv与hsl色彩空间"></a> HSV与HSL色彩空间</h3>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062203833.png" alt=""></p>
+<h3 id="HSV与HSL色彩空间">HSV与HSL色彩空间</h3>
 <blockquote>
 <p>为了更好的数字化处理颜色，提出了<code>HSV</code>，<code>HSL</code>两个色彩空间。</p>
 <p><code>HSV</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>， <code>V</code>是<code>明度(value)</code>。</p>
 <p><code>HSL</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>，<code>L</code>是<code>亮度(lightness)</code>。</p>
 </blockquote>
-<h3 id="灰度空间"><a class="markdownIt-Anchor" href="#灰度空间"></a> 灰度空间</h3>
+<h3 id="灰度空间">灰度空间</h3>
 <blockquote>
 <p>在<code>OpenCV</code>的灰度空间中，和一般的色彩空间相同，每一个颜色都有三个量，但是只有第一个亮度有值，所以表示为<code>（亮度，0，0）</code>。</p>
 <p>其中，亮度是根据如下灰度公式计算而得：<code>Gray = R*0.299 + G*0.587 + B*0.114</code></p>
 </blockquote>
-<h3 id="色彩空间转换"><a class="markdownIt-Anchor" href="#色彩空间转换"></a> 色彩空间转换</h3>
+<h3 id="色彩空间转换">色彩空间转换</h3>
 <p>经常用到的是以下两种：</p>
 <ol>
 <li><code>BGR</code>空间到<code>Gray</code>空间 的转换；</li>
@@ -817,21 +842,21 @@
 <p>同样的，对于<code>BGR</code>到<code>HSV</code>的转换，使用<code>cv2.COLOR_BGR2HSV</code>类型。</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2, requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062216524.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">img2=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理前&#x27;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理后&#x27;</span>,img2)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;test.jpg&#x27;</span>,img2) </span><br></pre></td></tr></table></figure>
-<hr />
-<h1 id="人脸识别应用"><a class="markdownIt-Anchor" href="#人脸识别应用"></a> 人脸识别应用</h1>
+<hr>
+<h1 id="人脸识别应用">人脸识别应用</h1>
 <blockquote>
-<h3 id="类harr特征"><a class="markdownIt-Anchor" href="#类harr特征"></a> 类Harr特征</h3>
+<h3 id="类Harr特征">类Harr特征</h3>
 <p>图像中的特征通常是指，图片的像素点经过一系列的运算之后得到的结果，这些结果可能是向量、矩阵和多维数据等等。类<code>Harr</code>特征是一种反映图像的灰度变化的，像素分模块求差值的一种特征。</p>
-<h4 id="harr特征类别"><a class="markdownIt-Anchor" href="#harr特征类别"></a> Harr特征类别</h4>
+<h4 id="Harr特征类别">Harr特征类别</h4>
 <p>可分为三类：边缘特征、线性特征、中心特征和对角线特征</p>
-<h3 id="边缘特征"><a class="markdownIt-Anchor" href="#边缘特征"></a> 边缘特征</h3>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070002088.jpg" alt="" /></p>
-<h3 id="线性特征"><a class="markdownIt-Anchor" href="#线性特征"></a> 线性特征</h3>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070003931.jpg" alt="" /></p>
-<h3 id="中心特征和对角线特征"><a class="markdownIt-Anchor" href="#中心特征和对角线特征"></a> 中心特征和对角线特征</h3>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070004843.jpg" alt="" /></p>
+<h3 id="边缘特征">边缘特征</h3>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070002088.jpg" alt=""></p>
+<h3 id="线性特征">线性特征</h3>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070003931.jpg" alt=""></p>
+<h3 id="中心特征和对角线特征">中心特征和对角线特征</h3>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209070004843.jpg" alt=""></p>
 </blockquote>
-<h3 id="使用harr分类器检测人脸"><a class="markdownIt-Anchor" href="#使用harr分类器检测人脸"></a> 使用Harr分类器检测人脸</h3>
+<h3 id="使用Harr分类器检测人脸">使用Harr分类器检测人脸</h3>
 <p><code>OpenCV</code> 中的人脸训练模型格式为 <code>XML</code>，可以从 <a href="https://github.com/opencv/opencv/tree/master/data/haarcascades">https://github.com/opencv/opencv/tree/master/data/haarcascades</a> 。在此我们使用<code>Harrcascade_frontalface_default.xml</code>模型检测人脸。</p>
 <p>声明分类器：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">CascadeClassifier(path)</span><br></pre></td></tr></table></figure>
@@ -847,8 +872,109 @@
 </ol>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;1.png&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">grayimg=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line">faces = face_cascade.detectMultiScale(grayimg, <span class="number">1.2</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    <span class="built_in">print</span>((x,y,w,h))</span><br><span class="line">    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;out.jpg&#x27;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062357868.png" alt="" /></p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062358009.jpg" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062357868.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062358009.jpg" alt=""></p>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV的基本操作</title>
+    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs">图像输入输出模块imgcodecs</h1>
+<h2 id="读取图像文件">读取图像文件</h2>
+<p>读取图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第二个参数指定图片被读取的方式：</p>
+<ul>
+<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
+<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
+<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
+</ul>
+<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>读取失败返回None</p>
+<h2 id="读取照片的高度与宽度">读取照片的高度与宽度</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
+<h2 id="保存照片">保存照片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="OpenCV界面编程">OpenCV界面编程</h1>
+<h2 id="新建窗口函数">新建窗口函数</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>flags</p>
+<ul>
+<li>
+<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
+</li>
+<li>
+<p>cv2.WINDOW_NORMAL</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="单窗口显示多图片">单窗口显示多图片</h1>
+<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" title="" alt="" data-align="center">
+<h1 id="销毁窗口">销毁窗口</h1>
+<ul>
+<li>
+<p>cv2.destroyWindow(winname)</p>
+</li>
+<li>
+<p>cv2.destroyAllWindows(winname)</p>
+</li>
+<li>
+<p>cv2.resizeWindow(winname,width,height)</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="鼠标事件">鼠标事件</h1>
+<p>OpenCV使用setMousecallback设定</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
+<p>鼠标事件event</p>
+<blockquote>
+<p>enum<br>
+{<br>
+EVENT_MOUSEMOVE      =0,   //鼠标移动<br>
+EVENT_LBUTTONDOWN    =1,   //按下左键<br>
+EVENT_RBUTTONDOWN    =2,   //按下右键<br>
+EVENT_MBUTTONDOWN    =3,   //按下中键<br>
+EVENT_LBUTTONUP      =4,   //放开左键<br>
+EVENT_RBUTTONUP      =5,   //放开右键<br>
+EVENT_MBUTTONUP      =6,   //放开中键<br>
+EVENT_LBUTTONDBLCLK  =7,   //左键双击<br>
+EVENT_RBUTTONDBLCLK  =8,   //右键双击<br>
+EVENT_MBUTTONDBLCLK  =9,   //中键双击<br>
+EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br>
+};</p>
+</blockquote>
+<p>鼠标事件flags</p>
+<blockquote>
+<p>enum<br>
+{<br>
+CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br>
+CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br>
+CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br>
+CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br>
+CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br>
+CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br>
+};</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="滑动条事件">滑动条事件</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102320942.png" alt=""></p>
 ]]></content>
       <categories>
         <category>OpenCV</category>
@@ -861,11 +987,11 @@
   <entry>
     <title>OpenCV:数组矩阵</title>
     <url>/2022/09/11/OpenCV-%E6%95%B0%E7%BB%84%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<h1 id="ndarray对象"><a class="markdownIt-Anchor" href="#ndarray对象"></a> ndarray对象</h1>
+    <content><![CDATA[<h1 id="ndarray对象">ndarray对象</h1>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">array</span>(<span class="params">p_object, dtype=<span class="literal">None</span>, *args, **kwargs</span>):</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],ndmin=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],dtype=<span class="built_in">complex</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="numpy数据类型"><a class="markdownIt-Anchor" href="#numpy数据类型"></a> NumPy数据类型</h1>
+<h1 id="NumPy数据类型">NumPy数据类型</h1>
 <table>
 <thead>
 <tr>
@@ -953,150 +1079,49 @@
 </tbody>
 </table>
 <p>numpy 的数值类型实际上是 dtype 对象的实例，并对应唯一的字符，包括 np.bool_，np.int32，np.float32，等等。</p>
-<h1 id="新建数组"><a class="markdownIt-Anchor" href="#新建数组"></a> 新建数组</h1>
+<h1 id="新建数组">新建数组</h1>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.empty([<span class="number">3</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>为随机值，未初始化</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.zeros([<span class="number">3</span>,<span class="number">2</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.ones([<span class="number">3</span>,<span class="number">2</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<h1 id="从已有的数组创建数组"><a class="markdownIt-Anchor" href="#从已有的数组创建数组"></a> 从已有的数组创建数组</h1>
+<h1 id="从已有的数组创建数组">从已有的数组创建数组</h1>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>]]</span><br><span class="line">a=np.asarray(x)</span><br><span class="line"><span class="built_in">print</span>(a.shape)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">str</span>=<span class="string">b&#x27;hello&#x27;</span></span><br><span class="line">a=np.frombuffer(<span class="built_in">str</span>,dtype=<span class="string">&#x27;S1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">list</span>=<span class="built_in">range</span>(<span class="number">20</span>)</span><br><span class="line">it=<span class="built_in">iter</span>(<span class="built_in">list</span>)</span><br><span class="line">x=np.fromiter(it,dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<h1 id="从数值范围创建数组"><a class="markdownIt-Anchor" href="#从数值范围创建数组"></a> 从数值范围创建数组</h1>
+<h1 id="从数值范围创建数组">从数值范围创建数组</h1>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=np.arange(<span class="number">12</span>,dtype=<span class="built_in">float</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">9</span>,<span class="number">10</span>,dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.logspace(<span class="number">0</span>,<span class="number">9</span>,<span class="number">10</span>,base=<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<h1 id="切片与索引"><a class="markdownIt-Anchor" href="#切片与索引"></a> 切片与索引</h1>
+<h1 id="切片与索引">切片与索引</h1>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">15</span>)</span><br><span class="line">a=<span class="built_in">slice</span>(<span class="number">2</span>,<span class="number">10</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(x[a])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">15</span>)</span><br><span class="line">a=x[<span class="number">2</span>:<span class="number">12</span>:<span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]])</span><br><span class="line"><span class="built_in">print</span>(x[...,<span class="number">1</span>])<span class="comment">#第二列</span></span><br><span class="line"><span class="built_in">print</span>(x[<span class="number">1</span>,...])<span class="comment">#第二行</span></span><br><span class="line"><span class="built_in">print</span>(x[...,<span class="number">1</span>:])<span class="comment">#第二列及以下</span></span><br></pre></td></tr></table></figure>
-<h1 id="高级索引"><a class="markdownIt-Anchor" href="#高级索引"></a> 高级索引</h1>
-<h2 id="整数数组索引"><a class="markdownIt-Anchor" href="#整数数组索引"></a> 整数数组索引</h2>
+<h1 id="高级索引">高级索引</h1>
+<h2 id="整数数组索引">整数数组索引</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment">#获取(0,0),(1,1),(2,0)</span></span><br><span class="line">x=np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">y=x[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]]</span><br><span class="line"><span class="built_in">print</span>(y)      </span><br><span class="line">/*</span><br><span class="line">[<span class="number">1</span> <span class="number">4</span> <span class="number">5</span>]</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<h2 id="布尔索引"><a class="markdownIt-Anchor" href="#布尔索引"></a> 布尔索引</h2>
+<h2 id="布尔索引">布尔索引</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">1</span>,<span class="number">50</span>)</span><br><span class="line"><span class="built_in">print</span>(x[x&gt;<span class="number">10</span>])    </span><br><span class="line">/*</span><br><span class="line">[<span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span> <span class="number">16</span> <span class="number">17</span> <span class="number">18</span> <span class="number">19</span> <span class="number">20</span> <span class="number">21</span> <span class="number">22</span> <span class="number">23</span> <span class="number">24</span> <span class="number">25</span> <span class="number">26</span> <span class="number">27</span> <span class="number">28</span> <span class="number">29</span> <span class="number">30</span> <span class="number">31</span> <span class="number">32</span> <span class="number">33</span> <span class="number">34</span></span><br><span class="line"> <span class="number">35</span> <span class="number">36</span> <span class="number">37</span> <span class="number">38</span> <span class="number">39</span> <span class="number">40</span> <span class="number">41</span> <span class="number">42</span> <span class="number">43</span> <span class="number">44</span> <span class="number">45</span> <span class="number">46</span> <span class="number">47</span> <span class="number">48</span> <span class="number">49</span>]</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<h2 id="花式索引"><a class="markdownIt-Anchor" href="#花式索引"></a> 花式索引</h2>
+<h2 id="花式索引">花式索引</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">32</span>).reshape(<span class="number">4</span>,<span class="number">8</span>)</span><br><span class="line"><span class="built_in">print</span>(x[[<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>]])    </span><br><span class="line">/*</span><br><span class="line">[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [<span class="number">16</span> <span class="number">17</span> <span class="number">18</span> <span class="number">19</span> <span class="number">20</span> <span class="number">21</span> <span class="number">22</span> <span class="number">23</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]]</span><br><span class="line">*/ </span><br></pre></td></tr></table></figure>
-<h1 id="迭代数组"><a class="markdownIt-Anchor" href="#迭代数组"></a> 迭代数组</h1>
-<h2 id="迭代对象nditer"><a class="markdownIt-Anchor" href="#迭代对象nditer"></a> 迭代对象nditer</h2>
+<h1 id="迭代数组">迭代数组</h1>
+<h2 id="迭代对象nditer">迭代对象nditer</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">6</span>).reshape(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> np.nditer(x):</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">&quot;,&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="控制遍历顺序"><a class="markdownIt-Anchor" href="#控制遍历顺序"></a> 控制遍历顺序</h2>
+<h2 id="控制遍历顺序">控制遍历顺序</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">6</span>).reshape(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> np.nditer(x,order=<span class="string">&#x27;F&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">&quot;,&quot;</span>)     </span><br><span class="line">/*</span><br><span class="line"><span class="number">0</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">6</span>).reshape(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> np.nditer(x,order=<span class="string">&#x27;C&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">&quot;,&quot;</span>)      </span><br><span class="line">/*</span><br><span class="line"><span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<h2 id="修改数组中元素的值"><a class="markdownIt-Anchor" href="#修改数组中元素的值"></a> 修改数组中元素的值</h2>
+<h2 id="修改数组中元素的值">修改数组中元素的值</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> np.nditer(x,op_flags=[<span class="string">&#x27;readwrite&#x27;</span>]):</span><br><span class="line">    i[...]=<span class="number">2</span>*i</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-<h2 id="使用外部循环"><a class="markdownIt-Anchor" href="#使用外部循环"></a> 使用外部循环</h2>
+<h2 id="使用外部循环">使用外部循环</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> np.nditer(x,flags=[<span class="string">&#x27;external_loop&#x27;</span>],order=<span class="string">&#x27;F&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">&#x27;,&#x27;</span>)    </span><br><span class="line">/*</span><br><span class="line">[ <span class="number">0</span> <span class="number">20</span> <span class="number">40</span>],[ <span class="number">5</span> <span class="number">25</span> <span class="number">45</span>],[<span class="number">10</span> <span class="number">30</span> <span class="number">50</span>],[<span class="number">15</span> <span class="number">35</span> <span class="number">55</span>],</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<h2 id="广播迭代"><a class="markdownIt-Anchor" href="#广播迭代"></a> 广播迭代</h2>
+<h2 id="广播迭代">广播迭代</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">b=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> np.nditer([x,b]):</span><br><span class="line">    <span class="built_in">print</span>(i,j)</span><br></pre></td></tr></table></figure>
-<h1 id="数组操作"><a class="markdownIt-Anchor" href="#数组操作"></a> 数组操作</h1>
-<h2 id="修改数组形状"><a class="markdownIt-Anchor" href="#修改数组形状"></a> 修改数组形状</h2>
+<h1 id="数组操作">数组操作</h1>
+<h2 id="修改数组形状">修改数组形状</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> x.flat:</span><br><span class="line">    <span class="built_in">print</span>(j,end=<span class="string">&quot; &quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="反转数组"><a class="markdownIt-Anchor" href="#反转数组"></a> 反转数组</h2>
+<h2 id="反转数组">反转数组</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(np.transpose(x))</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV的基本操作</title>
-    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
-<h2 id="读取图像文件"><a class="markdownIt-Anchor" href="#读取图像文件"></a> 读取图像文件</h2>
-<p>读取图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>第二个参数指定图片被读取的方式：</p>
-<ul>
-<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
-<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
-<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
-</ul>
-<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>读取失败返回None</p>
-<h2 id="读取照片的高度与宽度"><a class="markdownIt-Anchor" href="#读取照片的高度与宽度"></a> 读取照片的高度与宽度</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
-<h2 id="保存照片"><a class="markdownIt-Anchor" href="#保存照片"></a> 保存照片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="opencv界面编程"><a class="markdownIt-Anchor" href="#opencv界面编程"></a> OpenCV界面编程</h1>
-<h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>flags</p>
-<ul>
-<li>
-<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
-</li>
-<li>
-<p>cv2.WINDOW_NORMAL</p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
-<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" title="" alt="" data-align="center">
-<h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
-<ul>
-<li>
-<p>cv2.destroyWindow(winname)</p>
-</li>
-<li>
-<p>cv2.destroyAllWindows(winname)</p>
-</li>
-<li>
-<p>cv2.resizeWindow(winname,width,height)</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
-<p>OpenCV使用setMousecallback设定</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
-<p>鼠标事件event</p>
-<blockquote>
-<p>enum<br />
-{<br />
-EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
-EVENT_LBUTTONDOWN    =1,   //按下左键<br />
-EVENT_RBUTTONDOWN    =2,   //按下右键<br />
-EVENT_MBUTTONDOWN    =3,   //按下中键<br />
-EVENT_LBUTTONUP      =4,   //放开左键<br />
-EVENT_RBUTTONUP      =5,   //放开右键<br />
-EVENT_MBUTTONUP      =6,   //放开中键<br />
-EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
-EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
-EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
-EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
-};</p>
-</blockquote>
-<p>鼠标事件flags</p>
-<blockquote>
-<p>enum<br />
-{<br />
-CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
-CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
-CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
-CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
-CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
-CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
-};</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102320942.png" alt="" /></p>
-]]></content>
       <categories>
         <category>OpenCV</category>
       </categories>
@@ -1108,9 +1133,9 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
   <entry>
     <title>Python爬虫：爬取豆瓣电影榜Top250</title>
     <url>/2022/08/16/Python%E7%88%AC%E8%99%AB%EF%BC%9A%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%A6%9CTop250/</url>
-    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+    <content><![CDATA[<h1 id="前言">前言</h1>
 <p>现在很多网站都做了反爬，导致单一使用requests库无法爬到东西，经过全网实验，我发现豆瓣的电影排行榜很容易爬取下来的</p>
-<h1 id="实现过程"><a class="markdownIt-Anchor" href="#实现过程"></a> 实现过程</h1>
+<h1 id="实现过程">实现过程</h1>
 <p>我们使用浏览器<mark>检查</mark>工具</p>
 <img src="https://s2.loli.net/2022/08/17/cm8A7gdG2H691fD.png" title="" alt="" data-align="center">
 <p>分析每一项的HTML代码</p>
@@ -1123,9 +1148,9 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>然后网站是以GET方式25为增量换页的</p>
 <figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://movie.douban.com/top250?start=0&amp;filter=</span><br><span class="line">https://movie.douban.com/top250?start=25&amp;filter=</span><br></pre></td></tr></table></figure>
 <p>有了以上思路就可以完成爬虫了</p>
-<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
+<h1 id="代码-8">代码</h1>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests,re,csv</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getpage</span>(<span class="params">url</span>):</span><br><span class="line">    headers=&#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    response=requests.get(url,headers=headers)</span><br><span class="line">    <span class="keyword">if</span> response.status_code==<span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> response.text</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parsehtml</span>(<span class="params">html</span>):</span><br><span class="line">    pattern=re.<span class="built_in">compile</span>(</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;item&quot;&gt;.*?&lt;em class=&quot;&quot;&gt;(.*?)&lt;/em&gt;.*?&lt;span class=&quot;title&quot;&gt;(.*?)&lt;/span&gt;.*?&lt;br&gt;(.*?) / .*? / (.*?)&lt;/p&gt;.*?property=&quot;v:average&quot;&gt;(.*?)&lt;/span&gt;&#x27;</span>,re.S)</span><br><span class="line">    items=re.findall(pattern,html)</span><br><span class="line">    <span class="keyword">return</span> items;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">write</span>(<span class="params">items</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;豆瓣电影Top250.csv&quot;</span>,mode=<span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8-sig&quot;</span>, newline=<span class="string">&quot;&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        writer = csv.writer(f)</span><br><span class="line">        headerList=[<span class="string">&#x27;排名&#x27;</span>,<span class="string">&#x27;电影名&#x27;</span>,<span class="string">&#x27;上映时间&#x27;</span>,<span class="string">&#x27;分类&#x27;</span>,<span class="string">&#x27;豆瓣评分&#x27;</span>]</span><br><span class="line">        writer.writerow(headerList)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">            tmp=[]</span><br><span class="line">            tmp.append(i[<span class="number">0</span>])</span><br><span class="line">            tmp.append(i[<span class="number">1</span>])</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">2</span>]).strip())</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">3</span>]).strip())</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">4</span>]).strip())</span><br><span class="line">            <span class="built_in">print</span>(tmp[<span class="number">0</span>],tmp[<span class="number">1</span>],tmp[<span class="number">2</span>],tmp[<span class="number">3</span>],tmp[<span class="number">4</span>])</span><br><span class="line">            writer.writerow(tmp)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    items=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">250</span>,<span class="number">25</span>):</span><br><span class="line">        url=<span class="string">&#x27;https://movie.douban.com/top250?start=&#123;&#125;&amp;filter=&#x27;</span>.<span class="built_in">format</span>(i)</span><br><span class="line">        text=getpage(url)</span><br><span class="line">        items+=parsehtml(text)</span><br><span class="line">    write(items)</span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
-<h1 id="结果"><a class="markdownIt-Anchor" href="#结果"></a> 结果</h1>
+<h1 id="结果">结果</h1>
 <img src="https://s2.loli.net/2022/08/17/4GgyqDRSI9ljcNv.png" title="" alt="" data-align="center">
 <center>非常基础的爬虫入门例子</center>
 ]]></content>
@@ -1140,8 +1165,8 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
   <entry>
     <title>Qt工具类</title>
     <url>/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="字符串类"><a class="markdownIt-Anchor" href="#字符串类"></a> 字符串类</h1>
-<h2 id="操作字符串"><a class="markdownIt-Anchor" href="#操作字符串"></a> 操作字符串</h2>
+    <content><![CDATA[<h1 id="字符串类">字符串类</h1>
+<h2 id="操作字符串">操作字符串</h2>
 <ol>
 <li>
 <p>“+”</p>
@@ -1168,7 +1193,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 </blockquote>
 </li>
 </ol>
-<h2 id="查询字符串"><a class="markdownIt-Anchor" href="#查询字符串"></a> 查询字符串</h2>
+<h2 id="查询字符串">查询字符串</h2>
 <ol>
 <li>
 <p>QString::startsWith()</p>
@@ -1184,7 +1209,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>操作符 &gt;=&lt;</p>
 </li>
 </ol>
-<h2 id="字符串转换"><a class="markdownIt-Anchor" href="#字符串转换"></a> 字符串转换</h2>
+<h2 id="字符串转换">字符串转换</h2>
 <ul>
 <li>
 <p>toInt()</p>
@@ -1203,8 +1228,8 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 </li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QString str=<span class="string">&quot;welcome to you&quot;</span>;</span><br><span class="line">QByteArray b=str.<span class="built_in">toAscii</span>();</span><br><span class="line">qDebug&lt;&lt;b;</span><br><span class="line">b.<span class="built_in">append</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line"><span class="built_in">qDebug</span>()&lt;&lt;ba.<span class="built_in">data</span>();</span><br></pre></td></tr></table></figure>
-<h1 id="容器类"><a class="markdownIt-Anchor" href="#容器类"></a> 容器类</h1>
-<h2 id="qlist类"><a class="markdownIt-Anchor" href="#qlist类"></a> QList类</h2>
+<h1 id="容器类">容器类</h1>
+<h2 id="QList类">QList类</h2>
 <ul>
 <li>
 <p>QList::append()</p>
@@ -1217,11 +1242,11 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QList&lt;QString&gt;list;</span><br><span class="line"><span class="function">QString <span class="title">str</span><span class="params">(<span class="string">&quot;sdsd&quot;</span>)</span></span>;</span><br><span class="line">list&lt;&lt;str;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="qlinkedlist类"><a class="markdownIt-Anchor" href="#qlinkedlist类"></a> QLinkedList类</h2>
+<h2 id="QLinkedList类">QLinkedList类</h2>
 <p>QLinkedList是一个链式列表，以非连续的内存块保存</p>
-<h2 id="qvector类"><a class="markdownIt-Anchor" href="#qvector类"></a> QVector类</h2>
+<h2 id="QVector类">QVector类</h2>
 <p>相邻的内存储存给定数据类型的一组数值</p>
-<h2 id="java风格迭代器遍历容器"><a class="markdownIt-Anchor" href="#java风格迭代器遍历容器"></a> Java风格迭代器遍历容器</h2>
+<h2 id="Java风格迭代器遍历容器">Java风格迭代器遍历容器</h2>
 <center>*两种不同类型的Java风格迭代器数据类型*</center>
 <table>
 <thead>
@@ -1250,7 +1275,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 </tbody>
 </table>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QCoreApplication&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QDebug&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">QCoreApplication <span class="title">a</span><span class="params">(argc,argv)</span></span>;</span><br><span class="line">    QList&lt;<span class="type">int</span>&gt;list;</span><br><span class="line">    list&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="number">2</span>&lt;&lt;<span class="number">3</span>&lt;&lt;<span class="number">4</span>&lt;&lt;<span class="number">5</span>;</span><br><span class="line">    QListIterator&lt;<span class="type">int</span>&gt;<span class="built_in">i</span>(list);</span><br><span class="line">    <span class="keyword">for</span>(;i.<span class="built_in">hasNext</span>();)</span><br><span class="line">        <span class="built_in">qDebug</span>()&lt;&lt;i.next;</span><br><span class="line">    <span class="keyword">return</span> a.exec;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="qlistiterator"><a class="markdownIt-Anchor" href="#qlistiterator"></a> QListIterator</h3>
+<h3 id="QListIterator">QListIterator</h3>
 <ul>
 <li>
 <p>QListIterator::toBack()</p>
@@ -1277,7 +1302,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>QListIterator::findPrevious()</p>
 </li>
 </ul>
-<h2 id="stl风格迭代器遍历容器"><a class="markdownIt-Anchor" href="#stl风格迭代器遍历容器"></a> STL风格迭代器遍历容器</h2>
+<h2 id="STL风格迭代器遍历容器">STL风格迭代器遍历容器</h2>
 <CENTER>STL风格迭代器数据类型*</CENTER>
 <table>
 <thead>
@@ -1317,9 +1342,9 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
   <entry>
     <title>Hello World</title>
     <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
+    <content><![CDATA[<h2 id="在Hexo上写文章">在Hexo上写文章</h2>
 <p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
-<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
+<h2 id="Hello-World">Hello World</h2>
 <p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
 ]]></content>
       <categories>
@@ -1332,7 +1357,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
   <entry>
     <title>requests库的使用</title>
     <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
+    <content><![CDATA[<h2 id="请求">请求</h2>
 <ul>
 <li>
 <p>post(‘url’)</p>
@@ -1353,15 +1378,15 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>get(‘url’)</p>
 </li>
 </ul>
-<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
+<h3 id="GET请求">GET请求</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
 <p>下载图片</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
-<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
+<h3 id="POST请求">POST请求</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
 <p>文件上传</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
+<h3 id="会话维持">会话维持</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
@@ -1373,58 +1398,9 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
-    <title>刷题笔记㈠</title>
-    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
-    <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
-<h1 id="面试题-0805-递归乘法-力扣leetcode"><a class="markdownIt-Anchor" href="#面试题-0805-递归乘法-力扣leetcode"></a> <a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
-<blockquote>
-<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="2119-反转两次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#2119-反转两次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>老实人真会反转两次</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-offer-58-ii-左旋转字符串-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-58-ii-左旋转字符串-力扣leetcode"></a> <a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>越界处理用取模</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="136-只出现一次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#136-只出现一次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
-<p>本题采用异或运算</p>
-<blockquote>
-<p><strong>异或运算性质</strong></p>
-<blockquote>
-<ol>
-<li>a^a=0；</li>
-<li>a^0=a;</li>
-<li>a<sup>b=b</sup>a</li>
-</ol>
-</blockquote>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="268-丢失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#268-丢失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>求和做减法</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>urllib库的使用</title>
     <url>/2022/08/09/urllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
+    <content><![CDATA[<h2 id="开始-2">开始</h2>
 <p>urllib是Python内置的HTTP请求模块，其包含以下四个模块</p>
 <ul>
 <li>
@@ -1440,14 +1416,14 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>robotparser:识别网站robots.txt文件，判断哪些网站可以爬。</p>
 </li>
 </ul>
-<h2 id="请求发送"><a class="markdownIt-Anchor" href="#请求发送"></a> 请求发送</h2>
+<h2 id="请求发送">请求发送</h2>
 <ol>
 <li>
-<h3 id="urlopen"><a class="markdownIt-Anchor" href="#urlopen"></a> urlopen()</h3>
+<h3 id="urlopen">urlopen()</h3>
 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">response=urllib.request.urlopen(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))<span class="comment">#read可以返回网页内容， 网页编码为UTF-8需要用decode,不然会有转义字符</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response)) <span class="comment">#类型</span></span><br><span class="line"><span class="built_in">print</span>(response.status) <span class="comment">#获取响应状态码</span></span><br><span class="line"><span class="built_in">print</span>(response.getheaders()) <span class="comment">#获取响应头rs())</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/08/09/rbAdLaeVoSgvB8m.png" alt="运行结果" /></p>
+<p><img src="https://s2.loli.net/2022/08/09/rbAdLaeVoSgvB8m.png" alt="运行结果"></p>
 <ul>
 <li>
 <p>data参数</p>
@@ -1465,7 +1441,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 </ul>
 <ol start="2">
 <li>
-<h3 id="request"><a class="markdownIt-Anchor" href="#request"></a> Request()</h3>
+<h3 id="Request">Request()</h3>
 <blockquote>
 <p><a href="https://docs.python.org/3/library/urllib.request.html">urllib.request — Extensible library for opening URLs — Python 3.10.6 documentation</a></p>
 </blockquote>
@@ -1493,8 +1469,8 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,parse</span><br><span class="line">url=<span class="string">&#x27;http://httpbin.org/post&#x27;</span></span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">&#x27;Host&#x27;</span>:<span class="string">&#x27;httpbin.org&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.47&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">dict</span>=&#123;<span class="string">&#x27;b&#x27;</span>:<span class="number">1</span>&#125;</span><br><span class="line">data=<span class="built_in">bytes</span>(parse.urlencode(<span class="built_in">dict</span>),encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">data=<span class="built_in">bytes</span>(parse.urlencode(&#123;<span class="string">&#x27;B&#x27;</span>:<span class="string">&#x27;1&#x27;</span>&#125;),encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">req=request.Request(url,data=data,headers=headers,method=<span class="string">&#x27;POST&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">另一种请求头的添加方式</span></span><br><span class="line"><span class="string">req=request.Request(url=url,data=data,method=&#x27;POST&#x27;)</span></span><br><span class="line"><span class="string">req.add_header(&#x27;Host&#x27;,&#x27;httpbin.org&#x27;,)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">response=request.urlopen(req)</span><br><span class="line"><span class="built_in">print</span>(response.read().deco</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="进阶用法"><a class="markdownIt-Anchor" href="#进阶用法"></a> 进阶用法</h2>
-<h3 id="handler"><a class="markdownIt-Anchor" href="#handler"></a> Handler</h3>
+<h2 id="进阶用法">进阶用法</h2>
+<h3 id="Handler">Handler</h3>
 <p>现在我们介绍Handler</p>
 <p>比如：</p>
 <blockquote>
@@ -1505,41 +1481,41 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>HTTPPasswordMgr:用于管理密码，维护了用户名和密码</p>
 <p>HTTPBasicAuthHandler:用于管理认证</p>
 </blockquote>
-<h3 id="cookies"><a class="markdownIt-Anchor" href="#cookies"></a> Cookies</h3>
+<h3 id="Cookies">Cookies</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">filename=<span class="string">&#x27;cookies.txt&#x27;</span></span><br><span class="line">cookie=http.cookiejar.MozillaCookieJar(filename)</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line">cookie.save(ignore_discard=<span class="literal">True</span>,ignore_expires=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.CookieJar()</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie:</span><br><span class="line">    <span class="built_in">print</span>(item.</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.LWPCookieJar()</span><br><span class="line">cookie.load(<span class="string">&#x27;cookies.txt&#x27;</span>,ignore_expires=<span class="number">1</span>,ignore_discard=<span class="number">1</span>)</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read.decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
-<h2 id="异常处理"><a class="markdownIt-Anchor" href="#异常处理"></a> 异常处理</h2>
-<h3 id="urlerror"><a class="markdownIt-Anchor" href="#urlerror"></a> URLError</h3>
+<h2 id="异常处理">异常处理</h2>
+<h3 id="URLError">URLError</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br></pre></td></tr></table></figure>
-<h3 id="httperror"><a class="markdownIt-Anchor" href="#httperror"></a> HTTPError</h3>
+<h3 id="HTTPError">HTTPError</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line">    <span class="built_in">print</span>(e.code)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
 <p>URLError是HTTPError的父类</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line">    <span class="built_in">print</span>(e.code)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;SUCCESS!!&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="解析链接"><a class="markdownIt-Anchor" href="#解析链接"></a> 解析链接</h2>
-<h3 id="urlparse"><a class="markdownIt-Anchor" href="#urlparse"></a> urlparse</h3>
+<h2 id="解析链接">解析链接</h2>
+<h3 id="urlparse">urlparse</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line">result=urlparse(<span class="string">&#x27;https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E6%88%96%E5%B0%86%E9%9D%A2%E4%B8%B4%E6%9C%80%E9%AB%9830%E5%B9%B4%E5%88%91%E6%9C%9F&amp;tn=baiduhome_pg&amp;usm=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rsv_pq=beff06110014fb0c&amp;oq=%E9%BB%91%E5%B1%B1%E5%8F%91%E7%94%9F%E6%9E%AA%E5%87%BB%E4%BA%8B%E4%BB%B6%E8%87%B411%E6%AD%BB6%E4%BC%A4&amp;rsv_t=203cnvqhWV3frPIJkl4SxrljZIVFGNv6ZJkChXgM4YBU2qiBwG0dd0rTfPGYEJdqPkDg&amp;rqid=beff06110014fb0c&amp;rsf=a7183c00b74706d91bca215ee108b466_1_15_2&amp;rsv_dl=0_right_fyb_pchot_20811&amp;sa=0_right_fyb_pchot_20811&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-<h3 id="urlunparse"><a class="markdownIt-Anchor" href="#urlunparse"></a> urlunparse()</h3>
+<h3 id="urlunparse">urlunparse()</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunparse</span><br><span class="line">data=[<span class="string">&#x27;https&#x27;</span>,<span class="string">&#x27;wwww.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>,<span class="string">&#x27;user&#x27;</span>,<span class="string">&#x27;a=6&#x27;</span>,<span class="string">&#x27;comment&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(urlunparse(data))</span><br></pre></td></tr></table></figure>
-<h3 id="urlsplit"><a class="markdownIt-Anchor" href="#urlsplit"></a> urlsplit</h3>
+<h3 id="urlsplit">urlsplit</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
-<h3 id="urlunsplit"><a class="markdownIt-Anchor" href="#urlunsplit"></a> urlunsplit()</h3>
+<h3 id="urlunsplit">urlunsplit()</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunsplit</span><br><span class="line">data=[<span class="string">&#x27;http&#x27;</span>,<span class="string">&#x27;www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>,<span class="string">&#x27;a=0&#x27;</span>,<span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(urlunsplit(data))</span><br></pre></td></tr></table></figure>
-<h3 id="urljoin"><a class="markdownIt-Anchor" href="#urljoin"></a> urljoin()</h3>
+<h3 id="urljoin">urljoin()</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urljoin</span><br><span class="line"><span class="built_in">print</span>(urljoin(<span class="string">&#x27;http://www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>))</span><br></pre></td></tr></table></figure>
-<h3 id="urlencode"><a class="markdownIt-Anchor" href="#urlencode"></a> urlencode</h3>
+<h3 id="urlencode">urlencode</h3>
 <p>在GET中加参数</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">params=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;s&#x27;</span>,</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;2&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">base_url=<span class="string">&#x27;http//www.baidu.com&#x27;</span></span><br><span class="line">urll=base_url+urlencode(params)</span><br><span class="line"><span class="built_in">print</span>(urll)</span><br></pre></td></tr></table></figure>
-<h3 id="parse_qs"><a class="markdownIt-Anchor" href="#parse_qs"></a> parse_qs()</h3>
+<h3 id="parse-qs">parse_qs()</h3>
 <p>反序列化</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit,parse_qs</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(parse_qs(result.query))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="quote"><a class="markdownIt-Anchor" href="#quote"></a> quote()</h3>
+<h3 id="quote">quote()</h3>
 <p>将内容转为URL编码</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin</span><br><span class="line">keyword=<span class="string">&#x27;python&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;http://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br></pre></td></tr></table></figure>
-<h3 id="unquote"><a class="markdownIt-Anchor" href="#unquote"></a> unquote()</h3>
+<h3 id="unquote">unquote()</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin,unquote</span><br><span class="line">keyword=<span class="string">&#x27;你好&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;https://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br><span class="line"><span class="built_in">print</span>(unquote(url))</span><br></pre></td></tr></table></figure>
-<h2 id="robots协议"><a class="markdownIt-Anchor" href="#robots协议"></a> Robots协议</h2>
-<h3 id="robotparser"><a class="markdownIt-Anchor" href="#robotparser"></a> robotparser()</h3>
+<h2 id="Robots协议">Robots协议</h2>
+<h3 id="robotparser">robotparser()</h3>
 <ul>
 <li>
 <p><strong>set_ur()</strong>:设置Robots.txt链接</p>
@@ -1571,32 +1547,81 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
+    <title>刷题笔记㈠</title>
+    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
+    <content><![CDATA[<h1 id="额，感觉这很奇怪，下次不写了"><em>额，感觉这很奇怪，下次不写了</em></h1>
+<h1 id="面试题-08-05-递归乘法-力扣（LeetCode）"><a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
+<h2 id="思路：">思路：</h2>
+<blockquote>
+<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="2119-反转两次的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>老实人真会反转两次</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-Offer-58-II-左旋转字符串-力扣（LeetCode）"><a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>越界处理用取模</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="136-只出现一次的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
+<p>本题采用异或运算</p>
+<blockquote>
+<p><strong>异或运算性质</strong></p>
+<blockquote>
+<ol>
+<li>a^a=0；</li>
+<li>a^0=a;</li>
+<li>a^b=b^a</li>
+</ol>
+</blockquote>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="268-丢失的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>求和做减法</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-Offer-53-II-0～n-1中缺失的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>爬虫基础</title>
     <url>/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="http基本原理"><a class="markdownIt-Anchor" href="#http基本原理"></a> HTTP基本原理</h1>
+    <content><![CDATA[<h1 id="HTTP基本原理">HTTP基本原理</h1>
 <blockquote>
 <p>参考资料：</p>
 <ul>
 <li><a href="https://www.runoob.com/http/http-tutorial.html">HTTP 教程 | 菜鸟教程 (runoob.com)</a></li>
 </ul>
 </blockquote>
-<hr />
-<h2 id="uri和url"><a class="markdownIt-Anchor" href="#uri和url"></a> URI和URL</h2>
+<hr>
+<h2 id="URI和URL">URI和URL</h2>
 <p>URI:统一资源标识符</p>
 <p>URL:统一资源定位符</p>
 <p>URN:统一资源名称</p>
 <blockquote>
 <p>现在互联网，URN用得很少，一般网页链接🔗称为URL</p>
 </blockquote>
-<hr />
-<h2 id="超文本"><a class="markdownIt-Anchor" href="#超文本"></a> 超文本</h2>
+<hr>
+<h2 id="超文本">超文本</h2>
 <p>网页源代码HTML称为超文本</p>
-<hr />
-<h2 id="http和https"><a class="markdownIt-Anchor" href="#http和https"></a> HTTP和HTTPS</h2>
+<hr>
+<h2 id="HTTP和HTTPS">HTTP和HTTPS</h2>
 <p>HTTP:超文本传输协议</p>
 <p>HTTPS:HTTP下加入SSL层</p>
-<hr />
-<h2 id="http-请求过程"><a class="markdownIt-Anchor" href="#http-请求过程"></a> HTTP 请求过程</h2>
+<hr>
+<h2 id="HTTP-请求过程">HTTP 请求过程</h2>
 <img title="" src="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp" alt="" data-align="inline">
 <p><strong>我们利用浏览器”检查“工具的网络来观察这个过程</strong></p>
 <img title="" src="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png" alt="" data-align="inline">
@@ -1628,8 +1653,8 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>Request Header:请求头</p>
 </li>
 </ul>
-<hr />
-<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
+<hr>
+<h2 id="请求-2">请求</h2>
 <blockquote>
 <p>请求由客户端发出，分为4部分</p>
 <blockquote>
@@ -1649,7 +1674,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 </ul>
 </blockquote>
 </blockquote>
-<h3 id="请求方法"><a class="markdownIt-Anchor" href="#请求方法"></a> 请求方法</h3>
+<h3 id="请求方法">请求方法</h3>
 <p>常见的为：GET和POST</p>
 <blockquote>
 <p>GET 与POST区别</p>
@@ -1664,9 +1689,9 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 </blockquote>
 <p>其他请求方法</p>
 <img title="" src="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png" alt="" data-align="inline">
-<h3 id="请求的网址"><a class="markdownIt-Anchor" href="#请求的网址"></a> 请求的网址</h3>
+<h3 id="请求的网址">请求的网址</h3>
 <p>请求的网址即URL</p>
-<h3 id="请求头"><a class="markdownIt-Anchor" href="#请求头"></a> 请求头</h3>
+<h3 id="请求头">请求头</h3>
 <ul>
 <li>
 <p>Accept:请求报头域，指定客户端接收哪些类型的信息</p>
@@ -1690,11 +1715,11 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>Content-Type:内容类型，一般是指网页中存在的Content-Type，用于定义网络文件的类型和网页的编码，决定文件接收方将以什么形式、什么编码读取这个文件</p>
 </li>
 </ul>
-<h3 id="请求体"><a class="markdownIt-Anchor" href="#请求体"></a> 请求体</h3>
+<h3 id="请求体">请求体</h3>
 <p>请求体承载的是POST的表单数据，对于GET，请求为空</p>
-<hr />
-<h2 id="响应"><a class="markdownIt-Anchor" href="#响应"></a> 响应</h2>
-<h3 id="响应状态码"><a class="markdownIt-Anchor" href="#响应状态码"></a> 响应状态码</h3>
+<hr>
+<h2 id="响应">响应</h2>
+<h3 id="响应状态码">响应状态码</h3>
 <p>常见的 HTTP 状态码：</p>
 <ul>
 <li>200 - 请求成功</li>
@@ -1703,13 +1728,13 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <li>500 - 内部服务器错误</li>
 </ul>
 <p>其它可以参考<a href="https://www.runoob.com/http/http-status-codes.html">HTTP 状态码 | 菜鸟教程</a></p>
-<h3 id="响应头"><a class="markdownIt-Anchor" href="#响应头"></a> 响应头</h3>
+<h3 id="响应头">响应头</h3>
 <p>响应头包含服务器对请求的应答信息，如Content-Type、Sever、Set-Cookie</p>
-<h3 id="响应体"><a class="markdownIt-Anchor" href="#响应体"></a> 响应体</h3>
+<h3 id="响应体">响应体</h3>
 <p>响应体包含响应的正文数据</p>
-<hr />
-<h1 id="网页基础"><a class="markdownIt-Anchor" href="#网页基础"></a> 网页基础</h1>
-<h2 id="网页组成"><a class="markdownIt-Anchor" href="#网页组成"></a> 网页组成</h2>
+<hr>
+<h1 id="网页基础">网页基础</h1>
+<h2 id="网页组成">网页组成</h2>
 <p>网页是由HTML、CSS、JavaScript组成</p>
 <p><em><strong>如果想学爬虫，必须要点Web基础</strong></em></p>
 ]]></content>
@@ -1724,9 +1749,9 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
   <entry>
     <title>计算机网络三级笔记</title>
     <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%89%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="第一章-网络系统结构与设计的基本原则"><a class="markdownIt-Anchor" href="#第一章-网络系统结构与设计的基本原则"></a> 第一章 网络系统结构与设计的基本原则</h1>
-<hr />
-<h2 id="以太网速率分类"><a class="markdownIt-Anchor" href="#以太网速率分类"></a> 以太网速率分类</h2>
+    <content><![CDATA[<h1 id="第一章-网络系统结构与设计的基本原则">第一章 网络系统结构与设计的基本原则</h1>
+<hr>
+<h2 id="以太网速率分类">以太网速率分类</h2>
 <ul>
 <li>
 <p>传统以太网：10Mbit/s</p>
@@ -1738,7 +1763,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>吉比特以太网：10Gbits</p>
 </li>
 </ul>
-<h2 id="csmacd-与-csmaca"><a class="markdownIt-Anchor" href="#csmacd-与-csmaca"></a> CSMA/CD 与 CSMA/CA</h2>
+<h2 id="CSMA-CD-与-CSMA-CA">CSMA/CD 与 CSMA/CA</h2>
 <ul>
 <li>
 <p>CSMA/CD（Carrier Sense Multiple Access/Collision Detection，带有冲突检测的载波侦听多路存取）。是子网内部所采用的介质访问控制方法。</p>
@@ -1747,15 +1772,15 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>CSMA/CA(Carrier Sense Multiple Access with Collision Avoidance，带有冲突检测的载波监听的多路访问)。利用 ACK 信号来避免冲突的发生。</p>
 </li>
 </ul>
-<h2 id="光纤分布式数据接口fddi与弹性分组环rpr"><a class="markdownIt-Anchor" href="#光纤分布式数据接口fddi与弹性分组环rpr"></a> <em>光纤分布式数据接口</em>(FDDI)与<em>弹性分组环</em>(RPR)</h2>
+<h2 id="光纤分布式数据接口-FDDI-与弹性分组环-RPR"><em>光纤分布式数据接口</em>(FDDI)与<em>弹性分组环</em>(RPR)</h2>
 <ul>
 <li>都是双环结构</li>
 </ul>
-<h2 id="宽带城域网"><a class="markdownIt-Anchor" href="#宽带城域网"></a> 宽带城域网</h2>
-<h3 id="宽带城域网结构"><a class="markdownIt-Anchor" href="#宽带城域网结构"></a> 宽带城域网结构</h3>
+<h2 id="宽带城域网">宽带城域网</h2>
+<h3 id="宽带城域网结构">宽带城域网结构</h3>
 <img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202208312306948.png" title="" alt="" data-align="center">  
-<h3 id="宽带城域网网络平台各层功能"><a class="markdownIt-Anchor" href="#宽带城域网网络平台各层功能"></a> 宽带城域网网络平台各层功能</h3>
-<h4 id="核心交换层核心层"><a class="markdownIt-Anchor" href="#核心交换层核心层"></a> 核心交换层（核心层）</h4>
+<h3 id="宽带城域网网络平台各层功能">宽带城域网网络平台各层功能</h3>
+<h4 id="核心交换层（核心层）">核心交换层（核心层）</h4>
 <ul>
 <li>
 <p>主要承担高速数据交换的功能</p>
@@ -1770,7 +1795,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>将多个汇聚层连接起来，为汇聚层的网络提供高速分组转发，为整个城域网提供一个高速、安全并具有QoS 保障能力的数据传输环境。</p>
 </li>
 </ul>
-<h4 id="边缘汇聚层汇聚层"><a class="markdownIt-Anchor" href="#边缘汇聚层汇聚层"></a> 边缘汇聚层（汇聚层）</h4>
+<h4 id="边缘汇聚层（汇聚层）">边缘汇聚层（汇聚层）</h4>
 <ul>
 <li>
 <p>主要承担路由与流量汇聚的功能</p>
@@ -1785,7 +1810,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <p>根据接入层的用户流量，进行本地路由、过滤、流量均衡、QoS 优先级管理，以及安全控制、IP 地址转换、流量整形等处理。</p>
 </li>
 </ul>
-<h4 id="用户接入层接入层"><a class="markdownIt-Anchor" href="#用户接入层接入层"></a> 用户接入层（接入层）</h4>
+<h4 id="用户接入层（接入层）">用户接入层（接入层）</h4>
 <ul>
 <li>
 <p>主要承担用户接入与本地流量控制的功能。</p>
