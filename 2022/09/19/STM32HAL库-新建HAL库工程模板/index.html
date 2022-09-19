@@ -21,29 +21,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="requests库的使用">
+    <meta name="description" content="新建HAL库工程模板">
 <meta property="og:type" content="article">
-<meta property="og:title" content="requests库的使用">
-<meta property="og:url" content="http://www.helicunzai.cn/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="STM32HAL库:新建HAL库工程模板">
+<meta property="og:url" content="http://www.helicunzai.cn/2022/09/19/STM32HAL%E5%BA%93-%E6%96%B0%E5%BB%BAHAL%E5%BA%93%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF/index.html">
 <meta property="og:site_name" content="Mr Harsh的广阔天地">
-<meta property="og:description" content="requests库的使用">
+<meta property="og:description" content="新建HAL库工程模板">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-13T10:22:05.000Z">
-<meta property="article:modified_time" content="2022-08-13T13:31:39.393Z">
+<meta property="article:published_time" content="2022-09-19T08:33:19.000Z">
+<meta property="article:modified_time" content="2022-09-19T08:43:54.043Z">
 <meta property="article:author" content="Mr Harsh">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="爬虫">
+<meta property="article:tag" content="嵌入式">
+<meta property="article:tag" content="STM32">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://www.helicunzai.cn/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/">
+<link rel="canonical" href="http://www.helicunzai.cn/2022/09/19/STM32HAL%E5%BA%93-%E6%96%B0%E5%BB%BAHAL%E5%BA%93%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/","path":"2022/08/13/requests的使用/","title":"requests库的使用"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/09/19/STM32HAL%E5%BA%93-%E6%96%B0%E5%BB%BAHAL%E5%BA%93%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF/","path":"2022/09/19/STM32HAL库-新建HAL库工程模板/","title":"STM32HAL库:新建HAL库工程模板"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>requests库的使用 | Mr Harsh的广阔天地</title>
+<title>STM32HAL库:新建HAL库工程模板 | Mr Harsh的广阔天地</title>
   
 
 
@@ -133,7 +133,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -146,7 +146,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GET%E8%AF%B7%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST%E8%AF%B7%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D%E7%BB%B4%E6%8C%81"><span class="nav-number">1.3.</span> <span class="nav-text">会话维持</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -225,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/09/19/STM32HAL%E5%BA%93-%E6%96%B0%E5%BB%BAHAL%E5%BA%93%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/08/08/WJ12zxk8fsVMiAj.jpg">
@@ -238,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="requests库的使用 | Mr Harsh的广阔天地">
-      <meta itemprop="description" content="requests库的使用">
+      <meta itemprop="name" content="STM32HAL库:新建HAL库工程模板 | Mr Harsh的广阔天地">
+      <meta itemprop="description" content="新建HAL库工程模板">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          requests库的使用
+          STM32HAL库:新建HAL库工程模板
         </h1>
 
         <div class="post-meta-container">
@@ -255,7 +254,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-08-13 18:22:05 / 修改时间：21:31:39" itemprop="dateCreated datePublished" datetime="2022-08-13T18:22:05+08:00">2022-08-13</time>
+      <time title="创建时间：2022-09-19 16:33:19 / 修改时间：16:43:54" itemprop="dateCreated datePublished" datetime="2022-09-19T16:33:19+08:00">2022-09-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -263,7 +262,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%88%AC%E8%99%AB/" itemprop="url" rel="index"><span itemprop="name">爬虫</span></a>
+          <a href="/categories/STM32/" itemprop="url" rel="index"><span itemprop="name">STM32</span></a>
         </span>
     </span>
 
@@ -277,7 +276,7 @@
     </span>
 </div>
 
-            <div class="post-description">requests库的使用</div>
+            <div class="post-description">新建HAL库工程模板</div>
         </div>
       </header>
 
@@ -285,38 +284,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="请求">请求</h2>
-<ul>
-<li>
-<p>post(‘url’)</p>
-</li>
-<li>
-<p>put(‘url’)</p>
-</li>
-<li>
-<p>delete(‘url’)</p>
-</li>
-<li>
-<p>head(‘url’)</p>
-</li>
-<li>
-<p>options(‘url’)</p>
-</li>
-<li>
-<p>get(‘url’)</p>
-</li>
-</ul>
-<h3 id="GET请求">GET请求</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
-<p>下载图片</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
-<h3 id="POST请求">POST请求</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<p>文件上传</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<h3 id="会话维持">会话维持</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-
+        
     </div>
 
     
@@ -325,22 +293,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Python/" rel="tag"># Python</a>
-              <a href="/tags/%E7%88%AC%E8%99%AB/" rel="tag"># 爬虫</a>
+              <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"># 嵌入式</a>
+              <a href="/tags/STM32/" rel="tag"># STM32</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/" rel="prev" title="刷题笔记㈠">
-                  <i class="fa fa-chevron-left"></i> 刷题笔记㈠
+                <a href="/2022/09/16/%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3/" rel="prev" title="OpenCV:灰度变换和直方图修正">
+                  <i class="fa fa-chevron-left"></i> OpenCV:灰度变换和直方图修正
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="next" title="Qt工具类">
-                  Qt工具类 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
