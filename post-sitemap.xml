@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/2022/09/21/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93/</loc>
+        <lastmod>2022-09-21T11:55:01.867Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/2022/09/21/SQL%E8%AF%AD%E5%8F%A5/</loc>
+        <lastmod>2022-09-21T00:56:14.289Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/2022/09/19/STM32HAL%E5%BA%93-%E6%96%B0%E5%BB%BAHAL%E5%BA%93%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF/</loc>
         <lastmod>2022-09-19T15:10:59.101Z</lastmod>
         <changefreq>weekly</changefreq>

@@ -21,26 +21,35 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Mr Harsh的广阔天地">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mr Harsh的广阔天地">
-<meta property="og:url" content="http://www.helicunzai.cn/tags/C/index.html">
+    <meta name="description" content="STM32固件库介绍和新建工程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STM32固件库">
+<meta property="og:url" content="http://www.helicunzai.cn/2022/09/21/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93/index.html">
 <meta property="og:site_name" content="Mr Harsh的广阔天地">
-<meta property="og:description" content="Mr Harsh的广阔天地">
+<meta property="og:description" content="STM32固件库介绍和新建工程">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211733239.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211733239.png">
+<meta property="og:image" content="c:%5CUsers%5Clym%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2022-09-21-18-22-46-image.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211910553.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211924680.png">
+<meta property="article:published_time" content="2022-09-21T07:42:54.000Z">
+<meta property="article:modified_time" content="2022-09-21T11:55:01.867Z">
 <meta property="article:author" content="Mr Harsh">
-<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="STM32">
+<meta property="article:tag" content="嵌入式">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211733239.png">
 
 
-<link rel="canonical" href="http://www.helicunzai.cn/tags/C/">
+<link rel="canonical" href="http://www.helicunzai.cn/2022/09/21/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/C/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/09/21/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93/","path":"2022/09/21/STM32固件库/","title":"STM32固件库"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: C++ | Mr Harsh的广阔天地</title>
+<title>STM32固件库 | Mr Harsh的广阔天地</title>
   
 
 
@@ -130,7 +139,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -143,6 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BA%E4%BB%B6%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text"> 什么是固件库？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E5%9F%BA%E4%BA%8E%E5%9B%BA%E4%BB%B6%E5%BA%93%E7%9A%84-mdk5-%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.</span> <span class="nav-text"> 新建基于固件库的 MDK5 工程模板</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -210,110 +220,180 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">C++
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/09/21/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/08/08/WJ12zxk8fsVMiAj.jpg">
+      <meta itemprop="name" content="Mr Harsh">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr Harsh的广阔天地">
+      <meta itemprop="description" content="Mr Harsh的广阔天地">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="STM32固件库 | Mr Harsh的广阔天地">
+      <meta itemprop="description" content="STM32固件库介绍和新建工程">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          STM32固件库
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="创建时间：2022-09-21 15:42:54 / 修改时间：19:55:01" itemprop="dateCreated datePublished" datetime="2022-09-21T15:42:54+08:00">2022-09-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/STM32/" itemprop="url" rel="index"><span itemprop="name">STM32</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">STM32固件库介绍和新建工程</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="什么是固件库"><a class="markdownIt-Anchor" href="#什么是固件库"></a> 什么是固件库？</h1>
+<p>STM32 固件库就是函数的集合</p>
+<p>为了能让不同的芯片公司生产的 Cortex-M3 芯片能在软件上基本兼容，和芯片生产商共同提出了一套标准 CMSIS 标准(Cortex Microcontroller Software Interface Standard) ,翻译过来是“ARM Cortex™ 微控制器软件接口标准”。</p>
+<p>CMSIS 分为 3 个基本功能层：</p>
+<ol>
+<li>核内外设访问层：ARM 公司提供的访问，定义处理器内部寄存器地址以及功能函数。</li>
+<li>中间件访问层:定义访问中间件的通用 API,也是 ARM 公司提供。</li>
+<li>外设访问层：定义硬件寄存器的地址以及外设的访问函数。</li>
+</ol>
+<p>CMSIS 层在整个系统中是处于中间层，向下负责与内核和各个外设直接打交道，向上提供实时操作系统用户程序调用的函数接口。如果没有 CMSIS 标准，那么各个芯片公司就会设计自己喜欢的风格的库函数，而 CMSIS 标准就是要强制规定，芯片生产公司设计的库<br />
+函数必须按照 CMSIS 这套规范来设计。</p>
+<h1 id="新建基于固件库的-mdk5-工程模板"><a class="markdownIt-Anchor" href="#新建基于固件库的-mdk5-工程模板"></a> 新建基于固件库的 MDK5 工程模板</h1>
+<ol>
+<li>
+<p>建立一个文件夹,并在其下新建USER目录</p>
+</li>
+<li>
+<p>keil5新建项目在USER下<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211733239.png" alt="" /></p>
+</li>
+<li>
+<p>删除USER下的objects和Listings</p>
+</li>
+<li>
+<p>在根目录下新建CORE,OBJ，以及LIB文件夹</p>
+</li>
+<li>
+<p><em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\STM32F10x_StdPeriph_Driver</em> 下面，<br />
+将目录下面的* src,inc 文件夹 *复制 到我们刚才建立的 STM32F10x_FWLib 文件夹下面。</p>
+</li>
+<li>
+<p>目录<em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\CoreSupport</em> 下面，将文件 <em>core_cm3.c、core_cm3.h</em> 复制到 CORE 下 面 去 。</p>
+</li>
+<li>
+<p>*STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\arm *下面，将里面 <em>startup_stm32f10x_hd.s</em> 文件复制到 CORE 下面。</p>
+</li>
+<li>
+<p>定位为<em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x</em>将里面的三个文件<em>stm32f10x.h，system_stm32f10x.c，system_stm32f10x.h</em>，复制到我们的 USER目录之下。</p>
+</li>
+<li>
+<p>定位于<em>STM32F10x_StdPeriph_Lib_V3.5.0\Project\STM32F10x_StdPeriph_Template <em>下面的 4 个 文件</em>main.c，stm32f10x_conf.h，stm32f10x_it.c，stm32f10x_it.h</em> 复制到 USER 目录下面</p>
+</li>
+<li>
+<p>下面我们将这些文件加入我们的工程中去。右键点击 Target1，选择 Manage Components</p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211733239.png" alt="" /></p>
+</li>
+<li>
+<p>Project Targets 一栏，我们将 Target 名字修改为 Template,然后在 Groups 一栏删掉一个 Source Group1，建立三个 Groups：USER,CORE,FWLIB。然后点击 OK，可以看到我们的 Target名字以及 Groups 情况。</p>
+<p><img src="C:%5CUsers%5Clym%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2022-09-21-18-22-46-image.png" alt="" /></p>
+</li>
+<li>
+<p>选择选择 Manage Components.然后选择需要添加文件的 Group，这里第一步我们选 择 FWLIB ， 然 后 点 击 右 边 的 Add Files, 定 位 到 我 们 刚 才 建 立 的 目 录STM32F10x_FWLib/src 下面，将里面所有的文件选中(Ctrl+A)，然后点击 Add，然后 Close.可以看到 Files 列表下面包含我们添加的文件。</p>
+</li>
+<li>
+<p>将 Groups 定位到 CORE 和 USER 下面，添加需要的文件。这里我们的 CORE 下面需要添加的文件为 core_cm3.c，startup_stm32f10x_hd.s</p>
+</li>
+<li>
+<p>USER 目录下面需要添加的文件为 main.c，stm32f10x_it.c，system_stm32f10x.c. <img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211910553.png" alt="" /></p>
+</li>
+<li>
+<p>接下来我们要编译工程，在编译之前我们首先要选择编译中间文件编译后存放目录。<br />
+方法是点击魔术棒，然后选择“Output”选项下面的“Select folder for objects…”,然后选<br />
+择目录为我们上面新建的 OBJ 目录。这里大家注意，如果我们不设置 Output 路径，那么默认的编译中间文件存放目录就是 MDK 自动生成的 Objects 目录和 Listings 目录</p>
+</li>
+<li>
+<p>对于任何一个工程，我们都需要把工程中引用到的所有头文件的路径都包含到进来。回到工程主菜单，点击魔术棒 ，出来一个菜单，然后点击 c/c++选项.然后点击<br />
+Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我们将图上面的 3 个目录添加进去。记住，keil 只会在一级目录查找，所以如果你的目录下面还有子目录，记得 path一定要定位到最后一级子目录。然后点击 OK<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211924680.png" alt="" /></p>
+</li>
+<li>
+<p>将正点原子的SYSTEM文件将.c和.h文件导入项目</p>
+</li>
+</ol>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-08-14T10:34:48+08:00"
-              content="2022-08-14">
-          08-14
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/" itemprop="url">
-            <span itemprop="name">Qt工具类</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/STM32/" rel="tag"># STM32</a>
+              <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"># 嵌入式</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/21/SQL%E8%AF%AD%E5%8F%A5/" rel="prev" title="SQL语句">
+                  <i class="fa fa-chevron-left"></i> SQL语句
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-08-11T21:10:25+08:00"
-              content="2022-08-11">
-          08-11
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/" itemprop="url">
-            <span itemprop="name">刷题笔记㈠</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-08-10T16:51:16+08:00"
-              content="2022-08-10">
-          08-10
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/08/10/C-%E7%9A%84STL/" itemprop="url">
-            <span itemprop="name">C++的STL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-08-10T11:28:35+08:00"
-              content="2022-08-10">
-          08-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/08/10/C-%E7%BC%96%E7%A8%8B/" itemprop="url">
-            <span itemprop="name">C++编程基础</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
 
 </div>
   </main>
