@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/tags/SQL/</loc>
+        <lastmod>2022-09-23T08:40:41.305Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+        <lastmod>2022-09-23T08:40:41.305Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</loc>
         <lastmod>2022-09-22T16:25:27.430Z</lastmod>
         <changefreq>weekly</changefreq>

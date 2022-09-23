@@ -21,26 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Mr Harsh的广阔天地">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mr Harsh的广阔天地">
-<meta property="og:url" content="http://www.helicunzai.cn/categories/C/index.html">
+    <meta name="description" content="抽象上面盖房子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库原理">
+<meta property="og:url" content="http://www.helicunzai.cn/2022/09/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="Mr Harsh的广阔天地">
-<meta property="og:description" content="Mr Harsh的广阔天地">
+<meta property="og:description" content="抽象上面盖房子">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-23T07:49:41.000Z">
+<meta property="article:modified_time" content="2022-09-23T08:29:57.945Z">
 <meta property="article:author" content="Mr Harsh">
-<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://www.helicunzai.cn/categories/C/">
+<link rel="canonical" href="http://www.helicunzai.cn/2022/09/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/C/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/09/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/","path":"2022/09/23/数据库原理/","title":"数据库原理"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类: C++ | Mr Harsh的广阔天地</title>
+<title>数据库原理 | Mr Harsh的广阔天地</title>
   
 
 
@@ -130,7 +132,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -143,6 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">数据库概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">数据库基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF"><span class="nav-number">1.1.1.</span> <span class="nav-text">信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">数据系统管理数据的特点</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -210,90 +213,151 @@
 </noscript>
 
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">C++
-          <small>分类</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/09/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/08/08/WJ12zxk8fsVMiAj.jpg">
+      <meta itemprop="name" content="Mr Harsh">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr Harsh的广阔天地">
+      <meta itemprop="description" content="Mr Harsh的广阔天地">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数据库原理 | Mr Harsh的广阔天地">
+      <meta itemprop="description" content="抽象上面盖房子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库原理
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="创建时间：2022-09-23 15:49:41 / 修改时间：16:29:57" itemprop="dateCreated datePublished" datetime="2022-09-23T15:49:41+08:00">2022-09-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">抽象上面盖房子</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="数据库概述">数据库概述</h1>
+<h2 id="数据库基本概念">数据库基本概念</h2>
+<h3 id="信息">信息</h3>
+<p>信息是现实世界中各种事物的存在方式，运动形态以及它们之间的相互联系等诸要素在人脑中的反应，通过人脑抽象后形成的概念。</p>
+<h3 id="数据">数据</h3>
+<p>数据指(信息)的一种符号化表示记录方法,就是说用一定的符号表示信息，那采用什么符号完全是人为规定。</p>
+<ol>
+<li>
+<p>数据的内容是信息</p>
+</li>
+<li>
+<p>数据的表现形式是符号或数据是信息的载体</p>
+</li>
+</ol>
+<h1 id="数据系统管理数据的特点">数据系统管理数据的特点</h1>
+<ol>
+<li>
+<p>数据结构化</p>
+</li>
+<li>
+<p>数据共享性号，冗余度低</p>
+</li>
+<li>
+<p>数据独立性高</p>
+</li>
+<li>
+<p>有统一的数据控制功能</p>
+<ul>
+<li>
+<p>数据安全性控制</p>
+</li>
+<li>
+<p>数据完整性控制</p>
+</li>
+<li>
+<p>并发控制</p>
+</li>
+<li>
+<p>数据恢复</p>
+</li>
+</ul>
+</li>
+</ol>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-08-11T21:10:25+08:00"
-              content="2022-08-11">
-          08-11
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/" itemprop="url">
-            <span itemprop="name">刷题笔记㈠</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/" rel="prev" title="STM32F1软件仿真">
+                  <i class="fa fa-chevron-left"></i> STM32F1软件仿真
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-08-10T16:51:16+08:00"
-              content="2022-08-10">
-          08-10
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/08/10/C-%E7%9A%84STL/" itemprop="url">
-            <span itemprop="name">C++的STL</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-08-10T11:28:35+08:00"
-              content="2022-08-10">
-          08-10
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/08/10/C-%E7%BC%96%E7%A8%8B/" itemprop="url">
-            <span itemprop="name">C++编程基础</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
 
 </div>
   </main>
