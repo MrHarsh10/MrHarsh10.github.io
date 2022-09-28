@@ -25,7 +25,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="STM32F1软件仿真">
 <meta property="og:url" content="http://www.helicunzai.cn/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/index.html">
-<meta property="og:site_name" content="儒雅匪人">
+<meta property="og:site_name" content="Mr Harsh的广阔天地">
 <meta property="og:description" content="在MDK5的软件环境下仿真这个工程，以验证我们代码的正确性。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230008993.png">
@@ -48,7 +48,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/","path":"2022/09/23/STM32F1软件仿真/","title":"STM32F1软件仿真"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>STM32F1软件仿真 | 儒雅匪人</title>
+<title>STM32F1软件仿真 | Mr Harsh的广阔天地</title>
   
 
 
@@ -78,7 +78,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">儒雅匪人</p>
+      <p class="site-title">Mr Harsh的广阔天地</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">广阔天地，大有作为。</p>
@@ -151,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">检查配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debug-%E9%80%89%E9%A1%B9%E5%8D%A1"><span class="nav-number">2.</span> <span class="nav-text">Debug 选项卡</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text"> 检查配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#debug-%E9%80%89%E9%A1%B9%E5%8D%A1"><span class="nav-number">2.</span> <span class="nav-text"> Debug 选项卡</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -238,12 +238,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="儒雅匪人">
+      <meta itemprop="name" content="Mr Harsh的广阔天地">
       <meta itemprop="description" content="一个神奇的博客">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="STM32F1软件仿真 | 儒雅匪人">
+      <meta itemprop="name" content="STM32F1软件仿真 | Mr Harsh的广阔天地">
       <meta itemprop="description" content="在MDK5的软件环境下仿真这个工程，以验证我们代码的正确性。">
     </span>
       <header class="post-header">
@@ -290,18 +290,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="检查配置">检查配置</h1>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230008993.png" alt=""></p>
-<h1 id="Debug-选项卡">Debug 选项卡</h1>
-<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br>
+        <h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230008993.png" alt="" /></p>
+<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
+<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
 编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：DARMSTM.DLL和 TARMSTM.DLL，Parameter 均为：</p>
 <pre><code>-pSTM32F103ZE
 </code></pre>
 <p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230018268.png" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230020277.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230018268.png" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230020277.png" alt="" /></p>
 <p>Debug 工具条</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230021271.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230021271.png" alt="" /></p>
 
     </div>
 
