@@ -675,6 +675,49 @@
       </tags>
   </entry>
   <entry>
+    <title>C++编程基础</title>
+    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
+<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
+<h1 id="万能头文件"><a class="markdownIt-Anchor" href="#万能头文件"></a> 万能头文件</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="最简单的c程序"><a class="markdownIt-Anchor" href="#最简单的c程序"></a> 最简单的C++程序</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>
+<p>C++规定main函数必须声明为int型。</p>
+</li>
+<li>
+<p>cout为输出流对象</p>
+</li>
+</ol>
+<h2 id="输入输出"><a class="markdownIt-Anchor" href="#输入输出"></a> 输入输出</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="内联函数"><a class="markdownIt-Anchor" href="#内联函数"></a> 内联函数</h2>
+<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
+<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="函数模板"><a class="markdownIt-Anchor" href="#函数模板"></a> 函数模板</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="引用和引用形参"><a class="markdownIt-Anchor" href="#引用和引用形参"></a> 引用和引用形参</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
+<h1 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>默认参数必须写在一般参数的后面</strong></li>
+</ul>
+<h1 id="一元作用域运算符"><a class="markdownIt-Anchor" href="#一元作用域运算符"></a> 一元作用域运算符::</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>OP编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Numpy笔记</title>
     <url>/2022/09/26/Numpy%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
@@ -1215,49 +1258,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++编程基础</title>
-    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h1 id="万能头文件"><a class="markdownIt-Anchor" href="#万能头文件"></a> 万能头文件</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="最简单的c程序"><a class="markdownIt-Anchor" href="#最简单的c程序"></a> 最简单的C++程序</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>
-<p>C++规定main函数必须声明为int型。</p>
-</li>
-<li>
-<p>cout为输出流对象</p>
-</li>
-</ol>
-<h2 id="输入输出"><a class="markdownIt-Anchor" href="#输入输出"></a> 输入输出</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="内联函数"><a class="markdownIt-Anchor" href="#内联函数"></a> 内联函数</h2>
-<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
-<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="函数模板"><a class="markdownIt-Anchor" href="#函数模板"></a> 函数模板</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="引用和引用形参"><a class="markdownIt-Anchor" href="#引用和引用形参"></a> 引用和引用形参</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
-<h1 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>默认参数必须写在一般参数的后面</strong></li>
-</ul>
-<h1 id="一元作用域运算符"><a class="markdownIt-Anchor" href="#一元作用域运算符"></a> 一元作用域运算符::</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>OP编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV:图像处理</title>
     <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
     <content><![CDATA[<h1 id="颜色变换cvtcolor"><a class="markdownIt-Anchor" href="#颜色变换cvtcolor"></a> 颜色变换cvtColor</h1>
@@ -1571,6 +1571,184 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
+    <title>SQL语句</title>
+    <url>/2022/09/21/SQL%E8%AF%AD%E5%8F%A5/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32固件库</title>
+    <url>/2022/09/21/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="什么是固件库"><a class="markdownIt-Anchor" href="#什么是固件库"></a> 什么是固件库？</h1>
+<p>STM32 固件库就是函数的集合</p>
+<p>为了能让不同的芯片公司生产的 Cortex-M3 芯片能在软件上基本兼容，和芯片生产商共同提出了一套标准 CMSIS 标准(Cortex Microcontroller Software Interface Standard) ,翻译过来是“ARM Cortex™ 微控制器软件接口标准”。</p>
+<p>CMSIS 分为 3 个基本功能层：</p>
+<ol>
+<li>核内外设访问层：ARM 公司提供的访问，定义处理器内部寄存器地址以及功能函数。</li>
+<li>中间件访问层:定义访问中间件的通用 API,也是 ARM 公司提供。</li>
+<li>外设访问层：定义硬件寄存器的地址以及外设的访问函数。</li>
+</ol>
+<p>CMSIS 层在整个系统中是处于中间层，向下负责与内核和各个外设直接打交道，向上提供实时操作系统用户程序调用的函数接口。如果没有 CMSIS 标准，那么各个芯片公司就会设计自己喜欢的风格的库函数，而 CMSIS 标准就是要强制规定，芯片生产公司设计的库<br />
+函数必须按照 CMSIS 这套规范来设计。</p>
+<h1 id="新建基于固件库的-mdk5-工程模板"><a class="markdownIt-Anchor" href="#新建基于固件库的-mdk5-工程模板"></a> 新建基于固件库的 MDK5 工程模板</h1>
+<ol>
+<li>
+<p>建立一个文件夹,并在其下新建USER目录</p>
+</li>
+<li>
+<p>keil5新建项目在USER下<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211733239.png" alt="" /></p>
+</li>
+<li>
+<p>删除USER下的objects和Listings</p>
+</li>
+<li>
+<p>在根目录下新建CORE,OBJ，以及LIB文件夹</p>
+</li>
+<li>
+<p><em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\STM32F10x_StdPeriph_Driver</em> 下面，<br />
+将目录下面的* src,inc 文件夹 *复制 到我们刚才建立的 STM32F10x_FWLib 文件夹下面。</p>
+</li>
+<li>
+<p>目录<em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\CoreSupport</em> 下面，将文件 <em>core_cm3.c、core_cm3.h</em> 复制到 CORE 下 面 去 。</p>
+</li>
+<li>
+<p>*STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\arm *下面，将里面 <em>startup_stm32f10x_hd.s</em> 文件复制到 CORE 下面。</p>
+</li>
+<li>
+<p>定位为<em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x</em>将里面的三个文件<em>stm32f10x.h，system_stm32f10x.c，system_stm32f10x.h</em>，复制到我们的 USER目录之下。</p>
+</li>
+<li>
+<p>定位于<em>STM32F10x_StdPeriph_Lib_V3.5.0\Project\STM32F10x_StdPeriph_Template <em>下面的 4 个 文件</em>main.c，stm32f10x_conf.h，stm32f10x_it.c，stm32f10x_it.h</em> 复制到 USER 目录下面</p>
+</li>
+<li>
+<p>下面我们将这些文件加入我们的工程中去。右键点击 Target1，选择 Manage Components</p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211733239.png" alt="" /></p>
+</li>
+<li>
+<p>Project Targets 一栏，我们将 Target 名字修改为 Template,然后在 Groups 一栏删掉一个 Source Group1，建立三个 Groups：USER,CORE,FWLIB。然后点击 OK，可以看到我们的 Target名字以及 Groups 情况。</p>
+<p><img src="C:%5CUsers%5Clym%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2022-09-21-18-22-46-image.png" alt="" /></p>
+</li>
+<li>
+<p>选择选择 Manage Components.然后选择需要添加文件的 Group，这里第一步我们选 择 FWLIB ， 然 后 点 击 右 边 的 Add Files, 定 位 到 我 们 刚 才 建 立 的 目 录STM32F10x_FWLib/src 下面，将里面所有的文件选中(Ctrl+A)，然后点击 Add，然后 Close.可以看到 Files 列表下面包含我们添加的文件。</p>
+</li>
+<li>
+<p>将 Groups 定位到 CORE 和 USER 下面，添加需要的文件。这里我们的 CORE 下面需要添加的文件为 core_cm3.c，startup_stm32f10x_hd.s</p>
+</li>
+<li>
+<p>USER 目录下面需要添加的文件为 main.c，stm32f10x_it.c，system_stm32f10x.c. <img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211910553.png" alt="" /></p>
+</li>
+<li>
+<p>接下来我们要编译工程，在编译之前我们首先要选择编译中间文件编译后存放目录。<br />
+方法是点击魔术棒，然后选择“Output”选项下面的“Select folder for objects…”,然后选<br />
+择目录为我们上面新建的 OBJ 目录。这里大家注意，如果我们不设置 Output 路径，那么默认的编译中间文件存放目录就是 MDK 自动生成的 Objects 目录和 Listings 目录</p>
+</li>
+<li>
+<p>对于任何一个工程，我们都需要把工程中引用到的所有头文件的路径都包含到进来。回到工程主菜单，点击魔术棒 ，出来一个菜单，然后点击 c/c++选项.然后点击<br />
+Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我们将图上面的 3 个目录添加进去。记住，keil 只会在一级目录查找，所以如果你的目录下面还有子目录，记得 path一定要定位到最后一级子目录。然后点击 OK<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211924680.png" alt="" /></p>
+</li>
+<li>
+<p>将正点原子的SYSTEM文件将.c和.h文件导入项目</p>
+<p><a href="https://download.csdn.net/download/qq_36831734/86615348">本文源文件下载</a></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>嵌入式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32F1软件仿真</title>
+    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
+    <content><![CDATA[<h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230008993.png" alt="" /></p>
+<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
+<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
+编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：DARMSTM.DLL和 TARMSTM.DLL，Parameter 均为：</p>
+<pre><code>-pSTM32F103ZE
+</code></pre>
+<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230018268.png" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230020277.png" alt="" /></p>
+<p>Debug 工具条</p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230021271.png" alt="" /></p>
+]]></content>
+      <categories>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>嵌入式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
+<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>requests库的使用</title>
+    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
+<ul>
+<li>
+<p>post(‘url’)</p>
+</li>
+<li>
+<p>put(‘url’)</p>
+</li>
+<li>
+<p>delete(‘url’)</p>
+</li>
+<li>
+<p>head(‘url’)</p>
+</li>
+<li>
+<p>options(‘url’)</p>
+</li>
+<li>
+<p>get(‘url’)</p>
+</li>
+</ul>
+<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
+<p>下载图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
+<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<p>文件上传</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Qt工具类</title>
     <url>/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
     <content><![CDATA[<h1 id="字符串类"><a class="markdownIt-Anchor" href="#字符串类"></a> 字符串类</h1>
@@ -1748,181 +1926,20 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
-    <title>SQL语句</title>
-    <url>/2022/09/21/SQL%E8%AF%AD%E5%8F%A5/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>STM32F1软件仿真</title>
-    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
-    <content><![CDATA[<h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230008993.png" alt="" /></p>
-<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
-<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
-编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：DARMSTM.DLL和 TARMSTM.DLL，Parameter 均为：</p>
-<pre><code>-pSTM32F103ZE
-</code></pre>
-<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230018268.png" alt="" /></p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230020277.png" alt="" /></p>
-<p>Debug 工具条</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230021271.png" alt="" /></p>
+    <title>使用Python和NumPy构建神经网络模型</title>
+    <url>/2022/09/26/%E4%BD%BF%E7%94%A8Python%E5%92%8CNumPy%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209262311935.png" alt="" /></p>
+<h2 id="1-线性回归模型"><a class="markdownIt-Anchor" href="#1-线性回归模型"></a> 1. 线性回归模型</h2>
+<p>假设房价和各影响因素之间能够用线性关系来描述：</p>
+<p>模型的求解即是通过数据拟合出每个<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>。其中，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>分别表示该线性模型的权重和偏置。一维情况下，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span> 是直线的斜率和截距。</p>
+<p>线性回归模型使用均方误差作为损失函数（Loss），用以衡量预测房价和真实房价的差异，公式如下：</p>
 ]]></content>
       <categories>
-        <category>STM32</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>嵌入式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>STM32固件库</title>
-    <url>/2022/09/21/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93/</url>
-    <content><![CDATA[<h1 id="什么是固件库"><a class="markdownIt-Anchor" href="#什么是固件库"></a> 什么是固件库？</h1>
-<p>STM32 固件库就是函数的集合</p>
-<p>为了能让不同的芯片公司生产的 Cortex-M3 芯片能在软件上基本兼容，和芯片生产商共同提出了一套标准 CMSIS 标准(Cortex Microcontroller Software Interface Standard) ,翻译过来是“ARM Cortex™ 微控制器软件接口标准”。</p>
-<p>CMSIS 分为 3 个基本功能层：</p>
-<ol>
-<li>核内外设访问层：ARM 公司提供的访问，定义处理器内部寄存器地址以及功能函数。</li>
-<li>中间件访问层:定义访问中间件的通用 API,也是 ARM 公司提供。</li>
-<li>外设访问层：定义硬件寄存器的地址以及外设的访问函数。</li>
-</ol>
-<p>CMSIS 层在整个系统中是处于中间层，向下负责与内核和各个外设直接打交道，向上提供实时操作系统用户程序调用的函数接口。如果没有 CMSIS 标准，那么各个芯片公司就会设计自己喜欢的风格的库函数，而 CMSIS 标准就是要强制规定，芯片生产公司设计的库<br />
-函数必须按照 CMSIS 这套规范来设计。</p>
-<h1 id="新建基于固件库的-mdk5-工程模板"><a class="markdownIt-Anchor" href="#新建基于固件库的-mdk5-工程模板"></a> 新建基于固件库的 MDK5 工程模板</h1>
-<ol>
-<li>
-<p>建立一个文件夹,并在其下新建USER目录</p>
-</li>
-<li>
-<p>keil5新建项目在USER下<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211733239.png" alt="" /></p>
-</li>
-<li>
-<p>删除USER下的objects和Listings</p>
-</li>
-<li>
-<p>在根目录下新建CORE,OBJ，以及LIB文件夹</p>
-</li>
-<li>
-<p><em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\STM32F10x_StdPeriph_Driver</em> 下面，<br />
-将目录下面的* src,inc 文件夹 *复制 到我们刚才建立的 STM32F10x_FWLib 文件夹下面。</p>
-</li>
-<li>
-<p>目录<em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\CoreSupport</em> 下面，将文件 <em>core_cm3.c、core_cm3.h</em> 复制到 CORE 下 面 去 。</p>
-</li>
-<li>
-<p>*STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\arm *下面，将里面 <em>startup_stm32f10x_hd.s</em> 文件复制到 CORE 下面。</p>
-</li>
-<li>
-<p>定位为<em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x</em>将里面的三个文件<em>stm32f10x.h，system_stm32f10x.c，system_stm32f10x.h</em>，复制到我们的 USER目录之下。</p>
-</li>
-<li>
-<p>定位于<em>STM32F10x_StdPeriph_Lib_V3.5.0\Project\STM32F10x_StdPeriph_Template <em>下面的 4 个 文件</em>main.c，stm32f10x_conf.h，stm32f10x_it.c，stm32f10x_it.h</em> 复制到 USER 目录下面</p>
-</li>
-<li>
-<p>下面我们将这些文件加入我们的工程中去。右键点击 Target1，选择 Manage Components</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211733239.png" alt="" /></p>
-</li>
-<li>
-<p>Project Targets 一栏，我们将 Target 名字修改为 Template,然后在 Groups 一栏删掉一个 Source Group1，建立三个 Groups：USER,CORE,FWLIB。然后点击 OK，可以看到我们的 Target名字以及 Groups 情况。</p>
-<p><img src="C:%5CUsers%5Clym%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2022-09-21-18-22-46-image.png" alt="" /></p>
-</li>
-<li>
-<p>选择选择 Manage Components.然后选择需要添加文件的 Group，这里第一步我们选 择 FWLIB ， 然 后 点 击 右 边 的 Add Files, 定 位 到 我 们 刚 才 建 立 的 目 录STM32F10x_FWLib/src 下面，将里面所有的文件选中(Ctrl+A)，然后点击 Add，然后 Close.可以看到 Files 列表下面包含我们添加的文件。</p>
-</li>
-<li>
-<p>将 Groups 定位到 CORE 和 USER 下面，添加需要的文件。这里我们的 CORE 下面需要添加的文件为 core_cm3.c，startup_stm32f10x_hd.s</p>
-</li>
-<li>
-<p>USER 目录下面需要添加的文件为 main.c，stm32f10x_it.c，system_stm32f10x.c. <img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211910553.png" alt="" /></p>
-</li>
-<li>
-<p>接下来我们要编译工程，在编译之前我们首先要选择编译中间文件编译后存放目录。<br />
-方法是点击魔术棒，然后选择“Output”选项下面的“Select folder for objects…”,然后选<br />
-择目录为我们上面新建的 OBJ 目录。这里大家注意，如果我们不设置 Output 路径，那么默认的编译中间文件存放目录就是 MDK 自动生成的 Objects 目录和 Listings 目录</p>
-</li>
-<li>
-<p>对于任何一个工程，我们都需要把工程中引用到的所有头文件的路径都包含到进来。回到工程主菜单，点击魔术棒 ，出来一个菜单，然后点击 c/c++选项.然后点击<br />
-Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我们将图上面的 3 个目录添加进去。记住，keil 只会在一级目录查找，所以如果你的目录下面还有子目录，记得 path一定要定位到最后一级子目录。然后点击 OK<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209211924680.png" alt="" /></p>
-</li>
-<li>
-<p>将正点原子的SYSTEM文件将.c和.h文件导入项目</p>
-<p><a href="https://download.csdn.net/download/qq_36831734/86615348">本文源文件下载</a></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>STM32</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>嵌入式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
-<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>requests库的使用</title>
-    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
-<ul>
-<li>
-<p>post(‘url’)</p>
-</li>
-<li>
-<p>put(‘url’)</p>
-</li>
-<li>
-<p>delete(‘url’)</p>
-</li>
-<li>
-<p>head(‘url’)</p>
-</li>
-<li>
-<p>options(‘url’)</p>
-</li>
-<li>
-<p>get(‘url’)</p>
-</li>
-</ul>
-<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
-<p>下载图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
-<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<p>文件上传</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
+        <category>人工智能</category>
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>爬虫</tag>
+        <tag>人工智能</tag>
       </tags>
   </entry>
   <entry>
@@ -2075,20 +2092,52 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>使用Python和NumPy构建神经网络模型</title>
-    <url>/2022/09/26/%E4%BD%BF%E7%94%A8Python%E5%92%8CNumPy%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209262311935.png" alt="" /></p>
-<h2 id="1-线性回归模型"><a class="markdownIt-Anchor" href="#1-线性回归模型"></a> 1. 线性回归模型</h2>
-<p>假设房价和各影响因素之间能够用线性关系来描述：</p>
-<p>模型的求解即是通过数据拟合出每个<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>。其中，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>分别表示该线性模型的权重和偏置。一维情况下，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span> 是直线的斜率和截距。</p>
-<p>线性回归模型使用均方误差作为损失函数（Loss），用以衡量预测房价和真实房价的差异，公式如下：</p>
+    <title>刷题笔记㈠</title>
+    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
+    <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
+<h1 id="面试题-0805-递归乘法-力扣leetcode"><a class="markdownIt-Anchor" href="#面试题-0805-递归乘法-力扣leetcode"></a> <a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
+<blockquote>
+<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="2119-反转两次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#2119-反转两次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>老实人真会反转两次</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-offer-58-ii-左旋转字符串-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-58-ii-左旋转字符串-力扣leetcode"></a> <a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>越界处理用取模</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="136-只出现一次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#136-只出现一次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
+<p>本题采用异或运算</p>
+<blockquote>
+<p><strong>异或运算性质</strong></p>
+<blockquote>
+<ol>
+<li>a^a=0；</li>
+<li>a^0=a;</li>
+<li>a<sup>b=b</sup>a</li>
+</ol>
+</blockquote>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="268-丢失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#268-丢失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>求和做减法</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>人工智能</category>
+        <category>C++</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>人工智能</tag>
+        <tag>C++</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2146,55 +2195,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>刷题笔记㈠</title>
-    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
-    <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
-<h1 id="面试题-0805-递归乘法-力扣leetcode"><a class="markdownIt-Anchor" href="#面试题-0805-递归乘法-力扣leetcode"></a> <a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
-<blockquote>
-<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="2119-反转两次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#2119-反转两次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>老实人真会反转两次</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-offer-58-ii-左旋转字符串-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-58-ii-左旋转字符串-力扣leetcode"></a> <a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>越界处理用取模</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="136-只出现一次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#136-只出现一次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
-<p>本题采用异或运算</p>
-<blockquote>
-<p><strong>异或运算性质</strong></p>
-<blockquote>
-<ol>
-<li>a^a=0；</li>
-<li>a^0=a;</li>
-<li>a<sup>b=b</sup>a</li>
-</ol>
-</blockquote>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="268-丢失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#268-丢失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>求和做减法</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV:灰度变换和直方图修正</title>
     <url>/2022/09/16/%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3/</url>
     <content><![CDATA[<h1 id="灰度化"><a class="markdownIt-Anchor" href="#灰度化"></a> 灰度化</h1>
@@ -2220,87 +2220,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       <tags>
         <tag>Python</tag>
         <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络三级笔记</title>
-    <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%89%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="第一章-网络系统结构与设计的基本原则"><a class="markdownIt-Anchor" href="#第一章-网络系统结构与设计的基本原则"></a> 第一章 网络系统结构与设计的基本原则</h1>
-<hr />
-<h2 id="以太网速率分类"><a class="markdownIt-Anchor" href="#以太网速率分类"></a> 以太网速率分类</h2>
-<ul>
-<li>
-<p>传统以太网：10Mbit/s</p>
-</li>
-<li>
-<p>快速以太网：100Mbit/s</p>
-</li>
-<li>
-<p>吉比特以太网：10Gbits</p>
-</li>
-</ul>
-<h2 id="csmacd-与-csmaca"><a class="markdownIt-Anchor" href="#csmacd-与-csmaca"></a> CSMA/CD 与 CSMA/CA</h2>
-<ul>
-<li>
-<p>CSMA/CD（Carrier Sense Multiple Access/Collision Detection，带有冲突检测的载波侦听多路存取）。是子网内部所采用的介质访问控制方法。</p>
-</li>
-<li>
-<p>CSMA/CA(Carrier Sense Multiple Access with Collision Avoidance，带有冲突检测的载波监听的多路访问)。利用 ACK 信号来避免冲突的发生。</p>
-</li>
-</ul>
-<h2 id="光纤分布式数据接口fddi与弹性分组环rpr"><a class="markdownIt-Anchor" href="#光纤分布式数据接口fddi与弹性分组环rpr"></a> <em>光纤分布式数据接口</em>(FDDI)与<em>弹性分组环</em>(RPR)</h2>
-<ul>
-<li>都是双环结构</li>
-</ul>
-<h2 id="宽带城域网"><a class="markdownIt-Anchor" href="#宽带城域网"></a> 宽带城域网</h2>
-<h3 id="宽带城域网结构"><a class="markdownIt-Anchor" href="#宽带城域网结构"></a> 宽带城域网结构</h3>
-<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202208312306948.png" title="" alt="" data-align="center">  
-<h3 id="宽带城域网网络平台各层功能"><a class="markdownIt-Anchor" href="#宽带城域网网络平台各层功能"></a> 宽带城域网网络平台各层功能</h3>
-<h4 id="核心交换层核心层"><a class="markdownIt-Anchor" href="#核心交换层核心层"></a> 核心交换层（核心层）</h4>
-<ul>
-<li>
-<p>主要承担高速数据交换的功能</p>
-</li>
-<li>
-<p>实现与主干网络的互联，提供城市宽带 IP 数据出口。</p>
-</li>
-<li>
-<p>提供宽带城域网用户访问 Internet 所需要的路由服务。</p>
-</li>
-<li>
-<p>将多个汇聚层连接起来，为汇聚层的网络提供高速分组转发，为整个城域网提供一个高速、安全并具有QoS 保障能力的数据传输环境。</p>
-</li>
-</ul>
-<h4 id="边缘汇聚层汇聚层"><a class="markdownIt-Anchor" href="#边缘汇聚层汇聚层"></a> 边缘汇聚层（汇聚层）</h4>
-<ul>
-<li>
-<p>主要承担路由与流量汇聚的功能</p>
-</li>
-<li>
-<p>根据处理结果把用户流量转发到核心交换层或在本地进行路由处理。</p>
-</li>
-<li>
-<p>汇接接入层的用户流量，进行数据分组传输的汇聚、转发与交换。</p>
-</li>
-<li>
-<p>根据接入层的用户流量，进行本地路由、过滤、流量均衡、QoS 优先级管理，以及安全控制、IP 地址转换、流量整形等处理。</p>
-</li>
-</ul>
-<h4 id="用户接入层接入层"><a class="markdownIt-Anchor" href="#用户接入层接入层"></a> 用户接入层（接入层）</h4>
-<ul>
-<li>
-<p>主要承担用户接入与本地流量控制的功能。</p>
-</li>
-<li>
-<p>解决“最后一公里”问题。通过各种接入技术，连接最终用户，为它覆盖范围内的用户提供访问 Internet以及其他信息服务。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网路</tag>
       </tags>
   </entry>
   <entry>
@@ -2452,6 +2371,87 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络三级笔记</title>
+    <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%89%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="第一章-网络系统结构与设计的基本原则"><a class="markdownIt-Anchor" href="#第一章-网络系统结构与设计的基本原则"></a> 第一章 网络系统结构与设计的基本原则</h1>
+<hr />
+<h2 id="以太网速率分类"><a class="markdownIt-Anchor" href="#以太网速率分类"></a> 以太网速率分类</h2>
+<ul>
+<li>
+<p>传统以太网：10Mbit/s</p>
+</li>
+<li>
+<p>快速以太网：100Mbit/s</p>
+</li>
+<li>
+<p>吉比特以太网：10Gbits</p>
+</li>
+</ul>
+<h2 id="csmacd-与-csmaca"><a class="markdownIt-Anchor" href="#csmacd-与-csmaca"></a> CSMA/CD 与 CSMA/CA</h2>
+<ul>
+<li>
+<p>CSMA/CD（Carrier Sense Multiple Access/Collision Detection，带有冲突检测的载波侦听多路存取）。是子网内部所采用的介质访问控制方法。</p>
+</li>
+<li>
+<p>CSMA/CA(Carrier Sense Multiple Access with Collision Avoidance，带有冲突检测的载波监听的多路访问)。利用 ACK 信号来避免冲突的发生。</p>
+</li>
+</ul>
+<h2 id="光纤分布式数据接口fddi与弹性分组环rpr"><a class="markdownIt-Anchor" href="#光纤分布式数据接口fddi与弹性分组环rpr"></a> <em>光纤分布式数据接口</em>(FDDI)与<em>弹性分组环</em>(RPR)</h2>
+<ul>
+<li>都是双环结构</li>
+</ul>
+<h2 id="宽带城域网"><a class="markdownIt-Anchor" href="#宽带城域网"></a> 宽带城域网</h2>
+<h3 id="宽带城域网结构"><a class="markdownIt-Anchor" href="#宽带城域网结构"></a> 宽带城域网结构</h3>
+<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202208312306948.png" title="" alt="" data-align="center">  
+<h3 id="宽带城域网网络平台各层功能"><a class="markdownIt-Anchor" href="#宽带城域网网络平台各层功能"></a> 宽带城域网网络平台各层功能</h3>
+<h4 id="核心交换层核心层"><a class="markdownIt-Anchor" href="#核心交换层核心层"></a> 核心交换层（核心层）</h4>
+<ul>
+<li>
+<p>主要承担高速数据交换的功能</p>
+</li>
+<li>
+<p>实现与主干网络的互联，提供城市宽带 IP 数据出口。</p>
+</li>
+<li>
+<p>提供宽带城域网用户访问 Internet 所需要的路由服务。</p>
+</li>
+<li>
+<p>将多个汇聚层连接起来，为汇聚层的网络提供高速分组转发，为整个城域网提供一个高速、安全并具有QoS 保障能力的数据传输环境。</p>
+</li>
+</ul>
+<h4 id="边缘汇聚层汇聚层"><a class="markdownIt-Anchor" href="#边缘汇聚层汇聚层"></a> 边缘汇聚层（汇聚层）</h4>
+<ul>
+<li>
+<p>主要承担路由与流量汇聚的功能</p>
+</li>
+<li>
+<p>根据处理结果把用户流量转发到核心交换层或在本地进行路由处理。</p>
+</li>
+<li>
+<p>汇接接入层的用户流量，进行数据分组传输的汇聚、转发与交换。</p>
+</li>
+<li>
+<p>根据接入层的用户流量，进行本地路由、过滤、流量均衡、QoS 优先级管理，以及安全控制、IP 地址转换、流量整形等处理。</p>
+</li>
+</ul>
+<h4 id="用户接入层接入层"><a class="markdownIt-Anchor" href="#用户接入层接入层"></a> 用户接入层（接入层）</h4>
+<ul>
+<li>
+<p>主要承担用户接入与本地流量控制的功能。</p>
+</li>
+<li>
+<p>解决“最后一公里”问题。通过各种接入技术，连接最终用户，为它覆盖范围内的用户提供访问 Internet以及其他信息服务。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网路</tag>
       </tags>
   </entry>
 </search>
