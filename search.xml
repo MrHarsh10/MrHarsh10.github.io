@@ -675,46 +675,49 @@
       </tags>
   </entry>
   <entry>
-    <title>C++编程基础</title>
-    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从C到C">从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h1 id="万能头文件">万能头文件</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="最简单的C-程序">最简单的C++程序</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>
-<p>C++规定main函数必须声明为int型。</p>
-</li>
-<li>
-<p>cout为输出流对象</p>
-</li>
-</ol>
-<h2 id="输入输出">输入输出</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="内联函数">内联函数</h2>
-<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
-<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="函数模板">函数模板</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="引用和引用形参">引用和引用形参</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
-<h1 id="参数传递">参数传递</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
+    <title>Java:集合类</title>
+    <url>/2022/10/01/Java-%E9%9B%86%E5%90%88%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Set">Set</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Set</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//基本操作</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(Objects element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">remove</span><span class="params">(Objects element)</span>;</span><br><span class="line">    Iterator&lt;E&gt; <span class="title function_">iterator</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsAll</span><span class="params">(Collection &lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(Collection&lt;?extends E&gt; c)</span>;<span class="comment">//将集合c的元素添加到本集合</span></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">removeAll</span><span class="params">(Collection&lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">retainAll</span><span class="params">(Collection&lt;?&gt; c)</span>;<span class="comment">//只保留属于c的元素</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span>;</span><br><span class="line">    Objects[] toArray();</span><br><span class="line">    &lt;T&gt;T[] toArray(T[] a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JDK提供Set接口3个实用类</p>
 <ul>
-<li><strong>默认参数必须写在一般参数的后面</strong></li>
+<li>
+<p>HashSet，采用Hash,无固定顺序</p>
+</li>
+<li>
+<p>TreeSet，实现SortedSet接口，有序</p>
+</li>
+<li>
+<p>LinkedHashSet，有固定顺序</p>
+</li>
 </ul>
-<h1 id="一元作用域运算符">一元作用域运算符::</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="List">List</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">List</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;&#123;</span><br><span class="line">    E <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    E <span class="title function_">set</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(<span class="type">int</span> index,Collection&lt;? extends E&gt; c)</span>;</span><br><span class="line">    <span class="comment">//查找</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">lastIndexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">()</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    Lis&lt;E&gt; <span class="title function_">subList</span><span class="params">(<span class="type">int</span> from,<span class="type">int</span> to)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JDK提供Set接口3个实用类</p>
+<ul>
+<li>
+<p>ArrayList,效率最高</p>
+</li>
+<li>
+<p>LinkedList,还提供在结尾和开头get,remove,insert</p>
+</li>
+<li>
+<p>Vector</p>
+</li>
+</ul>
+<hr>
+<h1 id="Queue">Queue</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Queue</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt; &#123;</span><br><span class="line">    E <span class="title function_">element</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E e)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">offer</span><span class="params">(E e)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">poll</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">peek</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Map">Map</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Map</span>&lt;K, V&gt; &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>C++</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>C++</tag>
-        <tag>OP编程</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1120,49 +1123,46 @@
       </tags>
   </entry>
   <entry>
-    <title>Java:集合类</title>
-    <url>/2022/10/01/Java-%E9%9B%86%E5%90%88%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Set">Set</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Set</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//基本操作</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(Objects element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">remove</span><span class="params">(Objects element)</span>;</span><br><span class="line">    Iterator&lt;E&gt; <span class="title function_">iterator</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsAll</span><span class="params">(Collection &lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(Collection&lt;?extends E&gt; c)</span>;<span class="comment">//将集合c的元素添加到本集合</span></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">removeAll</span><span class="params">(Collection&lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">retainAll</span><span class="params">(Collection&lt;?&gt; c)</span>;<span class="comment">//只保留属于c的元素</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span>;</span><br><span class="line">    Objects[] toArray();</span><br><span class="line">    &lt;T&gt;T[] toArray(T[] a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>JDK提供Set接口3个实用类</p>
+    <title>C++编程基础</title>
+    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="从C到C">从C到C++</h2>
+<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
+<h1 id="万能头文件">万能头文件</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="最简单的C-程序">最简单的C++程序</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>
+<p>C++规定main函数必须声明为int型。</p>
+</li>
+<li>
+<p>cout为输出流对象</p>
+</li>
+</ol>
+<h2 id="输入输出">输入输出</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="内联函数">内联函数</h2>
+<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
+<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="函数模板">函数模板</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="引用和引用形参">引用和引用形参</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
+<h1 id="参数传递">参数传递</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>
-<p>HashSet，采用Hash,无固定顺序</p>
-</li>
-<li>
-<p>TreeSet，实现SortedSet接口，有序</p>
-</li>
-<li>
-<p>LinkedHashSet，有固定顺序</p>
-</li>
+<li><strong>默认参数必须写在一般参数的后面</strong></li>
 </ul>
-<hr>
-<h1 id="List">List</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">List</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;&#123;</span><br><span class="line">    E <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    E <span class="title function_">set</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(<span class="type">int</span> index,Collection&lt;? extends E&gt; c)</span>;</span><br><span class="line">    <span class="comment">//查找</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">lastIndexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">()</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    Lis&lt;E&gt; <span class="title function_">subList</span><span class="params">(<span class="type">int</span> from,<span class="type">int</span> to)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>JDK提供Set接口3个实用类</p>
-<ul>
-<li>
-<p>ArrayList,效率最高</p>
-</li>
-<li>
-<p>LinkedList,还提供在结尾和开头get,remove,insert</p>
-</li>
-<li>
-<p>Vector</p>
-</li>
-</ul>
-<hr>
-<h1 id="Queue">Queue</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Queue</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt; &#123;</span><br><span class="line">    E <span class="title function_">element</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E e)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">offer</span><span class="params">(E e)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">poll</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">peek</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="Map">Map</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Map</span>&lt;K, V&gt; &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="一元作用域运算符">一元作用域运算符::</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>C++</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>C++</tag>
+        <tag>OP编程</tag>
       </tags>
   </entry>
   <entry>
@@ -1297,6 +1297,40 @@
 ]]></content>
       <categories>
         <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV:图像处理</title>
+    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h1 id="颜色变换cvtColor">颜色变换cvtColor</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt=""></p>
+<h1 id="画基本图形">画基本图形</h1>
+<h2 id="画矩形">画矩形</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画圆">画圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画椭圆">画椭圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ellipse</span>(<span class="params">img, center, axes, angle, startAngle, endAngle, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画线段">画线段</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">line</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.line(img,[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">300</span>,<span class="number">200</span>],(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="画多边形">画多边形</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">polylines</span>(<span class="params">img, pts, isClosed, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.polylines(img,[Pts],<span class="literal">True</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="填充多边形">填充多边形</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fillPoly</span>(<span class="params">img, pts, color, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span>, offset=<span class="literal">None</span></span>): </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.fillPoly(img,[Pts],(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -1450,40 +1484,6 @@
       </tags>
   </entry>
   <entry>
-    <title>OpenCV:图像处理</title>
-    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1 id="颜色变换cvtColor">颜色变换cvtColor</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt=""></p>
-<h1 id="画基本图形">画基本图形</h1>
-<h2 id="画矩形">画矩形</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画圆">画圆</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画椭圆">画椭圆</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ellipse</span>(<span class="params">img, center, axes, angle, startAngle, endAngle, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画线段">画线段</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">line</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.line(img,[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">300</span>,<span class="number">200</span>],(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="画多边形">画多边形</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">polylines</span>(<span class="params">img, pts, isClosed, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.polylines(img,[Pts],<span class="literal">True</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="填充多边形">填充多边形</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fillPoly</span>(<span class="params">img, pts, color, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span>, offset=<span class="literal">None</span></span>): </span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.fillPoly(img,[Pts],(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV的基本操作</title>
     <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="图像输入输出模块imgcodecs">图像输入输出模块imgcodecs</h1>
@@ -1614,6 +1614,30 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br>
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32F1软件仿真</title>
+    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
+    <content><![CDATA[<h1 id="检查配置">检查配置</h1>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230008993.png" alt=""></p>
+<h1 id="Debug-选项卡">Debug 选项卡</h1>
+<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br>
+编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：DARMSTM.DLL和 TARMSTM.DLL，Parameter 均为：</p>
+<pre><code>-pSTM32F103ZE
+</code></pre>
+<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230018268.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230020277.png" alt=""></p>
+<p>Debug 工具条</p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230021271.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>嵌入式</tag>
       </tags>
   </entry>
   <entry>
@@ -1794,30 +1818,6 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br>
       </tags>
   </entry>
   <entry>
-    <title>STM32F1软件仿真</title>
-    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
-    <content><![CDATA[<h1 id="检查配置">检查配置</h1>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230008993.png" alt=""></p>
-<h1 id="Debug-选项卡">Debug 选项卡</h1>
-<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br>
-编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：DARMSTM.DLL和 TARMSTM.DLL，Parameter 均为：</p>
-<pre><code>-pSTM32F103ZE
-</code></pre>
-<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230018268.png" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230020277.png" alt=""></p>
-<p>Debug 工具条</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230021271.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>STM32</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>嵌入式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>STM32固件库</title>
     <url>/2022/09/21/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93/</url>
     <content><![CDATA[<h1 id="什么是固件库？">什么是固件库？</h1>
@@ -1902,21 +1902,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在Hexo上写文章">在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
-<h2 id="Hello-World">Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>requests库的使用</title>
     <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="请求">请求</h2>
@@ -1960,57 +1945,18 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>数据库原理</title>
-    <url>/2022/09/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h1 id="数据库概述">数据库概述</h1>
-<h2 id="数据库基本概念">数据库基本概念</h2>
-<h3 id="信息">信息</h3>
-<p>信息是现实世界中各种事物的存在方式，运动形态以及它们之间的相互联系等诸要素在人脑中的反应，通过人脑抽象后形成的概念。</p>
-<h3 id="数据">数据</h3>
-<p>数据指(信息)的一种符号化表示记录方法,就是说用一定的符号表示信息，那采用什么符号完全是人为规定。</p>
-<ol>
-<li>
-<p>数据的内容是信息</p>
-</li>
-<li>
-<p>数据的表现形式是符号或数据是信息的载体</p>
-</li>
-</ol>
-<h1 id="数据系统管理数据的特点">数据系统管理数据的特点</h1>
-<ol>
-<li>
-<p>数据结构化</p>
-</li>
-<li>
-<p>数据共享性号，冗余度低</p>
-</li>
-<li>
-<p>数据独立性高</p>
-</li>
-<li>
-<p>有统一的数据控制功能</p>
-<ul>
-<li>
-<p>数据安全性控制</p>
-</li>
-<li>
-<p>数据完整性控制</p>
-</li>
-<li>
-<p>并发控制</p>
-</li>
-<li>
-<p>数据恢复</p>
-</li>
-</ul>
-</li>
-</ol>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在Hexo上写文章">在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
+<h2 id="Hello-World">Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
 ]]></content>
       <categories>
-        <category>数据库</category>
+        <category>随想</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
+        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
@@ -2180,31 +2126,106 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>OpenCV:灰度变换和直方图修正</title>
-    <url>/2022/09/16/%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3/</url>
-    <content><![CDATA[<h1 id="灰度化">灰度化</h1>
-<h2 id="加权平均值实现">加权平均值实现</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="number">0.3</span>*image[i,j][<span class="number">0</span>]+<span class="number">0.59</span>*image[i,j][<span class="number">1</span>]+<span class="number">0.11</span>*image[i,j][<span class="number">2</span>]</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209162222424.png" alt=""></p>
-<h2 id="最大法实现">最大法实现</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="built_in">max</span>(image[i,j][<span class="number">0</span>],image[i,j][<span class="number">1</span>],image[i,j][<span class="number">2</span>])</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209162224296.png" alt=""></p>
-<h2 id="平均法实现">平均法实现</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=(image[i,j][<span class="number">0</span>]+image[i,j][<span class="number">1</span>]+image[i,j][<span class="number">2</span>])/<span class="number">3</span></span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209162227298.png" alt=""></p>
-<h2 id="灰度线性变换">灰度线性变换</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">out=<span class="number">1.8</span>*img</span><br><span class="line">out[out&gt;<span class="number">255</span>]=<span class="number">255</span></span><br><span class="line">out=np.around(out)</span><br><span class="line">out=out.astype(np.uint8)</span><br><span class="line">cv.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv.imshow(<span class="string">&quot;out&quot;</span>,out)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209171620544.png" alt=""></p>
-<h2 id="分段线性变换">分段线性变换</h2>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209240051754.png" alt=""></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+    <title>数据库原理</title>
+    <url>/2022/09/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="数据库概述">数据库概述</h1>
+<h2 id="数据库基本概念">数据库基本概念</h2>
+<h3 id="信息">信息</h3>
+<p>信息是现实世界中各种事物的存在方式，运动形态以及它们之间的相互联系等诸要素在人脑中的反应，通过人脑抽象后形成的概念。</p>
+<h3 id="数据">数据</h3>
+<p>数据指(信息)的一种符号化表示记录方法,就是说用一定的符号表示信息，那采用什么符号完全是人为规定。</p>
+<ol>
+<li>
+<p>数据的内容是信息</p>
+</li>
+<li>
+<p>数据的表现形式是符号或数据是信息的载体</p>
+</li>
+</ol>
+<h1 id="数据系统管理数据的特点">数据系统管理数据的特点</h1>
+<ol>
+<li>
+<p>数据结构化</p>
+</li>
+<li>
+<p>数据共享性号，冗余度低</p>
+</li>
+<li>
+<p>数据独立性高</p>
+</li>
+<li>
+<p>有统一的数据控制功能</p>
+<ul>
+<li>
+<p>数据安全性控制</p>
+</li>
+<li>
+<p>数据完整性控制</p>
+</li>
+<li>
+<p>并发控制</p>
+</li>
+<li>
+<p>数据恢复</p>
+</li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
-        <category>OpenCV</category>
+        <category>数据库</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>刷题笔记㈠</title>
+    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
+    <content><![CDATA[<h1 id="额，感觉这很奇怪，下次不写了"><em>额，感觉这很奇怪，下次不写了</em></h1>
+<h1 id="面试题-08-05-递归乘法-力扣（LeetCode）"><a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
+<h2 id="思路：">思路：</h2>
+<blockquote>
+<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="2119-反转两次的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>老实人真会反转两次</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-Offer-58-II-左旋转字符串-力扣（LeetCode）"><a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>越界处理用取模</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="136-只出现一次的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
+<p>本题采用异或运算</p>
+<blockquote>
+<p><strong>异或运算性质</strong></p>
+<blockquote>
+<ol>
+<li>a^a=0；</li>
+<li>a^0=a;</li>
+<li>a^b=b^a</li>
+</ol>
+</blockquote>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="268-丢失的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>求和做减法</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-Offer-53-II-0～n-1中缺失的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2359,55 +2380,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>刷题笔记㈠</title>
-    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
-    <content><![CDATA[<h1 id="额，感觉这很奇怪，下次不写了"><em>额，感觉这很奇怪，下次不写了</em></h1>
-<h1 id="面试题-08-05-递归乘法-力扣（LeetCode）"><a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
-<h2 id="思路：">思路：</h2>
-<blockquote>
-<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="2119-反转两次的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>老实人真会反转两次</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-Offer-58-II-左旋转字符串-力扣（LeetCode）"><a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>越界处理用取模</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="136-只出现一次的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
-<p>本题采用异或运算</p>
-<blockquote>
-<p><strong>异或运算性质</strong></p>
-<blockquote>
-<ol>
-<li>a^a=0；</li>
-<li>a^0=a;</li>
-<li>a^b=b^a</li>
-</ol>
-</blockquote>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="268-丢失的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>求和做减法</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-Offer-53-II-0～n-1中缺失的数字-力扣（LeetCode）"><a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>计算机网络三级笔记</title>
     <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%89%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="第一章-网络系统结构与设计的基本原则">第一章 网络系统结构与设计的基本原则</h1>
@@ -2486,6 +2458,34 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </categories>
       <tags>
         <tag>计算机网路</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV:灰度变换和直方图修正</title>
+    <url>/2022/09/16/%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3/</url>
+    <content><![CDATA[<h1 id="灰度化">灰度化</h1>
+<h2 id="加权平均值实现">加权平均值实现</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="number">0.3</span>*image[i,j][<span class="number">0</span>]+<span class="number">0.59</span>*image[i,j][<span class="number">1</span>]+<span class="number">0.11</span>*image[i,j][<span class="number">2</span>]</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209162222424.png" alt=""></p>
+<h2 id="最大法实现">最大法实现</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="built_in">max</span>(image[i,j][<span class="number">0</span>],image[i,j][<span class="number">1</span>],image[i,j][<span class="number">2</span>])</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209162224296.png" alt=""></p>
+<h2 id="平均法实现">平均法实现</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=(image[i,j][<span class="number">0</span>]+image[i,j][<span class="number">1</span>]+image[i,j][<span class="number">2</span>])/<span class="number">3</span></span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209162227298.png" alt=""></p>
+<h2 id="灰度线性变换">灰度线性变换</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">out=<span class="number">1.8</span>*img</span><br><span class="line">out[out&gt;<span class="number">255</span>]=<span class="number">255</span></span><br><span class="line">out=np.around(out)</span><br><span class="line">out=out.astype(np.uint8)</span><br><span class="line">cv.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv.imshow(<span class="string">&quot;out&quot;</span>,out)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209171620544.png" alt=""></p>
+<h2 id="分段线性变换">分段线性变换</h2>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209240051754.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
       </tags>
   </entry>
 </search>
