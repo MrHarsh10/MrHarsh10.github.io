@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/2022/10/01/Java-%E9%9B%86%E5%90%88%E7%B1%BB/</loc>
+        <lastmod>2022-10-01T15:25:17.562Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/2022/09/26/Numpy%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2022-09-28T03:24:48.264Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -35,14 +43,6 @@
     <url>
         <loc>http://www.helicunzai.cn/2022/09/06/OpenCV-Python/</loc>
         <lastmod>2022-09-23T15:24:30.705Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/2022/09/21/SQL%E8%AF%AD%E5%8F%A5/</loc>
-        <lastmod>2022-09-23T08:40:41.305Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
