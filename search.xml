@@ -1,6 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++编程基础</title>
+    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
+<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
+<h1 id="万能头文件"><a class="markdownIt-Anchor" href="#万能头文件"></a> 万能头文件</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="最简单的c程序"><a class="markdownIt-Anchor" href="#最简单的c程序"></a> 最简单的C++程序</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>
+<p>C++规定main函数必须声明为int型。</p>
+</li>
+<li>
+<p>cout为输出流对象</p>
+</li>
+</ol>
+<h2 id="输入输出"><a class="markdownIt-Anchor" href="#输入输出"></a> 输入输出</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="内联函数"><a class="markdownIt-Anchor" href="#内联函数"></a> 内联函数</h2>
+<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
+<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="函数模板"><a class="markdownIt-Anchor" href="#函数模板"></a> 函数模板</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="引用和引用形参"><a class="markdownIt-Anchor" href="#引用和引用形参"></a> 引用和引用形参</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
+<h1 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>默认参数必须写在一般参数的后面</strong></li>
+</ul>
+<h1 id="一元作用域运算符"><a class="markdownIt-Anchor" href="#一元作用域运算符"></a> 一元作用域运算符::</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>OP编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java:集合类</title>
+    <url>/2022/10/01/Java-%E9%9B%86%E5%90%88%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="set"><a class="markdownIt-Anchor" href="#set"></a> Set</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Set</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//基本操作</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(Objects element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">remove</span><span class="params">(Objects element)</span>;</span><br><span class="line">    Iterator&lt;E&gt; <span class="title function_">iterator</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsAll</span><span class="params">(Collection &lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(Collection&lt;?extends E&gt; c)</span>;<span class="comment">//将集合c的元素添加到本集合</span></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">removeAll</span><span class="params">(Collection&lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">retainAll</span><span class="params">(Collection&lt;?&gt; c)</span>;<span class="comment">//只保留属于c的元素</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span>;</span><br><span class="line">    Objects[] toArray();</span><br><span class="line">    &lt;T&gt;T[] toArray(T[] a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JDK提供Set接口3个实用类</p>
+<ul>
+<li>
+<p>HashSet，采用Hash,无固定顺序</p>
+</li>
+<li>
+<p>TreeSet，实现SortedSet接口，有序</p>
+</li>
+<li>
+<p>LinkedHashSet，有固定顺序</p>
+</li>
+</ul>
+<hr />
+<h1 id="list"><a class="markdownIt-Anchor" href="#list"></a> List</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">List</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;&#123;</span><br><span class="line">    E <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    E <span class="title function_">set</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(<span class="type">int</span> index,Collection&lt;? extends E&gt; c)</span>;</span><br><span class="line">    <span class="comment">//查找</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">lastIndexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">()</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    Lis&lt;E&gt; <span class="title function_">subList</span><span class="params">(<span class="type">int</span> from,<span class="type">int</span> to)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JDK提供Set接口3个实用类</p>
+<ul>
+<li>
+<p>ArrayList,效率最高</p>
+</li>
+<li>
+<p>LinkedList,还提供在结尾和开头get,remove,insert</p>
+</li>
+<li>
+<p>Vector</p>
+</li>
+</ul>
+<hr />
+<h1 id="queue"><a class="markdownIt-Anchor" href="#queue"></a> Queue</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Queue</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt; &#123;</span><br><span class="line">    E <span class="title function_">element</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E e)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">offer</span><span class="params">(E e)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">poll</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">peek</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
+<h1 id="map"><a class="markdownIt-Anchor" href="#map"></a> Map</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Map</span>&lt;K, V&gt; &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    V <span class="title function_">put</span><span class="params">(K key,V value)</span>;</span><br><span class="line">    V <span class="title function_">get</span><span class="params">(Object key)</span>;</span><br><span class="line">    V <span class="title function_">remove</span><span class="params">(Object key)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsKey</span><span class="params">(Object key)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsValue</span><span class="params">(Object value)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">putAll</span><span class="params">(Map&lt;?extends K,?extends V&gt;m)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Set</span><span class="params">(K)</span> keySet();</span><br><span class="line">    <span class="keyword">public</span> Collection&lt;V&gt; <span class="title function_">values</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> Set&lt;Map.Entry&lt;k,v&gt;&gt; entrySet();</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Entry</span>&#123;</span><br><span class="line">        K <span class="title function_">getKey</span><span class="params">()</span>;</span><br><span class="line">        V <span class="title function_">getValue</span><span class="params">()</span>;</span><br><span class="line">        V <span class="title function_">setValue</span><span class="params">(V value)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++的STL</title>
     <url>/2022/08/10/C-%E7%9A%84STL/</url>
     <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
@@ -675,49 +765,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++编程基础</title>
-    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h1 id="万能头文件"><a class="markdownIt-Anchor" href="#万能头文件"></a> 万能头文件</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="最简单的c程序"><a class="markdownIt-Anchor" href="#最简单的c程序"></a> 最简单的C++程序</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>
-<p>C++规定main函数必须声明为int型。</p>
-</li>
-<li>
-<p>cout为输出流对象</p>
-</li>
-</ol>
-<h2 id="输入输出"><a class="markdownIt-Anchor" href="#输入输出"></a> 输入输出</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="内联函数"><a class="markdownIt-Anchor" href="#内联函数"></a> 内联函数</h2>
-<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
-<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="函数模板"><a class="markdownIt-Anchor" href="#函数模板"></a> 函数模板</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="引用和引用形参"><a class="markdownIt-Anchor" href="#引用和引用形参"></a> 引用和引用形参</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
-<h1 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>默认参数必须写在一般参数的后面</strong></li>
-</ul>
-<h1 id="一元作用域运算符"><a class="markdownIt-Anchor" href="#一元作用域运算符"></a> 一元作用域运算符::</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>OP编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Numpy笔记</title>
     <url>/2022/09/26/Numpy%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
@@ -1132,87 +1179,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java:集合类</title>
-    <url>/2022/10/01/Java-%E9%9B%86%E5%90%88%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="set"><a class="markdownIt-Anchor" href="#set"></a> Set</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Set</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//基本操作</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(Objects element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">remove</span><span class="params">(Objects element)</span>;</span><br><span class="line">    Iterator&lt;E&gt; <span class="title function_">iterator</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsAll</span><span class="params">(Collection &lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(Collection&lt;?extends E&gt; c)</span>;<span class="comment">//将集合c的元素添加到本集合</span></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">removeAll</span><span class="params">(Collection&lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">retainAll</span><span class="params">(Collection&lt;?&gt; c)</span>;<span class="comment">//只保留属于c的元素</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span>;</span><br><span class="line">    Objects[] toArray();</span><br><span class="line">    &lt;T&gt;T[] toArray(T[] a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>JDK提供Set接口3个实用类</p>
-<ul>
-<li>
-<p>HashSet，采用Hash,无固定顺序</p>
-</li>
-<li>
-<p>TreeSet，实现SortedSet接口，有序</p>
-</li>
-<li>
-<p>LinkedHashSet，有固定顺序</p>
-</li>
-</ul>
-<hr />
-<h1 id="list"><a class="markdownIt-Anchor" href="#list"></a> List</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">List</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;&#123;</span><br><span class="line">    E <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    E <span class="title function_">set</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(<span class="type">int</span> index,Collection&lt;? extends E&gt; c)</span>;</span><br><span class="line">    <span class="comment">//查找</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">lastIndexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">()</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    Lis&lt;E&gt; <span class="title function_">subList</span><span class="params">(<span class="type">int</span> from,<span class="type">int</span> to)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>JDK提供Set接口3个实用类</p>
-<ul>
-<li>
-<p>ArrayList,效率最高</p>
-</li>
-<li>
-<p>LinkedList,还提供在结尾和开头get,remove,insert</p>
-</li>
-<li>
-<p>Vector</p>
-</li>
-</ul>
-<hr />
-<h1 id="queue"><a class="markdownIt-Anchor" href="#queue"></a> Queue</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Queue</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt; &#123;</span><br><span class="line">    E <span class="title function_">element</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E e)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">offer</span><span class="params">(E e)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">poll</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">peek</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
-<h1 id="map"><a class="markdownIt-Anchor" href="#map"></a> Map</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Map</span>&lt;K, V&gt; &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    V <span class="title function_">put</span><span class="params">(K key,V value)</span>;</span><br><span class="line">    V <span class="title function_">get</span><span class="params">(Object key)</span>;</span><br><span class="line">    V <span class="title function_">remove</span><span class="params">(Object key)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsKey</span><span class="params">(Object key)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsValue</span><span class="params">(Object value)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">putAll</span><span class="params">(Map&lt;?extends K,?extends V&gt;m)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Set</span><span class="params">(K)</span> keySet();</span><br><span class="line">    <span class="keyword">public</span> Collection&lt;V&gt; <span class="title function_">values</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> Set&lt;Map.Entry&lt;k,v&gt;&gt; entrySet();</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Entry</span>&#123;</span><br><span class="line">        K <span class="title function_">getKey</span><span class="params">()</span>;</span><br><span class="line">        V <span class="title function_">getValue</span><span class="params">()</span>;</span><br><span class="line">        V <span class="title function_">setValue</span><span class="params">(V value)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV:图像处理</title>
-    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1 id="颜色变换cvtcolor"><a class="markdownIt-Anchor" href="#颜色变换cvtcolor"></a> 颜色变换cvtColor</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt="" /></p>
-<h1 id="画基本图形"><a class="markdownIt-Anchor" href="#画基本图形"></a> 画基本图形</h1>
-<h2 id="画矩形"><a class="markdownIt-Anchor" href="#画矩形"></a> 画矩形</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画圆"><a class="markdownIt-Anchor" href="#画圆"></a> 画圆</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画椭圆"><a class="markdownIt-Anchor" href="#画椭圆"></a> 画椭圆</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ellipse</span>(<span class="params">img, center, axes, angle, startAngle, endAngle, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画线段"><a class="markdownIt-Anchor" href="#画线段"></a> 画线段</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">line</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.line(img,[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">300</span>,<span class="number">200</span>],(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="画多边形"><a class="markdownIt-Anchor" href="#画多边形"></a> 画多边形</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">polylines</span>(<span class="params">img, pts, isClosed, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.polylines(img,[Pts],<span class="literal">True</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="填充多边形"><a class="markdownIt-Anchor" href="#填充多边形"></a> 填充多边形</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fillPoly</span>(<span class="params">img, pts, color, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span>, offset=<span class="literal">None</span></span>): </span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.fillPoly(img,[Pts],(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV:简单实现人脸识别</title>
     <url>/2022/09/06/OpenCV-Python/</url>
     <content><![CDATA[<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
@@ -1497,6 +1463,40 @@
       </tags>
   </entry>
   <entry>
+    <title>OpenCV:图像处理</title>
+    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h1 id="颜色变换cvtcolor"><a class="markdownIt-Anchor" href="#颜色变换cvtcolor"></a> 颜色变换cvtColor</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt="" /></p>
+<h1 id="画基本图形"><a class="markdownIt-Anchor" href="#画基本图形"></a> 画基本图形</h1>
+<h2 id="画矩形"><a class="markdownIt-Anchor" href="#画矩形"></a> 画矩形</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画圆"><a class="markdownIt-Anchor" href="#画圆"></a> 画圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画椭圆"><a class="markdownIt-Anchor" href="#画椭圆"></a> 画椭圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ellipse</span>(<span class="params">img, center, axes, angle, startAngle, endAngle, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画线段"><a class="markdownIt-Anchor" href="#画线段"></a> 画线段</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">line</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.line(img,[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">300</span>,<span class="number">200</span>],(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="画多边形"><a class="markdownIt-Anchor" href="#画多边形"></a> 画多边形</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">polylines</span>(<span class="params">img, pts, isClosed, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.polylines(img,[Pts],<span class="literal">True</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="填充多边形"><a class="markdownIt-Anchor" href="#填充多边形"></a> 填充多边形</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fillPoly</span>(<span class="params">img, pts, color, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span>, offset=<span class="literal">None</span></span>): </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.fillPoly(img,[Pts],(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCV的基本操作</title>
     <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
@@ -1640,6 +1640,30 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32F1软件仿真</title>
+    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
+    <content><![CDATA[<h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230008993.png" alt="" /></p>
+<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
+<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
+编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：DARMSTM.DLL和 TARMSTM.DLL，Parameter 均为：</p>
+<pre><code>-pSTM32F103ZE
+</code></pre>
+<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230018268.png" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230020277.png" alt="" /></p>
+<p>Debug 工具条</p>
+<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230021271.png" alt="" /></p>
+]]></content>
+      <categories>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>嵌入式</tag>
       </tags>
   </entry>
   <entry>
@@ -1820,64 +1844,6 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
-<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>requests库的使用</title>
-    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
-<ul>
-<li>
-<p>post(‘url’)</p>
-</li>
-<li>
-<p>put(‘url’)</p>
-</li>
-<li>
-<p>delete(‘url’)</p>
-</li>
-<li>
-<p>head(‘url’)</p>
-</li>
-<li>
-<p>options(‘url’)</p>
-</li>
-<li>
-<p>get(‘url’)</p>
-</li>
-</ul>
-<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
-<p>下载图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
-<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<p>文件上传</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>STM32固件库</title>
     <url>/2022/09/21/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93/</url>
     <content><![CDATA[<h1 id="什么是固件库"><a class="markdownIt-Anchor" href="#什么是固件库"></a> 什么是固件库？</h1>
@@ -1962,27 +1928,61 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>STM32F1软件仿真</title>
-    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
-    <content><![CDATA[<h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230008993.png" alt="" /></p>
-<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
-<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
-编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：DARMSTM.DLL和 TARMSTM.DLL，Parameter 均为：</p>
-<pre><code>-pSTM32F103ZE
-</code></pre>
-<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230018268.png" alt="" /></p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230020277.png" alt="" /></p>
-<p>Debug 工具条</p>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209230021271.png" alt="" /></p>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，加个header就可以博客文章了，很方便！</p>
+<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
 ]]></content>
       <categories>
-        <category>STM32</category>
+        <category>随想</category>
       </categories>
       <tags>
-        <tag>STM32</tag>
-        <tag>嵌入式</tag>
+        <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>requests库的使用</title>
+    <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
+<ul>
+<li>
+<p>post(‘url’)</p>
+</li>
+<li>
+<p>put(‘url’)</p>
+</li>
+<li>
+<p>delete(‘url’)</p>
+</li>
+<li>
+<p>head(‘url’)</p>
+</li>
+<li>
+<p>options(‘url’)</p>
+</li>
+<li>
+<p>get(‘url’)</p>
+</li>
+</ul>
+<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
+<p>下载图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
+<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<p>文件上传</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -2148,23 +2148,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>使用Python和NumPy构建神经网络模型</title>
-    <url>/2022/09/26/%E4%BD%BF%E7%94%A8Python%E5%92%8CNumPy%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209262311935.png" alt="" /></p>
-<h2 id="1-线性回归模型"><a class="markdownIt-Anchor" href="#1-线性回归模型"></a> 1. 线性回归模型</h2>
-<p>假设房价和各影响因素之间能够用线性关系来描述：</p>
-<p>模型的求解即是通过数据拟合出每个<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>。其中，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>分别表示该线性模型的权重和偏置。一维情况下，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span> 是直线的斜率和截距。</p>
-<p>线性回归模型使用均方误差作为损失函数（Loss），用以衡量预测房价和真实房价的差异，公式如下：</p>
-]]></content>
-      <categories>
-        <category>人工智能</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>人工智能</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>刷题笔记㈠</title>
     <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
     <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
@@ -2214,6 +2197,23 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
+    <title>使用Python和NumPy构建神经网络模型</title>
+    <url>/2022/09/26/%E4%BD%BF%E7%94%A8Python%E5%92%8CNumPy%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209262311935.png" alt="" /></p>
+<h2 id="1-线性回归模型"><a class="markdownIt-Anchor" href="#1-线性回归模型"></a> 1. 线性回归模型</h2>
+<p>假设房价和各影响因素之间能够用线性关系来描述：</p>
+<p>模型的求解即是通过数据拟合出每个<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>。其中，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span>分别表示该线性模型的权重和偏置。一维情况下，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span> 是直线的斜率和截距。</p>
+<p>线性回归模型使用均方误差作为损失函数（Loss），用以衡量预测房价和真实房价的差异，公式如下：</p>
+]]></content>
+      <categories>
+        <category>人工智能</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCV:灰度变换和直方图修正</title>
     <url>/2022/09/16/%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3/</url>
     <content><![CDATA[<h1 id="灰度化"><a class="markdownIt-Anchor" href="#灰度化"></a> 灰度化</h1>
@@ -2239,60 +2239,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       <tags>
         <tag>Python</tag>
         <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据库原理</title>
-    <url>/2022/09/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h1 id="数据库概述"><a class="markdownIt-Anchor" href="#数据库概述"></a> 数据库概述</h1>
-<h2 id="数据库基本概念"><a class="markdownIt-Anchor" href="#数据库基本概念"></a> 数据库基本概念</h2>
-<h3 id="信息"><a class="markdownIt-Anchor" href="#信息"></a> 信息</h3>
-<p>信息是现实世界中各种事物的存在方式，运动形态以及它们之间的相互联系等诸要素在人脑中的反应，通过人脑抽象后形成的概念。</p>
-<h3 id="数据"><a class="markdownIt-Anchor" href="#数据"></a> 数据</h3>
-<p>数据指(信息)的一种符号化表示记录方法,就是说用一定的符号表示信息，那采用什么符号完全是人为规定。</p>
-<ol>
-<li>
-<p>数据的内容是信息</p>
-</li>
-<li>
-<p>数据的表现形式是符号或数据是信息的载体</p>
-</li>
-</ol>
-<h1 id="数据系统管理数据的特点"><a class="markdownIt-Anchor" href="#数据系统管理数据的特点"></a> 数据系统管理数据的特点</h1>
-<ol>
-<li>
-<p>数据结构化</p>
-</li>
-<li>
-<p>数据共享性号，冗余度低</p>
-</li>
-<li>
-<p>数据独立性高</p>
-</li>
-<li>
-<p>有统一的数据控制功能</p>
-<ul>
-<li>
-<p>数据安全性控制</p>
-</li>
-<li>
-<p>数据完整性控制</p>
-</li>
-<li>
-<p>并发控制</p>
-</li>
-<li>
-<p>数据恢复</p>
-</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -2444,6 +2390,60 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库原理</title>
+    <url>/2022/09/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="数据库概述"><a class="markdownIt-Anchor" href="#数据库概述"></a> 数据库概述</h1>
+<h2 id="数据库基本概念"><a class="markdownIt-Anchor" href="#数据库基本概念"></a> 数据库基本概念</h2>
+<h3 id="信息"><a class="markdownIt-Anchor" href="#信息"></a> 信息</h3>
+<p>信息是现实世界中各种事物的存在方式，运动形态以及它们之间的相互联系等诸要素在人脑中的反应，通过人脑抽象后形成的概念。</p>
+<h3 id="数据"><a class="markdownIt-Anchor" href="#数据"></a> 数据</h3>
+<p>数据指(信息)的一种符号化表示记录方法,就是说用一定的符号表示信息，那采用什么符号完全是人为规定。</p>
+<ol>
+<li>
+<p>数据的内容是信息</p>
+</li>
+<li>
+<p>数据的表现形式是符号或数据是信息的载体</p>
+</li>
+</ol>
+<h1 id="数据系统管理数据的特点"><a class="markdownIt-Anchor" href="#数据系统管理数据的特点"></a> 数据系统管理数据的特点</h1>
+<ol>
+<li>
+<p>数据结构化</p>
+</li>
+<li>
+<p>数据共享性号，冗余度低</p>
+</li>
+<li>
+<p>数据独立性高</p>
+</li>
+<li>
+<p>有统一的数据控制功能</p>
+<ul>
+<li>
+<p>数据安全性控制</p>
+</li>
+<li>
+<p>数据完整性控制</p>
+</li>
+<li>
+<p>并发控制</p>
+</li>
+<li>
+<p>数据恢复</p>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
