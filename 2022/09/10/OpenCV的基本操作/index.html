@@ -28,15 +28,15 @@
 <meta property="og:site_name" content="Mr Harsh的广阔天地">
 <meta property="og:description" content="试一试水深火热的CV">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102320942.png">
+<meta property="og:image" content="https://s2.loli.net/2022/10/09/UNlsSDQKXyLdf8a.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/10/09/SGZxMl649gC5HtI.png">
 <meta property="article:published_time" content="2022-09-10T03:40:54.000Z">
-<meta property="article:modified_time" content="2022-09-10T15:21:06.050Z">
+<meta property="article:modified_time" content="2022-10-09T07:32:40.571Z">
 <meta property="article:author" content="Mr Harsh">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="OpenCV">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png">
+<meta name="twitter:image" content="https://s2.loli.net/2022/10/09/UNlsSDQKXyLdf8a.jpg">
 
 
 <link rel="canonical" href="http://www.helicunzai.cn/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
@@ -256,9 +256,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-09-10 11:40:54 / 修改时间：23:21:06" itemprop="dateCreated datePublished" datetime="2022-09-10T11:40:54+08:00">2022-09-10</time>
+      <time title="创建时间：2022-09-10 11:40:54" itemprop="dateCreated datePublished" datetime="2022-09-10T11:40:54+08:00">2022-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-09 15:32:40" itemprop="dateModified" datetime="2022-10-09T15:32:40+08:00">2022-10-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -326,7 +332,7 @@
 <h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
 <p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102129722.png" title="" alt="" data-align="center">
+<img title="" src="https://s2.loli.net/2022/10/09/UNlsSDQKXyLdf8a.jpg" alt="" data-align="center">
 <h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
 <ul>
 <li>
@@ -376,7 +382,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
 <h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209102320942.png" alt="" /></p>
+<p><img src="https://s2.loli.net/2022/10/09/SGZxMl649gC5HtI.png" alt="" /></p>
 
     </div>
 
