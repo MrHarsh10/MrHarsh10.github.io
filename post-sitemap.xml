@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/2022/10/17/Django-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</loc>
+        <lastmod>2022-10-17T07:32:07.152Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</loc>
+        <lastmod>2022-10-15T16:20:50.818Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/2022/09/26/%E4%BD%BF%E7%94%A8Python%E5%92%8CNumPy%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</loc>
         <lastmod>2022-10-14T15:56:49.861Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -59,14 +75,6 @@
     <url>
         <loc>http://www.helicunzai.cn/2022/10/06/selenium-%E5%B7%9D%E5%86%9C%E5%AD%A6%E5%B7%A5%E7%BD%91%E8%87%AA%E5%8A%A8%E5%8C%96%E7%99%BB%E5%BD%95/</loc>
         <lastmod>2022-10-09T07:16:46.587Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</loc>
-        <lastmod>2022-10-09T07:14:57.984Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
