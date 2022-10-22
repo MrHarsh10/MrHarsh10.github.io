@@ -3,14 +3,14 @@
 
 
     <url>
-        <loc>http://www.helicunzai.cn/tags/Python/</loc>
+        <loc>http://www.helicunzai.cn/tags/Django/</loc>
         <lastmod>2022-10-17T08:03:33.340Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.helicunzai.cn/tags/Django/</loc>
+        <loc>http://www.helicunzai.cn/tags/Python/</loc>
         <lastmod>2022-10-17T08:03:33.340Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -54,13 +54,6 @@
     <url>
         <loc>http://www.helicunzai.cn/tags/Java/</loc>
         <lastmod>2022-10-01T15:29:35.216Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-        <lastmod>2022-09-23T08:29:57.945Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
