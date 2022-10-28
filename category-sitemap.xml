@@ -9,6 +9,13 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/categories/%25E6%259C%25BA%25E5%2599%25A8%25E5%25AD%25A6%25E4%25B9%25A0/</loc>
+        <lastmod>2022-10-28T02:49:47.317Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/categories/Django/</loc>
         <lastmod>2022-10-17T08:03:33.340Z</lastmod>
         <changefreq>weekly</changefreq>

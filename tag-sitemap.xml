@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2022-10-28T02:49:47.317Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+        <lastmod>2022-10-28T02:49:47.317Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/tags/Python/</loc>
         <lastmod>2022-10-17T08:03:33.340Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -26,13 +40,6 @@
     <url>
         <loc>http://www.helicunzai.cn/tags/STM32/</loc>
         <lastmod>2022-10-15T16:20:50.818Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
-        <lastmod>2022-10-14T15:56:49.861Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

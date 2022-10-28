@@ -718,53 +718,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java:集合类</title>
-    <url>/2022/10/01/Java-%E9%9B%86%E5%90%88%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="set"><a class="markdownIt-Anchor" href="#set"></a> Set</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Set</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//基本操作</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(Objects element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">remove</span><span class="params">(Objects element)</span>;</span><br><span class="line">    Iterator&lt;E&gt; <span class="title function_">iterator</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsAll</span><span class="params">(Collection &lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(Collection&lt;?extends E&gt; c)</span>;<span class="comment">//将集合c的元素添加到本集合</span></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">removeAll</span><span class="params">(Collection&lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">retainAll</span><span class="params">(Collection&lt;?&gt; c)</span>;<span class="comment">//只保留属于c的元素</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span>;</span><br><span class="line">    Objects[] toArray();</span><br><span class="line">    &lt;T&gt;T[] toArray(T[] a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>JDK提供Set接口3个实用类</p>
-<ul>
-<li>
-<p>HashSet，采用Hash,无固定顺序</p>
-</li>
-<li>
-<p>TreeSet，实现SortedSet接口，有序</p>
-</li>
-<li>
-<p>LinkedHashSet，有固定顺序</p>
-</li>
-</ul>
-<hr />
-<h1 id="list"><a class="markdownIt-Anchor" href="#list"></a> List</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">List</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;&#123;</span><br><span class="line">    E <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    E <span class="title function_">set</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(<span class="type">int</span> index,Collection&lt;? extends E&gt; c)</span>;</span><br><span class="line">    <span class="comment">//查找</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">lastIndexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">()</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    Lis&lt;E&gt; <span class="title function_">subList</span><span class="params">(<span class="type">int</span> from,<span class="type">int</span> to)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>JDK提供Set接口3个实用类</p>
-<ul>
-<li>
-<p>ArrayList,效率最高</p>
-</li>
-<li>
-<p>LinkedList,还提供在结尾和开头get,remove,insert</p>
-</li>
-<li>
-<p>Vector</p>
-</li>
-</ul>
-<hr />
-<h1 id="queue"><a class="markdownIt-Anchor" href="#queue"></a> Queue</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Queue</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt; &#123;</span><br><span class="line">    E <span class="title function_">element</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E e)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">offer</span><span class="params">(E e)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">poll</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">peek</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
-<h1 id="map"><a class="markdownIt-Anchor" href="#map"></a> Map</h1>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Map</span>&lt;K, V&gt; &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    V <span class="title function_">put</span><span class="params">(K key,V value)</span>;</span><br><span class="line">    V <span class="title function_">get</span><span class="params">(Object key)</span>;</span><br><span class="line">    V <span class="title function_">remove</span><span class="params">(Object key)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsKey</span><span class="params">(Object key)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsValue</span><span class="params">(Object value)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">putAll</span><span class="params">(Map&lt;?extends K,?extends V&gt;m)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Set</span><span class="params">(K)</span> keySet();</span><br><span class="line">    <span class="keyword">public</span> Collection&lt;V&gt; <span class="title function_">values</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> Set&lt;Map.Entry&lt;k,v&gt;&gt; entrySet();</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Entry</span>&#123;</span><br><span class="line">        K <span class="title function_">getKey</span><span class="params">()</span>;</span><br><span class="line">        V <span class="title function_">getValue</span><span class="params">()</span>;</span><br><span class="line">        V <span class="title function_">setValue</span><span class="params">(V value)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Django:快速入门介绍</title>
     <url>/2022/10/17/Django-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<h1 id="创建项目"><a class="markdownIt-Anchor" href="#创建项目"></a> 创建项目</h1>
@@ -883,6 +836,53 @@
       <tags>
         <tag>Django</tag>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java:集合类</title>
+    <url>/2022/10/01/Java-%E9%9B%86%E5%90%88%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="set"><a class="markdownIt-Anchor" href="#set"></a> Set</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Set</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//基本操作</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(Objects element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">remove</span><span class="params">(Objects element)</span>;</span><br><span class="line">    Iterator&lt;E&gt; <span class="title function_">iterator</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsAll</span><span class="params">(Collection &lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(Collection&lt;?extends E&gt; c)</span>;<span class="comment">//将集合c的元素添加到本集合</span></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">removeAll</span><span class="params">(Collection&lt;?&gt; c)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">retainAll</span><span class="params">(Collection&lt;?&gt; c)</span>;<span class="comment">//只保留属于c的元素</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span>;</span><br><span class="line">    Objects[] toArray();</span><br><span class="line">    &lt;T&gt;T[] toArray(T[] a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JDK提供Set接口3个实用类</p>
+<ul>
+<li>
+<p>HashSet，采用Hash,无固定顺序</p>
+</li>
+<li>
+<p>TreeSet，实现SortedSet接口，有序</p>
+</li>
+<li>
+<p>LinkedHashSet，有固定顺序</p>
+</li>
+</ul>
+<hr />
+<h1 id="list"><a class="markdownIt-Anchor" href="#list"></a> List</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">List</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt;&#123;</span><br><span class="line">    E <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    E <span class="title function_">set</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> index,E element)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">addAll</span><span class="params">(<span class="type">int</span> index,Collection&lt;? extends E&gt; c)</span>;</span><br><span class="line">    <span class="comment">//查找</span></span><br><span class="line">    <span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">lastIndexOf</span><span class="params">(Object o)</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">()</span>;</span><br><span class="line">    ListIterator&lt;E&gt; <span class="title function_">listIterator</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line">    Lis&lt;E&gt; <span class="title function_">subList</span><span class="params">(<span class="type">int</span> from,<span class="type">int</span> to)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JDK提供Set接口3个实用类</p>
+<ul>
+<li>
+<p>ArrayList,效率最高</p>
+</li>
+<li>
+<p>LinkedList,还提供在结尾和开头get,remove,insert</p>
+</li>
+<li>
+<p>Vector</p>
+</li>
+</ul>
+<hr />
+<h1 id="queue"><a class="markdownIt-Anchor" href="#queue"></a> Queue</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Queue</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">Collection</span>&lt;E&gt; &#123;</span><br><span class="line">    E <span class="title function_">element</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E e)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">offer</span><span class="params">(E e)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">poll</span><span class="params">()</span>;</span><br><span class="line">    E <span class="title function_">peek</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
+<h1 id="map"><a class="markdownIt-Anchor" href="#map"></a> Map</h1>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Map</span>&lt;K, V&gt; &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    V <span class="title function_">put</span><span class="params">(K key,V value)</span>;</span><br><span class="line">    V <span class="title function_">get</span><span class="params">(Object key)</span>;</span><br><span class="line">    V <span class="title function_">remove</span><span class="params">(Object key)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsKey</span><span class="params">(Object key)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">containsValue</span><span class="params">(Object value)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">putAll</span><span class="params">(Map&lt;?extends K,?extends V&gt;m)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Set</span><span class="params">(K)</span> keySet();</span><br><span class="line">    <span class="keyword">public</span> Collection&lt;V&gt; <span class="title function_">values</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> Set&lt;Map.Entry&lt;k,v&gt;&gt; entrySet();</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Entry</span>&#123;</span><br><span class="line">        K <span class="title function_">getKey</span><span class="params">()</span>;</span><br><span class="line">        V <span class="title function_">getValue</span><span class="params">()</span>;</span><br><span class="line">        V <span class="title function_">setValue</span><span class="params">(V value)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1472,107 +1472,6 @@
       </tags>
   </entry>
   <entry>
-    <title>OpenCV的基本操作</title>
-    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
-<h2 id="读取图像文件"><a class="markdownIt-Anchor" href="#读取图像文件"></a> 读取图像文件</h2>
-<p>读取图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>第二个参数指定图片被读取的方式：</p>
-<ul>
-<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
-<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
-<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
-</ul>
-<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>读取失败返回None</p>
-<h2 id="读取照片的高度与宽度"><a class="markdownIt-Anchor" href="#读取照片的高度与宽度"></a> 读取照片的高度与宽度</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
-<h2 id="保存照片"><a class="markdownIt-Anchor" href="#保存照片"></a> 保存照片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="opencv界面编程"><a class="markdownIt-Anchor" href="#opencv界面编程"></a> OpenCV界面编程</h1>
-<h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>flags</p>
-<ul>
-<li>
-<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
-</li>
-<li>
-<p>cv2.WINDOW_NORMAL</p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
-<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<img title="" src="https://s2.loli.net/2022/10/09/UNlsSDQKXyLdf8a.jpg" alt="" data-align="center">
-<h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
-<ul>
-<li>
-<p>cv2.destroyWindow(winname)</p>
-</li>
-<li>
-<p>cv2.destroyAllWindows(winname)</p>
-</li>
-<li>
-<p>cv2.resizeWindow(winname,width,height)</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
-<p>OpenCV使用setMousecallback设定</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
-<p>鼠标事件event</p>
-<blockquote>
-<p>enum<br />
-{<br />
-EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
-EVENT_LBUTTONDOWN    =1,   //按下左键<br />
-EVENT_RBUTTONDOWN    =2,   //按下右键<br />
-EVENT_MBUTTONDOWN    =3,   //按下中键<br />
-EVENT_LBUTTONUP      =4,   //放开左键<br />
-EVENT_RBUTTONUP      =5,   //放开右键<br />
-EVENT_MBUTTONUP      =6,   //放开中键<br />
-EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
-EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
-EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
-EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
-};</p>
-</blockquote>
-<p>鼠标事件flags</p>
-<blockquote>
-<p>enum<br />
-{<br />
-CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
-CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
-CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
-CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
-CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
-CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
-};</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/SGZxMl649gC5HtI.png" alt="" /></p>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV:数组矩阵</title>
     <url>/2022/09/11/OpenCV-%E6%95%B0%E7%BB%84%E7%9F%A9%E9%98%B5/</url>
     <content><![CDATA[<h1 id="ndarray对象"><a class="markdownIt-Anchor" href="#ndarray对象"></a> ndarray对象</h1>
@@ -1729,6 +1628,107 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV的基本操作</title>
+    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
+<h2 id="读取图像文件"><a class="markdownIt-Anchor" href="#读取图像文件"></a> 读取图像文件</h2>
+<p>读取图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第二个参数指定图片被读取的方式：</p>
+<ul>
+<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
+<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
+<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
+</ul>
+<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>读取失败返回None</p>
+<h2 id="读取照片的高度与宽度"><a class="markdownIt-Anchor" href="#读取照片的高度与宽度"></a> 读取照片的高度与宽度</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
+<h2 id="保存照片"><a class="markdownIt-Anchor" href="#保存照片"></a> 保存照片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="opencv界面编程"><a class="markdownIt-Anchor" href="#opencv界面编程"></a> OpenCV界面编程</h1>
+<h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>flags</p>
+<ul>
+<li>
+<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
+</li>
+<li>
+<p>cv2.WINDOW_NORMAL</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
+<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<img title="" src="https://s2.loli.net/2022/10/09/UNlsSDQKXyLdf8a.jpg" alt="" data-align="center">
+<h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
+<ul>
+<li>
+<p>cv2.destroyWindow(winname)</p>
+</li>
+<li>
+<p>cv2.destroyAllWindows(winname)</p>
+</li>
+<li>
+<p>cv2.resizeWindow(winname,width,height)</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
+<p>OpenCV使用setMousecallback设定</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
+<p>鼠标事件event</p>
+<blockquote>
+<p>enum<br />
+{<br />
+EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
+EVENT_LBUTTONDOWN    =1,   //按下左键<br />
+EVENT_RBUTTONDOWN    =2,   //按下右键<br />
+EVENT_MBUTTONDOWN    =3,   //按下中键<br />
+EVENT_LBUTTONUP      =4,   //放开左键<br />
+EVENT_RBUTTONUP      =5,   //放开右键<br />
+EVENT_MBUTTONUP      =6,   //放开中键<br />
+EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
+EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
+EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
+EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
+};</p>
+</blockquote>
+<p>鼠标事件flags</p>
+<blockquote>
+<p>enum<br />
+{<br />
+CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
+CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
+CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
+CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
+CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
+CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
+};</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/SGZxMl649gC5HtI.png" alt="" /></p>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
       </tags>
   </entry>
   <entry>
@@ -2193,6 +2193,55 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
+    <title>刷题笔记㈠</title>
+    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
+    <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
+<h1 id="面试题-0805-递归乘法-力扣leetcode"><a class="markdownIt-Anchor" href="#面试题-0805-递归乘法-力扣leetcode"></a> <a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
+<blockquote>
+<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="2119-反转两次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#2119-反转两次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>老实人真会反转两次</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-offer-58-ii-左旋转字符串-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-58-ii-左旋转字符串-力扣leetcode"></a> <a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>越界处理用取模</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="136-只出现一次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#136-只出现一次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
+<p>本题采用异或运算</p>
+<blockquote>
+<p><strong>异或运算性质</strong></p>
+<blockquote>
+<ol>
+<li>a^a=0；</li>
+<li>a^0=a;</li>
+<li>a<sup>b=b</sup>a</li>
+</ol>
+</blockquote>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="268-丢失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#268-丢失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>求和做减法</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>urllib库的使用</title>
     <url>/2022/08/09/urllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
@@ -2342,6 +2391,53 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
+    <title>机器学习概念</title>
+    <url>/2022/10/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<h1 id="机器学习概念"><a class="markdownIt-Anchor" href="#机器学习概念"></a> 机器学习概念</h1>
+<img src="https://s2.loli.net/2022/10/28/jcTI4nM2LHCuVgU.png" title="" alt="" data-align="center">
+<p>所谓“机器学习”就是通过对数据进行反复得学习，来找出其中的规律和模式。</p>
+<p>机器学习（Machine Learning）是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科 。专门研究计算机怎样模拟或实现人类的学习行为，以获取新知识或技能，重新组织已有的知识结构使之不断改善自身的性能。</p>
+<h1 id="各类机器学习算法"><a class="markdownIt-Anchor" href="#各类机器学习算法"></a> 各类机器学习算法</h1>
+<h2 id="监督学习"><a class="markdownIt-Anchor" href="#监督学习"></a> 监督学习</h2>
+<p>监督学习（supervised learning）：从给定的有标注的训练数据集中学习出一个函数(模型参数)，当新的数据到来时可以根据这个函数预测结果。 常见任务包括<strong>分类</strong>与<strong>回归</strong></p>
+<ul>
+<li>
+<p>分类问题：对数据所属类别进行预测</p>
+</li>
+<li>
+<p>回归问题：连续变化的数值进行预测</p>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/10/28/vGMrEHVPWA8BgIC.png" alt="" /></p>
+<h2 id="无监督学习"><a class="markdownIt-Anchor" href="#无监督学习"></a> 无监督学习</h2>
+<p>无监督学习（unsupervised learning）：没有标注的训练数据集，需要根据样本间的统计规律对样本集进行分析，常见任务如<strong>聚类</strong>等</p>
+<p><img src="https://s2.loli.net/2022/10/28/cHDkVoXfP9AhgSs.png" alt="" /></p>
+<h2 id="半监督学习"><a class="markdownIt-Anchor" href="#半监督学习"></a> 半监督学习</h2>
+<p>半监督学习(Semi-supervised learning)结合（少量的）标注训练数据和(大量的）未标注数据来进行数据的分类学习。</p>
+<p>一般情况下，我们需要在某些假设的基础上来建立未标记数据和目标之间的联系。目前，在半监督学习中有两个常用的基本假设（两种假设都是基于“相似的样本拥有相似的输出”）：</p>
+<ol>
+<li>
+<p>聚类假设<br />
+是指相同聚类中的数据有较大的可能有相同的标记（假设数据存在簇结构，同一个簇的样本属于同一个类别）。根据该假设，决策边界就应该尽量通过数据较为稀疏的地方，从而避免把稠密的聚类中的数据点分到决策边界两侧。如 TSVM算法</p>
+</li>
+<li>
+<p>流形假设<br />
+（将高纬数据嵌入到低维流形中，当两个样例处于低维流行中的一个小局部领域内时，它们具有 相似的类标签），是指处于一个很小的局部领域内的数据具有相似的性质，其标记也应该相似（这一假设反映了决策函数的局部平滑性。）。 因此，流形假设可看做聚类假设的推广，但流形假设对输出值没有限制，因此比聚类假设的适用范围更广，可用于更多类型的学习任务。 和聚类假设的主要不同是，聚类假设主要关注的是整体特性，流形假设主要考虑的是模型的局部特性。<br />
+<img src="https://s2.loli.net/2022/10/28/87PVjXANTiSBRH5.png" alt="" /></p>
+</li>
+</ol>
+<h2 id="强化学习"><a class="markdownIt-Anchor" href="#强化学习"></a> 强化学习</h2>
+<p>强化学习（Reinforcement Learning）：外部环境对输出只给出评价信息而非正确答案，学习机通过强化受奖励的动作来改善自身的性能。<img src="https://s2.loli.net/2022/10/28/4F9tbYJq2MDNfgv.png" alt="" /></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>人工智能</tag>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCV:灰度变换和直方图修正</title>
     <url>/2022/09/16/%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3/</url>
     <content><![CDATA[<h1 id="灰度化"><a class="markdownIt-Anchor" href="#灰度化"></a> 灰度化</h1>
@@ -2367,55 +2463,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       <tags>
         <tag>Python</tag>
         <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>刷题笔记㈠</title>
-    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
-    <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
-<h1 id="面试题-0805-递归乘法-力扣leetcode"><a class="markdownIt-Anchor" href="#面试题-0805-递归乘法-力扣leetcode"></a> <a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
-<blockquote>
-<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="2119-反转两次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#2119-反转两次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>老实人真会反转两次</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-offer-58-ii-左旋转字符串-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-58-ii-左旋转字符串-力扣leetcode"></a> <a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>越界处理用取模</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="136-只出现一次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#136-只出现一次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
-<p>本题采用异或运算</p>
-<blockquote>
-<p><strong>异或运算性质</strong></p>
-<blockquote>
-<ol>
-<li>a^a=0；</li>
-<li>a^0=a;</li>
-<li>a<sup>b=b</sup>a</li>
-</ol>
-</blockquote>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="268-丢失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#268-丢失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>求和做减法</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
