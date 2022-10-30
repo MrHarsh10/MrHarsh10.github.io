@@ -3,22 +3,36 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/tags/%E7%BD%91%E7%AB%99/</loc>
+        <lastmod>2022-10-30T13:33:16.492Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/tags/Java/</loc>
+        <lastmod>2022-10-30T13:33:16.492Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2022-10-29T03:37:31.073Z</lastmod>
+        <lastmod>2022-10-29T04:15:24.202Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.helicunzai.cn/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
-        <lastmod>2022-10-29T03:37:31.073Z</lastmod>
+        <lastmod>2022-10-29T04:15:24.202Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.helicunzai.cn/tags/Python/</loc>
-        <lastmod>2022-10-17T08:03:33.340Z</lastmod>
+        <lastmod>2022-10-29T04:15:24.202Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -54,13 +68,6 @@
     <url>
         <loc>http://www.helicunzai.cn/tags/%E7%88%AC%E8%99%AB/</loc>
         <lastmod>2022-10-09T07:44:27.520Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/tags/Java/</loc>
-        <lastmod>2022-10-01T15:29:35.216Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
