@@ -10,7 +10,14 @@
 
     <url>
         <loc>http://www.helicunzai.cn/categories/Java/</loc>
-        <lastmod>2022-10-30T13:33:16.492Z</lastmod>
+        <lastmod>2022-10-31T07:47:08.694Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/categories/OpenCV/</loc>
+        <lastmod>2022-10-30T14:19:18.648Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -39,13 +46,6 @@
     <url>
         <loc>http://www.helicunzai.cn/categories/%25E4%25BA%25BA%25E5%25B7%25A5%25E6%2599%25BA%25E8%2583%25BD/</loc>
         <lastmod>2022-10-14T15:56:49.861Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/categories/OpenCV/</loc>
-        <lastmod>2022-10-09T07:46:44.016Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -81,13 +81,6 @@
     <url>
         <loc>http://www.helicunzai.cn/categories/Qt/</loc>
         <lastmod>2022-08-15T09:19:44.404Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/categories/%25E9%259A%258F%25E6%2583%25B3/</loc>
-        <lastmod>2022-08-08T14:03:31.441Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

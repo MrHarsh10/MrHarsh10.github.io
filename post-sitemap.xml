@@ -10,7 +10,15 @@
 
     <url>
         <loc>http://www.helicunzai.cn/2022/10/29/JSP%E8%AF%AD%E6%B3%95/</loc>
-        <lastmod>2022-10-30T13:33:16.492Z</lastmod>
+        <lastmod>2022-10-31T07:47:08.694Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/2022/09/06/OpenCV-Python/</loc>
+        <lastmod>2022-10-30T14:19:18.648Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -75,14 +83,6 @@
     <url>
         <loc>http://www.helicunzai.cn/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
         <lastmod>2022-10-09T07:32:40.571Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/2022/09/06/OpenCV-Python/</loc>
-        <lastmod>2022-10-09T07:30:37.051Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -227,14 +227,6 @@
     <url>
         <loc>http://www.helicunzai.cn/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/</loc>
         <lastmod>2022-08-09T05:36:50.356Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/2022/08/08/hello-world/</loc>
-        <lastmod>2022-08-08T14:03:31.441Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

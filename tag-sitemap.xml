@@ -4,14 +4,28 @@
 
     <url>
         <loc>http://www.helicunzai.cn/tags/%E7%BD%91%E7%AB%99/</loc>
-        <lastmod>2022-10-30T13:33:16.492Z</lastmod>
+        <lastmod>2022-10-31T07:47:08.694Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.helicunzai.cn/tags/Java/</loc>
-        <lastmod>2022-10-30T13:33:16.492Z</lastmod>
+        <lastmod>2022-10-31T07:47:08.694Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/tags/OpenCV/</loc>
+        <lastmod>2022-10-30T14:19:18.648Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/tags/Python/</loc>
+        <lastmod>2022-10-30T14:19:18.648Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -25,13 +39,6 @@
 
     <url>
         <loc>http://www.helicunzai.cn/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
-        <lastmod>2022-10-29T04:15:24.202Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/tags/Python/</loc>
         <lastmod>2022-10-29T04:15:24.202Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -54,13 +61,6 @@
     <url>
         <loc>http://www.helicunzai.cn/tags/STM32/</loc>
         <lastmod>2022-10-15T16:20:50.818Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/tags/OpenCV/</loc>
-        <lastmod>2022-10-09T07:46:44.016Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -110,13 +110,6 @@
     <url>
         <loc>http://www.helicunzai.cn/tags/STL/</loc>
         <lastmod>2022-08-11T09:56:39.691Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/tags/%E9%9A%8F%E6%83%B3/</loc>
-        <lastmod>2022-08-08T14:03:31.441Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
