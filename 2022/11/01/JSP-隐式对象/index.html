@@ -21,29 +21,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="requests库的使用">
+    <meta name="description" content="JSP:隐式对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="requests库的使用">
-<meta property="og:url" content="http://www.helicunzai.cn/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="JSP:隐式对象">
+<meta property="og:url" content="http://www.helicunzai.cn/2022/11/01/JSP-%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/index.html">
 <meta property="og:site_name" content="Mr Harsh的广阔天地">
-<meta property="og:description" content="requests库的使用">
+<meta property="og:description" content="JSP:隐式对象">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-13T10:22:05.000Z">
-<meta property="article:modified_time" content="2022-08-13T13:31:39.393Z">
+<meta property="article:published_time" content="2022-11-01T09:33:34.000Z">
+<meta property="article:modified_time" content="2022-11-01T09:57:55.334Z">
 <meta property="article:author" content="Mr Harsh">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="爬虫">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="网站">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://www.helicunzai.cn/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/">
+<link rel="canonical" href="http://www.helicunzai.cn/2022/11/01/JSP-%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/","path":"2022/08/13/requests的使用/","title":"requests库的使用"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/11/01/JSP-%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/","path":"2022/11/01/JSP-隐式对象/","title":"JSP:隐式对象"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>requests库的使用 | Mr Harsh的广阔天地</title>
+<title>JSP:隐式对象 | Mr Harsh的广阔天地</title>
   
 
 
@@ -146,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GET%E8%AF%B7%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST%E8%AF%B7%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D%E7%BB%B4%E6%8C%81"><span class="nav-number">1.3.</span> <span class="nav-text">会话维持</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#request-%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">request 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">常用方法</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -225,7 +225,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/11/01/JSP-%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/10/17/GtcNw4FPoqS7RZY.jpg">
@@ -238,12 +238,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="requests库的使用 | Mr Harsh的广阔天地">
-      <meta itemprop="description" content="requests库的使用">
+      <meta itemprop="name" content="JSP:隐式对象 | Mr Harsh的广阔天地">
+      <meta itemprop="description" content="JSP:隐式对象">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          requests库的使用
+          JSP:隐式对象
         </h1>
 
         <div class="post-meta-container">
@@ -255,7 +255,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-08-13 18:22:05 / 修改时间：21:31:39" itemprop="dateCreated datePublished" datetime="2022-08-13T18:22:05+08:00">2022-08-13</time>
+      <time title="创建时间：2022-11-01 17:33:34 / 修改时间：17:57:55" itemprop="dateCreated datePublished" datetime="2022-11-01T17:33:34+08:00">2022-11-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -263,7 +263,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%88%AC%E8%99%AB/" itemprop="url" rel="index"><span itemprop="name">爬虫</span></a>
+          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
         </span>
     </span>
 
@@ -277,7 +277,7 @@
     </span>
 </div>
 
-            <div class="post-description">requests库的使用</div>
+            <div class="post-description">JSP:隐式对象</div>
         </div>
       </header>
 
@@ -285,37 +285,133 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="请求">请求</h2>
+        <blockquote>
 <ul>
-<li>
-<p>post(‘url’)</p>
-</li>
-<li>
-<p>put(‘url’)</p>
-</li>
-<li>
-<p>delete(‘url’)</p>
-</li>
-<li>
-<p>head(‘url’)</p>
-</li>
-<li>
-<p>options(‘url’)</p>
-</li>
-<li>
-<p>get(‘url’)</p>
-</li>
+<li>JSP隐式对象是JSP容器为每个页面提供的Java对象，开发者可以直接使用它们而不用显式声明。JSP隐式对象也被称为预定义变量。</li>
 </ul>
-<h3 id="GET请求">GET请求</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
-<p>下载图片</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
-<h3 id="POST请求">POST请求</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<p>文件上传</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<h3 id="会话维持">会话维持</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th><strong>对象</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td><strong>HttpServletRequest</strong> 接口的实例</td>
+</tr>
+<tr>
+<td>response</td>
+<td><strong>HttpServletResponse</strong> 接口的实例</td>
+</tr>
+<tr>
+<td>out</td>
+<td><strong>JspWriter</strong>类的实例，用于把结果输出至网页上</td>
+</tr>
+<tr>
+<td>session</td>
+<td><strong>HttpSession</strong>类的实例</td>
+</tr>
+<tr>
+<td>application</td>
+<td><strong>ServletContext</strong>类的实例，与应用上下文有关</td>
+</tr>
+<tr>
+<td>config</td>
+<td><strong>ServletConfig</strong>类的实例</td>
+</tr>
+<tr>
+<td>pageContext</td>
+<td><strong>PageContext</strong>类的实例，提供对JSP页面所有对象以及命名空间的访问</td>
+</tr>
+<tr>
+<td>page</td>
+<td>类似于Java类中的this关键字</td>
+</tr>
+<tr>
+<td>Exception</td>
+<td><strong>Exception</strong>类的对象，代表发生错误的JSP页面中对应的异常对象</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h1 id="request-对象">request 对象</h1>
+<h2 id="常用方法">常用方法</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Object getAttribute(String name)</td>
+<td style="text-align:center">返回指定属性的属性值</td>
+</tr>
+<tr>
+<td style="text-align:center">Enumeration getAttributeNames</td>
+<td style="text-align:center">返回所有可用属性名的枚举</td>
+</tr>
+<tr>
+<td style="text-align:center">String getCharaterEncoding</td>
+<td style="text-align:center">返回字符编码方式</td>
+</tr>
+<tr>
+<td style="text-align:center">int getContentLength()</td>
+<td style="text-align:center">返回请求体的字节数</td>
+</tr>
+<tr>
+<td style="text-align:center">String getContentType()</td>
+<td style="text-align:center">返回请求体的MIME类型</td>
+</tr>
+<tr>
+<td style="text-align:center">ServletInputStream getInputStream()</td>
+<td style="text-align:center">返回请求体的一行二进制流</td>
+</tr>
+<tr>
+<td style="text-align:center">String getParameter(String name)</td>
+<td style="text-align:center">返回name指定参数的参数值</td>
+</tr>
+<tr>
+<td style="text-align:center">Enumeration getParameterNames()</td>
+<td style="text-align:center">返回可用参数名的枚举</td>
+</tr>
+<tr>
+<td style="text-align:center">String[] getParameterValues(String name)</td>
+<td style="text-align:center">返回包含参数name的所有值的数组</td>
+</tr>
+<tr>
+<td style="text-align:center">String getProtocol()</td>
+<td style="text-align:center">返回请求用的协议类型及版本号</td>
+</tr>
+<tr>
+<td style="text-align:center">String getServerName()</td>
+<td style="text-align:center">返回接收请求的服务器主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">int getServerPort()</td>
+<td style="text-align:center">返回服务器接收此请求的端口号</td>
+</tr>
+<tr>
+<td style="text-align:center">String getRemoteAddr()</td>
+<td style="text-align:center">返回发送此请求的客户端IP地址</td>
+</tr>
+<tr>
+<td style="text-align:center">String getRemoteAddr()</td>
+<td style="text-align:center">返回发送此请求的客户端主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">void setAttribute(String key,Obeject obj)</td>
+<td style="text-align:center">设置属性的属性值</td>
+</tr>
+<tr>
+<td style="text-align:center">String geRealPath(String path)</td>
+<td style="text-align:center">返回一虚拟路径的真实路径</td>
+</tr>
+</tbody>
+</table>
 
     </div>
 
@@ -327,22 +423,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Python/" rel="tag"># Python</a>
-              <a href="/tags/%E7%88%AC%E8%99%AB/" rel="tag"># 爬虫</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/%E7%BD%91%E7%AB%99/" rel="tag"># 网站</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/" rel="prev" title="刷题笔记㈠">
-                  <i class="fa fa-chevron-left"></i> 刷题笔记㈠
+                <a href="/2022/10/29/JSP%E8%AF%AD%E6%B3%95/" rel="prev" title="JSP语法">
+                  <i class="fa fa-chevron-left"></i> JSP语法
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/08/14/Qt%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="next" title="Qt工具类">
-                  Qt工具类 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
