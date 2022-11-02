@@ -968,7 +968,7 @@
 </tr>
 </tbody>
 </table>
-<div style="position: relative;width: 100%;height: 0;padding-bottom:75%;"><iframe src="http://175.178.38.129:9986/notebooks/pytorch.ipynb" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute;width: 100%;height: 65%;"></iframe></div>
+<iframe src="http://175.178.38.129:9986/notebooks/pytorch.ipynb" width="570" height="2000"></iframe> 
 ]]></content>
       <categories>
         <category>Java</category>
@@ -1516,40 +1516,6 @@
       </tags>
   </entry>
   <entry>
-    <title>OpenCV:图像处理</title>
-    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1 id="颜色变换cvtcolor"><a class="markdownIt-Anchor" href="#颜色变换cvtcolor"></a> 颜色变换cvtColor</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt="" /></p>
-<h1 id="画基本图形"><a class="markdownIt-Anchor" href="#画基本图形"></a> 画基本图形</h1>
-<h2 id="画矩形"><a class="markdownIt-Anchor" href="#画矩形"></a> 画矩形</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画圆"><a class="markdownIt-Anchor" href="#画圆"></a> 画圆</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画椭圆"><a class="markdownIt-Anchor" href="#画椭圆"></a> 画椭圆</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ellipse</span>(<span class="params">img, center, axes, angle, startAngle, endAngle, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画线段"><a class="markdownIt-Anchor" href="#画线段"></a> 画线段</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">line</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.line(img,[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">300</span>,<span class="number">200</span>],(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="画多边形"><a class="markdownIt-Anchor" href="#画多边形"></a> 画多边形</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">polylines</span>(<span class="params">img, pts, isClosed, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.polylines(img,[Pts],<span class="literal">True</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="填充多边形"><a class="markdownIt-Anchor" href="#填充多边形"></a> 填充多边形</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fillPoly</span>(<span class="params">img, pts, color, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span>, offset=<span class="literal">None</span></span>): </span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.fillPoly(img,[Pts],(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV:简单实现人脸识别</title>
     <url>/2022/09/06/OpenCV-Python/</url>
     <content><![CDATA[<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
@@ -1681,6 +1647,40 @@
 ]]></content>
       <categories>
         <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV:图像处理</title>
+    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h1 id="颜色变换cvtcolor"><a class="markdownIt-Anchor" href="#颜色变换cvtcolor"></a> 颜色变换cvtColor</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt="" /></p>
+<h1 id="画基本图形"><a class="markdownIt-Anchor" href="#画基本图形"></a> 画基本图形</h1>
+<h2 id="画矩形"><a class="markdownIt-Anchor" href="#画矩形"></a> 画矩形</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画圆"><a class="markdownIt-Anchor" href="#画圆"></a> 画圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画椭圆"><a class="markdownIt-Anchor" href="#画椭圆"></a> 画椭圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ellipse</span>(<span class="params">img, center, axes, angle, startAngle, endAngle, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画线段"><a class="markdownIt-Anchor" href="#画线段"></a> 画线段</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">line</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.line(img,[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">300</span>,<span class="number">200</span>],(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="画多边形"><a class="markdownIt-Anchor" href="#画多边形"></a> 画多边形</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">polylines</span>(<span class="params">img, pts, isClosed, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.polylines(img,[Pts],<span class="literal">True</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="填充多边形"><a class="markdownIt-Anchor" href="#填充多边形"></a> 填充多边形</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fillPoly</span>(<span class="params">img, pts, color, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span>, offset=<span class="literal">None</span></span>): </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.fillPoly(img,[Pts],(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -1834,6 +1834,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Python爬虫:微博爬取</title>
+    <url>/2022/10/05/Python%E7%88%AC%E8%99%AB-%E5%BE%AE%E5%8D%9A%E7%88%AC%E5%8F%96/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</span><br><span class="line"></span><br><span class="line">base_url = <span class="string">&#x27;https://m.weibo.cn/api/container/getIndex?&#x27;</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&#x27;Host&#x27;</span>: <span class="string">&#x27;m.weibo.cn&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Referer&#x27;</span>: <span class="string">&#x27;https://m.weibo.cn/u/2830678474&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.53&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;X-Requested-With&#x27;</span>: <span class="string">&#x27;XMLHttpRequest&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">max_page = <span class="number">50</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_page</span>(<span class="params">page</span>):</span><br><span class="line">    uid=<span class="string">&#x27;1679186305&#x27;</span></span><br><span class="line">    containerid=<span class="string">&#x27;107603&#x27;</span>+uid</span><br><span class="line">    params = &#123;</span><br><span class="line">        <span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;uid&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;value&#x27;</span>: uid,</span><br><span class="line">        <span class="string">&#x27;containerid&#x27;</span>:containerid,</span><br><span class="line">        <span class="string">&#x27;page&#x27;</span>: page</span><br><span class="line">    &#125;</span><br><span class="line">    url = base_url + urlencode(params)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">            <span class="keyword">return</span> response.json()</span><br><span class="line">    <span class="keyword">except</span> requests.ConnectionError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Error&#x27;</span>, e.args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_page</span>(<span class="params">json</span>):</span><br><span class="line">    <span class="keyword">if</span> json:</span><br><span class="line">        items = json.get(<span class="string">&#x27;data&#x27;</span>).get(<span class="string">&#x27;cards&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">            item = item.get(<span class="string">&#x27;mblog&#x27;</span>)</span><br><span class="line">            weibo = &#123;&#125;</span><br><span class="line">            weibo[<span class="string">&#x27;id&#x27;</span>] = item.get(<span class="string">&#x27;id&#x27;</span>)</span><br><span class="line">            weibo[<span class="string">&#x27;text&#x27;</span>] = pq(item.get(<span class="string">&#x27;text&#x27;</span>)).text()</span><br><span class="line">            weibo[<span class="string">&#x27;attitudes&#x27;</span>] = item.get(<span class="string">&#x27;attitudes_count&#x27;</span>)</span><br><span class="line">            weibo[<span class="string">&#x27;comments&#x27;</span>] = item.get(<span class="string">&#x27;comments_count&#x27;</span>)</span><br><span class="line">            weibo[<span class="string">&#x27;reposts&#x27;</span>] = item.get(<span class="string">&#x27;reposts_count&#x27;</span>)</span><br><span class="line">            <span class="keyword">yield</span> weibo</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, max_page + <span class="number">1</span>):</span><br><span class="line">        json = get_page(page)</span><br><span class="line">        results = parse_page(json)</span><br><span class="line">        <span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">            <span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCV的基本操作</title>
     <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
@@ -1935,19 +1948,6 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
-    <title>Python爬虫:微博爬取</title>
-    <url>/2022/10/05/Python%E7%88%AC%E8%99%AB-%E5%BE%AE%E5%8D%9A%E7%88%AC%E5%8F%96/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</span><br><span class="line"></span><br><span class="line">base_url = <span class="string">&#x27;https://m.weibo.cn/api/container/getIndex?&#x27;</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&#x27;Host&#x27;</span>: <span class="string">&#x27;m.weibo.cn&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Referer&#x27;</span>: <span class="string">&#x27;https://m.weibo.cn/u/2830678474&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.53&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;X-Requested-With&#x27;</span>: <span class="string">&#x27;XMLHttpRequest&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">max_page = <span class="number">50</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_page</span>(<span class="params">page</span>):</span><br><span class="line">    uid=<span class="string">&#x27;1679186305&#x27;</span></span><br><span class="line">    containerid=<span class="string">&#x27;107603&#x27;</span>+uid</span><br><span class="line">    params = &#123;</span><br><span class="line">        <span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;uid&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;value&#x27;</span>: uid,</span><br><span class="line">        <span class="string">&#x27;containerid&#x27;</span>:containerid,</span><br><span class="line">        <span class="string">&#x27;page&#x27;</span>: page</span><br><span class="line">    &#125;</span><br><span class="line">    url = base_url + urlencode(params)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">            <span class="keyword">return</span> response.json()</span><br><span class="line">    <span class="keyword">except</span> requests.ConnectionError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Error&#x27;</span>, e.args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_page</span>(<span class="params">json</span>):</span><br><span class="line">    <span class="keyword">if</span> json:</span><br><span class="line">        items = json.get(<span class="string">&#x27;data&#x27;</span>).get(<span class="string">&#x27;cards&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">            item = item.get(<span class="string">&#x27;mblog&#x27;</span>)</span><br><span class="line">            weibo = &#123;&#125;</span><br><span class="line">            weibo[<span class="string">&#x27;id&#x27;</span>] = item.get(<span class="string">&#x27;id&#x27;</span>)</span><br><span class="line">            weibo[<span class="string">&#x27;text&#x27;</span>] = pq(item.get(<span class="string">&#x27;text&#x27;</span>)).text()</span><br><span class="line">            weibo[<span class="string">&#x27;attitudes&#x27;</span>] = item.get(<span class="string">&#x27;attitudes_count&#x27;</span>)</span><br><span class="line">            weibo[<span class="string">&#x27;comments&#x27;</span>] = item.get(<span class="string">&#x27;comments_count&#x27;</span>)</span><br><span class="line">            weibo[<span class="string">&#x27;reposts&#x27;</span>] = item.get(<span class="string">&#x27;reposts_count&#x27;</span>)</span><br><span class="line">            <span class="keyword">yield</span> weibo</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, max_page + <span class="number">1</span>):</span><br><span class="line">        json = get_page(page)</span><br><span class="line">        results = parse_page(json)</span><br><span class="line">        <span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">            <span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python爬虫：爬取豆瓣电影榜Top250</title>
     <url>/2022/08/16/Python%E7%88%AC%E8%99%AB%EF%BC%9A%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%A6%9CTop250/</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
@@ -1980,9 +1980,78 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
-    <title>Requests:登录课程平台</title>
-    <url>/2022/10/07/Requests-%E7%99%BB%E5%BD%95%E8%AF%BE%E7%A8%8B%E5%B9%B3%E5%8F%B0/</url>
-    <content><![CDATA[]]></content>
+    <title>STM32F1软件仿真</title>
+    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
+    <content><![CDATA[<blockquote>
+<p>MDK 的一个强大的功能就是提供软件仿真，通过软件仿真，我们可以发现很多将要出现<br />
+的问题，避免了下载到 STM32 里面来查这些错误，这样最大的好处是能很方便的检查程序存<br />
+在的问题，因为在 MDK 的仿真下面，你可以查看很多硬件相关的寄存器，通过观察这些寄存<br />
+器，你可以知道代码是不是真正有效。另外一个优点是不必频繁的刷机，从而延长了 STM32<br />
+的 FLASH 寿命（STM32 的 FLASH 寿命≥1W 次）。当然，软件仿真不是万能的，很多问题还<br />
+是要到在线调试才能发现。</p>
+</blockquote>
+<h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
+<p>如下图</p>
+<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
+<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
+<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
+编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：***DARMSTM.DLL ****</p>
+<p>和 <strong>TARMSTM.DLL</strong>，</p>
+<p>Parameter 均为：</p>
+<pre><code>-pSTM32F103ZE
+</code></pre>
+<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
+<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
+<p><img src="https://s2.loli.net/2022/10/09/86fWKslAZo7QOhR.png" alt="" /></p>
+<h1 id="开始仿真"><a class="markdownIt-Anchor" href="#开始仿真"></a> 开始仿真</h1>
+<p>我们点击<img src="https://s2.loli.net/2022/10/15/nRefBgi2JPs3odS.png" alt="" />开始仿真,进入仿真界面</p>
+<p><img src="https://s2.loli.net/2022/10/15/RQgjkE3pmd9KbaG.png" alt="" /></p>
+<h2 id="debug工具条"><a class="markdownIt-Anchor" href="#debug工具条"></a> Debug工具条</h2>
+<p><img src="https://s2.loli.net/2022/10/15/unwMt8CkGZXRqrU.png" alt="" /></p>
+<ul>
+<li>
+<p>复位：相当于硬件复位按键，从头开始</p>
+</li>
+<li>
+<p>执行到断点处：该按钮用来快速执行到断点处</p>
+</li>
+<li>
+<p>挂起：可以使程序停止下来，<br />
+进入到单步调试状态</p>
+</li>
+<li>
+<p>执行进去：实现执行到某个函数里面去的功能，在没有函数的情况下，是等同于执行过去按钮的</p>
+</li>
+<li>
+<p>执行过去：在碰到有函数的地方，通过该按钮就可以单步执行过这个函数，而不进入这个函数单步执行</p>
+</li>
+<li>
+<p>执行出去：该按钮是在进入了函数单步调试的时候，有时候你可能不必再执行该函数的剩余部分了，通过该按钮就直接一步执行完函数余下的部分，并跳出函数，回到函数被调用的位置。</p>
+</li>
+<li>
+<p>执行到光标处：可以迅速的使程序运行到光标处，其实是挺像执行到断点处按钮功能，但是两者是有区别的，断点可以有多个，但是光标所在处只有一个。</p>
+</li>
+<li>
+<p>汇编窗口：可以查看汇编代码，这对分析程序很有用。</p>
+</li>
+<li>
+<p>观看变量/堆栈窗口：显示变量的窗口，在里面可以查看各种你想要看的变量值，也是很常用的一个调试窗口。</p>
+</li>
+<li>
+<p>性能分析窗口：观看各个函数执行时间和所占百分比的窗口，用来分析函数的性能</p>
+</li>
+<li>
+<p>逻辑分析窗口：按下该按钮会弹出一个逻辑分析窗口，通过 SETUP 按钮新建一些 IO 口，就可以观察这些 IO 口的电平变化情况，以多种形式显示出来，比较直观。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>嵌入式</tag>
+      </tags>
   </entry>
   <entry>
     <title>Qt工具类</title>
@@ -2162,78 +2231,9 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
-    <title>STM32F1软件仿真</title>
-    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
-    <content><![CDATA[<blockquote>
-<p>MDK 的一个强大的功能就是提供软件仿真，通过软件仿真，我们可以发现很多将要出现<br />
-的问题，避免了下载到 STM32 里面来查这些错误，这样最大的好处是能很方便的检查程序存<br />
-在的问题，因为在 MDK 的仿真下面，你可以查看很多硬件相关的寄存器，通过观察这些寄存<br />
-器，你可以知道代码是不是真正有效。另外一个优点是不必频繁的刷机，从而延长了 STM32<br />
-的 FLASH 寿命（STM32 的 FLASH 寿命≥1W 次）。当然，软件仿真不是万能的，很多问题还<br />
-是要到在线调试才能发现。</p>
-</blockquote>
-<h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
-<p>如下图</p>
-<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
-<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
-<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
-编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：***DARMSTM.DLL ****</p>
-<p>和 <strong>TARMSTM.DLL</strong>，</p>
-<p>Parameter 均为：</p>
-<pre><code>-pSTM32F103ZE
-</code></pre>
-<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
-<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
-<p><img src="https://s2.loli.net/2022/10/09/86fWKslAZo7QOhR.png" alt="" /></p>
-<h1 id="开始仿真"><a class="markdownIt-Anchor" href="#开始仿真"></a> 开始仿真</h1>
-<p>我们点击<img src="https://s2.loli.net/2022/10/15/nRefBgi2JPs3odS.png" alt="" />开始仿真,进入仿真界面</p>
-<p><img src="https://s2.loli.net/2022/10/15/RQgjkE3pmd9KbaG.png" alt="" /></p>
-<h2 id="debug工具条"><a class="markdownIt-Anchor" href="#debug工具条"></a> Debug工具条</h2>
-<p><img src="https://s2.loli.net/2022/10/15/unwMt8CkGZXRqrU.png" alt="" /></p>
-<ul>
-<li>
-<p>复位：相当于硬件复位按键，从头开始</p>
-</li>
-<li>
-<p>执行到断点处：该按钮用来快速执行到断点处</p>
-</li>
-<li>
-<p>挂起：可以使程序停止下来，<br />
-进入到单步调试状态</p>
-</li>
-<li>
-<p>执行进去：实现执行到某个函数里面去的功能，在没有函数的情况下，是等同于执行过去按钮的</p>
-</li>
-<li>
-<p>执行过去：在碰到有函数的地方，通过该按钮就可以单步执行过这个函数，而不进入这个函数单步执行</p>
-</li>
-<li>
-<p>执行出去：该按钮是在进入了函数单步调试的时候，有时候你可能不必再执行该函数的剩余部分了，通过该按钮就直接一步执行完函数余下的部分，并跳出函数，回到函数被调用的位置。</p>
-</li>
-<li>
-<p>执行到光标处：可以迅速的使程序运行到光标处，其实是挺像执行到断点处按钮功能，但是两者是有区别的，断点可以有多个，但是光标所在处只有一个。</p>
-</li>
-<li>
-<p>汇编窗口：可以查看汇编代码，这对分析程序很有用。</p>
-</li>
-<li>
-<p>观看变量/堆栈窗口：显示变量的窗口，在里面可以查看各种你想要看的变量值，也是很常用的一个调试窗口。</p>
-</li>
-<li>
-<p>性能分析窗口：观看各个函数执行时间和所占百分比的窗口，用来分析函数的性能</p>
-</li>
-<li>
-<p>逻辑分析窗口：按下该按钮会弹出一个逻辑分析窗口，通过 SETUP 按钮新建一些 IO 口，就可以观察这些 IO 口的电平变化情况，以多种形式显示出来，比较直观。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>STM32</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>嵌入式</tag>
-      </tags>
+    <title>Requests:登录课程平台</title>
+    <url>/2022/10/07/Requests-%E7%99%BB%E5%BD%95%E8%AF%BE%E7%A8%8B%E5%B9%B3%E5%8F%B0/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>STM32固件库</title>
@@ -2338,6 +2338,26 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
+    <title>selenium:川农学工网自动化登录</title>
+    <url>/2022/10/06/selenium-%E5%B7%9D%E5%86%9C%E5%AD%A6%E5%B7%A5%E7%BD%91%E8%87%AA%E5%8A%A8%E5%8C%96%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="实现步骤"><a class="markdownIt-Anchor" href="#实现步骤"></a> 实现步骤</h1>
+<p><img src="https://s2.loli.net/2022/10/09/UVOKsQGEFm37fIg.png" alt="" /></p>
+<p>我萌使用检查工具查看相应的代码</p>
+<p><img src="https://s2.loli.net/2022/10/09/ialeAGdSIMUFuD6.png" alt="" /></p>
+<p>同理我们知道了相应的html代码</p>
+<p>验证码使用截屏方式截图后二值化处理后，进行OCR识别，如果错误，重复识别</p>
+<p>，如果密码错误，则退出</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> retrying <span class="keyword">import</span> retry</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> selenium.common.exceptions <span class="keyword">import</span> TimeoutException,NoSuchElementException</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">preprocess</span>(<span class="params">image</span>):</span><br><span class="line">    array =image</span><br><span class="line">    array = np.where(image &gt; <span class="number">100</span>, <span class="number">255</span>, <span class="number">0</span>)</span><br><span class="line">    image = Image.fromarray(array.astype(<span class="string">&#x27;uint8&#x27;</span>))</span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>(<span class="params">browser</span>):</span><br><span class="line">    username = <span class="string">&quot;user&quot;</span></span><br><span class="line">    psw = <span class="string">&quot;psw&quot;</span></span><br><span class="line">    browser.get(<span class="string">&quot;http://xsc.sicau.edu.cn/Sys/UserLogin.aspx&quot;</span>)</span><br><span class="line">    <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;UserName&#x27;</span>)</span><br><span class="line">    <span class="built_in">input</span>.send_keys(username)</span><br><span class="line">    <span class="built_in">input</span> = browser.find_element(By.NAME, value=<span class="string">&#x27;UserPass&#x27;</span>)</span><br><span class="line">    <span class="built_in">input</span>.send_keys(psw)</span><br><span class="line">    browser.set_window_size(<span class="number">1000</span>, <span class="number">800</span>)</span><br><span class="line">    browser.save_screenshot(<span class="string">&#x27;1.png&#x27;</span>)</span><br><span class="line">    image = Image.<span class="built_in">open</span>(<span class="string">&#x27;1.png&#x27;</span>)</span><br><span class="line">    image = image.convert(<span class="string">&#x27;RGB&#x27;</span>)</span><br><span class="line">    image = np.array(image)</span><br><span class="line">    image = image[<span class="number">480</span>:<span class="number">503</span>, <span class="number">1030</span>:<span class="number">1103</span>, :]</span><br><span class="line">    image = preprocess(image)</span><br><span class="line">    image = image.convert(<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    plt.imshow(image)</span><br><span class="line">    plt.show()</span><br><span class="line">    code = tesserocr.image_to_text(image)</span><br><span class="line">    code = code.strip()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;验证码识别结果&quot;</span>, code)</span><br><span class="line">    <span class="keyword">if</span> code.isdigit():</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;CheckCode&#x27;</span>)</span><br><span class="line">        code = <span class="built_in">str</span>(code)</span><br><span class="line">        <span class="built_in">input</span>.send_keys(code)</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;CheckCode&#x27;</span>)</span><br><span class="line">        <span class="built_in">input</span>.send_keys(code)</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;Btn_OK&#x27;</span>)</span><br><span class="line">        <span class="built_in">input</span>.click()</span><br><span class="line">        wait=WebDriverWait(browser,<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="built_in">input</span>=wait.until(EC.alert_is_present())</span><br><span class="line">            dig_alert = browser.switch_to.alert</span><br><span class="line">            <span class="keyword">if</span>(dig_alert.text==<span class="string">&quot;用户名或密码错误！&quot;</span>):</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;用户名或密码错误&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">            dig_alert.accept()</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;验证码失败了&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;识别有错&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    browser = webdriver.Edge()</span><br><span class="line">    browser.start_client()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">       p=login(browser)</span><br><span class="line">       <span class="keyword">if</span> p==<span class="number">1</span>:</span><br><span class="line">           <span class="built_in">print</span>(<span class="string">&quot;登录成功&quot;</span>)</span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">       <span class="keyword">elif</span> p==-<span class="number">1</span>:</span><br><span class="line">           <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>requests库的使用</title>
     <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
@@ -2371,175 +2391,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
 <h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>selenium:川农学工网自动化登录</title>
-    <url>/2022/10/06/selenium-%E5%B7%9D%E5%86%9C%E5%AD%A6%E5%B7%A5%E7%BD%91%E8%87%AA%E5%8A%A8%E5%8C%96%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="实现步骤"><a class="markdownIt-Anchor" href="#实现步骤"></a> 实现步骤</h1>
-<p><img src="https://s2.loli.net/2022/10/09/UVOKsQGEFm37fIg.png" alt="" /></p>
-<p>我萌使用检查工具查看相应的代码</p>
-<p><img src="https://s2.loli.net/2022/10/09/ialeAGdSIMUFuD6.png" alt="" /></p>
-<p>同理我们知道了相应的html代码</p>
-<p>验证码使用截屏方式截图后二值化处理后，进行OCR识别，如果错误，重复识别</p>
-<p>，如果密码错误，则退出</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> retrying <span class="keyword">import</span> retry</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> selenium.common.exceptions <span class="keyword">import</span> TimeoutException,NoSuchElementException</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">preprocess</span>(<span class="params">image</span>):</span><br><span class="line">    array =image</span><br><span class="line">    array = np.where(image &gt; <span class="number">100</span>, <span class="number">255</span>, <span class="number">0</span>)</span><br><span class="line">    image = Image.fromarray(array.astype(<span class="string">&#x27;uint8&#x27;</span>))</span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>(<span class="params">browser</span>):</span><br><span class="line">    username = <span class="string">&quot;user&quot;</span></span><br><span class="line">    psw = <span class="string">&quot;psw&quot;</span></span><br><span class="line">    browser.get(<span class="string">&quot;http://xsc.sicau.edu.cn/Sys/UserLogin.aspx&quot;</span>)</span><br><span class="line">    <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;UserName&#x27;</span>)</span><br><span class="line">    <span class="built_in">input</span>.send_keys(username)</span><br><span class="line">    <span class="built_in">input</span> = browser.find_element(By.NAME, value=<span class="string">&#x27;UserPass&#x27;</span>)</span><br><span class="line">    <span class="built_in">input</span>.send_keys(psw)</span><br><span class="line">    browser.set_window_size(<span class="number">1000</span>, <span class="number">800</span>)</span><br><span class="line">    browser.save_screenshot(<span class="string">&#x27;1.png&#x27;</span>)</span><br><span class="line">    image = Image.<span class="built_in">open</span>(<span class="string">&#x27;1.png&#x27;</span>)</span><br><span class="line">    image = image.convert(<span class="string">&#x27;RGB&#x27;</span>)</span><br><span class="line">    image = np.array(image)</span><br><span class="line">    image = image[<span class="number">480</span>:<span class="number">503</span>, <span class="number">1030</span>:<span class="number">1103</span>, :]</span><br><span class="line">    image = preprocess(image)</span><br><span class="line">    image = image.convert(<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    plt.imshow(image)</span><br><span class="line">    plt.show()</span><br><span class="line">    code = tesserocr.image_to_text(image)</span><br><span class="line">    code = code.strip()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;验证码识别结果&quot;</span>, code)</span><br><span class="line">    <span class="keyword">if</span> code.isdigit():</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;CheckCode&#x27;</span>)</span><br><span class="line">        code = <span class="built_in">str</span>(code)</span><br><span class="line">        <span class="built_in">input</span>.send_keys(code)</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;CheckCode&#x27;</span>)</span><br><span class="line">        <span class="built_in">input</span>.send_keys(code)</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;Btn_OK&#x27;</span>)</span><br><span class="line">        <span class="built_in">input</span>.click()</span><br><span class="line">        wait=WebDriverWait(browser,<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="built_in">input</span>=wait.until(EC.alert_is_present())</span><br><span class="line">            dig_alert = browser.switch_to.alert</span><br><span class="line">            <span class="keyword">if</span>(dig_alert.text==<span class="string">&quot;用户名或密码错误！&quot;</span>):</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;用户名或密码错误&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">            dig_alert.accept()</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;验证码失败了&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;识别有错&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    browser = webdriver.Edge()</span><br><span class="line">    browser.start_client()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">       p=login(browser)</span><br><span class="line">       <span class="keyword">if</span> p==<span class="number">1</span>:</span><br><span class="line">           <span class="built_in">print</span>(<span class="string">&quot;登录成功&quot;</span>)</span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">       <span class="keyword">elif</span> p==-<span class="number">1</span>:</span><br><span class="line">           <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>urllib库的使用</title>
-    <url>/2022/08/09/urllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
-<p>urllib是Python内置的HTTP请求模块，其包含以下四个模块</p>
-<ul>
-<li>
-<p>request:HTTP请求模块</p>
-</li>
-<li>
-<p>error:异常处理模块</p>
-</li>
-<li>
-<p>parse:工具模块，拆分、解析、合并</p>
-</li>
-<li>
-<p>robotparser:识别网站robots.txt文件，判断哪些网站可以爬。</p>
-</li>
-</ul>
-<h2 id="请求发送"><a class="markdownIt-Anchor" href="#请求发送"></a> 请求发送</h2>
-<ol>
-<li>
-<h3 id="urlopen"><a class="markdownIt-Anchor" href="#urlopen"></a> urlopen()</h3>
-</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">response=urllib.request.urlopen(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))<span class="comment">#read可以返回网页内容， 网页编码为UTF-8需要用decode,不然会有转义字符</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response)) <span class="comment">#类型</span></span><br><span class="line"><span class="built_in">print</span>(response.status) <span class="comment">#获取响应状态码</span></span><br><span class="line"><span class="built_in">print</span>(response.getheaders()) <span class="comment">#获取响应头rs())</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/08/09/rbAdLaeVoSgvB8m.png" alt="运行结果" /></p>
-<ul>
-<li>
-<p>data参数</p>
-<p>data参数为可选，使用需要，使用bytes()转换为字节流编码格式</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span>  urllib.parse</span><br><span class="line">data=<span class="built_in">bytes</span>(urllib.parse.urlencode(&#123;<span class="string">&#x27;B&#x27;</span>:<span class="string">&#x27;1&#x27;</span>&#125;),encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">response=urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf8&#x27;</span>))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<img src="https://s2.loli.net/2022/08/09/29Nm7Q6FEt3B4Kh.png" title="" alt="运行结果" data-align="right">
-<p>我们的数据出现在了form字段里，这是我们用POST方法传递的数据</p>
-<ul>
-<li>
-<p>timeout参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=urllib.request.urlopen(<span class="string">&#x27;http://www.google.com&#x27;</span>,timeout=<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(e.reason,socket.timeout):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;TIME OUT&#x27;</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol start="2">
-<li>
-<h3 id="request"><a class="markdownIt-Anchor" href="#request"></a> Request()</h3>
-<blockquote>
-<p><a href="https://docs.python.org/3/library/urllib.request.html">urllib.request — Extensible library for opening URLs — Python 3.10.6 documentation</a></p>
-</blockquote>
-<p>Request能实现更多参数的请求</p>
-<blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, url, data=<span class="literal">None</span>, headers=&#123;&#125;,</span></span><br><span class="line"><span class="params">                 origin_req_host=<span class="literal">None</span>, unverifiable=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 method=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p><strong>URL:请求URL</strong></p>
-</li>
-<li>
-<p><strong>data:必须为bytes(),如果是字典可以用urllib.parse.urlencode()</strong></p>
-</li>
-<li>
-<p><strong>headers:为一个字典</strong></p>
-</li>
-<li>
-<p><strong>origin_req_host：表示这个请求是否是无法验证的</strong></p>
-</li>
-<li>
-<p><strong>method:请求方法</strong></p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,parse</span><br><span class="line">url=<span class="string">&#x27;http://httpbin.org/post&#x27;</span></span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">&#x27;Host&#x27;</span>:<span class="string">&#x27;httpbin.org&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.47&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">dict</span>=&#123;<span class="string">&#x27;b&#x27;</span>:<span class="number">1</span>&#125;</span><br><span class="line">data=<span class="built_in">bytes</span>(parse.urlencode(<span class="built_in">dict</span>),encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">data=<span class="built_in">bytes</span>(parse.urlencode(&#123;<span class="string">&#x27;B&#x27;</span>:<span class="string">&#x27;1&#x27;</span>&#125;),encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">req=request.Request(url,data=data,headers=headers,method=<span class="string">&#x27;POST&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">另一种请求头的添加方式</span></span><br><span class="line"><span class="string">req=request.Request(url=url,data=data,method=&#x27;POST&#x27;)</span></span><br><span class="line"><span class="string">req.add_header(&#x27;Host&#x27;,&#x27;httpbin.org&#x27;,)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">response=request.urlopen(req)</span><br><span class="line"><span class="built_in">print</span>(response.read().deco</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="进阶用法"><a class="markdownIt-Anchor" href="#进阶用法"></a> 进阶用法</h2>
-<h3 id="handler"><a class="markdownIt-Anchor" href="#handler"></a> Handler</h3>
-<p>现在我们介绍Handler</p>
-<p>比如：</p>
-<blockquote>
-<p>HTTPDefaultErrorHandler:用于处理响应错误，错误会抛出HTTPError类型的异常</p>
-<p>HTTPRedirectHandler:处理重定向</p>
-<p>HTTPCookieProcesser:处理Cookies</p>
-<p>ProxyHandler:设置代理，默认代理为空</p>
-<p>HTTPPasswordMgr:用于管理密码，维护了用户名和密码</p>
-<p>HTTPBasicAuthHandler:用于管理认证</p>
-</blockquote>
-<h3 id="cookies"><a class="markdownIt-Anchor" href="#cookies"></a> Cookies</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">filename=<span class="string">&#x27;cookies.txt&#x27;</span></span><br><span class="line">cookie=http.cookiejar.MozillaCookieJar(filename)</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line">cookie.save(ignore_discard=<span class="literal">True</span>,ignore_expires=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.CookieJar()</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie:</span><br><span class="line">    <span class="built_in">print</span>(item.</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.LWPCookieJar()</span><br><span class="line">cookie.load(<span class="string">&#x27;cookies.txt&#x27;</span>,ignore_expires=<span class="number">1</span>,ignore_discard=<span class="number">1</span>)</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read.decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
-<h2 id="异常处理"><a class="markdownIt-Anchor" href="#异常处理"></a> 异常处理</h2>
-<h3 id="urlerror"><a class="markdownIt-Anchor" href="#urlerror"></a> URLError</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br></pre></td></tr></table></figure>
-<h3 id="httperror"><a class="markdownIt-Anchor" href="#httperror"></a> HTTPError</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line">    <span class="built_in">print</span>(e.code)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-<p>URLError是HTTPError的父类</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line">    <span class="built_in">print</span>(e.code)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;SUCCESS!!&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="解析链接"><a class="markdownIt-Anchor" href="#解析链接"></a> 解析链接</h2>
-<h3 id="urlparse"><a class="markdownIt-Anchor" href="#urlparse"></a> urlparse</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line">result=urlparse(<span class="string">&#x27;https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E6%88%96%E5%B0%86%E9%9D%A2%E4%B8%B4%E6%9C%80%E9%AB%9830%E5%B9%B4%E5%88%91%E6%9C%9F&amp;tn=baiduhome_pg&amp;usm=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rsv_pq=beff06110014fb0c&amp;oq=%E9%BB%91%E5%B1%B1%E5%8F%91%E7%94%9F%E6%9E%AA%E5%87%BB%E4%BA%8B%E4%BB%B6%E8%87%B411%E6%AD%BB6%E4%BC%A4&amp;rsv_t=203cnvqhWV3frPIJkl4SxrljZIVFGNv6ZJkChXgM4YBU2qiBwG0dd0rTfPGYEJdqPkDg&amp;rqid=beff06110014fb0c&amp;rsf=a7183c00b74706d91bca215ee108b466_1_15_2&amp;rsv_dl=0_right_fyb_pchot_20811&amp;sa=0_right_fyb_pchot_20811&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-<h3 id="urlunparse"><a class="markdownIt-Anchor" href="#urlunparse"></a> urlunparse()</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunparse</span><br><span class="line">data=[<span class="string">&#x27;https&#x27;</span>,<span class="string">&#x27;wwww.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>,<span class="string">&#x27;user&#x27;</span>,<span class="string">&#x27;a=6&#x27;</span>,<span class="string">&#x27;comment&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(urlunparse(data))</span><br></pre></td></tr></table></figure>
-<h3 id="urlsplit"><a class="markdownIt-Anchor" href="#urlsplit"></a> urlsplit</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
-<h3 id="urlunsplit"><a class="markdownIt-Anchor" href="#urlunsplit"></a> urlunsplit()</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunsplit</span><br><span class="line">data=[<span class="string">&#x27;http&#x27;</span>,<span class="string">&#x27;www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>,<span class="string">&#x27;a=0&#x27;</span>,<span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(urlunsplit(data))</span><br></pre></td></tr></table></figure>
-<h3 id="urljoin"><a class="markdownIt-Anchor" href="#urljoin"></a> urljoin()</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urljoin</span><br><span class="line"><span class="built_in">print</span>(urljoin(<span class="string">&#x27;http://www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>))</span><br></pre></td></tr></table></figure>
-<h3 id="urlencode"><a class="markdownIt-Anchor" href="#urlencode"></a> urlencode</h3>
-<p>在GET中加参数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">params=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;s&#x27;</span>,</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;2&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">base_url=<span class="string">&#x27;http//www.baidu.com&#x27;</span></span><br><span class="line">urll=base_url+urlencode(params)</span><br><span class="line"><span class="built_in">print</span>(urll)</span><br></pre></td></tr></table></figure>
-<h3 id="parse_qs"><a class="markdownIt-Anchor" href="#parse_qs"></a> parse_qs()</h3>
-<p>反序列化</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit,parse_qs</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(parse_qs(result.query))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="quote"><a class="markdownIt-Anchor" href="#quote"></a> quote()</h3>
-<p>将内容转为URL编码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin</span><br><span class="line">keyword=<span class="string">&#x27;python&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;http://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br></pre></td></tr></table></figure>
-<h3 id="unquote"><a class="markdownIt-Anchor" href="#unquote"></a> unquote()</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin,unquote</span><br><span class="line">keyword=<span class="string">&#x27;你好&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;https://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br><span class="line"><span class="built_in">print</span>(unquote(url))</span><br></pre></td></tr></table></figure>
-<h2 id="robots协议"><a class="markdownIt-Anchor" href="#robots协议"></a> Robots协议</h2>
-<h3 id="robotparser"><a class="markdownIt-Anchor" href="#robotparser"></a> robotparser()</h3>
-<ul>
-<li>
-<p><strong>set_ur()</strong>:设置Robots.txt链接</p>
-</li>
-<li>
-<p><strong>read()</strong>:读取robots.txt并分析</p>
-</li>
-<li>
-<p><strong>parse()</strong>:解析robots.txt文件</p>
-</li>
-<li>
-<p><strong>can_fetch()</strong>:传入User-Agent和URL,判读是否可爬取</p>
-</li>
-<li>
-<p><strong>mtime()</strong>:返回上次抓取的时间</p>
-</li>
-<li>
-<p><strong>modified()</strong>:设置当前时间为上次抓取时间</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.robotparser <span class="keyword">import</span> RobotFileParser</span><br><span class="line">rp=RobotFileParser()</span><br><span class="line">rp.set_url(<span class="string">&#x27;https://www.bilibili.com/robots.txt&#x27;</span>)</span><br><span class="line">rp.read()</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;Yisouspider&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;*&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>爬虫</category>
@@ -2636,189 +2487,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       <tags>
         <tag>Python</tag>
         <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫:推送川农大教务通知</title>
-    <url>/2022/10/09/%E7%88%AC%E8%99%AB-%E6%8E%A8%E9%80%81%E5%B7%9D%E5%86%9C%E5%A4%A7%E6%95%99%E5%8A%A1%E9%80%9A%E7%9F%A5/</url>
-    <content><![CDATA[<p><img title="" src="https://s2.loli.net/2022/10/09/QDeV4EFNG2KToSq.jpg" alt="" width="96"><img title="" src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202210091242107.jpg" alt="" width="97"></p>
-<h1 id="实现过程"><a class="markdownIt-Anchor" href="#实现过程"></a> 实现过程</h1>
-<ol>
-<li>平台</li>
-</ol>
-<p><img src="https://s2.loli.net/2022/10/09/GnuFfVYwDpva83q.png" alt="" /></p>
-<p>pushplus这个平台直接调用api接口就行了</p>
-<ol start="2">
-<li>目标网站</li>
-</ol>
-<p><img src="https://s2.loli.net/2022/10/09/9jd6kebRBtHvJpA.png" alt="" /></p>
-<p>研究一下网页源代码的组成部分我们可以发现每个通知的xpath</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/html/body/form/div/div[2]/table/tbody/tr</span><br></pre></td></tr></table></figure>
-<p>我们获取到每个通知的url后，将它们放入集合中，后用json保存，一定时间再次爬取，</p>
-<p>对前后两次集合的<mark>并集后取原集合的差集</mark>，如果结果不为空，则分别获取集合的结果，分页爬取文章内容</p>
-<p><img src="https://s2.loli.net/2022/10/09/RuFWlbv7e2jSVPg.png" alt="" /></p>
-<p>在调用平台API，发送信息</p>
-<p>为了实现全部自动化，我们可以将脚本部署到服务器上定时运行，当<mark>注意教务网每天凌晨要关闭</mark></p>
-<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_page</span>(<span class="params">url</span>):</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    s = requests.get(url, headers=header)</span><br><span class="line">    html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">    title=html.xpath(<span class="string">&quot;/html/body/div[@class=&#x27;page-title-2&#x27;]/text()&quot;</span>)</span><br><span class="line">    txt=html.xpath(<span class="string">&quot;//table[@align=&#x27;center&#x27;]/tbody/tr/td/table&quot;</span>)</span><br><span class="line">    txt=etree.tostring(txt[<span class="number">2</span>],encoding=<span class="string">&#x27;utf-8&#x27;</span>).decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    txt = <span class="string">&quot;&lt;head&gt;&lt;base href=\&quot;&quot;</span> + url + <span class="string">&quot;\&quot; /&gt;&lt;/head&gt;&lt;p&gt;&lt;a href=\&quot;&quot;</span>+url+<span class="string">&quot;\&quot;&gt;&quot;</span>+title[<span class="number">0</span>]+<span class="string">&quot;&lt;/a&gt;&lt;/p&gt;&quot;</span>+txt</span><br><span class="line">    <span class="keyword">return</span> title,txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">vx_msg</span>(<span class="params">title,content</span>):</span><br><span class="line">    token = <span class="string">&#x27;平台token&#x27;</span></span><br><span class="line">    url = <span class="string">&#x27;http://www.pushplus.plus/send&#x27;</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&quot;token&quot;</span>: token,</span><br><span class="line">        <span class="string">&quot;title&quot;</span>: title,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: content</span><br><span class="line">    &#125;</span><br><span class="line">    body = json.dumps(data).encode(encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    headers = &#123;<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>&#125;</span><br><span class="line">    r=requests.post(url, data=body, headers=headers)</span><br><span class="line">    j=r.json()</span><br><span class="line">    <span class="keyword">if</span> j[<span class="string">&quot;code&quot;</span>]==<span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;发送成功&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;失败&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        s = requests.get(<span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/gwmore.asp&quot;</span>, headers=header)</span><br><span class="line">        html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">        result = html.xpath(<span class="string">&quot;/html/body/form/div/div[2]/table/tbody/tr&quot;</span>)</span><br><span class="line">        ls =<span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            <span class="comment">#date = i.xpath(&quot;./td[4]/text()&quot;)</span></span><br><span class="line">            url = <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/&quot;</span> + <span class="string">&quot;&quot;</span>.join(i.xpath(<span class="string">&quot;./td[3]/div/a/@href&quot;</span>))</span><br><span class="line">            <span class="comment">#title = i.xpath(&quot;./td[3]/div/a/font/text()&quot;)</span></span><br><span class="line">            ls.add(url)</span><br><span class="line">        <span class="keyword">return</span> ls</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取通知列表失败&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send</span>(<span class="params">url</span>):</span><br><span class="line">    title, content = get_page(url)</span><br><span class="line">    vx_msg(title[<span class="number">0</span>], content)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.read()</span><br><span class="line">        data = json.loads(<span class="built_in">str</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">set</span>(data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.write(json.dumps(data))</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    ls=get_data()</span><br><span class="line">    data=read()</span><br><span class="line">    s=data|ls</span><br><span class="line">    s=s-data</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(s)!=<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            <span class="built_in">print</span>(i)</span><br><span class="line">            send(i)</span><br><span class="line">        save(<span class="built_in">list</span>(ls))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;没有新的通知&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫基础</title>
-    <url>/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="http基本原理"><a class="markdownIt-Anchor" href="#http基本原理"></a> HTTP基本原理</h1>
-<blockquote>
-<p>参考资料：</p>
-<ul>
-<li><a href="https://www.runoob.com/http/http-tutorial.html">HTTP 教程 | 菜鸟教程 (runoob.com)</a></li>
-</ul>
-</blockquote>
-<hr />
-<h2 id="uri和url"><a class="markdownIt-Anchor" href="#uri和url"></a> URI和URL</h2>
-<p>URI:统一资源标识符</p>
-<p>URL:统一资源定位符</p>
-<p>URN:统一资源名称</p>
-<blockquote>
-<p>现在互联网，URN用得很少，一般网页链接🔗称为URL</p>
-</blockquote>
-<hr />
-<h2 id="超文本"><a class="markdownIt-Anchor" href="#超文本"></a> 超文本</h2>
-<p>网页源代码HTML称为超文本</p>
-<hr />
-<h2 id="http和https"><a class="markdownIt-Anchor" href="#http和https"></a> HTTP和HTTPS</h2>
-<p>HTTP:超文本传输协议</p>
-<p>HTTPS:HTTP下加入SSL层</p>
-<hr />
-<h2 id="http-请求过程"><a class="markdownIt-Anchor" href="#http-请求过程"></a> HTTP 请求过程</h2>
-<img title="" src="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp" alt="" data-align="inline">
-<p><strong>我们利用浏览器”检查“工具的网络来观察这个过程</strong></p>
-<img title="" src="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png" alt="" data-align="inline">
-<ul>
-<li>
-<p>General部分</p>
-<ul>
-<li>
-<p>Request URL:请求的URL</p>
-</li>
-<li>
-<p>Request Method:请求方法</p>
-</li>
-<li>
-<p>Status Code: 响应状态码</p>
-</li>
-<li>
-<p>Remote Address:远程服务器的地址和端口</p>
-</li>
-<li>
-<p>Referrer Policy:Referrer判别策略</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Response Header:响应头</p>
-</li>
-<li>
-<p>Request Header:请求头</p>
-</li>
-</ul>
-<hr />
-<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
-<blockquote>
-<p>请求由客户端发出，分为4部分</p>
-<blockquote>
-<ul>
-<li>
-<p>请求方法:Request Method</p>
-</li>
-<li>
-<p>请求网址:Request URL</p>
-</li>
-<li>
-<p>请求头:Request Headers</p>
-</li>
-<li>
-<p>请求体:Request Body</p>
-</li>
-</ul>
-</blockquote>
-</blockquote>
-<h3 id="请求方法"><a class="markdownIt-Anchor" href="#请求方法"></a> 请求方法</h3>
-<p>常见的为：GET和POST</p>
-<blockquote>
-<p>GET 与POST区别</p>
-<ul>
-<li>
-<p>GET的参数在URL里面，而POST请求的数据以表单传输，包含在请求体</p>
-</li>
-<li>
-<p>GET的数据只有1024字节，而POST没有限制</p>
-</li>
-</ul>
-</blockquote>
-<p>其他请求方法</p>
-<img title="" src="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png" alt="" data-align="inline">
-<h3 id="请求的网址"><a class="markdownIt-Anchor" href="#请求的网址"></a> 请求的网址</h3>
-<p>请求的网址即URL</p>
-<h3 id="请求头"><a class="markdownIt-Anchor" href="#请求头"></a> 请求头</h3>
-<ul>
-<li>
-<p>Accept:请求报头域，指定客户端接收哪些类型的信息</p>
-</li>
-<li>
-<p>Accept-Language:指定客户端可接受语言类型</p>
-</li>
-<li>
-<p>Host:指定请求资源的主机IP和端口</p>
-</li>
-<li>
-<p>Cookie:储存在用户本地终端上的数据,特定的 web文档关联在一起, 保存了该客户机访问这个Web 文档时的信息, 当客户机再次访问这个 Web 文档时这些信息可供该文档使用。</p>
-</li>
-<li>
-<p>Referer:标识请求是从那个页面发过来的</p>
-</li>
-<li>
-<p>User-Agent:一个特殊字符串头，使得服务器能够识别客户使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎、浏览器语言、浏览器插件等。</p>
-</li>
-<li>
-<p>Content-Type:内容类型，一般是指网页中存在的Content-Type，用于定义网络文件的类型和网页的编码，决定文件接收方将以什么形式、什么编码读取这个文件</p>
-</li>
-</ul>
-<h3 id="请求体"><a class="markdownIt-Anchor" href="#请求体"></a> 请求体</h3>
-<p>请求体承载的是POST的表单数据，对于GET，请求为空</p>
-<hr />
-<h2 id="响应"><a class="markdownIt-Anchor" href="#响应"></a> 响应</h2>
-<h3 id="响应状态码"><a class="markdownIt-Anchor" href="#响应状态码"></a> 响应状态码</h3>
-<p>常见的 HTTP 状态码：</p>
-<ul>
-<li>200 - 请求成功</li>
-<li>301 - 资源（网页等）被永久转移到其它URL</li>
-<li>404 - 请求的资源（网页等）不存在</li>
-<li>500 - 内部服务器错误</li>
-</ul>
-<p>其它可以参考<a href="https://www.runoob.com/http/http-status-codes.html">HTTP 状态码 | 菜鸟教程</a></p>
-<h3 id="响应头"><a class="markdownIt-Anchor" href="#响应头"></a> 响应头</h3>
-<p>响应头包含服务器对请求的应答信息，如Content-Type、Sever、Set-Cookie</p>
-<h3 id="响应体"><a class="markdownIt-Anchor" href="#响应体"></a> 响应体</h3>
-<p>响应体包含响应的正文数据</p>
-<hr />
-<h1 id="网页基础"><a class="markdownIt-Anchor" href="#网页基础"></a> 网页基础</h1>
-<h2 id="网页组成"><a class="markdownIt-Anchor" href="#网页组成"></a> 网页组成</h2>
-<p>网页是由HTML、CSS、JavaScript组成</p>
-<p><em><strong>如果想学爬虫，必须要点Web基础</strong></em></p>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -3043,34 +2711,328 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>爬虫：川农选课</title>
-    <url>/2022/10/05/%E7%88%AC%E8%99%AB%EF%BC%9A%E5%B7%9D%E5%86%9C%E9%80%89%E8%AF%BE/</url>
-    <content><![CDATA[<pre><code>import time
-
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
-browser=webdriver.Edge()
-
-try:
-    browser.get(&quot;https://jiaowu.sicau.edu.cn/&quot;)
-    input=browser.find_element(By.NAME,value='user')
-    input.send_keys('202105930')
-    input=browser.find_element(By.NAME,value='pwd')
-    input.send_keys('05174436')
-    input=browser.find_element(By.XPATH,value='//input[@value=&quot;S&quot;]')
-    input.click()
-    input = browser.find_element(By.NAME, value='pwd')
-    print(input.location)
-    input.send_keys(Keys.ENTER)
-
-
-
-except:
-    print(&quot;error&quot;)
-</code></pre>
+    <title>urllib库的使用</title>
+    <url>/2022/08/09/urllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
+<p>urllib是Python内置的HTTP请求模块，其包含以下四个模块</p>
+<ul>
+<li>
+<p>request:HTTP请求模块</p>
+</li>
+<li>
+<p>error:异常处理模块</p>
+</li>
+<li>
+<p>parse:工具模块，拆分、解析、合并</p>
+</li>
+<li>
+<p>robotparser:识别网站robots.txt文件，判断哪些网站可以爬。</p>
+</li>
+</ul>
+<h2 id="请求发送"><a class="markdownIt-Anchor" href="#请求发送"></a> 请求发送</h2>
+<ol>
+<li>
+<h3 id="urlopen"><a class="markdownIt-Anchor" href="#urlopen"></a> urlopen()</h3>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">response=urllib.request.urlopen(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))<span class="comment">#read可以返回网页内容， 网页编码为UTF-8需要用decode,不然会有转义字符</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response)) <span class="comment">#类型</span></span><br><span class="line"><span class="built_in">print</span>(response.status) <span class="comment">#获取响应状态码</span></span><br><span class="line"><span class="built_in">print</span>(response.getheaders()) <span class="comment">#获取响应头rs())</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/08/09/rbAdLaeVoSgvB8m.png" alt="运行结果" /></p>
+<ul>
+<li>
+<p>data参数</p>
+<p>data参数为可选，使用需要，使用bytes()转换为字节流编码格式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span>  urllib.parse</span><br><span class="line">data=<span class="built_in">bytes</span>(urllib.parse.urlencode(&#123;<span class="string">&#x27;B&#x27;</span>:<span class="string">&#x27;1&#x27;</span>&#125;),encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">response=urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf8&#x27;</span>))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="https://s2.loli.net/2022/08/09/29Nm7Q6FEt3B4Kh.png" title="" alt="运行结果" data-align="right">
+<p>我们的数据出现在了form字段里，这是我们用POST方法传递的数据</p>
+<ul>
+<li>
+<p>timeout参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=urllib.request.urlopen(<span class="string">&#x27;http://www.google.com&#x27;</span>,timeout=<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(e.reason,socket.timeout):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;TIME OUT&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>
+<h3 id="request"><a class="markdownIt-Anchor" href="#request"></a> Request()</h3>
+<blockquote>
+<p><a href="https://docs.python.org/3/library/urllib.request.html">urllib.request — Extensible library for opening URLs — Python 3.10.6 documentation</a></p>
+</blockquote>
+<p>Request能实现更多参数的请求</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, url, data=<span class="literal">None</span>, headers=&#123;&#125;,</span></span><br><span class="line"><span class="params">                 origin_req_host=<span class="literal">None</span>, unverifiable=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 method=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><strong>URL:请求URL</strong></p>
+</li>
+<li>
+<p><strong>data:必须为bytes(),如果是字典可以用urllib.parse.urlencode()</strong></p>
+</li>
+<li>
+<p><strong>headers:为一个字典</strong></p>
+</li>
+<li>
+<p><strong>origin_req_host：表示这个请求是否是无法验证的</strong></p>
+</li>
+<li>
+<p><strong>method:请求方法</strong></p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,parse</span><br><span class="line">url=<span class="string">&#x27;http://httpbin.org/post&#x27;</span></span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">&#x27;Host&#x27;</span>:<span class="string">&#x27;httpbin.org&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.47&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">dict</span>=&#123;<span class="string">&#x27;b&#x27;</span>:<span class="number">1</span>&#125;</span><br><span class="line">data=<span class="built_in">bytes</span>(parse.urlencode(<span class="built_in">dict</span>),encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">data=<span class="built_in">bytes</span>(parse.urlencode(&#123;<span class="string">&#x27;B&#x27;</span>:<span class="string">&#x27;1&#x27;</span>&#125;),encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">req=request.Request(url,data=data,headers=headers,method=<span class="string">&#x27;POST&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">另一种请求头的添加方式</span></span><br><span class="line"><span class="string">req=request.Request(url=url,data=data,method=&#x27;POST&#x27;)</span></span><br><span class="line"><span class="string">req.add_header(&#x27;Host&#x27;,&#x27;httpbin.org&#x27;,)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">response=request.urlopen(req)</span><br><span class="line"><span class="built_in">print</span>(response.read().deco</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="进阶用法"><a class="markdownIt-Anchor" href="#进阶用法"></a> 进阶用法</h2>
+<h3 id="handler"><a class="markdownIt-Anchor" href="#handler"></a> Handler</h3>
+<p>现在我们介绍Handler</p>
+<p>比如：</p>
+<blockquote>
+<p>HTTPDefaultErrorHandler:用于处理响应错误，错误会抛出HTTPError类型的异常</p>
+<p>HTTPRedirectHandler:处理重定向</p>
+<p>HTTPCookieProcesser:处理Cookies</p>
+<p>ProxyHandler:设置代理，默认代理为空</p>
+<p>HTTPPasswordMgr:用于管理密码，维护了用户名和密码</p>
+<p>HTTPBasicAuthHandler:用于管理认证</p>
+</blockquote>
+<h3 id="cookies"><a class="markdownIt-Anchor" href="#cookies"></a> Cookies</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">filename=<span class="string">&#x27;cookies.txt&#x27;</span></span><br><span class="line">cookie=http.cookiejar.MozillaCookieJar(filename)</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line">cookie.save(ignore_discard=<span class="literal">True</span>,ignore_expires=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.CookieJar()</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie:</span><br><span class="line">    <span class="built_in">print</span>(item.</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.LWPCookieJar()</span><br><span class="line">cookie.load(<span class="string">&#x27;cookies.txt&#x27;</span>,ignore_expires=<span class="number">1</span>,ignore_discard=<span class="number">1</span>)</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.<span class="built_in">open</span>(<span class="string">&#x27;http://www.baidu.com&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read.decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="异常处理"><a class="markdownIt-Anchor" href="#异常处理"></a> 异常处理</h2>
+<h3 id="urlerror"><a class="markdownIt-Anchor" href="#urlerror"></a> URLError</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br></pre></td></tr></table></figure>
+<h3 id="httperror"><a class="markdownIt-Anchor" href="#httperror"></a> HTTPError</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line">    <span class="built_in">print</span>(e.code)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<p>URLError是HTTPError的父类</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">&#x27;http://mrharsh.top/index.htm&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line">    <span class="built_in">print</span>(e.code)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;SUCCESS!!&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="解析链接"><a class="markdownIt-Anchor" href="#解析链接"></a> 解析链接</h2>
+<h3 id="urlparse"><a class="markdownIt-Anchor" href="#urlparse"></a> urlparse</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line">result=urlparse(<span class="string">&#x27;https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E6%88%96%E5%B0%86%E9%9D%A2%E4%B8%B4%E6%9C%80%E9%AB%9830%E5%B9%B4%E5%88%91%E6%9C%9F&amp;tn=baiduhome_pg&amp;usm=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rsv_pq=beff06110014fb0c&amp;oq=%E9%BB%91%E5%B1%B1%E5%8F%91%E7%94%9F%E6%9E%AA%E5%87%BB%E4%BA%8B%E4%BB%B6%E8%87%B411%E6%AD%BB6%E4%BC%A4&amp;rsv_t=203cnvqhWV3frPIJkl4SxrljZIVFGNv6ZJkChXgM4YBU2qiBwG0dd0rTfPGYEJdqPkDg&amp;rqid=beff06110014fb0c&amp;rsf=a7183c00b74706d91bca215ee108b466_1_15_2&amp;rsv_dl=0_right_fyb_pchot_20811&amp;sa=0_right_fyb_pchot_20811&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+<h3 id="urlunparse"><a class="markdownIt-Anchor" href="#urlunparse"></a> urlunparse()</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunparse</span><br><span class="line">data=[<span class="string">&#x27;https&#x27;</span>,<span class="string">&#x27;wwww.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>,<span class="string">&#x27;user&#x27;</span>,<span class="string">&#x27;a=6&#x27;</span>,<span class="string">&#x27;comment&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(urlunparse(data))</span><br></pre></td></tr></table></figure>
+<h3 id="urlsplit"><a class="markdownIt-Anchor" href="#urlsplit"></a> urlsplit</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
+<h3 id="urlunsplit"><a class="markdownIt-Anchor" href="#urlunsplit"></a> urlunsplit()</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunsplit</span><br><span class="line">data=[<span class="string">&#x27;http&#x27;</span>,<span class="string">&#x27;www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>,<span class="string">&#x27;a=0&#x27;</span>,<span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(urlunsplit(data))</span><br></pre></td></tr></table></figure>
+<h3 id="urljoin"><a class="markdownIt-Anchor" href="#urljoin"></a> urljoin()</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urljoin</span><br><span class="line"><span class="built_in">print</span>(urljoin(<span class="string">&#x27;http://www.baidu.com&#x27;</span>,<span class="string">&#x27;index.html&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="urlencode"><a class="markdownIt-Anchor" href="#urlencode"></a> urlencode</h3>
+<p>在GET中加参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">params=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;s&#x27;</span>,</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;2&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">base_url=<span class="string">&#x27;http//www.baidu.com&#x27;</span></span><br><span class="line">urll=base_url+urlencode(params)</span><br><span class="line"><span class="built_in">print</span>(urll)</span><br></pre></td></tr></table></figure>
+<h3 id="parse_qs"><a class="markdownIt-Anchor" href="#parse_qs"></a> parse_qs()</h3>
+<p>反序列化</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit,parse_qs</span><br><span class="line">result=urlsplit(<span class="string">&#x27;https://www.baidu.com/s?wd=python&amp;pn=10&amp;oq=python&amp;tn=baiduhome_pg&amp;ie=utf-8&amp;usm=4&amp;rsv_idx=2&amp;rsv_pq=cb482fb3002cef17&amp;rsv_t=6415j2DcN1b3Ov7Yj0M6vjanBErrN6Meq3YKeNQ%2BhsGLzD1xnsUAYddpkN%2FlYnFdsQ07&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(parse_qs(result.query))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="quote"><a class="markdownIt-Anchor" href="#quote"></a> quote()</h3>
+<p>将内容转为URL编码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin</span><br><span class="line">keyword=<span class="string">&#x27;python&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;http://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br></pre></td></tr></table></figure>
+<h3 id="unquote"><a class="markdownIt-Anchor" href="#unquote"></a> unquote()</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote,urljoin,unquote</span><br><span class="line">keyword=<span class="string">&#x27;你好&#x27;</span></span><br><span class="line">url=<span class="string">&#x27;https://www.baidu.com/s?wd=&#x27;</span>+quote(keyword)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br><span class="line"><span class="built_in">print</span>(unquote(url))</span><br></pre></td></tr></table></figure>
+<h2 id="robots协议"><a class="markdownIt-Anchor" href="#robots协议"></a> Robots协议</h2>
+<h3 id="robotparser"><a class="markdownIt-Anchor" href="#robotparser"></a> robotparser()</h3>
+<ul>
+<li>
+<p><strong>set_ur()</strong>:设置Robots.txt链接</p>
+</li>
+<li>
+<p><strong>read()</strong>:读取robots.txt并分析</p>
+</li>
+<li>
+<p><strong>parse()</strong>:解析robots.txt文件</p>
+</li>
+<li>
+<p><strong>can_fetch()</strong>:传入User-Agent和URL,判读是否可爬取</p>
+</li>
+<li>
+<p><strong>mtime()</strong>:返回上次抓取的时间</p>
+</li>
+<li>
+<p><strong>modified()</strong>:设置当前时间为上次抓取时间</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.robotparser <span class="keyword">import</span> RobotFileParser</span><br><span class="line">rp=RobotFileParser()</span><br><span class="line">rp.set_url(<span class="string">&#x27;https://www.bilibili.com/robots.txt&#x27;</span>)</span><br><span class="line">rp.read()</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;Yisouspider&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;*&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫基础</title>
+    <url>/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="http基本原理"><a class="markdownIt-Anchor" href="#http基本原理"></a> HTTP基本原理</h1>
+<blockquote>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://www.runoob.com/http/http-tutorial.html">HTTP 教程 | 菜鸟教程 (runoob.com)</a></li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="uri和url"><a class="markdownIt-Anchor" href="#uri和url"></a> URI和URL</h2>
+<p>URI:统一资源标识符</p>
+<p>URL:统一资源定位符</p>
+<p>URN:统一资源名称</p>
+<blockquote>
+<p>现在互联网，URN用得很少，一般网页链接🔗称为URL</p>
+</blockquote>
+<hr />
+<h2 id="超文本"><a class="markdownIt-Anchor" href="#超文本"></a> 超文本</h2>
+<p>网页源代码HTML称为超文本</p>
+<hr />
+<h2 id="http和https"><a class="markdownIt-Anchor" href="#http和https"></a> HTTP和HTTPS</h2>
+<p>HTTP:超文本传输协议</p>
+<p>HTTPS:HTTP下加入SSL层</p>
+<hr />
+<h2 id="http-请求过程"><a class="markdownIt-Anchor" href="#http-请求过程"></a> HTTP 请求过程</h2>
+<img title="" src="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp" alt="" data-align="inline">
+<p><strong>我们利用浏览器”检查“工具的网络来观察这个过程</strong></p>
+<img title="" src="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png" alt="" data-align="inline">
+<ul>
+<li>
+<p>General部分</p>
+<ul>
+<li>
+<p>Request URL:请求的URL</p>
+</li>
+<li>
+<p>Request Method:请求方法</p>
+</li>
+<li>
+<p>Status Code: 响应状态码</p>
+</li>
+<li>
+<p>Remote Address:远程服务器的地址和端口</p>
+</li>
+<li>
+<p>Referrer Policy:Referrer判别策略</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Response Header:响应头</p>
+</li>
+<li>
+<p>Request Header:请求头</p>
+</li>
+</ul>
+<hr />
+<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
+<blockquote>
+<p>请求由客户端发出，分为4部分</p>
+<blockquote>
+<ul>
+<li>
+<p>请求方法:Request Method</p>
+</li>
+<li>
+<p>请求网址:Request URL</p>
+</li>
+<li>
+<p>请求头:Request Headers</p>
+</li>
+<li>
+<p>请求体:Request Body</p>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="请求方法"><a class="markdownIt-Anchor" href="#请求方法"></a> 请求方法</h3>
+<p>常见的为：GET和POST</p>
+<blockquote>
+<p>GET 与POST区别</p>
+<ul>
+<li>
+<p>GET的参数在URL里面，而POST请求的数据以表单传输，包含在请求体</p>
+</li>
+<li>
+<p>GET的数据只有1024字节，而POST没有限制</p>
+</li>
+</ul>
+</blockquote>
+<p>其他请求方法</p>
+<img title="" src="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png" alt="" data-align="inline">
+<h3 id="请求的网址"><a class="markdownIt-Anchor" href="#请求的网址"></a> 请求的网址</h3>
+<p>请求的网址即URL</p>
+<h3 id="请求头"><a class="markdownIt-Anchor" href="#请求头"></a> 请求头</h3>
+<ul>
+<li>
+<p>Accept:请求报头域，指定客户端接收哪些类型的信息</p>
+</li>
+<li>
+<p>Accept-Language:指定客户端可接受语言类型</p>
+</li>
+<li>
+<p>Host:指定请求资源的主机IP和端口</p>
+</li>
+<li>
+<p>Cookie:储存在用户本地终端上的数据,特定的 web文档关联在一起, 保存了该客户机访问这个Web 文档时的信息, 当客户机再次访问这个 Web 文档时这些信息可供该文档使用。</p>
+</li>
+<li>
+<p>Referer:标识请求是从那个页面发过来的</p>
+</li>
+<li>
+<p>User-Agent:一个特殊字符串头，使得服务器能够识别客户使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎、浏览器语言、浏览器插件等。</p>
+</li>
+<li>
+<p>Content-Type:内容类型，一般是指网页中存在的Content-Type，用于定义网络文件的类型和网页的编码，决定文件接收方将以什么形式、什么编码读取这个文件</p>
+</li>
+</ul>
+<h3 id="请求体"><a class="markdownIt-Anchor" href="#请求体"></a> 请求体</h3>
+<p>请求体承载的是POST的表单数据，对于GET，请求为空</p>
+<hr />
+<h2 id="响应"><a class="markdownIt-Anchor" href="#响应"></a> 响应</h2>
+<h3 id="响应状态码"><a class="markdownIt-Anchor" href="#响应状态码"></a> 响应状态码</h3>
+<p>常见的 HTTP 状态码：</p>
+<ul>
+<li>200 - 请求成功</li>
+<li>301 - 资源（网页等）被永久转移到其它URL</li>
+<li>404 - 请求的资源（网页等）不存在</li>
+<li>500 - 内部服务器错误</li>
+</ul>
+<p>其它可以参考<a href="https://www.runoob.com/http/http-status-codes.html">HTTP 状态码 | 菜鸟教程</a></p>
+<h3 id="响应头"><a class="markdownIt-Anchor" href="#响应头"></a> 响应头</h3>
+<p>响应头包含服务器对请求的应答信息，如Content-Type、Sever、Set-Cookie</p>
+<h3 id="响应体"><a class="markdownIt-Anchor" href="#响应体"></a> 响应体</h3>
+<p>响应体包含响应的正文数据</p>
+<hr />
+<h1 id="网页基础"><a class="markdownIt-Anchor" href="#网页基础"></a> 网页基础</h1>
+<h2 id="网页组成"><a class="markdownIt-Anchor" href="#网页组成"></a> 网页组成</h2>
+<p>网页是由HTML、CSS、JavaScript组成</p>
+<p><em><strong>如果想学爬虫，必须要点Web基础</strong></em></p>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫:推送川农大教务通知</title>
+    <url>/2022/10/09/%E7%88%AC%E8%99%AB-%E6%8E%A8%E9%80%81%E5%B7%9D%E5%86%9C%E5%A4%A7%E6%95%99%E5%8A%A1%E9%80%9A%E7%9F%A5/</url>
+    <content><![CDATA[<p><img title="" src="https://s2.loli.net/2022/10/09/QDeV4EFNG2KToSq.jpg" alt="" width="96"><img title="" src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202210091242107.jpg" alt="" width="97"></p>
+<h1 id="实现过程"><a class="markdownIt-Anchor" href="#实现过程"></a> 实现过程</h1>
+<ol>
+<li>平台</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/10/09/GnuFfVYwDpva83q.png" alt="" /></p>
+<p>pushplus这个平台直接调用api接口就行了</p>
+<ol start="2">
+<li>目标网站</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/10/09/9jd6kebRBtHvJpA.png" alt="" /></p>
+<p>研究一下网页源代码的组成部分我们可以发现每个通知的xpath</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/html/body/form/div/div[2]/table/tbody/tr</span><br></pre></td></tr></table></figure>
+<p>我们获取到每个通知的url后，将它们放入集合中，后用json保存，一定时间再次爬取，</p>
+<p>对前后两次集合的<mark>并集后取原集合的差集</mark>，如果结果不为空，则分别获取集合的结果，分页爬取文章内容</p>
+<p><img src="https://s2.loli.net/2022/10/09/RuFWlbv7e2jSVPg.png" alt="" /></p>
+<p>在调用平台API，发送信息</p>
+<p>为了实现全部自动化，我们可以将脚本部署到服务器上定时运行，当<mark>注意教务网每天凌晨要关闭</mark></p>
+<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_page</span>(<span class="params">url</span>):</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    s = requests.get(url, headers=header)</span><br><span class="line">    html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">    title=html.xpath(<span class="string">&quot;/html/body/div[@class=&#x27;page-title-2&#x27;]/text()&quot;</span>)</span><br><span class="line">    txt=html.xpath(<span class="string">&quot;//table[@align=&#x27;center&#x27;]/tbody/tr/td/table&quot;</span>)</span><br><span class="line">    txt=etree.tostring(txt[<span class="number">2</span>],encoding=<span class="string">&#x27;utf-8&#x27;</span>).decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    txt = <span class="string">&quot;&lt;head&gt;&lt;base href=\&quot;&quot;</span> + url + <span class="string">&quot;\&quot; /&gt;&lt;/head&gt;&lt;p&gt;&lt;a href=\&quot;&quot;</span>+url+<span class="string">&quot;\&quot;&gt;&quot;</span>+title[<span class="number">0</span>]+<span class="string">&quot;&lt;/a&gt;&lt;/p&gt;&quot;</span>+txt</span><br><span class="line">    <span class="keyword">return</span> title,txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">vx_msg</span>(<span class="params">title,content</span>):</span><br><span class="line">    token = <span class="string">&#x27;平台token&#x27;</span></span><br><span class="line">    url = <span class="string">&#x27;http://www.pushplus.plus/send&#x27;</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&quot;token&quot;</span>: token,</span><br><span class="line">        <span class="string">&quot;title&quot;</span>: title,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: content</span><br><span class="line">    &#125;</span><br><span class="line">    body = json.dumps(data).encode(encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    headers = &#123;<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>&#125;</span><br><span class="line">    r=requests.post(url, data=body, headers=headers)</span><br><span class="line">    j=r.json()</span><br><span class="line">    <span class="keyword">if</span> j[<span class="string">&quot;code&quot;</span>]==<span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;发送成功&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;失败&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        s = requests.get(<span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/gwmore.asp&quot;</span>, headers=header)</span><br><span class="line">        html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">        result = html.xpath(<span class="string">&quot;/html/body/form/div/div[2]/table/tbody/tr&quot;</span>)</span><br><span class="line">        ls =<span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            <span class="comment">#date = i.xpath(&quot;./td[4]/text()&quot;)</span></span><br><span class="line">            url = <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/&quot;</span> + <span class="string">&quot;&quot;</span>.join(i.xpath(<span class="string">&quot;./td[3]/div/a/@href&quot;</span>))</span><br><span class="line">            <span class="comment">#title = i.xpath(&quot;./td[3]/div/a/font/text()&quot;)</span></span><br><span class="line">            ls.add(url)</span><br><span class="line">        <span class="keyword">return</span> ls</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取通知列表失败&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send</span>(<span class="params">url</span>):</span><br><span class="line">    title, content = get_page(url)</span><br><span class="line">    vx_msg(title[<span class="number">0</span>], content)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.read()</span><br><span class="line">        data = json.loads(<span class="built_in">str</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">set</span>(data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.write(json.dumps(data))</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    ls=get_data()</span><br><span class="line">    data=read()</span><br><span class="line">    s=data|ls</span><br><span class="line">    s=s-data</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(s)!=<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            <span class="built_in">print</span>(i)</span><br><span class="line">            send(i)</span><br><span class="line">        save(<span class="built_in">list</span>(ls))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;没有新的通知&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>爬虫</category>
@@ -3159,6 +3121,44 @@ except:
       </categories>
       <tags>
         <tag>计算机网路</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫：川农选课</title>
+    <url>/2022/10/05/%E7%88%AC%E8%99%AB%EF%BC%9A%E5%B7%9D%E5%86%9C%E9%80%89%E8%AF%BE/</url>
+    <content><![CDATA[<pre><code>import time
+
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+browser=webdriver.Edge()
+
+try:
+    browser.get(&quot;https://jiaowu.sicau.edu.cn/&quot;)
+    input=browser.find_element(By.NAME,value='user')
+    input.send_keys('202105930')
+    input=browser.find_element(By.NAME,value='pwd')
+    input.send_keys('05174436')
+    input=browser.find_element(By.XPATH,value='//input[@value=&quot;S&quot;]')
+    input.click()
+    input = browser.find_element(By.NAME, value='pwd')
+    print(input.location)
+    input.send_keys(Keys.ENTER)
+
+
+
+except:
+    print(&quot;error&quot;)
+</code></pre>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
 </search>
