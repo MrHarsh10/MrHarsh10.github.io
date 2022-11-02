@@ -10,7 +10,14 @@
 
     <url>
         <loc>http://www.helicunzai.cn/categories/Java/</loc>
-        <lastmod>2022-11-02T16:21:22.744Z</lastmod>
+        <lastmod>2022-11-02T16:24:16.905Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/categories/%25E9%259A%258F%25E6%2583%25B3/</loc>
+        <lastmod>2022-11-02T16:23:48.556Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -10,7 +10,15 @@
 
     <url>
         <loc>http://www.helicunzai.cn/2022/11/01/JSP-%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/</loc>
-        <lastmod>2022-11-02T16:21:22.744Z</lastmod>
+        <lastmod>2022-11-02T16:24:16.905Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/2022/08/08/hello-world/</loc>
+        <lastmod>2022-11-02T16:23:48.556Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
