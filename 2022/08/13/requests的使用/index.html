@@ -146,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GET%E8%AF%B7%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST%E8%AF%B7%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D%E7%BB%B4%E6%8C%81"><span class="nav-number">1.3.</span> <span class="nav-text">会话维持</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text"> 请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#get%E8%AF%B7%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text"> GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post%E8%AF%B7%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text"> POST请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D%E7%BB%B4%E6%8C%81"><span class="nav-number">1.3.</span> <span class="nav-text"> 会话维持</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -285,7 +285,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="请求">请求</h2>
+        <h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
 <ul>
 <li>
 <p>post(‘url’)</p>
@@ -306,15 +306,15 @@
 <p>get(‘url’)</p>
 </li>
 </ul>
-<h3 id="GET请求">GET请求</h3>
+<h3 id="get请求"><a class="markdownIt-Anchor" href="#get请求"></a> GET请求</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;hha&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>,params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">js=r.json()</span><br><span class="line"><span class="built_in">print</span>(js[<span class="string">&quot;headers&quot;</span>][<span class="string">&quot;User-Agent&quot;</span>])</span><br><span class="line">r.text)</span><br></pre></td></tr></table></figure>
 <p>下载图片</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://s2.loli.net/2022/08/08/XPao6Bwfkjc2drg.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br></pre></td></tr></table></figure>
-<h3 id="POST请求">POST请求</h3>
+<h3 id="post请求"><a class="markdownIt-Anchor" href="#post请求"></a> POST请求</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&quot;1&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
 <p>文件上传</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files=&#123;</span><br><span class="line">    <span class="string">&#x27;files&#x27;</span>:<span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">r=requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>,files=files)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-<h3 id="会话维持">会话维持</h3>
+<h3 id="会话维持"><a class="markdownIt-Anchor" href="#会话维持"></a> 会话维持</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">s=requests.session()</span><br><span class="line">s.get(<span class="string">&#x27;http://httpbin.org/cookies/set/number/12345&#x27;</span>)</span><br><span class="line">r=s.get(<span class="string">&#x27;http://httpbin.org/cookies&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
 
     </div>
