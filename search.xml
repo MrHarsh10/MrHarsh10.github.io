@@ -718,6 +718,127 @@
       </tags>
   </entry>
   <entry>
+    <title>Django:快速入门介绍</title>
+    <url>/2022/10/17/Django-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h1 id="创建项目"><a class="markdownIt-Anchor" href="#创建项目"></a> 创建项目</h1>
+<p>在Pycharm专业版这可以直接创建Django项目</p>
+<p><img src="https://s2.loli.net/2022/10/17/TLKMSFCeza4cbyl.png" alt="" /></p>
+<p>也可以在创建空项目,在终端中输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">django-admin startproject quickstart</span><br></pre></td></tr></table></figure>
+<p>我们就可以发现目录生成一下文件结构</p>
+<ul>
+<li>
+<p>quickstart/</p>
+<ul>
+<li>
+<p><a href="http://manage.py">manage.py</a></p>
+</li>
+<li>
+<p>quickstart/</p>
+<ul>
+<li>
+<p>_init_.py</p>
+</li>
+<li>
+<p><a href="http://settings.py">settings.py</a></p>
+</li>
+<li>
+<p><a href="http://urls.py">urls.py</a></p>
+</li>
+<li>
+<p><a href="http://wsgi.py">wsgi.py</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>说明：</p>
+<blockquote>
+<ul>
+<li>
+<p>外层quickstart只是名字，可以替换</p>
+</li>
+<li>
+<p>manage.py是一个命令行程序，允许用户以各种方式与此项目进行交互</p>
+</li>
+<li>
+<p>quickstart/<em>init</em>.py为空文件，告诉python其为一个包</p>
+</li>
+<li>
+<p>quickstart/settings.py为项目配置文件</p>
+</li>
+<li>
+<p>quickstart/urls.py是项目URL声明</p>
+</li>
+<li>
+<p>quickstart/wsgi.py是使用WSGI部署服务的入口</p>
+</li>
+</ul>
+</blockquote>
+<h1 id="创建应用"><a class="markdownIt-Anchor" href="#创建应用"></a> 创建应用</h1>
+<p>我们在终端输入以下命令创建应用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">django-admin startapp myapp</span><br></pre></td></tr></table></figure>
+<p>我们就可以发现目录生成一下文件结构</p>
+<ul>
+<li>
+<p>myapp/</p>
+<ul>
+<li>
+<p>_<em>init_</em>.py</p>
+</li>
+<li>
+<p><a href="http://admin.py">admin.py</a></p>
+</li>
+<li>
+<p><a href="http://migrations.py">migrations.py</a></p>
+<ul>
+<li>_init_.py</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p><a href="http://tests.py">tests.py</a></p>
+</li>
+<li>
+<p><a href="http://models.py">models.py</a></p>
+</li>
+<li>
+<p><a href="http://views.py">views.py</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>说明：</p>
+<blockquote>
+<p>admin.py用于定制应用的管理页面</p>
+<p>migrations.py文件夹用于模型出现修改时对应数据库的更改操作</p>
+<p>_init_.py为空文件，告诉python其为一个包</p>
+<p>models.py用于储存应用的模型，即MVC中的M</p>
+<p>test.py一般用于放单元测试的代码</p>
+<p>views.py用来放视图的函数</p>
+</blockquote>
+<h1 id="启动服务器"><a class="markdownIt-Anchor" href="#启动服务器"></a> 启动服务器</h1>
+<p>像pycharm直接点击运行按钮</p>
+<p><img src="https://s2.loli.net/2022/10/17/TVDHpkghNJSRXlF.png" alt="" /></p>
+<p>也可以在终端输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/17/Cd2QGq8yPwYeBvz.png" alt="" /></p>
+<p>点击<a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+<p>就可以看见创建的服务了</p>
+<p><img src="https://s2.loli.net/2022/10/17/Lq8QMhRXiKGj1Uy.png" alt="" /></p>
+<h1 id="编写一个页面"><a class="markdownIt-Anchor" href="#编写一个页面"></a> 编写一个页面</h1>
+]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>Django</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JSP:隐式对象</title>
     <url>/2022/11/01/JSP-%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/</url>
     <content><![CDATA[<blockquote>
@@ -847,7 +968,6 @@
 </tr>
 </tbody>
 </table>
-<div class="pdf-container" data-target="/lib/1.pdf" data-height="500px"></div>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -855,127 +975,6 @@
       <tags>
         <tag>Java</tag>
         <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Django:快速入门介绍</title>
-    <url>/2022/10/17/Django-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<h1 id="创建项目"><a class="markdownIt-Anchor" href="#创建项目"></a> 创建项目</h1>
-<p>在Pycharm专业版这可以直接创建Django项目</p>
-<p><img src="https://s2.loli.net/2022/10/17/TLKMSFCeza4cbyl.png" alt="" /></p>
-<p>也可以在创建空项目,在终端中输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">django-admin startproject quickstart</span><br></pre></td></tr></table></figure>
-<p>我们就可以发现目录生成一下文件结构</p>
-<ul>
-<li>
-<p>quickstart/</p>
-<ul>
-<li>
-<p><a href="http://manage.py">manage.py</a></p>
-</li>
-<li>
-<p>quickstart/</p>
-<ul>
-<li>
-<p>_init_.py</p>
-</li>
-<li>
-<p><a href="http://settings.py">settings.py</a></p>
-</li>
-<li>
-<p><a href="http://urls.py">urls.py</a></p>
-</li>
-<li>
-<p><a href="http://wsgi.py">wsgi.py</a></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>说明：</p>
-<blockquote>
-<ul>
-<li>
-<p>外层quickstart只是名字，可以替换</p>
-</li>
-<li>
-<p>manage.py是一个命令行程序，允许用户以各种方式与此项目进行交互</p>
-</li>
-<li>
-<p>quickstart/<em>init</em>.py为空文件，告诉python其为一个包</p>
-</li>
-<li>
-<p>quickstart/settings.py为项目配置文件</p>
-</li>
-<li>
-<p>quickstart/urls.py是项目URL声明</p>
-</li>
-<li>
-<p>quickstart/wsgi.py是使用WSGI部署服务的入口</p>
-</li>
-</ul>
-</blockquote>
-<h1 id="创建应用"><a class="markdownIt-Anchor" href="#创建应用"></a> 创建应用</h1>
-<p>我们在终端输入以下命令创建应用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">django-admin startapp myapp</span><br></pre></td></tr></table></figure>
-<p>我们就可以发现目录生成一下文件结构</p>
-<ul>
-<li>
-<p>myapp/</p>
-<ul>
-<li>
-<p>_<em>init_</em>.py</p>
-</li>
-<li>
-<p><a href="http://admin.py">admin.py</a></p>
-</li>
-<li>
-<p><a href="http://migrations.py">migrations.py</a></p>
-<ul>
-<li>_init_.py</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p><a href="http://tests.py">tests.py</a></p>
-</li>
-<li>
-<p><a href="http://models.py">models.py</a></p>
-</li>
-<li>
-<p><a href="http://views.py">views.py</a></p>
-</li>
-</ul>
-</li>
-</ul>
-<p>说明：</p>
-<blockquote>
-<p>admin.py用于定制应用的管理页面</p>
-<p>migrations.py文件夹用于模型出现修改时对应数据库的更改操作</p>
-<p>_init_.py为空文件，告诉python其为一个包</p>
-<p>models.py用于储存应用的模型，即MVC中的M</p>
-<p>test.py一般用于放单元测试的代码</p>
-<p>views.py用来放视图的函数</p>
-</blockquote>
-<h1 id="启动服务器"><a class="markdownIt-Anchor" href="#启动服务器"></a> 启动服务器</h1>
-<p>像pycharm直接点击运行按钮</p>
-<p><img src="https://s2.loli.net/2022/10/17/TVDHpkghNJSRXlF.png" alt="" /></p>
-<p>也可以在终端输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/17/Cd2QGq8yPwYeBvz.png" alt="" /></p>
-<p>点击<a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
-<p>就可以看见创建的服务了</p>
-<p><img src="https://s2.loli.net/2022/10/17/Lq8QMhRXiKGj1Uy.png" alt="" /></p>
-<h1 id="编写一个页面"><a class="markdownIt-Anchor" href="#编写一个页面"></a> 编写一个页面</h1>
-]]></content>
-      <categories>
-        <category>Django</category>
-      </categories>
-      <tags>
-        <tag>Django</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1099,144 +1098,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV:简单实现人脸识别</title>
-    <url>/2022/09/06/OpenCV-Python/</url>
-    <content><![CDATA[<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install opencv-python</span><br><span class="line">pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
-<hr />
-<h1 id="opencv主要模块"><a class="markdownIt-Anchor" href="#opencv主要模块"></a> OpenCV主要模块</h1>
-<blockquote>
-<h3 id="core"><a class="markdownIt-Anchor" href="#core"></a> core</h3>
-<p>核心功能模块。该模块主要包含 OpenCV库的基础结构以及基本操作，例如OpenCV基础数据结构、绘图函数、数组操作相关函数、动态数据结构等calib3d：<br />
-这个模块名称是有 calibration（校准）和 3D 两个术语的缩写组合而成。包含了相机标定与立体视觉等功能，例如物体位姿估计、三维重建、摄像头标定等</p>
-<h3 id="dnn"><a class="markdownIt-Anchor" href="#dnn"></a> dnn</h3>
-<p>深度学习模块。该模块是 OpenCV4版的一个特色，主要包括：构建神经网络、加载序列化网络模型等。但这一模块目前仅适用与正向传递计算（测试网络），原则上不支持反向计算（训练网络）。</p>
-<h3 id="feature2d"><a class="markdownIt-Anchor" href="#feature2d"></a> feature2d</h3>
-<p>该模块是由 feature（特征）和 2D 两个术语的缩写组合而成的，其功能主要为处理图像特征点，例如特征检测、描述、匹配等</p>
-<h3 id="flann"><a class="markdownIt-Anchor" href="#flann"></a> flann</h3>
-<p>快速近似最邻近库（Fast Library for Approximate Nearest Neighbors）。该模块是高维的近似近邻快速搜索算法库，主要包含快速近似近邻搜索、聚类等</p>
-<h3 id="gapi"><a class="markdownIt-Anchor" href="#gapi"></a> gapi</h3>
-<p>该模块是 OpenCV4.0 中新增模块，旨在加速常规的图像处理。与其他模块相比，这个模块主要充当框架，而不是某些特定的计算机视觉算法</p>
-<h3 id="highgui"><a class="markdownIt-Anchor" href="#highgui"></a> highgui</h3>
-<p>高层 GUI，包含创建和操作显示图像的窗口、处理鼠标事件及键盘命令、提高图形交互可视化界面等</p>
-<h3 id="imgcodecs"><a class="markdownIt-Anchor" href="#imgcodecs"></a> imgcodecs</h3>
-<p>图像文件读取与保存模块，主要用于图像文件读取与保存</p>
-<h3 id="imgproc"><a class="markdownIt-Anchor" href="#imgproc"></a> imgproc</h3>
-<p>该模块名称是由 image（图像）和 process（处理）两个组合而成。是重要的图像处理模块，主要包含：图像滤波、几何变换、直方图、特征检测、目标检测等</p>
-<h3 id="ml"><a class="markdownIt-Anchor" href="#ml"></a> ml</h3>
-<p>机器学习模块，主要包括：统计分类、回归、数据聚类等</p>
-<h3 id="objdetect"><a class="markdownIt-Anchor" href="#objdetect"></a> objdetect</h3>
-<p>目标检测模块，主要用于图像的目标检测，如检测 Haar 特征</p>
-<h3 id="photo"><a class="markdownIt-Anchor" href="#photo"></a> photo</h3>
-<p>计算摄像模块，只要包含图像修复、去燥等</p>
-<h3 id="stitching"><a class="markdownIt-Anchor" href="#stitching"></a> stitching</h3>
-<p>图像拼接模块，主要包含：特征点寻找与匹配图像、估计旋转、自动校准、接缝估计等图像拼接过程的相关内容</p>
-<h3 id="video"><a class="markdownIt-Anchor" href="#video"></a> video</h3>
-<p>视频分析模块，主要包含：运动估计、背景分离、对象跟踪等视频处理等</p>
-<h3 id="videoio"><a class="markdownIt-Anchor" href="#videoio"></a> videoio</h3>
-<p>视频输入/输出模块，主要用于读取、写入视频 或者图像序列</p>
-</blockquote>
-<hr />
-<h1 id="图片基本操作"><a class="markdownIt-Anchor" href="#图片基本操作"></a> 图片基本操作</h1>
-<h2 id="摄像头采集图片"><a class="markdownIt-Anchor" href="#摄像头采集图片"></a> 摄像头采集图片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引入OpenCV库</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用摄像头进行拍照 VideoCapture(0)0为默认摄像头</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 获取一帧图片</span></span><br><span class="line"><span class="comment"># 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">ret, img = cap.read()</span><br><span class="line"><span class="comment"># 释放捕获对象</span></span><br><span class="line">cap.release()</span><br></pre></td></tr></table></figure>
-<h2 id="读取图片"><a class="markdownIt-Anchor" href="#读取图片"></a> 读取图片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path, 标记)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>第二个参数指定图片被读取的方式：</p>
-<ul>
-<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
-<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
-<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
-</ul>
-<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="显示图像"><a class="markdownIt-Anchor" href="#显示图像"></a> 显示图像</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()    </span><br><span class="line"><span class="comment">## 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imshow(窗口名称, 图片对象) </span><br></pre></td></tr></table></figure>
-<h2 id="保存图片"><a class="markdownIt-Anchor" href="#保存图片"></a> 保存图片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()</span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.imwrite(<span class="string">&#x27;2.png&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()</span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.imwrite(<span class="string">&#x27;2.png&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imwrite(path, 图片对象)</span><br></pre></td></tr></table></figure>
-<h2 id="色彩空间"><a class="markdownIt-Anchor" href="#色彩空间"></a> 色彩空间</h2>
-<blockquote>
-<p><code>色彩空间（Color space）</code>是对色彩的组织方式，是坐标系统和子空间的阐述，位于系统的每种颜色都有单个点表示。</p>
-</blockquote>
-<h3 id="rgb"><a class="markdownIt-Anchor" href="#rgb"></a> RGB</h3>
-<p><code>OpenCV</code>中默认的色彩空间是<code>BGR</code>。<code>BGR</code>与<code>RGB</code>的区别只是三个颜色信道的位置发生了变化，实际上原理相同。</p>
-<p><img src="https://s2.loli.net/2022/10/09/VDJc9HUibwA4XGy.png" alt="" /></p>
-<h3 id="hsv与hsl色彩空间"><a class="markdownIt-Anchor" href="#hsv与hsl色彩空间"></a> HSV与HSL色彩空间</h3>
-<blockquote>
-<p>为了更好的数字化处理颜色，提出了<code>HSV</code>，<code>HSL</code>两个色彩空间。</p>
-<p><code>HSV</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>， <code>V</code>是<code>明度(value)</code>。</p>
-<p><code>HSL</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>，<code>L</code>是<code>亮度(lightness)</code>。</p>
-</blockquote>
-<h3 id="灰度空间"><a class="markdownIt-Anchor" href="#灰度空间"></a> 灰度空间</h3>
-<blockquote>
-<p>在<code>OpenCV</code>的灰度空间中，和一般的色彩空间相同，每一个颜色都有三个量，但是只有第一个亮度有值，所以表示为<code>（亮度，0，0）</code>。</p>
-<p>其中，亮度是根据如下灰度公式计算而得：<code>Gray = R*0.299 + G*0.587 + B*0.114</code></p>
-</blockquote>
-<h3 id="色彩空间转换"><a class="markdownIt-Anchor" href="#色彩空间转换"></a> 色彩空间转换</h3>
-<p>经常用到的是以下两种：</p>
-<ol>
-<li><code>BGR</code>空间到<code>Gray</code>空间 的转换；</li>
-<li><code>BGR</code>空间到<code>HSV</code>空间 的转换。</li>
-</ol>
-<p>使用的函数为：<code>cv2.cvtColor()</code>。</p>
-<p>它的函数声明为：</p>
-<ol>
-<li><code>cv2.cvtColor(图片对象，转换类型)</code></li>
-</ol>
-<blockquote>
-<p>对于<code>BGR</code>到<code>Gray</code>的转换，使<code>cv2.COLOR_BGR2GRAY</code>类型。</p>
-<p>同样的，对于<code>BGR</code>到<code>HSV</code>的转换，使用<code>cv2.COLOR_BGR2HSV</code>类型。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2, requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062216524.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">img2=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理前&#x27;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理后&#x27;</span>,img2)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;test.jpg&#x27;</span>,img2) </span><br></pre></td></tr></table></figure>
-<hr />
-<h1 id="人脸识别应用"><a class="markdownIt-Anchor" href="#人脸识别应用"></a> 人脸识别应用</h1>
-<blockquote>
-<h3 id="类harr特征"><a class="markdownIt-Anchor" href="#类harr特征"></a> 类Harr特征</h3>
-<p>图像中的特征通常是指，图片的像素点经过一系列的运算之后得到的结果，这些结果可能是向量、矩阵和多维数据等等。类<code>Harr</code>特征是一种反映图像的灰度变化的，像素分模块求差值的一种特征。</p>
-<h4 id="harr特征类别"><a class="markdownIt-Anchor" href="#harr特征类别"></a> Harr特征类别</h4>
-<p>可分为三类：边缘特征、线性特征、中心特征和对角线特征</p>
-<h3 id="边缘特征"><a class="markdownIt-Anchor" href="#边缘特征"></a> 边缘特征</h3>
-<p><img src="https://s2.loli.net/2022/10/09/5ZzpSNW6wyE9hP2.png" alt="" /></p>
-<h3 id="线性特征"><a class="markdownIt-Anchor" href="#线性特征"></a> 线性特征</h3>
-<p><img src="https://s2.loli.net/2022/10/09/5ZzpSNW6wyE9hP2.png" alt="" /></p>
-<h3 id="中心特征和对角线特征"><a class="markdownIt-Anchor" href="#中心特征和对角线特征"></a> 中心特征和对角线特征</h3>
-<p><img src="https://s2.loli.net/2022/10/09/OjVZcJx7BuULlsN.png" alt="" /></p>
-</blockquote>
-<h3 id="使用harr分类器检测人脸"><a class="markdownIt-Anchor" href="#使用harr分类器检测人脸"></a> 使用Harr分类器检测人脸</h3>
-<p><code>OpenCV</code> 中的人脸训练模型格式为 <code>XML</code>，可以从 <a href="https://github.com/opencv/opencv/tree/master/data/haarcascades">https://github.com/opencv/opencv/tree/master/data/haarcascades</a> 。在此我们使用<code>Harrcascade_frontalface_default.xml</code>模型检测人脸。</p>
-<p>声明分类器：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">CascadeClassifier(path)</span><br></pre></td></tr></table></figure>
-<p>调用分类函数：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">detectMultiScale(img,scaleFactor, minNeighbors, minSize)`</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参数说明：</p>
-<ol>
-<li>图片对象：待识别图片对象；</li>
-<li><code>scaleFactor</code>：图像缩放比例；</li>
-<li><code>minNeighbors</code>：对特征检测点周边多少有效点同时检测，这样可避免因选取的特征检测点太小而导致遗漏；</li>
-<li><code>minSize</code>：特征检测点的最小尺寸，可选参数。</li>
-</ol>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;1.png&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">grayimg=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line">faces = face_cascade.detectMultiScale(grayimg, <span class="number">1.2</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    <span class="built_in">print</span>((x,y,w,h))</span><br><span class="line">    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;out.jpg&#x27;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/kxtZTsWFJM5nL63.png" alt="" /></p>
-<p><img src="https://s2.loli.net/2022/10/09/UNlsSDQKXyLdf8a.jpg" alt="" /></p>
-<h1 id="摄像头实时识别"><a class="markdownIt-Anchor" href="#摄像头实时识别"></a> 摄像头实时识别</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">capture = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> capture.isOpened():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        ret, frame = capture.read()</span><br><span class="line">        grayimg = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line">        face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line">        faces = face_cascade.detectMultiScale(grayimg, <span class="number">1.2</span>, <span class="number">5</span>)</span><br><span class="line">        <span class="keyword">for</span> (x, y, w, h) <span class="keyword">in</span> faces:</span><br><span class="line">            cv2.rectangle(frame, (x, y), (x + w, y + h), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">        cv2.imshow(<span class="string">&#x27;frame&#x27;</span>, frame)</span><br><span class="line">        <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">            capture.release()</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
       </tags>
   </entry>
   <entry>
@@ -1654,6 +1515,144 @@
       </tags>
   </entry>
   <entry>
+    <title>OpenCV:简单实现人脸识别</title>
+    <url>/2022/09/06/OpenCV-Python/</url>
+    <content><![CDATA[<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install opencv-python</span><br><span class="line">pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
+<hr />
+<h1 id="opencv主要模块"><a class="markdownIt-Anchor" href="#opencv主要模块"></a> OpenCV主要模块</h1>
+<blockquote>
+<h3 id="core"><a class="markdownIt-Anchor" href="#core"></a> core</h3>
+<p>核心功能模块。该模块主要包含 OpenCV库的基础结构以及基本操作，例如OpenCV基础数据结构、绘图函数、数组操作相关函数、动态数据结构等calib3d：<br />
+这个模块名称是有 calibration（校准）和 3D 两个术语的缩写组合而成。包含了相机标定与立体视觉等功能，例如物体位姿估计、三维重建、摄像头标定等</p>
+<h3 id="dnn"><a class="markdownIt-Anchor" href="#dnn"></a> dnn</h3>
+<p>深度学习模块。该模块是 OpenCV4版的一个特色，主要包括：构建神经网络、加载序列化网络模型等。但这一模块目前仅适用与正向传递计算（测试网络），原则上不支持反向计算（训练网络）。</p>
+<h3 id="feature2d"><a class="markdownIt-Anchor" href="#feature2d"></a> feature2d</h3>
+<p>该模块是由 feature（特征）和 2D 两个术语的缩写组合而成的，其功能主要为处理图像特征点，例如特征检测、描述、匹配等</p>
+<h3 id="flann"><a class="markdownIt-Anchor" href="#flann"></a> flann</h3>
+<p>快速近似最邻近库（Fast Library for Approximate Nearest Neighbors）。该模块是高维的近似近邻快速搜索算法库，主要包含快速近似近邻搜索、聚类等</p>
+<h3 id="gapi"><a class="markdownIt-Anchor" href="#gapi"></a> gapi</h3>
+<p>该模块是 OpenCV4.0 中新增模块，旨在加速常规的图像处理。与其他模块相比，这个模块主要充当框架，而不是某些特定的计算机视觉算法</p>
+<h3 id="highgui"><a class="markdownIt-Anchor" href="#highgui"></a> highgui</h3>
+<p>高层 GUI，包含创建和操作显示图像的窗口、处理鼠标事件及键盘命令、提高图形交互可视化界面等</p>
+<h3 id="imgcodecs"><a class="markdownIt-Anchor" href="#imgcodecs"></a> imgcodecs</h3>
+<p>图像文件读取与保存模块，主要用于图像文件读取与保存</p>
+<h3 id="imgproc"><a class="markdownIt-Anchor" href="#imgproc"></a> imgproc</h3>
+<p>该模块名称是由 image（图像）和 process（处理）两个组合而成。是重要的图像处理模块，主要包含：图像滤波、几何变换、直方图、特征检测、目标检测等</p>
+<h3 id="ml"><a class="markdownIt-Anchor" href="#ml"></a> ml</h3>
+<p>机器学习模块，主要包括：统计分类、回归、数据聚类等</p>
+<h3 id="objdetect"><a class="markdownIt-Anchor" href="#objdetect"></a> objdetect</h3>
+<p>目标检测模块，主要用于图像的目标检测，如检测 Haar 特征</p>
+<h3 id="photo"><a class="markdownIt-Anchor" href="#photo"></a> photo</h3>
+<p>计算摄像模块，只要包含图像修复、去燥等</p>
+<h3 id="stitching"><a class="markdownIt-Anchor" href="#stitching"></a> stitching</h3>
+<p>图像拼接模块，主要包含：特征点寻找与匹配图像、估计旋转、自动校准、接缝估计等图像拼接过程的相关内容</p>
+<h3 id="video"><a class="markdownIt-Anchor" href="#video"></a> video</h3>
+<p>视频分析模块，主要包含：运动估计、背景分离、对象跟踪等视频处理等</p>
+<h3 id="videoio"><a class="markdownIt-Anchor" href="#videoio"></a> videoio</h3>
+<p>视频输入/输出模块，主要用于读取、写入视频 或者图像序列</p>
+</blockquote>
+<hr />
+<h1 id="图片基本操作"><a class="markdownIt-Anchor" href="#图片基本操作"></a> 图片基本操作</h1>
+<h2 id="摄像头采集图片"><a class="markdownIt-Anchor" href="#摄像头采集图片"></a> 摄像头采集图片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引入OpenCV库</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用摄像头进行拍照 VideoCapture(0)0为默认摄像头</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 获取一帧图片</span></span><br><span class="line"><span class="comment"># 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">ret, img = cap.read()</span><br><span class="line"><span class="comment"># 释放捕获对象</span></span><br><span class="line">cap.release()</span><br></pre></td></tr></table></figure>
+<h2 id="读取图片"><a class="markdownIt-Anchor" href="#读取图片"></a> 读取图片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path, 标记)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第二个参数指定图片被读取的方式：</p>
+<ul>
+<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
+<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
+<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
+</ul>
+<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="显示图像"><a class="markdownIt-Anchor" href="#显示图像"></a> 显示图像</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()    </span><br><span class="line"><span class="comment">## 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imshow(窗口名称, 图片对象) </span><br></pre></td></tr></table></figure>
+<h2 id="保存图片"><a class="markdownIt-Anchor" href="#保存图片"></a> 保存图片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()</span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.imwrite(<span class="string">&#x27;2.png&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line">ret,img=cap.read()</span><br><span class="line">cap.release()</span><br><span class="line"><span class="keyword">if</span> ret:</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">    cv2.imwrite(<span class="string">&#x27;2.png&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;错误&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imwrite(path, 图片对象)</span><br></pre></td></tr></table></figure>
+<h2 id="色彩空间"><a class="markdownIt-Anchor" href="#色彩空间"></a> 色彩空间</h2>
+<blockquote>
+<p><code>色彩空间（Color space）</code>是对色彩的组织方式，是坐标系统和子空间的阐述，位于系统的每种颜色都有单个点表示。</p>
+</blockquote>
+<h3 id="rgb"><a class="markdownIt-Anchor" href="#rgb"></a> RGB</h3>
+<p><code>OpenCV</code>中默认的色彩空间是<code>BGR</code>。<code>BGR</code>与<code>RGB</code>的区别只是三个颜色信道的位置发生了变化，实际上原理相同。</p>
+<p><img src="https://s2.loli.net/2022/10/09/VDJc9HUibwA4XGy.png" alt="" /></p>
+<h3 id="hsv与hsl色彩空间"><a class="markdownIt-Anchor" href="#hsv与hsl色彩空间"></a> HSV与HSL色彩空间</h3>
+<blockquote>
+<p>为了更好的数字化处理颜色，提出了<code>HSV</code>，<code>HSL</code>两个色彩空间。</p>
+<p><code>HSV</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>， <code>V</code>是<code>明度(value)</code>。</p>
+<p><code>HSL</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>，<code>L</code>是<code>亮度(lightness)</code>。</p>
+</blockquote>
+<h3 id="灰度空间"><a class="markdownIt-Anchor" href="#灰度空间"></a> 灰度空间</h3>
+<blockquote>
+<p>在<code>OpenCV</code>的灰度空间中，和一般的色彩空间相同，每一个颜色都有三个量，但是只有第一个亮度有值，所以表示为<code>（亮度，0，0）</code>。</p>
+<p>其中，亮度是根据如下灰度公式计算而得：<code>Gray = R*0.299 + G*0.587 + B*0.114</code></p>
+</blockquote>
+<h3 id="色彩空间转换"><a class="markdownIt-Anchor" href="#色彩空间转换"></a> 色彩空间转换</h3>
+<p>经常用到的是以下两种：</p>
+<ol>
+<li><code>BGR</code>空间到<code>Gray</code>空间 的转换；</li>
+<li><code>BGR</code>空间到<code>HSV</code>空间 的转换。</li>
+</ol>
+<p>使用的函数为：<code>cv2.cvtColor()</code>。</p>
+<p>它的函数声明为：</p>
+<ol>
+<li><code>cv2.cvtColor(图片对象，转换类型)</code></li>
+</ol>
+<blockquote>
+<p>对于<code>BGR</code>到<code>Gray</code>的转换，使<code>cv2.COLOR_BGR2GRAY</code>类型。</p>
+<p>同样的，对于<code>BGR</code>到<code>HSV</code>的转换，使用<code>cv2.COLOR_BGR2HSV</code>类型。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2, requests</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202209062216524.jpg&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.jpg&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">img2=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理前&#x27;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;处理后&#x27;</span>,img2)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;test.jpg&#x27;</span>,img2) </span><br></pre></td></tr></table></figure>
+<hr />
+<h1 id="人脸识别应用"><a class="markdownIt-Anchor" href="#人脸识别应用"></a> 人脸识别应用</h1>
+<blockquote>
+<h3 id="类harr特征"><a class="markdownIt-Anchor" href="#类harr特征"></a> 类Harr特征</h3>
+<p>图像中的特征通常是指，图片的像素点经过一系列的运算之后得到的结果，这些结果可能是向量、矩阵和多维数据等等。类<code>Harr</code>特征是一种反映图像的灰度变化的，像素分模块求差值的一种特征。</p>
+<h4 id="harr特征类别"><a class="markdownIt-Anchor" href="#harr特征类别"></a> Harr特征类别</h4>
+<p>可分为三类：边缘特征、线性特征、中心特征和对角线特征</p>
+<h3 id="边缘特征"><a class="markdownIt-Anchor" href="#边缘特征"></a> 边缘特征</h3>
+<p><img src="https://s2.loli.net/2022/10/09/5ZzpSNW6wyE9hP2.png" alt="" /></p>
+<h3 id="线性特征"><a class="markdownIt-Anchor" href="#线性特征"></a> 线性特征</h3>
+<p><img src="https://s2.loli.net/2022/10/09/5ZzpSNW6wyE9hP2.png" alt="" /></p>
+<h3 id="中心特征和对角线特征"><a class="markdownIt-Anchor" href="#中心特征和对角线特征"></a> 中心特征和对角线特征</h3>
+<p><img src="https://s2.loli.net/2022/10/09/OjVZcJx7BuULlsN.png" alt="" /></p>
+</blockquote>
+<h3 id="使用harr分类器检测人脸"><a class="markdownIt-Anchor" href="#使用harr分类器检测人脸"></a> 使用Harr分类器检测人脸</h3>
+<p><code>OpenCV</code> 中的人脸训练模型格式为 <code>XML</code>，可以从 <a href="https://github.com/opencv/opencv/tree/master/data/haarcascades">https://github.com/opencv/opencv/tree/master/data/haarcascades</a> 。在此我们使用<code>Harrcascade_frontalface_default.xml</code>模型检测人脸。</p>
+<p>声明分类器：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">CascadeClassifier(path)</span><br></pre></td></tr></table></figure>
+<p>调用分类函数：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">detectMultiScale(img,scaleFactor, minNeighbors, minSize)`</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参数说明：</p>
+<ol>
+<li>图片对象：待识别图片对象；</li>
+<li><code>scaleFactor</code>：图像缩放比例；</li>
+<li><code>minNeighbors</code>：对特征检测点周边多少有效点同时检测，这样可避免因选取的特征检测点太小而导致遗漏；</li>
+<li><code>minSize</code>：特征检测点的最小尺寸，可选参数。</li>
+</ol>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;1.png&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">grayimg=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line">faces = face_cascade.detectMultiScale(grayimg, <span class="number">1.2</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    <span class="built_in">print</span>((x,y,w,h))</span><br><span class="line">    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;demo&#x27;</span>,img)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;out.jpg&#x27;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/kxtZTsWFJM5nL63.png" alt="" /></p>
+<p><img src="https://s2.loli.net/2022/10/09/UNlsSDQKXyLdf8a.jpg" alt="" /></p>
+<h1 id="摄像头实时识别"><a class="markdownIt-Anchor" href="#摄像头实时识别"></a> 摄像头实时识别</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">capture = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> capture.isOpened():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        ret, frame = capture.read()</span><br><span class="line">        grayimg = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line">        face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line">        faces = face_cascade.detectMultiScale(grayimg, <span class="number">1.2</span>, <span class="number">5</span>)</span><br><span class="line">        <span class="keyword">for</span> (x, y, w, h) <span class="keyword">in</span> faces:</span><br><span class="line">            cv2.rectangle(frame, (x, y), (x + w, y + h), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">        cv2.imshow(<span class="string">&#x27;frame&#x27;</span>, frame)</span><br><span class="line">        <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">            capture.release()</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCV:图像处理</title>
     <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
     <content><![CDATA[<h1 id="颜色变换cvtcolor"><a class="markdownIt-Anchor" href="#颜色变换cvtcolor"></a> 颜色变换cvtColor</h1>
@@ -1681,107 +1680,6 @@
 ]]></content>
       <categories>
         <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV的基本操作</title>
-    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
-<h2 id="读取图像文件"><a class="markdownIt-Anchor" href="#读取图像文件"></a> 读取图像文件</h2>
-<p>读取图片</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>第二个参数指定图片被读取的方式：</p>
-<ul>
-<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
-<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
-<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
-</ul>
-<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>读取失败返回None</p>
-<h2 id="读取照片的高度与宽度"><a class="markdownIt-Anchor" href="#读取照片的高度与宽度"></a> 读取照片的高度与宽度</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
-<h2 id="保存照片"><a class="markdownIt-Anchor" href="#保存照片"></a> 保存照片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="opencv界面编程"><a class="markdownIt-Anchor" href="#opencv界面编程"></a> OpenCV界面编程</h1>
-<h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>flags</p>
-<ul>
-<li>
-<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
-</li>
-<li>
-<p>cv2.WINDOW_NORMAL</p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
-<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<img title="" src="https://s2.loli.net/2022/10/09/UNlsSDQKXyLdf8a.jpg" alt="" data-align="center">
-<h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
-<ul>
-<li>
-<p>cv2.destroyWindow(winname)</p>
-</li>
-<li>
-<p>cv2.destroyAllWindows(winname)</p>
-</li>
-<li>
-<p>cv2.resizeWindow(winname,width,height)</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
-<p>OpenCV使用setMousecallback设定</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
-<p>鼠标事件event</p>
-<blockquote>
-<p>enum<br />
-{<br />
-EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
-EVENT_LBUTTONDOWN    =1,   //按下左键<br />
-EVENT_RBUTTONDOWN    =2,   //按下右键<br />
-EVENT_MBUTTONDOWN    =3,   //按下中键<br />
-EVENT_LBUTTONUP      =4,   //放开左键<br />
-EVENT_RBUTTONUP      =5,   //放开右键<br />
-EVENT_MBUTTONUP      =6,   //放开中键<br />
-EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
-EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
-EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
-EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
-};</p>
-</blockquote>
-<p>鼠标事件flags</p>
-<blockquote>
-<p>enum<br />
-{<br />
-CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
-CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
-CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
-CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
-CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
-CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
-};</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/SGZxMl649gC5HtI.png" alt="" /></p>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -1935,6 +1833,107 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
+    <title>OpenCV的基本操作</title>
+    <url>/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
+<h2 id="读取图像文件"><a class="markdownIt-Anchor" href="#读取图像文件"></a> 读取图像文件</h2>
+<p>读取图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第二个参数指定图片被读取的方式：</p>
+<ul>
+<li><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</li>
+<li><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</li>
+<li><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</li>
+</ul>
+<p>使用数字简约表示以上三种标记，分别为 <code>1</code>， <code>0</code>或<code>-1</code>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>读取失败返回None</p>
+<h2 id="读取照片的高度与宽度"><a class="markdownIt-Anchor" href="#读取照片的高度与宽度"></a> 读取照片的高度与宽度</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
+<h2 id="保存照片"><a class="markdownIt-Anchor" href="#保存照片"></a> 保存照片</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="opencv界面编程"><a class="markdownIt-Anchor" href="#opencv界面编程"></a> OpenCV界面编程</h1>
+<h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>flags</p>
+<ul>
+<li>
+<p>cv2.WINDOW_AUTOSIZE 窗口大小自动适应</p>
+</li>
+<li>
+<p>cv2.WINDOW_NORMAL</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
+<p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<img title="" src="https://s2.loli.net/2022/10/09/UNlsSDQKXyLdf8a.jpg" alt="" data-align="center">
+<h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
+<ul>
+<li>
+<p>cv2.destroyWindow(winname)</p>
+</li>
+<li>
+<p>cv2.destroyAllWindows(winname)</p>
+</li>
+<li>
+<p>cv2.resizeWindow(winname,width,height)</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
+<p>OpenCV使用setMousecallback设定</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
+<p>鼠标事件event</p>
+<blockquote>
+<p>enum<br />
+{<br />
+EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
+EVENT_LBUTTONDOWN    =1,   //按下左键<br />
+EVENT_RBUTTONDOWN    =2,   //按下右键<br />
+EVENT_MBUTTONDOWN    =3,   //按下中键<br />
+EVENT_LBUTTONUP      =4,   //放开左键<br />
+EVENT_RBUTTONUP      =5,   //放开右键<br />
+EVENT_MBUTTONUP      =6,   //放开中键<br />
+EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
+EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
+EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
+EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
+};</p>
+</blockquote>
+<p>鼠标事件flags</p>
+<blockquote>
+<p>enum<br />
+{<br />
+CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
+CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
+CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
+CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
+CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
+CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
+};</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/SGZxMl649gC5HtI.png" alt="" /></p>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python爬虫:微博爬取</title>
     <url>/2022/10/05/Python%E7%88%AC%E8%99%AB-%E5%BE%AE%E5%8D%9A%E7%88%AC%E5%8F%96/</url>
     <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</span><br><span class="line"></span><br><span class="line">base_url = <span class="string">&#x27;https://m.weibo.cn/api/container/getIndex?&#x27;</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&#x27;Host&#x27;</span>: <span class="string">&#x27;m.weibo.cn&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Referer&#x27;</span>: <span class="string">&#x27;https://m.weibo.cn/u/2830678474&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.53&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;X-Requested-With&#x27;</span>: <span class="string">&#x27;XMLHttpRequest&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">max_page = <span class="number">50</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_page</span>(<span class="params">page</span>):</span><br><span class="line">    uid=<span class="string">&#x27;1679186305&#x27;</span></span><br><span class="line">    containerid=<span class="string">&#x27;107603&#x27;</span>+uid</span><br><span class="line">    params = &#123;</span><br><span class="line">        <span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;uid&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;value&#x27;</span>: uid,</span><br><span class="line">        <span class="string">&#x27;containerid&#x27;</span>:containerid,</span><br><span class="line">        <span class="string">&#x27;page&#x27;</span>: page</span><br><span class="line">    &#125;</span><br><span class="line">    url = base_url + urlencode(params)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">            <span class="keyword">return</span> response.json()</span><br><span class="line">    <span class="keyword">except</span> requests.ConnectionError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Error&#x27;</span>, e.args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_page</span>(<span class="params">json</span>):</span><br><span class="line">    <span class="keyword">if</span> json:</span><br><span class="line">        items = json.get(<span class="string">&#x27;data&#x27;</span>).get(<span class="string">&#x27;cards&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">            item = item.get(<span class="string">&#x27;mblog&#x27;</span>)</span><br><span class="line">            weibo = &#123;&#125;</span><br><span class="line">            weibo[<span class="string">&#x27;id&#x27;</span>] = item.get(<span class="string">&#x27;id&#x27;</span>)</span><br><span class="line">            weibo[<span class="string">&#x27;text&#x27;</span>] = pq(item.get(<span class="string">&#x27;text&#x27;</span>)).text()</span><br><span class="line">            weibo[<span class="string">&#x27;attitudes&#x27;</span>] = item.get(<span class="string">&#x27;attitudes_count&#x27;</span>)</span><br><span class="line">            weibo[<span class="string">&#x27;comments&#x27;</span>] = item.get(<span class="string">&#x27;comments_count&#x27;</span>)</span><br><span class="line">            weibo[<span class="string">&#x27;reposts&#x27;</span>] = item.get(<span class="string">&#x27;reposts_count&#x27;</span>)</span><br><span class="line">            <span class="keyword">yield</span> weibo</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, max_page + <span class="number">1</span>):</span><br><span class="line">        json = get_page(page)</span><br><span class="line">        results = parse_page(json)</span><br><span class="line">        <span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">            <span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
@@ -1978,6 +1977,11 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
         <tag>Python</tag>
         <tag>爬虫</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Requests:登录课程平台</title>
+    <url>/2022/10/07/Requests-%E7%99%BB%E5%BD%95%E8%AF%BE%E7%A8%8B%E5%B9%B3%E5%8F%B0/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Qt工具类</title>
@@ -2157,9 +2161,78 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
-    <title>Requests:登录课程平台</title>
-    <url>/2022/10/07/Requests-%E7%99%BB%E5%BD%95%E8%AF%BE%E7%A8%8B%E5%B9%B3%E5%8F%B0/</url>
-    <content><![CDATA[]]></content>
+    <title>STM32F1软件仿真</title>
+    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
+    <content><![CDATA[<blockquote>
+<p>MDK 的一个强大的功能就是提供软件仿真，通过软件仿真，我们可以发现很多将要出现<br />
+的问题，避免了下载到 STM32 里面来查这些错误，这样最大的好处是能很方便的检查程序存<br />
+在的问题，因为在 MDK 的仿真下面，你可以查看很多硬件相关的寄存器，通过观察这些寄存<br />
+器，你可以知道代码是不是真正有效。另外一个优点是不必频繁的刷机，从而延长了 STM32<br />
+的 FLASH 寿命（STM32 的 FLASH 寿命≥1W 次）。当然，软件仿真不是万能的，很多问题还<br />
+是要到在线调试才能发现。</p>
+</blockquote>
+<h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
+<p>如下图</p>
+<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
+<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
+<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
+编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：***DARMSTM.DLL ****</p>
+<p>和 <strong>TARMSTM.DLL</strong>，</p>
+<p>Parameter 均为：</p>
+<pre><code>-pSTM32F103ZE
+</code></pre>
+<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
+<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
+<p><img src="https://s2.loli.net/2022/10/09/86fWKslAZo7QOhR.png" alt="" /></p>
+<h1 id="开始仿真"><a class="markdownIt-Anchor" href="#开始仿真"></a> 开始仿真</h1>
+<p>我们点击<img src="https://s2.loli.net/2022/10/15/nRefBgi2JPs3odS.png" alt="" />开始仿真,进入仿真界面</p>
+<p><img src="https://s2.loli.net/2022/10/15/RQgjkE3pmd9KbaG.png" alt="" /></p>
+<h2 id="debug工具条"><a class="markdownIt-Anchor" href="#debug工具条"></a> Debug工具条</h2>
+<p><img src="https://s2.loli.net/2022/10/15/unwMt8CkGZXRqrU.png" alt="" /></p>
+<ul>
+<li>
+<p>复位：相当于硬件复位按键，从头开始</p>
+</li>
+<li>
+<p>执行到断点处：该按钮用来快速执行到断点处</p>
+</li>
+<li>
+<p>挂起：可以使程序停止下来，<br />
+进入到单步调试状态</p>
+</li>
+<li>
+<p>执行进去：实现执行到某个函数里面去的功能，在没有函数的情况下，是等同于执行过去按钮的</p>
+</li>
+<li>
+<p>执行过去：在碰到有函数的地方，通过该按钮就可以单步执行过这个函数，而不进入这个函数单步执行</p>
+</li>
+<li>
+<p>执行出去：该按钮是在进入了函数单步调试的时候，有时候你可能不必再执行该函数的剩余部分了，通过该按钮就直接一步执行完函数余下的部分，并跳出函数，回到函数被调用的位置。</p>
+</li>
+<li>
+<p>执行到光标处：可以迅速的使程序运行到光标处，其实是挺像执行到断点处按钮功能，但是两者是有区别的，断点可以有多个，但是光标所在处只有一个。</p>
+</li>
+<li>
+<p>汇编窗口：可以查看汇编代码，这对分析程序很有用。</p>
+</li>
+<li>
+<p>观看变量/堆栈窗口：显示变量的窗口，在里面可以查看各种你想要看的变量值，也是很常用的一个调试窗口。</p>
+</li>
+<li>
+<p>性能分析窗口：观看各个函数执行时间和所占百分比的窗口，用来分析函数的性能</p>
+</li>
+<li>
+<p>逻辑分析窗口：按下该按钮会弹出一个逻辑分析窗口，通过 SETUP 按钮新建一些 IO 口，就可以观察这些 IO 口的电平变化情况，以多种形式显示出来，比较直观。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>嵌入式</tag>
+      </tags>
   </entry>
   <entry>
     <title>STM32固件库</title>
@@ -2245,80 +2318,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>STM32F1软件仿真</title>
-    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
-    <content><![CDATA[<blockquote>
-<p>MDK 的一个强大的功能就是提供软件仿真，通过软件仿真，我们可以发现很多将要出现<br />
-的问题，避免了下载到 STM32 里面来查这些错误，这样最大的好处是能很方便的检查程序存<br />
-在的问题，因为在 MDK 的仿真下面，你可以查看很多硬件相关的寄存器，通过观察这些寄存<br />
-器，你可以知道代码是不是真正有效。另外一个优点是不必频繁的刷机，从而延长了 STM32<br />
-的 FLASH 寿命（STM32 的 FLASH 寿命≥1W 次）。当然，软件仿真不是万能的，很多问题还<br />
-是要到在线调试才能发现。</p>
-</blockquote>
-<h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
-<p>如下图</p>
-<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
-<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
-<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
-编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：***DARMSTM.DLL ****</p>
-<p>和 <strong>TARMSTM.DLL</strong>，</p>
-<p>Parameter 均为：</p>
-<pre><code>-pSTM32F103ZE
-</code></pre>
-<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
-<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
-<p><img src="https://s2.loli.net/2022/10/09/86fWKslAZo7QOhR.png" alt="" /></p>
-<h1 id="开始仿真"><a class="markdownIt-Anchor" href="#开始仿真"></a> 开始仿真</h1>
-<p>我们点击<img src="https://s2.loli.net/2022/10/15/nRefBgi2JPs3odS.png" alt="" />开始仿真,进入仿真界面</p>
-<p><img src="https://s2.loli.net/2022/10/15/RQgjkE3pmd9KbaG.png" alt="" /></p>
-<h2 id="debug工具条"><a class="markdownIt-Anchor" href="#debug工具条"></a> Debug工具条</h2>
-<p><img src="https://s2.loli.net/2022/10/15/unwMt8CkGZXRqrU.png" alt="" /></p>
-<ul>
-<li>
-<p>复位：相当于硬件复位按键，从头开始</p>
-</li>
-<li>
-<p>执行到断点处：该按钮用来快速执行到断点处</p>
-</li>
-<li>
-<p>挂起：可以使程序停止下来，<br />
-进入到单步调试状态</p>
-</li>
-<li>
-<p>执行进去：实现执行到某个函数里面去的功能，在没有函数的情况下，是等同于执行过去按钮的</p>
-</li>
-<li>
-<p>执行过去：在碰到有函数的地方，通过该按钮就可以单步执行过这个函数，而不进入这个函数单步执行</p>
-</li>
-<li>
-<p>执行出去：该按钮是在进入了函数单步调试的时候，有时候你可能不必再执行该函数的剩余部分了，通过该按钮就直接一步执行完函数余下的部分，并跳出函数，回到函数被调用的位置。</p>
-</li>
-<li>
-<p>执行到光标处：可以迅速的使程序运行到光标处，其实是挺像执行到断点处按钮功能，但是两者是有区别的，断点可以有多个，但是光标所在处只有一个。</p>
-</li>
-<li>
-<p>汇编窗口：可以查看汇编代码，这对分析程序很有用。</p>
-</li>
-<li>
-<p>观看变量/堆栈窗口：显示变量的窗口，在里面可以查看各种你想要看的变量值，也是很常用的一个调试窗口。</p>
-</li>
-<li>
-<p>性能分析窗口：观看各个函数执行时间和所占百分比的窗口，用来分析函数的性能</p>
-</li>
-<li>
-<p>逻辑分析窗口：按下该按钮会弹出一个逻辑分析窗口，通过 SETUP 按钮新建一些 IO 口，就可以观察这些 IO 口的电平变化情况，以多种形式显示出来，比较直观。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>STM32</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>嵌入式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SVM——鸢尾花分类</title>
     <url>/2022/10/29/SVM%E9%B8%A2%E5%B0%BE%E8%8A%B1%E5%88%86%E7%B1%BB/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2022/10/29/B7tm1VXbTC49D5Q.png" alt="" /></p>
@@ -2335,21 +2334,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
         <tag>Python</tag>
         <tag>人工智能</tag>
         <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，顺便就发博客了，很方便！</p>
-<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
@@ -2396,23 +2380,18 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>selenium:川农学工网自动化登录</title>
-    <url>/2022/10/06/selenium-%E5%B7%9D%E5%86%9C%E5%AD%A6%E5%B7%A5%E7%BD%91%E8%87%AA%E5%8A%A8%E5%8C%96%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="实现步骤"><a class="markdownIt-Anchor" href="#实现步骤"></a> 实现步骤</h1>
-<p><img src="https://s2.loli.net/2022/10/09/UVOKsQGEFm37fIg.png" alt="" /></p>
-<p>我萌使用检查工具查看相应的代码</p>
-<p><img src="https://s2.loli.net/2022/10/09/ialeAGdSIMUFuD6.png" alt="" /></p>
-<p>同理我们知道了相应的html代码</p>
-<p>验证码使用截屏方式截图后二值化处理后，进行OCR识别，如果错误，重复识别</p>
-<p>，如果密码错误，则退出</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> retrying <span class="keyword">import</span> retry</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> selenium.common.exceptions <span class="keyword">import</span> TimeoutException,NoSuchElementException</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">preprocess</span>(<span class="params">image</span>):</span><br><span class="line">    array =image</span><br><span class="line">    array = np.where(image &gt; <span class="number">100</span>, <span class="number">255</span>, <span class="number">0</span>)</span><br><span class="line">    image = Image.fromarray(array.astype(<span class="string">&#x27;uint8&#x27;</span>))</span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>(<span class="params">browser</span>):</span><br><span class="line">    username = <span class="string">&quot;user&quot;</span></span><br><span class="line">    psw = <span class="string">&quot;psw&quot;</span></span><br><span class="line">    browser.get(<span class="string">&quot;http://xsc.sicau.edu.cn/Sys/UserLogin.aspx&quot;</span>)</span><br><span class="line">    <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;UserName&#x27;</span>)</span><br><span class="line">    <span class="built_in">input</span>.send_keys(username)</span><br><span class="line">    <span class="built_in">input</span> = browser.find_element(By.NAME, value=<span class="string">&#x27;UserPass&#x27;</span>)</span><br><span class="line">    <span class="built_in">input</span>.send_keys(psw)</span><br><span class="line">    browser.set_window_size(<span class="number">1000</span>, <span class="number">800</span>)</span><br><span class="line">    browser.save_screenshot(<span class="string">&#x27;1.png&#x27;</span>)</span><br><span class="line">    image = Image.<span class="built_in">open</span>(<span class="string">&#x27;1.png&#x27;</span>)</span><br><span class="line">    image = image.convert(<span class="string">&#x27;RGB&#x27;</span>)</span><br><span class="line">    image = np.array(image)</span><br><span class="line">    image = image[<span class="number">480</span>:<span class="number">503</span>, <span class="number">1030</span>:<span class="number">1103</span>, :]</span><br><span class="line">    image = preprocess(image)</span><br><span class="line">    image = image.convert(<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    plt.imshow(image)</span><br><span class="line">    plt.show()</span><br><span class="line">    code = tesserocr.image_to_text(image)</span><br><span class="line">    code = code.strip()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;验证码识别结果&quot;</span>, code)</span><br><span class="line">    <span class="keyword">if</span> code.isdigit():</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;CheckCode&#x27;</span>)</span><br><span class="line">        code = <span class="built_in">str</span>(code)</span><br><span class="line">        <span class="built_in">input</span>.send_keys(code)</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;CheckCode&#x27;</span>)</span><br><span class="line">        <span class="built_in">input</span>.send_keys(code)</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;Btn_OK&#x27;</span>)</span><br><span class="line">        <span class="built_in">input</span>.click()</span><br><span class="line">        wait=WebDriverWait(browser,<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="built_in">input</span>=wait.until(EC.alert_is_present())</span><br><span class="line">            dig_alert = browser.switch_to.alert</span><br><span class="line">            <span class="keyword">if</span>(dig_alert.text==<span class="string">&quot;用户名或密码错误！&quot;</span>):</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;用户名或密码错误&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">            dig_alert.accept()</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;验证码失败了&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;识别有错&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    browser = webdriver.Edge()</span><br><span class="line">    browser.start_client()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">       p=login(browser)</span><br><span class="line">       <span class="keyword">if</span> p==<span class="number">1</span>:</span><br><span class="line">           <span class="built_in">print</span>(<span class="string">&quot;登录成功&quot;</span>)</span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">       <span class="keyword">elif</span> p==-<span class="number">1</span>:</span><br><span class="line">           <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，顺便就发博客了，很方便！</p>
+<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
 ]]></content>
       <categories>
-        <category>爬虫</category>
+        <category>随想</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
+        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
@@ -2565,6 +2544,26 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
+    <title>selenium:川农学工网自动化登录</title>
+    <url>/2022/10/06/selenium-%E5%B7%9D%E5%86%9C%E5%AD%A6%E5%B7%A5%E7%BD%91%E8%87%AA%E5%8A%A8%E5%8C%96%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="实现步骤"><a class="markdownIt-Anchor" href="#实现步骤"></a> 实现步骤</h1>
+<p><img src="https://s2.loli.net/2022/10/09/UVOKsQGEFm37fIg.png" alt="" /></p>
+<p>我萌使用检查工具查看相应的代码</p>
+<p><img src="https://s2.loli.net/2022/10/09/ialeAGdSIMUFuD6.png" alt="" /></p>
+<p>同理我们知道了相应的html代码</p>
+<p>验证码使用截屏方式截图后二值化处理后，进行OCR识别，如果错误，重复识别</p>
+<p>，如果密码错误，则退出</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> retrying <span class="keyword">import</span> retry</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> selenium.common.exceptions <span class="keyword">import</span> TimeoutException,NoSuchElementException</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">preprocess</span>(<span class="params">image</span>):</span><br><span class="line">    array =image</span><br><span class="line">    array = np.where(image &gt; <span class="number">100</span>, <span class="number">255</span>, <span class="number">0</span>)</span><br><span class="line">    image = Image.fromarray(array.astype(<span class="string">&#x27;uint8&#x27;</span>))</span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>(<span class="params">browser</span>):</span><br><span class="line">    username = <span class="string">&quot;user&quot;</span></span><br><span class="line">    psw = <span class="string">&quot;psw&quot;</span></span><br><span class="line">    browser.get(<span class="string">&quot;http://xsc.sicau.edu.cn/Sys/UserLogin.aspx&quot;</span>)</span><br><span class="line">    <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;UserName&#x27;</span>)</span><br><span class="line">    <span class="built_in">input</span>.send_keys(username)</span><br><span class="line">    <span class="built_in">input</span> = browser.find_element(By.NAME, value=<span class="string">&#x27;UserPass&#x27;</span>)</span><br><span class="line">    <span class="built_in">input</span>.send_keys(psw)</span><br><span class="line">    browser.set_window_size(<span class="number">1000</span>, <span class="number">800</span>)</span><br><span class="line">    browser.save_screenshot(<span class="string">&#x27;1.png&#x27;</span>)</span><br><span class="line">    image = Image.<span class="built_in">open</span>(<span class="string">&#x27;1.png&#x27;</span>)</span><br><span class="line">    image = image.convert(<span class="string">&#x27;RGB&#x27;</span>)</span><br><span class="line">    image = np.array(image)</span><br><span class="line">    image = image[<span class="number">480</span>:<span class="number">503</span>, <span class="number">1030</span>:<span class="number">1103</span>, :]</span><br><span class="line">    image = preprocess(image)</span><br><span class="line">    image = image.convert(<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    plt.imshow(image)</span><br><span class="line">    plt.show()</span><br><span class="line">    code = tesserocr.image_to_text(image)</span><br><span class="line">    code = code.strip()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;验证码识别结果&quot;</span>, code)</span><br><span class="line">    <span class="keyword">if</span> code.isdigit():</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;CheckCode&#x27;</span>)</span><br><span class="line">        code = <span class="built_in">str</span>(code)</span><br><span class="line">        <span class="built_in">input</span>.send_keys(code)</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;CheckCode&#x27;</span>)</span><br><span class="line">        <span class="built_in">input</span>.send_keys(code)</span><br><span class="line">        <span class="built_in">input</span> = browser.find_element(By.ID, value=<span class="string">&#x27;Btn_OK&#x27;</span>)</span><br><span class="line">        <span class="built_in">input</span>.click()</span><br><span class="line">        wait=WebDriverWait(browser,<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="built_in">input</span>=wait.until(EC.alert_is_present())</span><br><span class="line">            dig_alert = browser.switch_to.alert</span><br><span class="line">            <span class="keyword">if</span>(dig_alert.text==<span class="string">&quot;用户名或密码错误！&quot;</span>):</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;用户名或密码错误&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">            dig_alert.accept()</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;验证码失败了&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;识别有错&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    browser = webdriver.Edge()</span><br><span class="line">    browser.start_client()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">       p=login(browser)</span><br><span class="line">       <span class="keyword">if</span> p==<span class="number">1</span>:</span><br><span class="line">           <span class="built_in">print</span>(<span class="string">&quot;登录成功&quot;</span>)</span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">       <span class="keyword">elif</span> p==-<span class="number">1</span>:</span><br><span class="line">           <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用Python和NumPy构建神经网络模型</title>
     <url>/2022/09/26/%E4%BD%BF%E7%94%A8Python%E5%92%8CNumPy%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[]]></content>
@@ -2651,6 +2650,38 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       <tags>
         <tag>Python</tag>
         <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫:推送川农大教务通知</title>
+    <url>/2022/10/09/%E7%88%AC%E8%99%AB-%E6%8E%A8%E9%80%81%E5%B7%9D%E5%86%9C%E5%A4%A7%E6%95%99%E5%8A%A1%E9%80%9A%E7%9F%A5/</url>
+    <content><![CDATA[<p><img title="" src="https://s2.loli.net/2022/10/09/QDeV4EFNG2KToSq.jpg" alt="" width="96"><img title="" src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202210091242107.jpg" alt="" width="97"></p>
+<h1 id="实现过程"><a class="markdownIt-Anchor" href="#实现过程"></a> 实现过程</h1>
+<ol>
+<li>平台</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/10/09/GnuFfVYwDpva83q.png" alt="" /></p>
+<p>pushplus这个平台直接调用api接口就行了</p>
+<ol start="2">
+<li>目标网站</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/10/09/9jd6kebRBtHvJpA.png" alt="" /></p>
+<p>研究一下网页源代码的组成部分我们可以发现每个通知的xpath</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/html/body/form/div/div[2]/table/tbody/tr</span><br></pre></td></tr></table></figure>
+<p>我们获取到每个通知的url后，将它们放入集合中，后用json保存，一定时间再次爬取，</p>
+<p>对前后两次集合的<mark>并集后取原集合的差集</mark>，如果结果不为空，则分别获取集合的结果，分页爬取文章内容</p>
+<p><img src="https://s2.loli.net/2022/10/09/RuFWlbv7e2jSVPg.png" alt="" /></p>
+<p>在调用平台API，发送信息</p>
+<p>为了实现全部自动化，我们可以将脚本部署到服务器上定时运行，当<mark>注意教务网每天凌晨要关闭</mark></p>
+<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_page</span>(<span class="params">url</span>):</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    s = requests.get(url, headers=header)</span><br><span class="line">    html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">    title=html.xpath(<span class="string">&quot;/html/body/div[@class=&#x27;page-title-2&#x27;]/text()&quot;</span>)</span><br><span class="line">    txt=html.xpath(<span class="string">&quot;//table[@align=&#x27;center&#x27;]/tbody/tr/td/table&quot;</span>)</span><br><span class="line">    txt=etree.tostring(txt[<span class="number">2</span>],encoding=<span class="string">&#x27;utf-8&#x27;</span>).decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    txt = <span class="string">&quot;&lt;head&gt;&lt;base href=\&quot;&quot;</span> + url + <span class="string">&quot;\&quot; /&gt;&lt;/head&gt;&lt;p&gt;&lt;a href=\&quot;&quot;</span>+url+<span class="string">&quot;\&quot;&gt;&quot;</span>+title[<span class="number">0</span>]+<span class="string">&quot;&lt;/a&gt;&lt;/p&gt;&quot;</span>+txt</span><br><span class="line">    <span class="keyword">return</span> title,txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">vx_msg</span>(<span class="params">title,content</span>):</span><br><span class="line">    token = <span class="string">&#x27;平台token&#x27;</span></span><br><span class="line">    url = <span class="string">&#x27;http://www.pushplus.plus/send&#x27;</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&quot;token&quot;</span>: token,</span><br><span class="line">        <span class="string">&quot;title&quot;</span>: title,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: content</span><br><span class="line">    &#125;</span><br><span class="line">    body = json.dumps(data).encode(encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    headers = &#123;<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>&#125;</span><br><span class="line">    r=requests.post(url, data=body, headers=headers)</span><br><span class="line">    j=r.json()</span><br><span class="line">    <span class="keyword">if</span> j[<span class="string">&quot;code&quot;</span>]==<span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;发送成功&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;失败&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        s = requests.get(<span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/gwmore.asp&quot;</span>, headers=header)</span><br><span class="line">        html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">        result = html.xpath(<span class="string">&quot;/html/body/form/div/div[2]/table/tbody/tr&quot;</span>)</span><br><span class="line">        ls =<span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            <span class="comment">#date = i.xpath(&quot;./td[4]/text()&quot;)</span></span><br><span class="line">            url = <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/&quot;</span> + <span class="string">&quot;&quot;</span>.join(i.xpath(<span class="string">&quot;./td[3]/div/a/@href&quot;</span>))</span><br><span class="line">            <span class="comment">#title = i.xpath(&quot;./td[3]/div/a/font/text()&quot;)</span></span><br><span class="line">            ls.add(url)</span><br><span class="line">        <span class="keyword">return</span> ls</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取通知列表失败&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send</span>(<span class="params">url</span>):</span><br><span class="line">    title, content = get_page(url)</span><br><span class="line">    vx_msg(title[<span class="number">0</span>], content)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.read()</span><br><span class="line">        data = json.loads(<span class="built_in">str</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">set</span>(data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.write(json.dumps(data))</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    ls=get_data()</span><br><span class="line">    data=read()</span><br><span class="line">    s=data|ls</span><br><span class="line">    s=s-data</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(s)!=<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            <span class="built_in">print</span>(i)</span><br><span class="line">            send(i)</span><br><span class="line">        save(<span class="built_in">list</span>(ls))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;没有新的通知&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -2872,38 +2903,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       <tags>
         <tag>人工智能</tag>
         <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫:推送川农大教务通知</title>
-    <url>/2022/10/09/%E7%88%AC%E8%99%AB-%E6%8E%A8%E9%80%81%E5%B7%9D%E5%86%9C%E5%A4%A7%E6%95%99%E5%8A%A1%E9%80%9A%E7%9F%A5/</url>
-    <content><![CDATA[<p><img title="" src="https://s2.loli.net/2022/10/09/QDeV4EFNG2KToSq.jpg" alt="" width="96"><img title="" src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202210091242107.jpg" alt="" width="97"></p>
-<h1 id="实现过程"><a class="markdownIt-Anchor" href="#实现过程"></a> 实现过程</h1>
-<ol>
-<li>平台</li>
-</ol>
-<p><img src="https://s2.loli.net/2022/10/09/GnuFfVYwDpva83q.png" alt="" /></p>
-<p>pushplus这个平台直接调用api接口就行了</p>
-<ol start="2">
-<li>目标网站</li>
-</ol>
-<p><img src="https://s2.loli.net/2022/10/09/9jd6kebRBtHvJpA.png" alt="" /></p>
-<p>研究一下网页源代码的组成部分我们可以发现每个通知的xpath</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/html/body/form/div/div[2]/table/tbody/tr</span><br></pre></td></tr></table></figure>
-<p>我们获取到每个通知的url后，将它们放入集合中，后用json保存，一定时间再次爬取，</p>
-<p>对前后两次集合的<mark>并集后取原集合的差集</mark>，如果结果不为空，则分别获取集合的结果，分页爬取文章内容</p>
-<p><img src="https://s2.loli.net/2022/10/09/RuFWlbv7e2jSVPg.png" alt="" /></p>
-<p>在调用平台API，发送信息</p>
-<p>为了实现全部自动化，我们可以将脚本部署到服务器上定时运行，当<mark>注意教务网每天凌晨要关闭</mark></p>
-<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_page</span>(<span class="params">url</span>):</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    s = requests.get(url, headers=header)</span><br><span class="line">    html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">    title=html.xpath(<span class="string">&quot;/html/body/div[@class=&#x27;page-title-2&#x27;]/text()&quot;</span>)</span><br><span class="line">    txt=html.xpath(<span class="string">&quot;//table[@align=&#x27;center&#x27;]/tbody/tr/td/table&quot;</span>)</span><br><span class="line">    txt=etree.tostring(txt[<span class="number">2</span>],encoding=<span class="string">&#x27;utf-8&#x27;</span>).decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    txt = <span class="string">&quot;&lt;head&gt;&lt;base href=\&quot;&quot;</span> + url + <span class="string">&quot;\&quot; /&gt;&lt;/head&gt;&lt;p&gt;&lt;a href=\&quot;&quot;</span>+url+<span class="string">&quot;\&quot;&gt;&quot;</span>+title[<span class="number">0</span>]+<span class="string">&quot;&lt;/a&gt;&lt;/p&gt;&quot;</span>+txt</span><br><span class="line">    <span class="keyword">return</span> title,txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">vx_msg</span>(<span class="params">title,content</span>):</span><br><span class="line">    token = <span class="string">&#x27;平台token&#x27;</span></span><br><span class="line">    url = <span class="string">&#x27;http://www.pushplus.plus/send&#x27;</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&quot;token&quot;</span>: token,</span><br><span class="line">        <span class="string">&quot;title&quot;</span>: title,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: content</span><br><span class="line">    &#125;</span><br><span class="line">    body = json.dumps(data).encode(encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    headers = &#123;<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>&#125;</span><br><span class="line">    r=requests.post(url, data=body, headers=headers)</span><br><span class="line">    j=r.json()</span><br><span class="line">    <span class="keyword">if</span> j[<span class="string">&quot;code&quot;</span>]==<span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;发送成功&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;失败&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        s = requests.get(<span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/gwmore.asp&quot;</span>, headers=header)</span><br><span class="line">        html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">        result = html.xpath(<span class="string">&quot;/html/body/form/div/div[2]/table/tbody/tr&quot;</span>)</span><br><span class="line">        ls =<span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            <span class="comment">#date = i.xpath(&quot;./td[4]/text()&quot;)</span></span><br><span class="line">            url = <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/&quot;</span> + <span class="string">&quot;&quot;</span>.join(i.xpath(<span class="string">&quot;./td[3]/div/a/@href&quot;</span>))</span><br><span class="line">            <span class="comment">#title = i.xpath(&quot;./td[3]/div/a/font/text()&quot;)</span></span><br><span class="line">            ls.add(url)</span><br><span class="line">        <span class="keyword">return</span> ls</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取通知列表失败&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send</span>(<span class="params">url</span>):</span><br><span class="line">    title, content = get_page(url)</span><br><span class="line">    vx_msg(title[<span class="number">0</span>], content)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.read()</span><br><span class="line">        data = json.loads(<span class="built_in">str</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">set</span>(data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.write(json.dumps(data))</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    ls=get_data()</span><br><span class="line">    data=read()</span><br><span class="line">    s=data|ls</span><br><span class="line">    s=s-data</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(s)!=<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            <span class="built_in">print</span>(i)</span><br><span class="line">            send(i)</span><br><span class="line">        save(<span class="built_in">list</span>(ls))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;没有新的通知&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
