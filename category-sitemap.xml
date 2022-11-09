@@ -9,15 +9,22 @@
 
 
     <url>
-        <loc>http://www.helicunzai.cn/categories/%25E6%259C%25BA%25E5%2599%25A8%25E5%25AD%25A6%25E4%25B9%25A0/</loc>
-        <lastmod>2022-11-05T07:49:31.002Z</lastmod>
+        <loc>http://www.helicunzai.cn/categories/%25E4%25BA%25BA%25E5%25B7%25A5%25E6%2599%25BA%25E8%2583%25BD/</loc>
+        <lastmod>2022-11-08T15:41:45.785Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.helicunzai.cn/categories/Java/</loc>
-        <lastmod>2022-11-04T08:01:58.493Z</lastmod>
+        <lastmod>2022-11-05T14:14:25.978Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/categories/%25E6%259C%25BA%25E5%2599%25A8%25E5%25AD%25A6%25E4%25B9%25A0/</loc>
+        <lastmod>2022-11-05T07:49:31.002Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -46,13 +53,6 @@
     <url>
         <loc>http://www.helicunzai.cn/categories/STM32/</loc>
         <lastmod>2022-10-15T16:20:50.818Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/categories/%25E4%25BA%25BA%25E5%25B7%25A5%25E6%2599%25BA%25E8%2583%25BD/</loc>
-        <lastmod>2022-10-14T15:56:49.861Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
