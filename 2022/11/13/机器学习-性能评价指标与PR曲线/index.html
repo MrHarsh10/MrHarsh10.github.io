@@ -21,29 +21,36 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="卷Java不如C++">
+    <meta name="description" content="性能评价指标与PR曲线">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++编程基础">
-<meta property="og:url" content="http://www.helicunzai.cn/2022/08/10/C-%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:title" content="机器学习:性能评价指标与PR曲线">
+<meta property="og:url" content="http://www.helicunzai.cn/2022/11/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87%E4%B8%8EPR%E6%9B%B2%E7%BA%BF/index.html">
 <meta property="og:site_name" content="Mr Harsh的广阔天地">
-<meta property="og:description" content="卷Java不如C++">
+<meta property="og:description" content="性能评价指标与PR曲线">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-10T03:28:35.000Z">
-<meta property="article:modified_time" content="2022-09-07T15:26:55.620Z">
+<meta property="og:image" content="https://s2.loli.net/2022/11/13/JxeSCLowTdnF6Db.png">
+<meta property="og:image" content="https://s2.loli.net/2022/11/13/gU3ayZFihtQ9JkD.png">
+<meta property="og:image" content="https://s2.loli.net/2022/11/13/2WHjbpdk9Xh6KTi.png">
+<meta property="og:image" content="https://s2.loli.net/2022/11/13/YvIBrO6Lu3U7pWH.png">
+<meta property="og:image" content="https://s2.loli.net/2022/11/13/8IozmpKUh4Vc17s.png">
+<meta property="og:image" content="https://s2.loli.net/2022/11/13/zPb6kqmLadepExI.png">
+<meta property="article:published_time" content="2022-11-13T03:45:27.000Z">
+<meta property="article:modified_time" content="2022-11-13T04:26:44.863Z">
 <meta property="article:author" content="Mr Harsh">
-<meta property="article:tag" content="C++">
-<meta property="article:tag" content="OP编程">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="人工智能">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/11/13/JxeSCLowTdnF6Db.png">
 
 
-<link rel="canonical" href="http://www.helicunzai.cn/2022/08/10/C-%E7%BC%96%E7%A8%8B/">
+<link rel="canonical" href="http://www.helicunzai.cn/2022/11/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87%E4%B8%8EPR%E6%9B%B2%E7%BA%BF/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/08/10/C-%E7%BC%96%E7%A8%8B/","path":"2022/08/10/C-编程/","title":"C++编程基础"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/11/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87%E4%B8%8EPR%E6%9B%B2%E7%BA%BF/","path":"2022/11/13/机器学习-性能评价指标与PR曲线/","title":"机器学习:性能评价指标与PR曲线"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>C++编程基础 | Mr Harsh的广阔天地</title>
+<title>机器学习:性能评价指标与PR曲线 | Mr Harsh的广阔天地</title>
   
 
 
@@ -146,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8Ec%E5%88%B0c"><span class="nav-number">1.</span> <span class="nav-text"> 从C到C++</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%87%E8%83%BD%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number"></span> <span class="nav-text"> 万能头文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text"> 最简单的C++程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-number">2.</span> <span class="nav-text"> 输入输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text"> 内联函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF"><span class="nav-number">4.</span> <span class="nav-text"> 函数模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E5%92%8C%E5%BC%95%E7%94%A8%E5%BD%A2%E5%8F%82"><span class="nav-number">5.</span> <span class="nav-text"> 引用和引用形参</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="nav-number"></span> <span class="nav-text"> 参数传递</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E5%85%83%E4%BD%9C%E7%94%A8%E5%9F%9F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number"></span> <span class="nav-text"> 一元作用域运算符::</span></a></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5"><span class="nav-number">1.</span> <span class="nav-text"> 混淆矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5-2"><span class="nav-number">1.1.</span> <span class="nav-text"> 混淆矩阵：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E7%A1%AE%E7%8E%87"><span class="nav-number">2.</span> <span class="nav-text"> 准确率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#f%E5%80%BC"><span class="nav-number">3.</span> <span class="nav-text"> F值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B2%BE%E7%A1%AE%E7%8E%87"><span class="nav-number">3.0.1.</span> <span class="nav-text"> 精确率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AC%E5%9B%9E%E7%8E%87"><span class="nav-number">3.0.2.</span> <span class="nav-text"> 召回率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f%E5%80%BC-2"><span class="nav-number">3.0.3.</span> <span class="nav-text"> F值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text"> 编程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pr%E6%9B%B2%E7%BA%BF"><span class="nav-number"></span> <span class="nav-text"> PR曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8Epr%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="nav-number">1.</span> <span class="nav-text"> 基于PR曲线的模型评估</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -225,7 +232,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/08/10/C-%E7%BC%96%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/11/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87%E4%B8%8EPR%E6%9B%B2%E7%BA%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/10/17/GtcNw4FPoqS7RZY.jpg">
@@ -238,12 +245,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="C++编程基础 | Mr Harsh的广阔天地">
-      <meta itemprop="description" content="卷Java不如C++">
+      <meta itemprop="name" content="机器学习:性能评价指标与PR曲线 | Mr Harsh的广阔天地">
+      <meta itemprop="description" content="性能评价指标与PR曲线">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C++编程基础
+          机器学习:性能评价指标与PR曲线
         </h1>
 
         <div class="post-meta-container">
@@ -253,15 +260,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-08-10 11:28:35" itemprop="dateCreated datePublished" datetime="2022-08-10T11:28:35+08:00">2022-08-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-09-07 23:26:55" itemprop="dateModified" datetime="2022-09-07T23:26:55+08:00">2022-09-07</time>
+      <time title="创建时间：2022-11-13 11:45:27 / 修改时间：12:26:44" itemprop="dateCreated datePublished" datetime="2022-11-13T11:45:27+08:00">2022-11-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -269,7 +270,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
         </span>
     </span>
 
@@ -283,7 +284,7 @@
     </span>
 </div>
 
-            <div class="post-description">卷Java不如C++</div>
+            <div class="post-description">性能评价指标与PR曲线</div>
         </div>
       </header>
 
@@ -291,37 +292,48 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h1 id="万能头文件"><a class="markdownIt-Anchor" href="#万能头文件"></a> 万能头文件</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="最简单的c程序"><a class="markdownIt-Anchor" href="#最简单的c程序"></a> 最简单的C++程序</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>
-<p>C++规定main函数必须声明为int型。</p>
-</li>
-<li>
-<p>cout为输出流对象</p>
-</li>
-</ol>
-<h2 id="输入输出"><a class="markdownIt-Anchor" href="#输入输出"></a> 输入输出</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="内联函数"><a class="markdownIt-Anchor" href="#内联函数"></a> 内联函数</h2>
-<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
-<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="函数模板"><a class="markdownIt-Anchor" href="#函数模板"></a> 函数模板</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="引用和引用形参"><a class="markdownIt-Anchor" href="#引用和引用形参"></a> 引用和引用形参</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
-<h1 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
+        <h2 id="混淆矩阵"><a class="markdownIt-Anchor" href="#混淆矩阵"></a> 混淆矩阵</h2>
+<h3 id="混淆矩阵-2"><a class="markdownIt-Anchor" href="#混淆矩阵-2"></a> 混淆矩阵：</h3>
 <ul>
-<li><strong>默认参数必须写在一般参数的后面</strong></li>
+<li>
+<p><strong>真阳性(TP)</strong>:预测为阳性，实际为阳</p>
+</li>
+<li>
+<p><strong>真阴性(TN)</strong>:预测为阴性，实际为阴</p>
+</li>
+<li>
+<p><strong>假阳性(FP)</strong>:预测为阳性，实际为阴</p>
+</li>
+<li>
+<p><strong>假阴性(FN)</strong>:预测为阴性，实际为阳</p>
+</li>
 </ul>
-<h1 id="一元作用域运算符"><a class="markdownIt-Anchor" href="#一元作用域运算符"></a> 一元作用域运算符::</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="准确率"><a class="markdownIt-Anchor" href="#准确率"></a> 准确率</h2>
+<p>准确率为是指在所有事件中预测结果与实际情况<strong>相符</strong>的事件所占比例</p>
+<p><img src="https://s2.loli.net/2022/11/13/JxeSCLowTdnF6Db.png" alt="" /></p>
+<h2 id="f值"><a class="markdownIt-Anchor" href="#f值"></a> F值</h2>
+<p><img src="https://s2.loli.net/2022/11/13/gU3ayZFihtQ9JkD.png" alt="" /></p>
+<p>机器学习中使用精确率(precision)、召回率(recall)、F值等指标进行性能评估</p>
+<h4 id="精确率"><a class="markdownIt-Anchor" href="#精确率"></a> 精确率</h4>
+<p>预测问阳的数据中，实际为阳的比例</p>
+<p><img src="https://s2.loli.net/2022/11/13/2WHjbpdk9Xh6KTi.png" alt="" /></p>
+<h4 id="召回率"><a class="markdownIt-Anchor" href="#召回率"></a> 召回率</h4>
+<p>实际为阳的数据，被预测为阳的比例</p>
+<p><img src="https://s2.loli.net/2022/11/13/YvIBrO6Lu3U7pWH.png" alt="" /></p>
+<h4 id="f值-2"><a class="markdownIt-Anchor" href="#f值-2"></a> F值</h4>
+<p>F值是由精确率与召回率组合计算的值(调和平均)</p>
+<p><img src="https://s2.loli.net/2022/11/13/8IozmpKUh4Vc17s.png" alt="" /></p>
+<h2 id="编程"><a class="markdownIt-Anchor" href="#编程"></a> 编程</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> *</span><br><span class="line">y_true=[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">y_pred=[<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">comfmat=confusion_matrix(y_true,y_pred)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;混淆矩阵:\n&quot;</span>,comfmat)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;精确率:&quot;</span>,precision_score(y_true,y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;召回率:&quot;</span>,recall_score(y_true,y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;F1:&quot;</span>,f1_score(y_true,y_pred))</span><br></pre></td></tr></table></figure>
+<h1 id="pr曲线"><a class="markdownIt-Anchor" href="#pr曲线"></a> PR曲线</h1>
+<p>召回率与精确率的关系: <strong>召回率与精准率成反比例</strong></p>
+<blockquote>
+<p><img src="https://s2.loli.net/2022/11/13/zPb6kqmLadepExI.png" alt="" /></p>
+<p>纵轴为精确率,横轴为召回率</p>
+</blockquote>
+<h2 id="基于pr曲线的模型评估"><a class="markdownIt-Anchor" href="#基于pr曲线的模型评估"></a> 基于PR曲线的模型评估</h2>
+<p>由于精确率与召回率成反比例，一个升高则另一个降低</p>
+<p>不过存在精确率与召回率相同的点，该点被称为<strong>平衡点(Break Even Point,BEP)</strong></p>
 
     </div>
 
@@ -333,22 +345,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/C/" rel="tag"># C++</a>
-              <a href="/tags/OP%E7%BC%96%E7%A8%8B/" rel="tag"># OP编程</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag"># 人工智能</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/08/09/urllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="prev" title="urllib库的使用">
-                  <i class="fa fa-chevron-left"></i> urllib库的使用
+                <a href="/2022/11/12/PyMysql-%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="prev" title="PyMysql:对数据库服务器的操作">
+                  <i class="fa fa-chevron-left"></i> PyMysql:对数据库服务器的操作
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/08/10/C-%E7%9A%84STL/" rel="next" title="C++的STL">
-                  C++的STL <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
