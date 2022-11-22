@@ -3,14 +3,21 @@
 
 
     <url>
-        <loc>http://www.helicunzai.cn/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/</loc>
-        <lastmod>2022-11-20T02:49:54.057Z</lastmod>
+        <loc>http://www.helicunzai.cn/tags/Java/</loc>
+        <lastmod>2022-11-22T08:56:37.177Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.helicunzai.cn/tags/Flask/</loc>
+        <lastmod>2022-11-20T02:49:54.057Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/</loc>
         <lastmod>2022-11-20T02:49:54.057Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -53,13 +60,6 @@
 
     <url>
         <loc>http://www.helicunzai.cn/tags/%E7%BD%91%E7%AB%99/</loc>
-        <lastmod>2022-11-05T14:14:25.978Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.helicunzai.cn/tags/Java/</loc>
         <lastmod>2022-11-05T14:14:25.978Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
