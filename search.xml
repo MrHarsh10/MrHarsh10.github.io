@@ -1,49 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++编程基础</title>
-    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
-<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
-<h1 id="万能头文件"><a class="markdownIt-Anchor" href="#万能头文件"></a> 万能头文件</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="最简单的c程序"><a class="markdownIt-Anchor" href="#最简单的c程序"></a> 最简单的C++程序</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>
-<p>C++规定main函数必须声明为int型。</p>
-</li>
-<li>
-<p>cout为输出流对象</p>
-</li>
-</ol>
-<h2 id="输入输出"><a class="markdownIt-Anchor" href="#输入输出"></a> 输入输出</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="内联函数"><a class="markdownIt-Anchor" href="#内联函数"></a> 内联函数</h2>
-<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
-<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="函数模板"><a class="markdownIt-Anchor" href="#函数模板"></a> 函数模板</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="引用和引用形参"><a class="markdownIt-Anchor" href="#引用和引用形参"></a> 引用和引用形参</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
-<h1 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>默认参数必须写在一般参数的后面</strong></li>
-</ul>
-<h1 id="一元作用域运算符"><a class="markdownIt-Anchor" href="#一元作用域运算符"></a> 一元作用域运算符::</h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>OP编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++的STL</title>
     <url>/2022/08/10/C-%E7%9A%84STL/</url>
     <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
@@ -718,6 +675,49 @@
       </tags>
   </entry>
   <entry>
+    <title>C++编程基础</title>
+    <url>/2022/08/10/C-%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="从c到c"><a class="markdownIt-Anchor" href="#从c到c"></a> 从C到C++</h2>
+<p>C是面向过程的语言，对于小规模程序还是得心应手的，为了程序设计的更见简易，C++最为C语言的自增版，保留原来语法，增加面向对象机制。</p>
+<h1 id="万能头文件"><a class="markdownIt-Anchor" href="#万能头文件"></a> 万能头文件</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span><span class="comment">//万能头文件  几乎包含所有的头文件</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="最简单的c程序"><a class="markdownIt-Anchor" href="#最简单的c程序"></a> 最简单的C++程序</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>
+<p>C++规定main函数必须声明为int型。</p>
+</li>
+<li>
+<p>cout为输出流对象</p>
+</li>
+</ol>
+<h2 id="输入输出"><a class="markdownIt-Anchor" href="#输入输出"></a> 输入输出</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="type">int</span> a,b,sum; </span><br><span class="line">     cin&gt;&gt;a&gt;&gt;b;   </span><br><span class="line">     sum = a + b;                 </span><br><span class="line">     cout&lt;&lt;″a + b =″&lt;&lt;sum&lt;&lt;endl;        </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="内联函数"><a class="markdownIt-Anchor" href="#内联函数"></a> 内联函数</h2>
+<p>内联函数是直接复制“镶嵌”到主函数中去的，就是将内联函数的代码直接放在内联函数的位置上</p>
+<p>当数本身内容比较少，代码比较短，函数功能相对简单，函数被调用得频繁，我们用内联函数</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">function</span><span class="params">( <span class="type">int</span> a )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="函数模板"><a class="markdownIt-Anchor" href="#函数模板"></a> 函数模板</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;<span class="comment">//T代表一个待定的类型，会改变为传入的参数的类型</span></span><br><span class="line">返回值类型 函数名(参数列表)</span><br><span class="line">&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="引用和引用形参"><a class="markdownIt-Anchor" href="#引用和引用形参"></a> 引用和引用形参</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>  &amp;b = a;     <span class="comment">//声明b是a的引用（别名）</span></span><br></pre></td></tr></table></figure>
+<h1 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b=<span class="number">1</span>)</span></span>&#123; &#125;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>默认参数必须写在一般参数的后面</strong></li>
+</ul>
+<h1 id="一元作用域运算符"><a class="markdownIt-Anchor" href="#一元作用域运算符"></a> 一元作用域运算符::</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n=<span class="number">55</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;::n&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>OP编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Django:快速入门介绍</title>
     <url>/2022/10/17/Django-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<h1 id="创建项目"><a class="markdownIt-Anchor" href="#创建项目"></a> 创建项目</h1>
@@ -983,145 +983,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JSP:隐式对象</title>
-    <url>/2022/11/01/JSP-%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/</url>
-    <content><![CDATA[<blockquote>
-<ul>
-<li>JSP隐式对象是JSP容器为每个页面提供的Java对象，开发者可以直接使用它们而不用显式声明。JSP隐式对象也被称为预定义变量。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th><strong>对象</strong></th>
-<th><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>request</td>
-<td><strong>HttpServletRequest</strong> 接口的实例</td>
-</tr>
-<tr>
-<td>response</td>
-<td><strong>HttpServletResponse</strong> 接口的实例</td>
-</tr>
-<tr>
-<td>out</td>
-<td><strong>JspWriter</strong>类的实例，用于把结果输出至网页上</td>
-</tr>
-<tr>
-<td>session</td>
-<td><strong>HttpSession</strong>类的实例</td>
-</tr>
-<tr>
-<td>application</td>
-<td><strong>ServletContext</strong>类的实例，与应用上下文有关</td>
-</tr>
-<tr>
-<td>config</td>
-<td><strong>ServletConfig</strong>类的实例</td>
-</tr>
-<tr>
-<td>pageContext</td>
-<td><strong>PageContext</strong>类的实例，提供对JSP页面所有对象以及命名空间的访问</td>
-</tr>
-<tr>
-<td>page</td>
-<td>类似于Java类中的this关键字</td>
-</tr>
-<tr>
-<td>Exception</td>
-<td><strong>Exception</strong>类的对象，代表发生错误的JSP页面中对应的异常对象</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<h1 id="request-对象"><a class="markdownIt-Anchor" href="#request-对象"></a> request 对象</h1>
-<h2 id="常用方法"><a class="markdownIt-Anchor" href="#常用方法"></a> 常用方法</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">方法</th>
-<th style="text-align:left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Object getAttribute(String name)</td>
-<td style="text-align:left">返回指定属性的属性值</td>
-</tr>
-<tr>
-<td style="text-align:center">Enumeration getAttributeNames</td>
-<td style="text-align:left">返回所有可用属性名的枚举</td>
-</tr>
-<tr>
-<td style="text-align:center">String getCharaterEncoding</td>
-<td style="text-align:left">返回字符编码方式</td>
-</tr>
-<tr>
-<td style="text-align:center">int getContentLength()</td>
-<td style="text-align:left">返回请求体的字节数</td>
-</tr>
-<tr>
-<td style="text-align:center">String getContentType()</td>
-<td style="text-align:left">返回请求体的MIME类型</td>
-</tr>
-<tr>
-<td style="text-align:center">ServletInputStream getInputStream()</td>
-<td style="text-align:left">返回请求体的一行二进制流</td>
-</tr>
-<tr>
-<td style="text-align:center">String getParameter(String name)</td>
-<td style="text-align:left">返回name指定参数的参数值</td>
-</tr>
-<tr>
-<td style="text-align:center">Enumeration getParameterNames()</td>
-<td style="text-align:left">返回可用参数名的枚举</td>
-</tr>
-<tr>
-<td style="text-align:center">String[] getParameterValues(String name)</td>
-<td style="text-align:left">返回包含参数name的所有值的数组</td>
-</tr>
-<tr>
-<td style="text-align:center">String getProtocol()</td>
-<td style="text-align:left">返回请求用的协议类型及版本号</td>
-</tr>
-<tr>
-<td style="text-align:center">String getServerName()</td>
-<td style="text-align:left">返回接收请求的服务器主机名</td>
-</tr>
-<tr>
-<td style="text-align:center">int getServerPort()</td>
-<td style="text-align:left">返回服务器接收此请求的端口号</td>
-</tr>
-<tr>
-<td style="text-align:center">String getRemoteAddr()</td>
-<td style="text-align:left">返回发送此请求的客户端IP地址</td>
-</tr>
-<tr>
-<td style="text-align:center">String getRemoteHost()</td>
-<td style="text-align:left">返回发送此请求的客户端主机名</td>
-</tr>
-<tr>
-<td style="text-align:center">void setAttribute(String key,Obeject obj)</td>
-<td style="text-align:left">设置属性的属性值</td>
-</tr>
-<tr>
-<td style="text-align:center">String geRealPath(String path)</td>
-<td style="text-align:left">返回一虚拟路径的真实路径</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Flask框架基础</title>
     <url>/2022/11/15/Flask%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="flask基础"><a class="markdownIt-Anchor" href="#flask基础"></a> Flask基础</h1>
@@ -1349,25 +1210,142 @@
       </tags>
   </entry>
   <entry>
-    <title>Java:泛型与集合类</title>
-    <url>/2022/11/22/Java-%E6%B3%9B%E5%9E%8B%E4%B8%8E%E9%9B%86%E5%90%88%E7%B1%BB/</url>
-    <content><![CDATA[]]></content>
+    <title>JSP:隐式对象</title>
+    <url>/2022/11/01/JSP-%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<blockquote>
+<ul>
+<li>JSP隐式对象是JSP容器为每个页面提供的Java对象，开发者可以直接使用它们而不用显式声明。JSP隐式对象也被称为预定义变量。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>对象</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td><strong>HttpServletRequest</strong> 接口的实例</td>
+</tr>
+<tr>
+<td>response</td>
+<td><strong>HttpServletResponse</strong> 接口的实例</td>
+</tr>
+<tr>
+<td>out</td>
+<td><strong>JspWriter</strong>类的实例，用于把结果输出至网页上</td>
+</tr>
+<tr>
+<td>session</td>
+<td><strong>HttpSession</strong>类的实例</td>
+</tr>
+<tr>
+<td>application</td>
+<td><strong>ServletContext</strong>类的实例，与应用上下文有关</td>
+</tr>
+<tr>
+<td>config</td>
+<td><strong>ServletConfig</strong>类的实例</td>
+</tr>
+<tr>
+<td>pageContext</td>
+<td><strong>PageContext</strong>类的实例，提供对JSP页面所有对象以及命名空间的访问</td>
+</tr>
+<tr>
+<td>page</td>
+<td>类似于Java类中的this关键字</td>
+</tr>
+<tr>
+<td>Exception</td>
+<td><strong>Exception</strong>类的对象，代表发生错误的JSP页面中对应的异常对象</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h1 id="request-对象"><a class="markdownIt-Anchor" href="#request-对象"></a> request 对象</h1>
+<h2 id="常用方法"><a class="markdownIt-Anchor" href="#常用方法"></a> 常用方法</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Object getAttribute(String name)</td>
+<td style="text-align:left">返回指定属性的属性值</td>
+</tr>
+<tr>
+<td style="text-align:center">Enumeration getAttributeNames</td>
+<td style="text-align:left">返回所有可用属性名的枚举</td>
+</tr>
+<tr>
+<td style="text-align:center">String getCharaterEncoding</td>
+<td style="text-align:left">返回字符编码方式</td>
+</tr>
+<tr>
+<td style="text-align:center">int getContentLength()</td>
+<td style="text-align:left">返回请求体的字节数</td>
+</tr>
+<tr>
+<td style="text-align:center">String getContentType()</td>
+<td style="text-align:left">返回请求体的MIME类型</td>
+</tr>
+<tr>
+<td style="text-align:center">ServletInputStream getInputStream()</td>
+<td style="text-align:left">返回请求体的一行二进制流</td>
+</tr>
+<tr>
+<td style="text-align:center">String getParameter(String name)</td>
+<td style="text-align:left">返回name指定参数的参数值</td>
+</tr>
+<tr>
+<td style="text-align:center">Enumeration getParameterNames()</td>
+<td style="text-align:left">返回可用参数名的枚举</td>
+</tr>
+<tr>
+<td style="text-align:center">String[] getParameterValues(String name)</td>
+<td style="text-align:left">返回包含参数name的所有值的数组</td>
+</tr>
+<tr>
+<td style="text-align:center">String getProtocol()</td>
+<td style="text-align:left">返回请求用的协议类型及版本号</td>
+</tr>
+<tr>
+<td style="text-align:center">String getServerName()</td>
+<td style="text-align:left">返回接收请求的服务器主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">int getServerPort()</td>
+<td style="text-align:left">返回服务器接收此请求的端口号</td>
+</tr>
+<tr>
+<td style="text-align:center">String getRemoteAddr()</td>
+<td style="text-align:left">返回发送此请求的客户端IP地址</td>
+</tr>
+<tr>
+<td style="text-align:center">String getRemoteHost()</td>
+<td style="text-align:left">返回发送此请求的客户端主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">void setAttribute(String key,Obeject obj)</td>
+<td style="text-align:left">设置属性的属性值</td>
+</tr>
+<tr>
+<td style="text-align:center">String geRealPath(String path)</td>
+<td style="text-align:left">返回一虚拟路径的真实路径</td>
+</tr>
+</tbody>
+</table>
+]]></content>
       <categories>
         <category>Java</category>
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java:线程</title>
-    <url>/2022/11/22/Java-%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -1444,6 +1422,28 @@
       <tags>
         <tag>Java</tag>
         <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java:泛型与集合类</title>
+    <url>/2022/11/22/Java-%E6%B3%9B%E5%9E%8B%E4%B8%8E%E9%9B%86%E5%90%88%E7%B1%BB/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java:线程</title>
+    <url>/2022/11/22/Java-%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1529,6 +1529,48 @@
       <tags>
         <tag>机器学习</tag>
         <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux C:内存管理</title>
+    <url>/2022/11/25/Linux-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h1 id="动态内存和静态内存"><a class="markdownIt-Anchor" href="#动态内存和静态内存"></a> 动态内存和静态内存</h1>
+<p>动态内存和静态内存分配方式不同</p>
+<ul>
+<li>
+<p>静态内存是在程序编译时候完成的，动态内存是在运行的</p>
+</li>
+<li>
+<p>静态内存是在栈上分配的，而动态内存是在堆上分配的</p>
+</li>
+</ul>
+<h1 id="内存管理基本操作"><a class="markdownIt-Anchor" href="#内存管理基本操作"></a> 内存管理基本操作</h1>
+<h2 id="分配内存"><a class="markdownIt-Anchor" href="#分配内存"></a> 分配内存</h2>
+<h3 id="malloc函数"><a class="markdownIt-Anchor" href="#malloc函数"></a> malloc()函数</h3>
+<p><code>void *malloc(unsigned int size)</code></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> *buffer;</span><br><span class="line">buffer=(<span class="type">long</span>*)<span class="built_in">malloc</span>(<span class="number">500</span>*<span class="keyword">sizeof</span>(<span class="type">long</span>));</span><br><span class="line"><span class="built_in">free</span>(buffer);</span><br></pre></td></tr></table></figure>
+<h3 id="realloc函数"><a class="markdownIt-Anchor" href="#realloc函数"></a> realloc()函数</h3>
+<p><code> void *realloc(void *men_address,unsigned int newsize)</code></p>
+<p>调整men_address所指的内存区域大小为newsize长度</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *p;</span><br><span class="line">p=(<span class="type">char</span>*)<span class="built_in">malloc</span>(<span class="number">100</span>*<span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line">p=(<span class="type">char</span>*)<span class="built_in">realloc</span>(p,<span class="number">200</span>*<span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line"><span class="built_in">free</span>(p); </span><br></pre></td></tr></table></figure>
+<h3 id="calloc函数"><a class="markdownIt-Anchor" href="#calloc函数"></a> calloc()函数</h3>
+<p>分配n个长度为size的内存快</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *p;</span><br><span class="line">p=(<span class="type">char</span>*)<span class="built_in">calloc</span>(<span class="number">200</span>,<span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line"><span class="built_in">free</span>(p);</span><br></pre></td></tr></table></figure>
+<h3 id="memset函数"><a class="markdownIt-Anchor" href="#memset函数"></a> memset()函数</h3>
+<p><code>void *memset(void *s,char ch,unsigned nn)</code></p>
+<p>设置s中所有的字节为ch,s的大小为n</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> s[]=<span class="string">&quot;hello world\n&quot;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line"><span class="built_in">memset</span>(s+<span class="number">6</span>,<span class="string">&#x27;*&#x27;</span>,<span class="number">5</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="释放内存"><a class="markdownIt-Anchor" href="#释放内存"></a> 释放内存</h2>
+<h2 id="free函数"><a class="markdownIt-Anchor" href="#free函数"></a> free()函数</h2>
+<p><code>void free(void *memblock)</code></p>
+<p>要释放的内存快</p>
+]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2782,6 +2824,38 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
+    <title>Python爬虫：爬取豆瓣电影榜Top250</title>
+    <url>/2022/08/16/Python%E7%88%AC%E8%99%AB%EF%BC%9A%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%A6%9CTop250/</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>现在很多网站都做了反爬，导致单一使用requests库无法爬到东西，经过全网实验，我发现豆瓣的电影排行榜很容易爬取下来的</p>
+<h1 id="实现过程"><a class="markdownIt-Anchor" href="#实现过程"></a> 实现过程</h1>
+<p>我们使用浏览器<mark>检查</mark>工具</p>
+<img src="https://s2.loli.net/2022/08/17/cm8A7gdG2H691fD.png" title="" alt="" data-align="center">
+<p>分析每一项的HTML代码</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;pic&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">em</span> <span class="attr">class</span>=<span class="string">&quot;&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://movie.douban.com/subject/1292052/&quot;</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">&quot;100&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;肖申克的救赎&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://img2.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg&quot;</span> <span class="attr">class</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;info&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;hd&quot;</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://movie.douban.com/subject/1292052/&quot;</span> <span class="attr">class</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">                      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span>肖申克的救赎<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span> / The Shawshank Redemption<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;other&quot;</span>&gt;</span> / 月黑高飞(港)  /  刺激1995(台)<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;playable&quot;</span>&gt;</span>[可播放]<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bd&quot;</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">                      导演: 弗兰克·德拉邦特 Frank Darabont   主演: 蒂姆·罗宾斯 Tim Robbins /...<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                      1994 / 美国 / 犯罪 剧情</span><br><span class="line">                  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;star&quot;</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;rating5-t&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;rating_num&quot;</span> <span class="attr">property</span>=<span class="string">&quot;v:average&quot;</span>&gt;</span>9.7<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span> <span class="attr">property</span>=<span class="string">&quot;v:best&quot;</span> <span class="attr">content</span>=<span class="string">&quot;10.0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span>&gt;</span>2674333人评价<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                      <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;quote&quot;</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;inq&quot;</span>&gt;</span>希望让人自由。<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                      <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>每个代码都有如上规律，所以我们用<u>正则表达式</u>去匹配每个电影，获取需要的数据</p>
+<blockquote>
+<p>这个需要有<u>正则表达式知识</u></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern=re.<span class="built_in">compile</span>(</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;item&quot;&gt;.*?&lt;em class=&quot;&quot;&gt;(.*?)&lt;/em&gt;.*?&lt;span class=&quot;title&quot;&gt;(.*?)&lt;/span&gt;.*?&lt;br&gt;(.*?) / .*? / (.*?)&lt;/p&gt;.*?property=&quot;v:average&quot;&gt;(.*?)&lt;/span&gt;&#x27;</span>,re.S)</span><br><span class="line">    items=re.findall(pattern,html)</span><br></pre></td></tr></table></figure>
+<p>然后网站是以GET方式25为增量换页的</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://movie.douban.com/top250?start=0&amp;filter=</span><br><span class="line">https://movie.douban.com/top250?start=25&amp;filter=</span><br></pre></td></tr></table></figure>
+<p>有了以上思路就可以完成爬虫了</p>
+<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests,re,csv</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getpage</span>(<span class="params">url</span>):</span><br><span class="line">    headers=&#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    response=requests.get(url,headers=headers)</span><br><span class="line">    <span class="keyword">if</span> response.status_code==<span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> response.text</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parsehtml</span>(<span class="params">html</span>):</span><br><span class="line">    pattern=re.<span class="built_in">compile</span>(</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;item&quot;&gt;.*?&lt;em class=&quot;&quot;&gt;(.*?)&lt;/em&gt;.*?&lt;span class=&quot;title&quot;&gt;(.*?)&lt;/span&gt;.*?&lt;br&gt;(.*?) / .*? / (.*?)&lt;/p&gt;.*?property=&quot;v:average&quot;&gt;(.*?)&lt;/span&gt;&#x27;</span>,re.S)</span><br><span class="line">    items=re.findall(pattern,html)</span><br><span class="line">    <span class="keyword">return</span> items;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">write</span>(<span class="params">items</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;豆瓣电影Top250.csv&quot;</span>,mode=<span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8-sig&quot;</span>, newline=<span class="string">&quot;&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        writer = csv.writer(f)</span><br><span class="line">        headerList=[<span class="string">&#x27;排名&#x27;</span>,<span class="string">&#x27;电影名&#x27;</span>,<span class="string">&#x27;上映时间&#x27;</span>,<span class="string">&#x27;分类&#x27;</span>,<span class="string">&#x27;豆瓣评分&#x27;</span>]</span><br><span class="line">        writer.writerow(headerList)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">            tmp=[]</span><br><span class="line">            tmp.append(i[<span class="number">0</span>])</span><br><span class="line">            tmp.append(i[<span class="number">1</span>])</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">2</span>]).strip())</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">3</span>]).strip())</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">4</span>]).strip())</span><br><span class="line">            <span class="built_in">print</span>(tmp[<span class="number">0</span>],tmp[<span class="number">1</span>],tmp[<span class="number">2</span>],tmp[<span class="number">3</span>],tmp[<span class="number">4</span>])</span><br><span class="line">            writer.writerow(tmp)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    items=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">250</span>,<span class="number">25</span>):</span><br><span class="line">        url=<span class="string">&#x27;https://movie.douban.com/top250?start=&#123;&#125;&amp;filter=&#x27;</span>.<span class="built_in">format</span>(i)</span><br><span class="line">        text=getpage(url)</span><br><span class="line">        items+=parsehtml(text)</span><br><span class="line">    write(items)</span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+<h1 id="结果"><a class="markdownIt-Anchor" href="#结果"></a> 结果</h1>
+<img src="https://s2.loli.net/2022/08/17/4GgyqDRSI9ljcNv.png" title="" alt="" data-align="center">
+<center>非常基础的爬虫入门例子</center>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Requests:登录课程平台</title>
     <url>/2022/10/07/Requests-%E7%99%BB%E5%BD%95%E8%AF%BE%E7%A8%8B%E5%B9%B3%E5%8F%B0/</url>
     <content><![CDATA[]]></content>
@@ -2858,86 +2932,6 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       <tags>
         <tag>STM32</tag>
         <tag>嵌入式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python爬虫：爬取豆瓣电影榜Top250</title>
-    <url>/2022/08/16/Python%E7%88%AC%E8%99%AB%EF%BC%9A%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%A6%9CTop250/</url>
-    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<p>现在很多网站都做了反爬，导致单一使用requests库无法爬到东西，经过全网实验，我发现豆瓣的电影排行榜很容易爬取下来的</p>
-<h1 id="实现过程"><a class="markdownIt-Anchor" href="#实现过程"></a> 实现过程</h1>
-<p>我们使用浏览器<mark>检查</mark>工具</p>
-<img src="https://s2.loli.net/2022/08/17/cm8A7gdG2H691fD.png" title="" alt="" data-align="center">
-<p>分析每一项的HTML代码</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;pic&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">em</span> <span class="attr">class</span>=<span class="string">&quot;&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://movie.douban.com/subject/1292052/&quot;</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">&quot;100&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;肖申克的救赎&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://img2.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg&quot;</span> <span class="attr">class</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;info&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;hd&quot;</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://movie.douban.com/subject/1292052/&quot;</span> <span class="attr">class</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">                      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span>肖申克的救赎<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span> / The Shawshank Redemption<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;other&quot;</span>&gt;</span> / 月黑高飞(港)  /  刺激1995(台)<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;playable&quot;</span>&gt;</span>[可播放]<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bd&quot;</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">                      导演: 弗兰克·德拉邦特 Frank Darabont   主演: 蒂姆·罗宾斯 Tim Robbins /...<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                      1994 / 美国 / 犯罪 剧情</span><br><span class="line">                  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;star&quot;</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;rating5-t&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;rating_num&quot;</span> <span class="attr">property</span>=<span class="string">&quot;v:average&quot;</span>&gt;</span>9.7<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span> <span class="attr">property</span>=<span class="string">&quot;v:best&quot;</span> <span class="attr">content</span>=<span class="string">&quot;10.0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span>&gt;</span>2674333人评价<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                      <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;quote&quot;</span>&gt;</span></span><br><span class="line">                          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;inq&quot;</span>&gt;</span>希望让人自由。<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                      <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>每个代码都有如上规律，所以我们用<u>正则表达式</u>去匹配每个电影，获取需要的数据</p>
-<blockquote>
-<p>这个需要有<u>正则表达式知识</u></p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern=re.<span class="built_in">compile</span>(</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;item&quot;&gt;.*?&lt;em class=&quot;&quot;&gt;(.*?)&lt;/em&gt;.*?&lt;span class=&quot;title&quot;&gt;(.*?)&lt;/span&gt;.*?&lt;br&gt;(.*?) / .*? / (.*?)&lt;/p&gt;.*?property=&quot;v:average&quot;&gt;(.*?)&lt;/span&gt;&#x27;</span>,re.S)</span><br><span class="line">    items=re.findall(pattern,html)</span><br></pre></td></tr></table></figure>
-<p>然后网站是以GET方式25为增量换页的</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://movie.douban.com/top250?start=0&amp;filter=</span><br><span class="line">https://movie.douban.com/top250?start=25&amp;filter=</span><br></pre></td></tr></table></figure>
-<p>有了以上思路就可以完成爬虫了</p>
-<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests,re,csv</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getpage</span>(<span class="params">url</span>):</span><br><span class="line">    headers=&#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    response=requests.get(url,headers=headers)</span><br><span class="line">    <span class="keyword">if</span> response.status_code==<span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> response.text</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parsehtml</span>(<span class="params">html</span>):</span><br><span class="line">    pattern=re.<span class="built_in">compile</span>(</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;item&quot;&gt;.*?&lt;em class=&quot;&quot;&gt;(.*?)&lt;/em&gt;.*?&lt;span class=&quot;title&quot;&gt;(.*?)&lt;/span&gt;.*?&lt;br&gt;(.*?) / .*? / (.*?)&lt;/p&gt;.*?property=&quot;v:average&quot;&gt;(.*?)&lt;/span&gt;&#x27;</span>,re.S)</span><br><span class="line">    items=re.findall(pattern,html)</span><br><span class="line">    <span class="keyword">return</span> items;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">write</span>(<span class="params">items</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;豆瓣电影Top250.csv&quot;</span>,mode=<span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8-sig&quot;</span>, newline=<span class="string">&quot;&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        writer = csv.writer(f)</span><br><span class="line">        headerList=[<span class="string">&#x27;排名&#x27;</span>,<span class="string">&#x27;电影名&#x27;</span>,<span class="string">&#x27;上映时间&#x27;</span>,<span class="string">&#x27;分类&#x27;</span>,<span class="string">&#x27;豆瓣评分&#x27;</span>]</span><br><span class="line">        writer.writerow(headerList)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">            tmp=[]</span><br><span class="line">            tmp.append(i[<span class="number">0</span>])</span><br><span class="line">            tmp.append(i[<span class="number">1</span>])</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">2</span>]).strip())</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">3</span>]).strip())</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">4</span>]).strip())</span><br><span class="line">            <span class="built_in">print</span>(tmp[<span class="number">0</span>],tmp[<span class="number">1</span>],tmp[<span class="number">2</span>],tmp[<span class="number">3</span>],tmp[<span class="number">4</span>])</span><br><span class="line">            writer.writerow(tmp)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    items=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">250</span>,<span class="number">25</span>):</span><br><span class="line">        url=<span class="string">&#x27;https://movie.douban.com/top250?start=&#123;&#125;&amp;filter=&#x27;</span>.<span class="built_in">format</span>(i)</span><br><span class="line">        text=getpage(url)</span><br><span class="line">        items+=parsehtml(text)</span><br><span class="line">    write(items)</span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
-<h1 id="结果"><a class="markdownIt-Anchor" href="#结果"></a> 结果</h1>
-<img src="https://s2.loli.net/2022/08/17/4GgyqDRSI9ljcNv.png" title="" alt="" data-align="center">
-<center>非常基础的爬虫入门例子</center>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
-<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，顺便就发博客了，很方便！</p>
-<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
-<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SVM(支持向量机)——鸢尾花分类</title>
-    <url>/2022/11/02/SVM%E9%B8%A2%E5%B0%BE%E8%8A%B1%E5%88%86%E7%B1%BB/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2022/10/29/B7tm1VXbTC49D5Q.png" alt="" /></p>
-<h1 id="scikit-learn"><a class="markdownIt-Anchor" href="#scikit-learn"></a> scikit-learn</h1>
-<p><a href="https://www.scikitlearn.com.cn/">sklearn (scikitlearn.com.cn)</a></p>
-<p>scikit-learn 是基于 Python 语言的机器学习工具</p>
-<h1 id="加载相关包"><a class="markdownIt-Anchor" href="#加载相关包"></a> 加载相关包</h1>
-<p><a href="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202210291202446.data">数据下载</a></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> colors</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm </span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br></pre></td></tr></table></figure>
-<h1 id="加载数据-切分数据集"><a class="markdownIt-Anchor" href="#加载数据-切分数据集"></a> 加载数据、切分数据集</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">iris_type</span>(<span class="params">s</span>):</span><br><span class="line">    it = &#123;<span class="string">b&#x27;Iris-setosa&#x27;</span>:<span class="number">0</span>, <span class="string">b&#x27;Iris-versicolor&#x27;</span>:<span class="number">1</span>,<span class="string">b&#x27;Iris-virginica&#x27;</span>:<span class="number">2</span>&#125; </span><br><span class="line">    <span class="keyword">return</span> it[s]</span><br><span class="line"></span><br><span class="line"><span class="comment">#数据准备</span></span><br><span class="line">data = np.loadtxt(<span class="string">&#x27;iris.data&#x27;</span>,  <span class="comment"># 数据文件路径i</span></span><br><span class="line">                  dtype=<span class="built_in">float</span>,    <span class="comment"># 数据类型</span></span><br><span class="line">                  delimiter=<span class="string">&#x27;,&#x27;</span>,  <span class="comment"># 数据分割符</span></span><br><span class="line">                  converters=&#123;<span class="number">4</span>:iris_type&#125;) <span class="comment"># 将第五列使用函数iris_type进行转换</span></span><br><span class="line"><span class="comment"># 数据分割</span></span><br><span class="line">x, y = np.split(data, (<span class="number">4</span>, ), axis=<span class="number">1</span>) <span class="comment"># 数据分组 第五列开始往后为y 代表纵向分割按列分割</span></span><br><span class="line">x = x[:, :<span class="number">2</span>]</span><br><span class="line">x_train, x_test, y_train, y_test=model_selection.train_test_split(x, y, random_state=<span class="number">1</span>, test_size=<span class="number">0.2</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/11/04/4TkqhRPBLvEcprs.png" alt="" /></p>
-<p>大概鸢尾花的数据如上图，我们要做的就是分类</p>
-<p>在超平面上将不同品种数据分割开</p>
-<h1 id="svm分类器的构建"><a class="markdownIt-Anchor" href="#svm分类器的构建"></a> SVM分类器的构建</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">classifier</span>():</span><br><span class="line">    clf = svm.SVC(C=<span class="number">0.8</span>,                         <span class="comment"># 误差项惩罚系数</span></span><br><span class="line">                  kernel=<span class="string">&#x27;linear&#x27;</span>,               <span class="comment"># 线性核 高斯核 rbf</span></span><br><span class="line">                  decision_function_shape=<span class="string">&#x27;ovr&#x27;</span>) <span class="comment"># 决策函数</span></span><br><span class="line">    <span class="keyword">return</span> clf</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">clf, x_train, y_train</span>):</span><br><span class="line">    clf.fit(x_train, y_train.ravel()) <span class="comment"># 训练集特征向量和 训练集目标值</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>C为误差项惩罚系：其越大要求拟合越高，相应泛化能力减弱</p>
-<p>kernel有线性核,高斯核 ,rbf核</p>
-</blockquote>
-<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#加载相关包</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> colors</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">iris_type</span>(<span class="params">s</span>):</span><br><span class="line">    it = &#123;<span class="string">b&#x27;Iris-setosa&#x27;</span>:<span class="number">0</span>, <span class="string">b&#x27;Iris-versicolor&#x27;</span>:<span class="number">1</span>,<span class="string">b&#x27;Iris-virginica&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> it[s]</span><br><span class="line">data = np.loadtxt(<span class="string">&#x27;iris.data&#x27;</span>,</span><br><span class="line">                  dtype=<span class="built_in">float</span>,    <span class="comment"># 数据类型</span></span><br><span class="line">                  delimiter=<span class="string">&#x27;,&#x27;</span>,  <span class="comment"># 数据分割符</span></span><br><span class="line">                  converters=&#123;<span class="number">4</span>:iris_type&#125;)  <span class="comment"># 将第五列使用函数iris_type进行转换</span></span><br><span class="line">x,y=np.split(data,(<span class="number">4</span>,),axis=<span class="number">1</span>)<span class="comment">#将第5列设为y</span></span><br><span class="line">x=x[:,:<span class="number">2</span>]</span><br><span class="line">x_train, x_test, y_train, y_test=model_selection.train_test_split(x, y, random_state=<span class="number">1</span>, test_size=<span class="number">0.2</span>)</span><br><span class="line"><span class="comment"># SVM分类器构建</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">classifier</span>():</span><br><span class="line">    clf = svm.SVC(C=<span class="number">0.81</span>,                         <span class="comment"># 误差项惩罚系数</span></span><br><span class="line">                  kernel=<span class="string">&#x27;linear&#x27;</span>,               <span class="comment"># 线性核 高斯核 rbf</span></span><br><span class="line">                  decision_function_shape=<span class="string">&#x27;ovr&#x27;</span>) <span class="comment"># 决策函数</span></span><br><span class="line">    <span class="keyword">return</span> clf</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">clf, x_train, y_train</span>):</span><br><span class="line">    clf.fit(x_train, y_train.ravel()) <span class="comment"># 训练集特征向量和 训练集目标值</span></span><br><span class="line"><span class="comment"># 2 定义模型 SVM模型定义</span></span><br><span class="line">clf = classifier()</span><br><span class="line"></span><br><span class="line">train(clf, x_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show_accuracy</span>(<span class="params">a, b, tip</span>):</span><br><span class="line">    acc = a.ravel() == b.ravel()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;%s Accuracy:%.3f&#x27;</span> % (tip, np.mean(acc)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分别打印训练集和测试集的准确率 score(x_train, y_train)表示输出 x_train,y_train在模型上的准确率</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">print_accuracy</span>(<span class="params">clf, x_train, y_train, x_test, y_test</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;training prediction:%.3f&#x27;</span> % (clf.score(x_train, y_train)))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;test data prediction:%.3f&#x27;</span> % (clf.score(x_test, y_test)))</span><br><span class="line">    <span class="comment"># 原始结果和预测结果进行对比 predict() 表示对x_train样本进行预测,返回样本类别</span></span><br><span class="line">    show_accuracy(clf.predict(x_train), y_train, <span class="string">&#x27;traing data&#x27;</span>)</span><br><span class="line">    show_accuracy(clf.predict(x_test), y_test, <span class="string">&#x27;testing data&#x27;</span>)</span><br><span class="line">    <span class="comment"># 计算决策函数的值 表示x到各个分割平面的距离</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;decision_function:\n&#x27;</span>, clf.decision_function(x_train))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw</span>(<span class="params">clf, x</span>):</span><br><span class="line">    iris_feature = <span class="string">&#x27;sepal length&#x27;</span>, <span class="string">&#x27;sepal width&#x27;</span>, <span class="string">&#x27;petal length&#x27;</span>, <span class="string">&#x27;petal width&#x27;</span></span><br><span class="line">    <span class="comment"># 开始画图</span></span><br><span class="line">    x1_min, x1_max = x[:, <span class="number">0</span>].<span class="built_in">min</span>(), x[:, <span class="number">0</span>].<span class="built_in">max</span>()</span><br><span class="line">    x2_min, x2_max = x[:, <span class="number">1</span>].<span class="built_in">min</span>(), x[:, <span class="number">1</span>].<span class="built_in">max</span>()</span><br><span class="line">    <span class="comment"># 生成网格采样点</span></span><br><span class="line">    x1, x2 = np.mgrid[x1_min:x1_max:<span class="number">200j</span>, x2_min:x2_max:<span class="number">200j</span>]</span><br><span class="line">    <span class="comment"># 测试点</span></span><br><span class="line">    grid_test = np.stack((x1.flat, x2.flat), axis=<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;grid_test:\n&#x27;</span>, grid_test)</span><br><span class="line">    <span class="comment"># 输出样本到决策面的距离</span></span><br><span class="line">    z = clf.decision_function(grid_test)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;the distance to decision plane:\n&#x27;</span>, z)</span><br><span class="line">    grid_hat = clf.predict(grid_test)</span><br><span class="line">    <span class="comment"># 预测分类值 得到[0, 0, ..., 2, 2]</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;grid_hat:\n&#x27;</span>, grid_hat)</span><br><span class="line">    <span class="comment"># 使得grid_hat 和 x1 形状一致</span></span><br><span class="line">    grid_hat = grid_hat.reshape(x1.shape)</span><br><span class="line">    cm_light = mpl.colors.ListedColormap([<span class="string">&#x27;#A0FFA0&#x27;</span>, <span class="string">&#x27;#FFA0A0&#x27;</span>, <span class="string">&#x27;#A0A0FF&#x27;</span>])</span><br><span class="line">    cm_dark = mpl.colors.ListedColormap([<span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;r&#x27;</span>])</span><br><span class="line"></span><br><span class="line">    plt.pcolormesh(x1, x2, grid_hat, cmap=cm_light)</span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=np.squeeze(y), edgecolor=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">50</span>, cmap=cm_dark)</span><br><span class="line">    plt.scatter(x_test[:, <span class="number">0</span>], x_test[:, <span class="number">1</span>], s=<span class="number">120</span>, facecolor=<span class="string">&#x27;none&#x27;</span>, zorder=<span class="number">10</span>)</span><br><span class="line">    plt.xlabel(iris_feature[<span class="number">0</span>], fontsize=<span class="number">20</span>)</span><br><span class="line">    plt.ylabel(iris_feature[<span class="number">1</span>], fontsize=<span class="number">20</span>)</span><br><span class="line">    plt.xlim(x1_min, x1_max)</span><br><span class="line">    plt.ylim(x2_min, x2_max)</span><br><span class="line">    plt.title(<span class="string">&#x27;Iris data classification via SVM&#x27;</span>, fontsize=<span class="number">30</span>)</span><br><span class="line">    plt.grid()</span><br><span class="line">    plt.show()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-------- eval ----------&#x27;</span>)</span><br><span class="line">print_accuracy(clf, x_train, y_train, x_test, y_test)</span><br><span class="line"><span class="comment"># 5 模型使用</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-------- show ----------&#x27;</span>)</span><br><span class="line">draw(clf, x)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>机器学习</tag>
-        <tag>人工智能</tag>
       </tags>
   </entry>
   <entry>
@@ -3021,6 +3015,342 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       <tags>
         <tag>STM32</tag>
         <tag>嵌入式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SVM(支持向量机)——鸢尾花分类</title>
+    <url>/2022/11/02/SVM%E9%B8%A2%E5%B0%BE%E8%8A%B1%E5%88%86%E7%B1%BB/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/10/29/B7tm1VXbTC49D5Q.png" alt="" /></p>
+<h1 id="scikit-learn"><a class="markdownIt-Anchor" href="#scikit-learn"></a> scikit-learn</h1>
+<p><a href="https://www.scikitlearn.com.cn/">sklearn (scikitlearn.com.cn)</a></p>
+<p>scikit-learn 是基于 Python 语言的机器学习工具</p>
+<h1 id="加载相关包"><a class="markdownIt-Anchor" href="#加载相关包"></a> 加载相关包</h1>
+<p><a href="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202210291202446.data">数据下载</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> colors</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm </span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br></pre></td></tr></table></figure>
+<h1 id="加载数据-切分数据集"><a class="markdownIt-Anchor" href="#加载数据-切分数据集"></a> 加载数据、切分数据集</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">iris_type</span>(<span class="params">s</span>):</span><br><span class="line">    it = &#123;<span class="string">b&#x27;Iris-setosa&#x27;</span>:<span class="number">0</span>, <span class="string">b&#x27;Iris-versicolor&#x27;</span>:<span class="number">1</span>,<span class="string">b&#x27;Iris-virginica&#x27;</span>:<span class="number">2</span>&#125; </span><br><span class="line">    <span class="keyword">return</span> it[s]</span><br><span class="line"></span><br><span class="line"><span class="comment">#数据准备</span></span><br><span class="line">data = np.loadtxt(<span class="string">&#x27;iris.data&#x27;</span>,  <span class="comment"># 数据文件路径i</span></span><br><span class="line">                  dtype=<span class="built_in">float</span>,    <span class="comment"># 数据类型</span></span><br><span class="line">                  delimiter=<span class="string">&#x27;,&#x27;</span>,  <span class="comment"># 数据分割符</span></span><br><span class="line">                  converters=&#123;<span class="number">4</span>:iris_type&#125;) <span class="comment"># 将第五列使用函数iris_type进行转换</span></span><br><span class="line"><span class="comment"># 数据分割</span></span><br><span class="line">x, y = np.split(data, (<span class="number">4</span>, ), axis=<span class="number">1</span>) <span class="comment"># 数据分组 第五列开始往后为y 代表纵向分割按列分割</span></span><br><span class="line">x = x[:, :<span class="number">2</span>]</span><br><span class="line">x_train, x_test, y_train, y_test=model_selection.train_test_split(x, y, random_state=<span class="number">1</span>, test_size=<span class="number">0.2</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/11/04/4TkqhRPBLvEcprs.png" alt="" /></p>
+<p>大概鸢尾花的数据如上图，我们要做的就是分类</p>
+<p>在超平面上将不同品种数据分割开</p>
+<h1 id="svm分类器的构建"><a class="markdownIt-Anchor" href="#svm分类器的构建"></a> SVM分类器的构建</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">classifier</span>():</span><br><span class="line">    clf = svm.SVC(C=<span class="number">0.8</span>,                         <span class="comment"># 误差项惩罚系数</span></span><br><span class="line">                  kernel=<span class="string">&#x27;linear&#x27;</span>,               <span class="comment"># 线性核 高斯核 rbf</span></span><br><span class="line">                  decision_function_shape=<span class="string">&#x27;ovr&#x27;</span>) <span class="comment"># 决策函数</span></span><br><span class="line">    <span class="keyword">return</span> clf</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">clf, x_train, y_train</span>):</span><br><span class="line">    clf.fit(x_train, y_train.ravel()) <span class="comment"># 训练集特征向量和 训练集目标值</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>C为误差项惩罚系：其越大要求拟合越高，相应泛化能力减弱</p>
+<p>kernel有线性核,高斯核 ,rbf核</p>
+</blockquote>
+<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#加载相关包</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> colors</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">iris_type</span>(<span class="params">s</span>):</span><br><span class="line">    it = &#123;<span class="string">b&#x27;Iris-setosa&#x27;</span>:<span class="number">0</span>, <span class="string">b&#x27;Iris-versicolor&#x27;</span>:<span class="number">1</span>,<span class="string">b&#x27;Iris-virginica&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> it[s]</span><br><span class="line">data = np.loadtxt(<span class="string">&#x27;iris.data&#x27;</span>,</span><br><span class="line">                  dtype=<span class="built_in">float</span>,    <span class="comment"># 数据类型</span></span><br><span class="line">                  delimiter=<span class="string">&#x27;,&#x27;</span>,  <span class="comment"># 数据分割符</span></span><br><span class="line">                  converters=&#123;<span class="number">4</span>:iris_type&#125;)  <span class="comment"># 将第五列使用函数iris_type进行转换</span></span><br><span class="line">x,y=np.split(data,(<span class="number">4</span>,),axis=<span class="number">1</span>)<span class="comment">#将第5列设为y</span></span><br><span class="line">x=x[:,:<span class="number">2</span>]</span><br><span class="line">x_train, x_test, y_train, y_test=model_selection.train_test_split(x, y, random_state=<span class="number">1</span>, test_size=<span class="number">0.2</span>)</span><br><span class="line"><span class="comment"># SVM分类器构建</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">classifier</span>():</span><br><span class="line">    clf = svm.SVC(C=<span class="number">0.81</span>,                         <span class="comment"># 误差项惩罚系数</span></span><br><span class="line">                  kernel=<span class="string">&#x27;linear&#x27;</span>,               <span class="comment"># 线性核 高斯核 rbf</span></span><br><span class="line">                  decision_function_shape=<span class="string">&#x27;ovr&#x27;</span>) <span class="comment"># 决策函数</span></span><br><span class="line">    <span class="keyword">return</span> clf</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">clf, x_train, y_train</span>):</span><br><span class="line">    clf.fit(x_train, y_train.ravel()) <span class="comment"># 训练集特征向量和 训练集目标值</span></span><br><span class="line"><span class="comment"># 2 定义模型 SVM模型定义</span></span><br><span class="line">clf = classifier()</span><br><span class="line"></span><br><span class="line">train(clf, x_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show_accuracy</span>(<span class="params">a, b, tip</span>):</span><br><span class="line">    acc = a.ravel() == b.ravel()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;%s Accuracy:%.3f&#x27;</span> % (tip, np.mean(acc)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分别打印训练集和测试集的准确率 score(x_train, y_train)表示输出 x_train,y_train在模型上的准确率</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">print_accuracy</span>(<span class="params">clf, x_train, y_train, x_test, y_test</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;training prediction:%.3f&#x27;</span> % (clf.score(x_train, y_train)))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;test data prediction:%.3f&#x27;</span> % (clf.score(x_test, y_test)))</span><br><span class="line">    <span class="comment"># 原始结果和预测结果进行对比 predict() 表示对x_train样本进行预测,返回样本类别</span></span><br><span class="line">    show_accuracy(clf.predict(x_train), y_train, <span class="string">&#x27;traing data&#x27;</span>)</span><br><span class="line">    show_accuracy(clf.predict(x_test), y_test, <span class="string">&#x27;testing data&#x27;</span>)</span><br><span class="line">    <span class="comment"># 计算决策函数的值 表示x到各个分割平面的距离</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;decision_function:\n&#x27;</span>, clf.decision_function(x_train))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw</span>(<span class="params">clf, x</span>):</span><br><span class="line">    iris_feature = <span class="string">&#x27;sepal length&#x27;</span>, <span class="string">&#x27;sepal width&#x27;</span>, <span class="string">&#x27;petal length&#x27;</span>, <span class="string">&#x27;petal width&#x27;</span></span><br><span class="line">    <span class="comment"># 开始画图</span></span><br><span class="line">    x1_min, x1_max = x[:, <span class="number">0</span>].<span class="built_in">min</span>(), x[:, <span class="number">0</span>].<span class="built_in">max</span>()</span><br><span class="line">    x2_min, x2_max = x[:, <span class="number">1</span>].<span class="built_in">min</span>(), x[:, <span class="number">1</span>].<span class="built_in">max</span>()</span><br><span class="line">    <span class="comment"># 生成网格采样点</span></span><br><span class="line">    x1, x2 = np.mgrid[x1_min:x1_max:<span class="number">200j</span>, x2_min:x2_max:<span class="number">200j</span>]</span><br><span class="line">    <span class="comment"># 测试点</span></span><br><span class="line">    grid_test = np.stack((x1.flat, x2.flat), axis=<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;grid_test:\n&#x27;</span>, grid_test)</span><br><span class="line">    <span class="comment"># 输出样本到决策面的距离</span></span><br><span class="line">    z = clf.decision_function(grid_test)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;the distance to decision plane:\n&#x27;</span>, z)</span><br><span class="line">    grid_hat = clf.predict(grid_test)</span><br><span class="line">    <span class="comment"># 预测分类值 得到[0, 0, ..., 2, 2]</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;grid_hat:\n&#x27;</span>, grid_hat)</span><br><span class="line">    <span class="comment"># 使得grid_hat 和 x1 形状一致</span></span><br><span class="line">    grid_hat = grid_hat.reshape(x1.shape)</span><br><span class="line">    cm_light = mpl.colors.ListedColormap([<span class="string">&#x27;#A0FFA0&#x27;</span>, <span class="string">&#x27;#FFA0A0&#x27;</span>, <span class="string">&#x27;#A0A0FF&#x27;</span>])</span><br><span class="line">    cm_dark = mpl.colors.ListedColormap([<span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;r&#x27;</span>])</span><br><span class="line"></span><br><span class="line">    plt.pcolormesh(x1, x2, grid_hat, cmap=cm_light)</span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=np.squeeze(y), edgecolor=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">50</span>, cmap=cm_dark)</span><br><span class="line">    plt.scatter(x_test[:, <span class="number">0</span>], x_test[:, <span class="number">1</span>], s=<span class="number">120</span>, facecolor=<span class="string">&#x27;none&#x27;</span>, zorder=<span class="number">10</span>)</span><br><span class="line">    plt.xlabel(iris_feature[<span class="number">0</span>], fontsize=<span class="number">20</span>)</span><br><span class="line">    plt.ylabel(iris_feature[<span class="number">1</span>], fontsize=<span class="number">20</span>)</span><br><span class="line">    plt.xlim(x1_min, x1_max)</span><br><span class="line">    plt.ylim(x2_min, x2_max)</span><br><span class="line">    plt.title(<span class="string">&#x27;Iris data classification via SVM&#x27;</span>, fontsize=<span class="number">30</span>)</span><br><span class="line">    plt.grid()</span><br><span class="line">    plt.show()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-------- eval ----------&#x27;</span>)</span><br><span class="line">print_accuracy(clf, x_train, y_train, x_test, y_test)</span><br><span class="line"><span class="comment"># 5 模型使用</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-------- show ----------&#x27;</span>)</span><br><span class="line">draw(clf, x)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>机器学习</tag>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/08/08/hello-world/</url>
+    <content><![CDATA[<h2 id="在hexo上写文章"><a class="markdownIt-Anchor" href="#在hexo上写文章"></a> 在Hexo上写文章</h2>
+<p>以前我是有写博客的用的是wordpress，wp可以说非常优秀，各种插件与主题，个性化也是非常的高，就是写博客就要有专门的时间写博客，而现在我发现hexo可以用markdown边写笔记，顺便就发博客了，很方便！</p>
+<h2 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world"></a> Hello World</h2>
+<p>就让一句&quot;Hello world&quot;来开始新的旅程！</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Springboot:第一个项目</title>
+    <url>/2022/12/17/Springboot-%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="idea专业版创建项目"><a class="markdownIt-Anchor" href="#idea专业版创建项目"></a> IDEA专业版创建项目</h1>
+<p><img src="https://s2.loli.net/2022/12/17/rlEMdvU1xaDP9Qn.jpg" alt="" /></p>
+<p><img src="https://s2.loli.net/2022/12/17/PFKIZOtpB3JXqem.jpg" alt="" /></p>
+<h1 id="项目结构"><a class="markdownIt-Anchor" href="#项目结构"></a> 项目结构</h1>
+<p>Spring Boot的基础结构有3个主要目录</p>
+<ul>
+<li>
+<p>src/main/java:程序开发以及主程序目录</p>
+</li>
+<li>
+<p>src/main/resourse:配置文件和资源文件目录</p>
+</li>
+<li>
+<p>src/test/java:测试程序目录</p>
+</li>
+</ul>
+<h2 id="建议目录"><a class="markdownIt-Anchor" href="#建议目录"></a> 建议目录</h2>
+<p><img src="https://s2.loli.net/2022/12/17/iMvfE7wqtHjz3dU.jpg" alt="" /></p>
+<h3 id="java根目录"><a class="markdownIt-Anchor" href="#java根目录"></a> java根目录</h3>
+<ul>
+<li>
+<p>Application.java:建议放在根目录下，是项目的启动类</p>
+</li>
+<li>
+<p>comm:建议放置公共类，如全局的配置文件、工具类</p>
+</li>
+<li>
+<p>models:主要用于实体(Entity)</p>
+</li>
+<li>
+<p>repository:主要是数据库访问层代码</p>
+</li>
+<li>
+<p>service:主要是业务类代码</p>
+</li>
+</ul>
+<h3 id="resources目录"><a class="markdownIt-Anchor" href="#resources目录"></a> resources目录</h3>
+<ul>
+<li>
+<p>static:存在Web访问的静态资源，如JS、CSS、图片</p>
+</li>
+<li>
+<p>templates:存放项目页面</p>
+</li>
+<li>
+<p>appplication.properties:存放项目配置信息</p>
+</li>
+</ul>
+<h1 id="pomxml详解"><a class="markdownIt-Anchor" href="#pomxml详解"></a> pom.xml详解</h1>
+<p>Spring Boot项目根目录下的pom.xml是Maven项目中非常重要的配置文件，主要描述项目包的依赖和项目构建时的配置。</p>
+<h2 id="项目的描述信息"><a class="markdownIt-Anchor" href="#项目的描述信息"></a> 项目的描述信息</h2>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span>       </span><br><span class="line"><span class="tag">&lt;<span class="name">packageing</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packageing</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>groupId:项目的包路径</p>
+</li>
+<li>
+<p>artifactId:项目名称</p>
+</li>
+<li>
+<p>version:项目版本号</p>
+</li>
+<li>
+<p>packageing:一般有jar、war两个值</p>
+</li>
+<li>
+<p>name:项目名称</p>
+</li>
+<li>
+<p>description：项目描述</p>
+</li>
+</ul>
+<h2 id="项目的依赖配置信息"><a class="markdownIt-Anchor" href="#项目的依赖配置信息"></a> 项目的依赖配置信息</h2>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">name</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">description</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>17<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>parent:配置父级项目的信息。Maven支持项目的父子结构，引入后会默认继承父级的配置。</p>
+</li>
+<li>
+<p>depencies:配置项目所需的依赖包，SpringBoot体系内的依赖组件不需要填写版本号，spring-boot-starter-parent维护了体系内所有依赖包的版本信息</p>
+</li>
+</ul>
+<h2 id="构建时需要的公共变量"><a class="markdownIt-Anchor" href="#构建时需要的公共变量"></a> 构建时需要的公共变量</h2>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>17<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="构建配置"><a class="markdownIt-Anchor" href="#构建配置"></a> 构建配置</h1>
+<p>此部分为构建配置，这里使用Maven构建Springboot,所以必须在<code>&lt;plugins&gt;</code>中添加<code>spring-boot-maven-plugin</code>插件，它能够使Maven的方式为应用SpringBoot支持。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上面配置<code>spring-boot-maven-plugin</code>构建插件，将springboot应用打包为可执行的Jar或War文件，然后以简单的方式运行Springboot应用。</p>
+<h1 id="第一个helloworld程序"><a class="markdownIt-Anchor" href="#第一个helloworld程序"></a> 第一个helloworld程序</h1>
+<p>我们在controller下创建HelloController.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloController</span> &#123;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello springframework&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="单元测试"><a class="markdownIt-Anchor" href="#单元测试"></a> 单元测试</h1>
+<p>单元测试在日常项目开发中必不可少，Springboot提供了完善的单元测试框架和工具用于测试开发的应用。</p>
+<h2 id="spring-boot集成单元测试"><a class="markdownIt-Anchor" href="#spring-boot集成单元测试"></a> Spring Boot集成单元测试</h2>
+<p>单元测试主要用于测试单个代码组件</p>
+<h3 id="引入依赖"><a class="markdownIt-Anchor" href="#引入依赖"></a> 引入依赖</h3>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建单元测试"><a class="markdownIt-Anchor" href="#创建单元测试"></a> 创建单元测试</h3>
+<p>在src/test目录下新建一个HelloTest类。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DemoApplicationTests</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">contextLoads</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="运行单元测试"><a class="markdownIt-Anchor" href="#运行单元测试"></a> 运行单元测试</h3>
+<p><img src="https://s2.loli.net/2022/12/18/iS7b2vBpQ5fwHFh.jpg" alt="" /></p>
+<h2 id="测试service方法"><a class="markdownIt-Anchor" href="#测试service方法"></a> 测试Service方法</h2>
+<h3 id="创建service测试类"><a class="markdownIt-Anchor" href="#创建service测试类"></a> 创建Service测试类</h3>
+<p>一般使用Spring Boot进行单元测试主要针对Service和API进行。</p>
+]]></content>
+      <categories>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jQuery整理</title>
+    <url>/2022/12/29/jQuery%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h1 id="jquery导入"><a class="markdownIt-Anchor" href="#jquery导入"></a> jQuery导入</h1>
+<h2 id="cdn地址"><a class="markdownIt-Anchor" href="#cdn地址"></a> CDN地址</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="jquery语法"><a class="markdownIt-Anchor" href="#jquery语法"></a> jQuery语法</h1>
+<p>jQuery是通过选取HTML元素然后进行某些操作。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(selector).<span class="title function_">action</span>()</span><br></pre></td></tr></table></figure>
+<p>如：  <code>$(&quot;p.test&quot;).hide()</code></p>
+<h2 id="文档就绪事件"><a class="markdownIt-Anchor" href="#文档就绪事件"></a> 文档就绪事件</h2>
+<p>所有 jQuery 函数位于一个 document ready 函数中</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="comment">// jQuery 代码...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>也可以</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="comment">// jQuery 代码...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="jquery选择器"><a class="markdownIt-Anchor" href="#jquery选择器"></a> jQuery选择器</h1>
+<p>jQuery 选择器允许您对 HTML 元素组或单个元素进行操作。</p>
+<h2 id="元素选择器"><a class="markdownIt-Anchor" href="#元素选择器"></a> 元素选择器</h2>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>)<span class="comment">//选取所有&lt;p&gt; 元素</span></span><br></pre></td></tr></table></figure>
+<h2 id="id选择器"><a class="markdownIt-Anchor" href="#id选择器"></a> id选择器</h2>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;#test&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="class选择器"><a class="markdownIt-Anchor" href="#class选择器"></a> class选择器</h2>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;.test&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="其他选择器"><a class="markdownIt-Anchor" href="#其他选择器"></a> 其他选择器</h2>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(“*”)</td>
+<td style="text-align:left">选取所有元素</td>
+</tr>
+<tr>
+<td>$(this)</td>
+<td style="text-align:left">$(this)</td>
+</tr>
+<tr>
+<td>$(“p.intro”)</td>
+<td style="text-align:left">选取 class 为 intro 的 <p> 元素</td>
+</tr>
+<tr>
+<td>$(“p:first”)</td>
+<td style="text-align:left">选取第一个 <p> 元素</td>
+</tr>
+<tr>
+<td>$(“ul li:first”)</td>
+<td style="text-align:left">选取第一个 <ul> 元素的第一个 <li> 元素</td>
+</tr>
+<tr>
+<td>$(“ul li:first-child”)</td>
+<td style="text-align:left">选取每个 <ul> 元素的第一个 <li> 元素</td>
+</tr>
+<tr>
+<td>$(“[href]”)</td>
+<td style="text-align:left">$(“[href]”)</td>
+</tr>
+<tr>
+<td>$(“a[target=‘_blank’]”)</td>
+<td style="text-align:left">$(“a[target=‘_blank’]”)</td>
+</tr>
+<tr>
+<td>$(“a[target=‘_blank’]”)</td>
+<td style="text-align:left">选取所有 target 属性值不等于 “_blank” 的 <a> 元素</td>
+</tr>
+<tr>
+<td>$(“:button”)</td>
+<td style="text-align:left">选取所有 type=“button” 的 <input> 元素 和 <button> 元素</td>
+</tr>
+<tr>
+<td>$(“tr:even”)</td>
+<td style="text-align:left">选取偶数位置的 <tr> 元素</td>
+</tr>
+<tr>
+<td>$(“tr:odd”)</td>
+<td style="text-align:left">选取奇数位置的 <tr> 元素</td>
+</tr>
+</tbody>
+</table>
+<h1 id="jquery事件"><a class="markdownIt-Anchor" href="#jquery事件"></a> jQuery事件</h1>
+<h2 id="常见dom事件"><a class="markdownIt-Anchor" href="#常见dom事件"></a> 常见DOM事件</h2>
+<table>
+<thead>
+<tr>
+<th>鼠标事件</th>
+<th>键盘事件</th>
+<th>表单事件</th>
+<th>文档/窗口事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>keypress</td>
+<td>submit</td>
+<td>submit</td>
+</tr>
+<tr>
+<td>dblclick</td>
+<td>keydown</td>
+<td>change</td>
+<td>resize</td>
+</tr>
+<tr>
+<td>mouseenter</td>
+<td>keydown</td>
+<td>focus</td>
+<td>scroll</td>
+</tr>
+<tr>
+<td>mouseleave</td>
+<td></td>
+<td>blur</td>
+<td>unload</td>
+</tr>
+<tr>
+<td>hover</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="jquery-事件方法语法"><a class="markdownIt-Anchor" href="#jquery-事件方法语法"></a> jQuery 事件方法语法</h2>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">click</span>();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">// 动作触发后执行的代码!!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="jquery-效果"><a class="markdownIt-Anchor" href="#jquery-效果"></a> jQuery 效果</h1>
+<h2 id="隐藏和显示"><a class="markdownIt-Anchor" href="#隐藏和显示"></a> 隐藏和显示</h2>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;#hide&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">hide</span>();</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">$(<span class="string">&quot;#show&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">show</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">toggle</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="淡入淡出"><a class="markdownIt-Anchor" href="#淡入淡出"></a> 淡入淡出</h2>
+<h3 id="fadein-方法"><a class="markdownIt-Anchor" href="#fadein-方法"></a> fadeIn() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeIn</span>(speed,callback);</span><br></pre></td></tr></table></figure>
+<h3 id="fadeout-方法"><a class="markdownIt-Anchor" href="#fadeout-方法"></a> fadeOut() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeOut</span>(speed,callback);</span><br></pre></td></tr></table></figure>
+<h3 id="fadetoggle-方法"><a class="markdownIt-Anchor" href="#fadetoggle-方法"></a> fadeToggle() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeToggle</span>(speed,callback);</span><br></pre></td></tr></table></figure>
+<h3 id="fadeto-方法"><a class="markdownIt-Anchor" href="#fadeto-方法"></a> fadeTo() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeTo</span>(speed,opacity,callback);</span><br></pre></td></tr></table></figure>
+<h2 id="滑动"><a class="markdownIt-Anchor" href="#滑动"></a> 滑动</h2>
+<h3 id="slidedown-方法"><a class="markdownIt-Anchor" href="#slidedown-方法"></a> slideDown() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(selector).<span class="title function_">slideDown</span>(speed,callback)</span><br></pre></td></tr></table></figure>
+<h3 id="slideup-方法"><a class="markdownIt-Anchor" href="#slideup-方法"></a> slideUp() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(selector).<span class="title function_">slideUp</span>(speed,callback);</span><br></pre></td></tr></table></figure>
+<h3 id="slidetoggle-方法"><a class="markdownIt-Anchor" href="#slidetoggle-方法"></a> slideToggle() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(selector).<span class="title function_">slideToggle</span>(speed,callback);</span><br></pre></td></tr></table></figure>
+<h2 id="动画"><a class="markdownIt-Anchor" href="#动画"></a> 动画</h2>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(selector).<span class="title function_">animate</span>(&#123;params&#125;,speed,callback);</span><br></pre></td></tr></table></figure>
+<h2 id="停止动画"><a class="markdownIt-Anchor" href="#停止动画"></a> 停止动画</h2>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(selector).<span class="title function_">stop</span>(stopAll,goToEnd);</span><br></pre></td></tr></table></figure>
+<h1 id="获取内容和属性"><a class="markdownIt-Anchor" href="#获取内容和属性"></a> 获取内容和属性</h1>
+<h2 id="获得内容-text-html-以及-val"><a class="markdownIt-Anchor" href="#获得内容-text-html-以及-val"></a> 获得内容 - text()、html() 以及 val()</h2>
+<ul>
+<li><strong>text()</strong> - 设置或返回所选元素的文本内容</li>
+<li><strong>html()</strong> - 设置或返回所选元素的内容（包括 HTML 标签）</li>
+<li><strong>val()</strong> - 设置或返回表单字段的值</li>
+<li><strong>attr()</strong>- 用于获取属性值。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>jQuery</tag>
       </tags>
   </entry>
   <entry>
@@ -3121,6 +3451,121 @@ plt.ylabel(</p>
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用Python和NumPy构建神经网络模型</title>
+    <url>/2022/09/26/%E4%BD%BF%E7%94%A8Python%E5%92%8CNumPy%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>人工智能</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>刷题笔记㈠</title>
+    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
+    <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
+<h1 id="面试题-0805-递归乘法-力扣leetcode"><a class="markdownIt-Anchor" href="#面试题-0805-递归乘法-力扣leetcode"></a> <a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
+<blockquote>
+<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="2119-反转两次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#2119-反转两次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>老实人真会反转两次</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-offer-58-ii-左旋转字符串-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-58-ii-左旋转字符串-力扣leetcode"></a> <a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>越界处理用取模</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="136-只出现一次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#136-只出现一次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
+<p>本题采用异或运算</p>
+<blockquote>
+<p><strong>异或运算性质</strong></p>
+<blockquote>
+<ol>
+<li>a^a=0；</li>
+<li>a^0=a;</li>
+<li>a<sup>b=b</sup>a</li>
+</ol>
+</blockquote>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="268-丢失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#268-丢失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
+<blockquote>
+<p>求和做减法</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习:性能评价指标与PR曲线</title>
+    <url>/2022/11/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87%E4%B8%8EPR%E6%9B%B2%E7%BA%BF/</url>
+    <content><![CDATA[<h2 id="混淆矩阵"><a class="markdownIt-Anchor" href="#混淆矩阵"></a> 混淆矩阵</h2>
+<h3 id="混淆矩阵-2"><a class="markdownIt-Anchor" href="#混淆矩阵-2"></a> 混淆矩阵：</h3>
+<ul>
+<li>
+<p><strong>真阳性(TP)</strong>:预测为阳性，实际为阳</p>
+</li>
+<li>
+<p><strong>真阴性(TN)</strong>:预测为阴性，实际为阴</p>
+</li>
+<li>
+<p><strong>假阳性(FP)</strong>:预测为阳性，实际为阴</p>
+</li>
+<li>
+<p><strong>假阴性(FN)</strong>:预测为阴性，实际为阳</p>
+</li>
+</ul>
+<h2 id="准确率"><a class="markdownIt-Anchor" href="#准确率"></a> 准确率</h2>
+<p>准确率为是指在所有事件中预测结果与实际情况<strong>相符</strong>的事件所占比例</p>
+<p><img src="https://s2.loli.net/2022/11/13/JxeSCLowTdnF6Db.png" alt="" /></p>
+<h2 id="f值"><a class="markdownIt-Anchor" href="#f值"></a> F值</h2>
+<p><img src="https://s2.loli.net/2022/11/13/gU3ayZFihtQ9JkD.png" alt="" /></p>
+<p>机器学习中使用精确率(precision)、召回率(recall)、F值等指标进行性能评估</p>
+<h4 id="精确率"><a class="markdownIt-Anchor" href="#精确率"></a> 精确率</h4>
+<p>预测问阳的数据中，实际为阳的比例</p>
+<p><img src="https://s2.loli.net/2022/11/13/2WHjbpdk9Xh6KTi.png" alt="" /></p>
+<h4 id="召回率"><a class="markdownIt-Anchor" href="#召回率"></a> 召回率</h4>
+<p>实际为阳的数据，被预测为阳的比例</p>
+<p><img src="https://s2.loli.net/2022/11/13/YvIBrO6Lu3U7pWH.png" alt="" /></p>
+<h4 id="f值-2"><a class="markdownIt-Anchor" href="#f值-2"></a> F值</h4>
+<p>F值是由精确率与召回率组合计算的值(调和平均)</p>
+<p><img src="https://s2.loli.net/2022/11/13/8IozmpKUh4Vc17s.png" alt="" /></p>
+<h2 id="编程"><a class="markdownIt-Anchor" href="#编程"></a> 编程</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> *</span><br><span class="line">y_true=[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">y_pred=[<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">comfmat=confusion_matrix(y_true,y_pred)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;混淆矩阵:\n&quot;</span>,comfmat)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;精确率:&quot;</span>,precision_score(y_true,y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;召回率:&quot;</span>,recall_score(y_true,y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;F1:&quot;</span>,f1_score(y_true,y_pred))</span><br></pre></td></tr></table></figure>
+<h1 id="pr曲线"><a class="markdownIt-Anchor" href="#pr曲线"></a> PR曲线</h1>
+<p>召回率与精确率的关系: <strong>召回率与精准率成反比例</strong></p>
+<blockquote>
+<p><img src="https://s2.loli.net/2022/11/13/zPb6kqmLadepExI.png" alt="" /></p>
+<p>纵轴为精确率,横轴为召回率</p>
+</blockquote>
+<h2 id="基于pr曲线的模型评估"><a class="markdownIt-Anchor" href="#基于pr曲线的模型评估"></a> 基于PR曲线的模型评估</h2>
+<p>由于精确率与召回率成反比例，一个升高则另一个降低</p>
+<p>不过存在精确率与召回率相同的点，该点被称为<strong>平衡点(Break Even Point,BEP)</strong></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>人工智能</tag>
       </tags>
   </entry>
   <entry>
@@ -3263,332 +3708,6 @@ plt.ylabel(</p>
 </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.robotparser <span class="keyword">import</span> RobotFileParser</span><br><span class="line">rp=RobotFileParser()</span><br><span class="line">rp.set_url(<span class="string">&#x27;https://www.bilibili.com/robots.txt&#x27;</span>)</span><br><span class="line">rp.read()</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;Yisouspider&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(rp.can_fetch(<span class="string">&#x27;*&#x27;</span>,<span class="string">&#x27;https://www.bilibili.com/video/BV1fN4y1u7s1?spm_id_from=333.1007.tianma.2-3-6.click&#x27;</span>))</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用Python和NumPy构建神经网络模型</title>
-    <url>/2022/09/26/%E4%BD%BF%E7%94%A8Python%E5%92%8CNumPy%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>人工智能</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>人工智能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>刷题笔记㈠</title>
-    <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
-    <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
-<h1 id="面试题-0805-递归乘法-力扣leetcode"><a class="markdownIt-Anchor" href="#面试题-0805-递归乘法-力扣leetcode"></a> <a href="https://leetcode.cn/problems/recursive-mulitply-lcci/">面试题 08.05. 递归乘法 - 力扣（LeetCode）</a></h1>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路：</h2>
-<blockquote>
-<p>A<em>B=MAX</em>(MIN-1+1)=MAX*(MIN-1)+MAX</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">multiply</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">       <span class="type">int</span> Max=<span class="built_in">max</span>(A,B);</span><br><span class="line">       <span class="type">int</span> Min=<span class="built_in">min</span>(A,B);</span><br><span class="line">       <span class="keyword">if</span>(Min==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(Min==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> Max;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">multiply</span>(Min<span class="number">-1</span>,Max)+Max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="2119-反转两次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#2119-反转两次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/a-number-after-a-double-reversal/submissions/">2119. 反转两次的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>老实人真会反转两次</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">isSameAfterReversals</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> num == <span class="number">0</span> || num % <span class="number">10</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-offer-58-ii-左旋转字符串-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-58-ii-左旋转字符串-力扣leetcode"></a> <a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/submissions/">剑指 Offer 58 - II. 左旋转字符串 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>越界处理用取模</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseLeftWords</span><span class="params">(string s, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> len=s.<span class="built_in">length</span>();</span><br><span class="line">        <span class="function">string <span class="title">str</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            s[i]=str[(i+n)%len];</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="136-只出现一次的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#136-只出现一次的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字 - 力扣（LeetCode）</a></h1>
-<p>本题采用异或运算</p>
-<blockquote>
-<p><strong>异或运算性质</strong></p>
-<blockquote>
-<ol>
-<li>a^a=0；</li>
-<li>a^0=a;</li>
-<li>a<sup>b=b</sup>a</li>
-</ol>
-</blockquote>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        ans^=nums[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="268-丢失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#268-丢失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/missing-number/submissions/">268. 丢失的数字 - 力扣（LeetCode）</a></h1>
-<blockquote>
-<p>求和做减法</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum=n*(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        sum-=it;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"><a class="markdownIt-Anchor" href="#剑指-offer-53-ii-0~n-1中缺失的数字-力扣leetcode"></a> <a href="https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/">剑指 Offer 53 - II. 0～n-1中缺失的数字 - 力扣（LeetCode）</a></h1>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        ans^=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it:nums)</span><br><span class="line">        ans^=it;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习:性能评价指标与PR曲线</title>
-    <url>/2022/11/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87%E4%B8%8EPR%E6%9B%B2%E7%BA%BF/</url>
-    <content><![CDATA[<h2 id="混淆矩阵"><a class="markdownIt-Anchor" href="#混淆矩阵"></a> 混淆矩阵</h2>
-<h3 id="混淆矩阵-2"><a class="markdownIt-Anchor" href="#混淆矩阵-2"></a> 混淆矩阵：</h3>
-<ul>
-<li>
-<p><strong>真阳性(TP)</strong>:预测为阳性，实际为阳</p>
-</li>
-<li>
-<p><strong>真阴性(TN)</strong>:预测为阴性，实际为阴</p>
-</li>
-<li>
-<p><strong>假阳性(FP)</strong>:预测为阳性，实际为阴</p>
-</li>
-<li>
-<p><strong>假阴性(FN)</strong>:预测为阴性，实际为阳</p>
-</li>
-</ul>
-<h2 id="准确率"><a class="markdownIt-Anchor" href="#准确率"></a> 准确率</h2>
-<p>准确率为是指在所有事件中预测结果与实际情况<strong>相符</strong>的事件所占比例</p>
-<p><img src="https://s2.loli.net/2022/11/13/JxeSCLowTdnF6Db.png" alt="" /></p>
-<h2 id="f值"><a class="markdownIt-Anchor" href="#f值"></a> F值</h2>
-<p><img src="https://s2.loli.net/2022/11/13/gU3ayZFihtQ9JkD.png" alt="" /></p>
-<p>机器学习中使用精确率(precision)、召回率(recall)、F值等指标进行性能评估</p>
-<h4 id="精确率"><a class="markdownIt-Anchor" href="#精确率"></a> 精确率</h4>
-<p>预测问阳的数据中，实际为阳的比例</p>
-<p><img src="https://s2.loli.net/2022/11/13/2WHjbpdk9Xh6KTi.png" alt="" /></p>
-<h4 id="召回率"><a class="markdownIt-Anchor" href="#召回率"></a> 召回率</h4>
-<p>实际为阳的数据，被预测为阳的比例</p>
-<p><img src="https://s2.loli.net/2022/11/13/YvIBrO6Lu3U7pWH.png" alt="" /></p>
-<h4 id="f值-2"><a class="markdownIt-Anchor" href="#f值-2"></a> F值</h4>
-<p>F值是由精确率与召回率组合计算的值(调和平均)</p>
-<p><img src="https://s2.loli.net/2022/11/13/8IozmpKUh4Vc17s.png" alt="" /></p>
-<h2 id="编程"><a class="markdownIt-Anchor" href="#编程"></a> 编程</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> *</span><br><span class="line">y_true=[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">y_pred=[<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">comfmat=confusion_matrix(y_true,y_pred)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;混淆矩阵:\n&quot;</span>,comfmat)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;精确率:&quot;</span>,precision_score(y_true,y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;召回率:&quot;</span>,recall_score(y_true,y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;F1:&quot;</span>,f1_score(y_true,y_pred))</span><br></pre></td></tr></table></figure>
-<h1 id="pr曲线"><a class="markdownIt-Anchor" href="#pr曲线"></a> PR曲线</h1>
-<p>召回率与精确率的关系: <strong>召回率与精准率成反比例</strong></p>
-<blockquote>
-<p><img src="https://s2.loli.net/2022/11/13/zPb6kqmLadepExI.png" alt="" /></p>
-<p>纵轴为精确率,横轴为召回率</p>
-</blockquote>
-<h2 id="基于pr曲线的模型评估"><a class="markdownIt-Anchor" href="#基于pr曲线的模型评估"></a> 基于PR曲线的模型评估</h2>
-<p>由于精确率与召回率成反比例，一个升高则另一个降低</p>
-<p>不过存在精确率与召回率相同的点，该点被称为<strong>平衡点(Break Even Point,BEP)</strong></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>人工智能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV:灰度变换和直方图修正</title>
-    <url>/2022/09/16/%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3/</url>
-    <content><![CDATA[<h1 id="灰度化"><a class="markdownIt-Anchor" href="#灰度化"></a> 灰度化</h1>
-<h2 id="加权平均值实现"><a class="markdownIt-Anchor" href="#加权平均值实现"></a> 加权平均值实现</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="number">0.3</span>*image[i,j][<span class="number">0</span>]+<span class="number">0.59</span>*image[i,j][<span class="number">1</span>]+<span class="number">0.11</span>*image[i,j][<span class="number">2</span>]</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/Mq5tuSURyH9XZds.png" alt="" /></p>
-<h2 id="最大法实现"><a class="markdownIt-Anchor" href="#最大法实现"></a> 最大法实现</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="built_in">max</span>(image[i,j][<span class="number">0</span>],image[i,j][<span class="number">1</span>],image[i,j][<span class="number">2</span>])</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/Mq5tuSURyH9XZds.png" alt="" /></p>
-<h2 id="平均法实现"><a class="markdownIt-Anchor" href="#平均法实现"></a> 平均法实现</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=(image[i,j][<span class="number">0</span>]+image[i,j][<span class="number">1</span>]+image[i,j][<span class="number">2</span>])/<span class="number">3</span></span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/1VDUxs2E4eiT9XF.png" alt="" /></p>
-<h2 id="灰度线性变换"><a class="markdownIt-Anchor" href="#灰度线性变换"></a> 灰度线性变换</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">out=<span class="number">1.8</span>*img</span><br><span class="line">out[out&gt;<span class="number">255</span>]=<span class="number">255</span></span><br><span class="line">out=np.around(out)</span><br><span class="line">out=out.astype(np.uint8)</span><br><span class="line">cv.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv.imshow(<span class="string">&quot;out&quot;</span>,out)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/1VDUxs2E4eiT9XF.png" alt="" /></p>
-<h2 id="分段线性变换"><a class="markdownIt-Anchor" href="#分段线性变换"></a> 分段线性变换</h2>
-<p><img src="https://s2.loli.net/2022/10/09/xfiNWtIpkXgPh8E.png" alt="" /></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫基础</title>
-    <url>/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="http基本原理"><a class="markdownIt-Anchor" href="#http基本原理"></a> HTTP基本原理</h1>
-<blockquote>
-<p>参考资料：</p>
-<ul>
-<li><a href="https://www.runoob.com/http/http-tutorial.html">HTTP 教程 | 菜鸟教程 (runoob.com)</a></li>
-</ul>
-</blockquote>
-<hr />
-<h2 id="uri和url"><a class="markdownIt-Anchor" href="#uri和url"></a> URI和URL</h2>
-<p>URI:统一资源标识符</p>
-<p>URL:统一资源定位符</p>
-<p>URN:统一资源名称</p>
-<blockquote>
-<p>现在互联网，URN用得很少，一般网页链接🔗称为URL</p>
-</blockquote>
-<hr />
-<h2 id="超文本"><a class="markdownIt-Anchor" href="#超文本"></a> 超文本</h2>
-<p>网页源代码HTML称为超文本</p>
-<hr />
-<h2 id="http和https"><a class="markdownIt-Anchor" href="#http和https"></a> HTTP和HTTPS</h2>
-<p>HTTP:超文本传输协议</p>
-<p>HTTPS:HTTP下加入SSL层</p>
-<hr />
-<h2 id="http-请求过程"><a class="markdownIt-Anchor" href="#http-请求过程"></a> HTTP 请求过程</h2>
-<img title="" src="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp" alt="" data-align="inline">
-<p><strong>我们利用浏览器”检查“工具的网络来观察这个过程</strong></p>
-<img title="" src="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png" alt="" data-align="inline">
-<ul>
-<li>
-<p>General部分</p>
-<ul>
-<li>
-<p>Request URL:请求的URL</p>
-</li>
-<li>
-<p>Request Method:请求方法</p>
-</li>
-<li>
-<p>Status Code: 响应状态码</p>
-</li>
-<li>
-<p>Remote Address:远程服务器的地址和端口</p>
-</li>
-<li>
-<p>Referrer Policy:Referrer判别策略</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Response Header:响应头</p>
-</li>
-<li>
-<p>Request Header:请求头</p>
-</li>
-</ul>
-<hr />
-<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
-<blockquote>
-<p>请求由客户端发出，分为4部分</p>
-<blockquote>
-<ul>
-<li>
-<p>请求方法:Request Method</p>
-</li>
-<li>
-<p>请求网址:Request URL</p>
-</li>
-<li>
-<p>请求头:Request Headers</p>
-</li>
-<li>
-<p>请求体:Request Body</p>
-</li>
-</ul>
-</blockquote>
-</blockquote>
-<h3 id="请求方法"><a class="markdownIt-Anchor" href="#请求方法"></a> 请求方法</h3>
-<p>常见的为：GET和POST</p>
-<blockquote>
-<p>GET 与POST区别</p>
-<ul>
-<li>
-<p>GET的参数在URL里面，而POST请求的数据以表单传输，包含在请求体</p>
-</li>
-<li>
-<p>GET的数据只有1024字节，而POST没有限制</p>
-</li>
-</ul>
-</blockquote>
-<p>其他请求方法</p>
-<img title="" src="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png" alt="" data-align="inline">
-<h3 id="请求的网址"><a class="markdownIt-Anchor" href="#请求的网址"></a> 请求的网址</h3>
-<p>请求的网址即URL</p>
-<h3 id="请求头"><a class="markdownIt-Anchor" href="#请求头"></a> 请求头</h3>
-<ul>
-<li>
-<p>Accept:请求报头域，指定客户端接收哪些类型的信息</p>
-</li>
-<li>
-<p>Accept-Language:指定客户端可接受语言类型</p>
-</li>
-<li>
-<p>Host:指定请求资源的主机IP和端口</p>
-</li>
-<li>
-<p>Cookie:储存在用户本地终端上的数据,特定的 web文档关联在一起, 保存了该客户机访问这个Web 文档时的信息, 当客户机再次访问这个 Web 文档时这些信息可供该文档使用。</p>
-</li>
-<li>
-<p>Referer:标识请求是从那个页面发过来的</p>
-</li>
-<li>
-<p>User-Agent:一个特殊字符串头，使得服务器能够识别客户使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎、浏览器语言、浏览器插件等。</p>
-</li>
-<li>
-<p>Content-Type:内容类型，一般是指网页中存在的Content-Type，用于定义网络文件的类型和网页的编码，决定文件接收方将以什么形式、什么编码读取这个文件</p>
-</li>
-</ul>
-<h3 id="请求体"><a class="markdownIt-Anchor" href="#请求体"></a> 请求体</h3>
-<p>请求体承载的是POST的表单数据，对于GET，请求为空</p>
-<hr />
-<h2 id="响应"><a class="markdownIt-Anchor" href="#响应"></a> 响应</h2>
-<h3 id="响应状态码"><a class="markdownIt-Anchor" href="#响应状态码"></a> 响应状态码</h3>
-<p>常见的 HTTP 状态码：</p>
-<ul>
-<li>200 - 请求成功</li>
-<li>301 - 资源（网页等）被永久转移到其它URL</li>
-<li>404 - 请求的资源（网页等）不存在</li>
-<li>500 - 内部服务器错误</li>
-</ul>
-<p>其它可以参考<a href="https://www.runoob.com/http/http-status-codes.html">HTTP 状态码 | 菜鸟教程</a></p>
-<h3 id="响应头"><a class="markdownIt-Anchor" href="#响应头"></a> 响应头</h3>
-<p>响应头包含服务器对请求的应答信息，如Content-Type、Sever、Set-Cookie</p>
-<h3 id="响应体"><a class="markdownIt-Anchor" href="#响应体"></a> 响应体</h3>
-<p>响应体包含响应的正文数据</p>
-<hr />
-<h1 id="网页基础"><a class="markdownIt-Anchor" href="#网页基础"></a> 网页基础</h1>
-<h2 id="网页组成"><a class="markdownIt-Anchor" href="#网页组成"></a> 网页组成</h2>
-<p>网页是由HTML、CSS、JavaScript组成</p>
-<p><em><strong>如果想学爬虫，必须要点Web基础</strong></em></p>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫:推送川农大教务通知</title>
-    <url>/2022/10/09/%E7%88%AC%E8%99%AB-%E6%8E%A8%E9%80%81%E5%B7%9D%E5%86%9C%E5%A4%A7%E6%95%99%E5%8A%A1%E9%80%9A%E7%9F%A5/</url>
-    <content><![CDATA[<p><img title="" src="https://s2.loli.net/2022/10/09/QDeV4EFNG2KToSq.jpg" alt="" width="96"><img title="" src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202210091242107.jpg" alt="" width="97"></p>
-<h1 id="实现过程"><a class="markdownIt-Anchor" href="#实现过程"></a> 实现过程</h1>
-<ol>
-<li>平台</li>
-</ol>
-<p><img src="https://s2.loli.net/2022/10/09/GnuFfVYwDpva83q.png" alt="" /></p>
-<p>pushplus这个平台直接调用api接口就行了</p>
-<ol start="2">
-<li>目标网站</li>
-</ol>
-<p><img src="https://s2.loli.net/2022/10/09/9jd6kebRBtHvJpA.png" alt="" /></p>
-<p>研究一下网页源代码的组成部分我们可以发现每个通知的xpath</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/html/body/form/div/div[2]/table/tbody/tr</span><br></pre></td></tr></table></figure>
-<p>我们获取到每个通知的url后，将它们放入集合中，后用json保存，一定时间再次爬取，</p>
-<p>对前后两次集合的<mark>并集后取原集合的差集</mark>，如果结果不为空，则分别获取集合的结果，分页爬取文章内容</p>
-<p><img src="https://s2.loli.net/2022/10/09/RuFWlbv7e2jSVPg.png" alt="" /></p>
-<p>在调用平台API，发送信息</p>
-<p>为了实现全部自动化，我们可以将脚本部署到服务器上定时运行，当<mark>注意教务网每天凌晨要关闭</mark></p>
-<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_page</span>(<span class="params">url</span>):</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    s = requests.get(url, headers=header)</span><br><span class="line">    html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">    title=html.xpath(<span class="string">&quot;/html/body/div[@class=&#x27;page-title-2&#x27;]/text()&quot;</span>)</span><br><span class="line">    txt=html.xpath(<span class="string">&quot;//table[@align=&#x27;center&#x27;]/tbody/tr/td/table&quot;</span>)</span><br><span class="line">    txt=etree.tostring(txt[<span class="number">2</span>],encoding=<span class="string">&#x27;utf-8&#x27;</span>).decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    txt = <span class="string">&quot;&lt;head&gt;&lt;base href=\&quot;&quot;</span> + url + <span class="string">&quot;\&quot; /&gt;&lt;/head&gt;&lt;p&gt;&lt;a href=\&quot;&quot;</span>+url+<span class="string">&quot;\&quot;&gt;&quot;</span>+title[<span class="number">0</span>]+<span class="string">&quot;&lt;/a&gt;&lt;/p&gt;&quot;</span>+txt</span><br><span class="line">    <span class="keyword">return</span> title,txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">vx_msg</span>(<span class="params">title,content</span>):</span><br><span class="line">    token = <span class="string">&#x27;平台token&#x27;</span></span><br><span class="line">    url = <span class="string">&#x27;http://www.pushplus.plus/send&#x27;</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&quot;token&quot;</span>: token,</span><br><span class="line">        <span class="string">&quot;title&quot;</span>: title,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: content</span><br><span class="line">    &#125;</span><br><span class="line">    body = json.dumps(data).encode(encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    headers = &#123;<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>&#125;</span><br><span class="line">    r=requests.post(url, data=body, headers=headers)</span><br><span class="line">    j=r.json()</span><br><span class="line">    <span class="keyword">if</span> j[<span class="string">&quot;code&quot;</span>]==<span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;发送成功&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;失败&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        s = requests.get(<span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/gwmore.asp&quot;</span>, headers=header)</span><br><span class="line">        html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">        result = html.xpath(<span class="string">&quot;/html/body/form/div/div[2]/table/tbody/tr&quot;</span>)</span><br><span class="line">        ls =<span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            <span class="comment">#date = i.xpath(&quot;./td[4]/text()&quot;)</span></span><br><span class="line">            url = <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/&quot;</span> + <span class="string">&quot;&quot;</span>.join(i.xpath(<span class="string">&quot;./td[3]/div/a/@href&quot;</span>))</span><br><span class="line">            <span class="comment">#title = i.xpath(&quot;./td[3]/div/a/font/text()&quot;)</span></span><br><span class="line">            ls.add(url)</span><br><span class="line">        <span class="keyword">return</span> ls</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取通知列表失败&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send</span>(<span class="params">url</span>):</span><br><span class="line">    title, content = get_page(url)</span><br><span class="line">    vx_msg(title[<span class="number">0</span>], content)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.read()</span><br><span class="line">        data = json.loads(<span class="built_in">str</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">set</span>(data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.write(json.dumps(data))</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    ls=get_data()</span><br><span class="line">    data=read()</span><br><span class="line">    s=data|ls</span><br><span class="line">    s=s-data</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(s)!=<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            <span class="built_in">print</span>(i)</span><br><span class="line">            send(i)</span><br><span class="line">        save(<span class="built_in">list</span>(ls))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;没有新的通知&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>爬虫</category>
@@ -3820,6 +3939,255 @@ plt.ylabel(</p>
       </tags>
   </entry>
   <entry>
+    <title>OpenCV:灰度变换和直方图修正</title>
+    <url>/2022/09/16/%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3/</url>
+    <content><![CDATA[<h1 id="灰度化"><a class="markdownIt-Anchor" href="#灰度化"></a> 灰度化</h1>
+<h2 id="加权平均值实现"><a class="markdownIt-Anchor" href="#加权平均值实现"></a> 加权平均值实现</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="number">0.3</span>*image[i,j][<span class="number">0</span>]+<span class="number">0.59</span>*image[i,j][<span class="number">1</span>]+<span class="number">0.11</span>*image[i,j][<span class="number">2</span>]</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/Mq5tuSURyH9XZds.png" alt="" /></p>
+<h2 id="最大法实现"><a class="markdownIt-Anchor" href="#最大法实现"></a> 最大法实现</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="built_in">max</span>(image[i,j][<span class="number">0</span>],image[i,j][<span class="number">1</span>],image[i,j][<span class="number">2</span>])</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/Mq5tuSURyH9XZds.png" alt="" /></p>
+<h2 id="平均法实现"><a class="markdownIt-Anchor" href="#平均法实现"></a> 平均法实现</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=(image[i,j][<span class="number">0</span>]+image[i,j][<span class="number">1</span>]+image[i,j][<span class="number">2</span>])/<span class="number">3</span></span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/1VDUxs2E4eiT9XF.png" alt="" /></p>
+<h2 id="灰度线性变换"><a class="markdownIt-Anchor" href="#灰度线性变换"></a> 灰度线性变换</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">out=<span class="number">1.8</span>*img</span><br><span class="line">out[out&gt;<span class="number">255</span>]=<span class="number">255</span></span><br><span class="line">out=np.around(out)</span><br><span class="line">out=out.astype(np.uint8)</span><br><span class="line">cv.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv.imshow(<span class="string">&quot;out&quot;</span>,out)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/1VDUxs2E4eiT9XF.png" alt="" /></p>
+<h2 id="分段线性变换"><a class="markdownIt-Anchor" href="#分段线性变换"></a> 分段线性变换</h2>
+<p><img src="https://s2.loli.net/2022/10/09/xfiNWtIpkXgPh8E.png" alt="" /></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫:推送川农大教务通知</title>
+    <url>/2022/10/09/%E7%88%AC%E8%99%AB-%E6%8E%A8%E9%80%81%E5%B7%9D%E5%86%9C%E5%A4%A7%E6%95%99%E5%8A%A1%E9%80%9A%E7%9F%A5/</url>
+    <content><![CDATA[<p><img title="" src="https://s2.loli.net/2022/10/09/QDeV4EFNG2KToSq.jpg" alt="" width="96"><img title="" src="https://raw.githubusercontent.com/MrHarsh10/ImageHosting-/main/img/202210091242107.jpg" alt="" width="97"></p>
+<h1 id="实现过程"><a class="markdownIt-Anchor" href="#实现过程"></a> 实现过程</h1>
+<ol>
+<li>平台</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/10/09/GnuFfVYwDpva83q.png" alt="" /></p>
+<p>pushplus这个平台直接调用api接口就行了</p>
+<ol start="2">
+<li>目标网站</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/10/09/9jd6kebRBtHvJpA.png" alt="" /></p>
+<p>研究一下网页源代码的组成部分我们可以发现每个通知的xpath</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/html/body/form/div/div[2]/table/tbody/tr</span><br></pre></td></tr></table></figure>
+<p>我们获取到每个通知的url后，将它们放入集合中，后用json保存，一定时间再次爬取，</p>
+<p>对前后两次集合的<mark>并集后取原集合的差集</mark>，如果结果不为空，则分别获取集合的结果，分页爬取文章内容</p>
+<p><img src="https://s2.loli.net/2022/10/09/RuFWlbv7e2jSVPg.png" alt="" /></p>
+<p>在调用平台API，发送信息</p>
+<p>为了实现全部自动化，我们可以将脚本部署到服务器上定时运行，当<mark>注意教务网每天凌晨要关闭</mark></p>
+<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_page</span>(<span class="params">url</span>):</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    s = requests.get(url, headers=header)</span><br><span class="line">    html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">    title=html.xpath(<span class="string">&quot;/html/body/div[@class=&#x27;page-title-2&#x27;]/text()&quot;</span>)</span><br><span class="line">    txt=html.xpath(<span class="string">&quot;//table[@align=&#x27;center&#x27;]/tbody/tr/td/table&quot;</span>)</span><br><span class="line">    txt=etree.tostring(txt[<span class="number">2</span>],encoding=<span class="string">&#x27;utf-8&#x27;</span>).decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    txt = <span class="string">&quot;&lt;head&gt;&lt;base href=\&quot;&quot;</span> + url + <span class="string">&quot;\&quot; /&gt;&lt;/head&gt;&lt;p&gt;&lt;a href=\&quot;&quot;</span>+url+<span class="string">&quot;\&quot;&gt;&quot;</span>+title[<span class="number">0</span>]+<span class="string">&quot;&lt;/a&gt;&lt;/p&gt;&quot;</span>+txt</span><br><span class="line">    <span class="keyword">return</span> title,txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">vx_msg</span>(<span class="params">title,content</span>):</span><br><span class="line">    token = <span class="string">&#x27;平台token&#x27;</span></span><br><span class="line">    url = <span class="string">&#x27;http://www.pushplus.plus/send&#x27;</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&quot;token&quot;</span>: token,</span><br><span class="line">        <span class="string">&quot;title&quot;</span>: title,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: content</span><br><span class="line">    &#125;</span><br><span class="line">    body = json.dumps(data).encode(encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    headers = &#123;<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>&#125;</span><br><span class="line">    r=requests.post(url, data=body, headers=headers)</span><br><span class="line">    j=r.json()</span><br><span class="line">    <span class="keyword">if</span> j[<span class="string">&quot;code&quot;</span>]==<span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;发送成功&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;失败&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    header = &#123;</span><br><span class="line">        <span class="string">&quot;accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-encoding&quot;</span>: <span class="string">&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">        <span class="string">&quot;accept-language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;</span>,</span><br><span class="line">        <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/index.asp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua&quot;</span>: <span class="string">&#x27;Chromium&quot;;v=&quot;106&quot;, &quot;Microsoft Edge&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-mobile&quot;</span>: <span class="string">&quot;?0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-ch-ua-platform&quot;</span>: <span class="string">&quot;Windows&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-dest&quot;</span>: <span class="string">&quot;document&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-mode&quot;</span>: <span class="string">&quot;navigate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-site&quot;</span>: <span class="string">&quot;same-origin&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sec-fetch-user&quot;</span>: <span class="string">&quot;?1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;upgrade-insecure-requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        s = requests.get(<span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/gwmore.asp&quot;</span>, headers=header)</span><br><span class="line">        html = etree.HTML(s.content.decode(<span class="string">&#x27;gbk&#x27;</span>))</span><br><span class="line">        result = html.xpath(<span class="string">&quot;/html/body/form/div/div[2]/table/tbody/tr&quot;</span>)</span><br><span class="line">        ls =<span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            <span class="comment">#date = i.xpath(&quot;./td[4]/text()&quot;)</span></span><br><span class="line">            url = <span class="string">&quot;https://jiaowu.sicau.edu.cn/web/web/web/&quot;</span> + <span class="string">&quot;&quot;</span>.join(i.xpath(<span class="string">&quot;./td[3]/div/a/@href&quot;</span>))</span><br><span class="line">            <span class="comment">#title = i.xpath(&quot;./td[3]/div/a/font/text()&quot;)</span></span><br><span class="line">            ls.add(url)</span><br><span class="line">        <span class="keyword">return</span> ls</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取通知列表失败&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send</span>(<span class="params">url</span>):</span><br><span class="line">    title, content = get_page(url)</span><br><span class="line">    vx_msg(title[<span class="number">0</span>], content)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.read()</span><br><span class="line">        data = json.loads(<span class="built_in">str</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">set</span>(data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">str</span> = file.write(json.dumps(data))</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    ls=get_data()</span><br><span class="line">    data=read()</span><br><span class="line">    s=data|ls</span><br><span class="line">    s=s-data</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(s)!=<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            <span class="built_in">print</span>(i)</span><br><span class="line">            send(i)</span><br><span class="line">        save(<span class="built_in">list</span>(ls))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;没有新的通知&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫基础</title>
+    <url>/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="http基本原理"><a class="markdownIt-Anchor" href="#http基本原理"></a> HTTP基本原理</h1>
+<blockquote>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://www.runoob.com/http/http-tutorial.html">HTTP 教程 | 菜鸟教程 (runoob.com)</a></li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="uri和url"><a class="markdownIt-Anchor" href="#uri和url"></a> URI和URL</h2>
+<p>URI:统一资源标识符</p>
+<p>URL:统一资源定位符</p>
+<p>URN:统一资源名称</p>
+<blockquote>
+<p>现在互联网，URN用得很少，一般网页链接🔗称为URL</p>
+</blockquote>
+<hr />
+<h2 id="超文本"><a class="markdownIt-Anchor" href="#超文本"></a> 超文本</h2>
+<p>网页源代码HTML称为超文本</p>
+<hr />
+<h2 id="http和https"><a class="markdownIt-Anchor" href="#http和https"></a> HTTP和HTTPS</h2>
+<p>HTTP:超文本传输协议</p>
+<p>HTTPS:HTTP下加入SSL层</p>
+<hr />
+<h2 id="http-请求过程"><a class="markdownIt-Anchor" href="#http-请求过程"></a> HTTP 请求过程</h2>
+<img title="" src="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp" alt="" data-align="inline">
+<p><strong>我们利用浏览器”检查“工具的网络来观察这个过程</strong></p>
+<img title="" src="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png" alt="" data-align="inline">
+<ul>
+<li>
+<p>General部分</p>
+<ul>
+<li>
+<p>Request URL:请求的URL</p>
+</li>
+<li>
+<p>Request Method:请求方法</p>
+</li>
+<li>
+<p>Status Code: 响应状态码</p>
+</li>
+<li>
+<p>Remote Address:远程服务器的地址和端口</p>
+</li>
+<li>
+<p>Referrer Policy:Referrer判别策略</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Response Header:响应头</p>
+</li>
+<li>
+<p>Request Header:请求头</p>
+</li>
+</ul>
+<hr />
+<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
+<blockquote>
+<p>请求由客户端发出，分为4部分</p>
+<blockquote>
+<ul>
+<li>
+<p>请求方法:Request Method</p>
+</li>
+<li>
+<p>请求网址:Request URL</p>
+</li>
+<li>
+<p>请求头:Request Headers</p>
+</li>
+<li>
+<p>请求体:Request Body</p>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="请求方法"><a class="markdownIt-Anchor" href="#请求方法"></a> 请求方法</h3>
+<p>常见的为：GET和POST</p>
+<blockquote>
+<p>GET 与POST区别</p>
+<ul>
+<li>
+<p>GET的参数在URL里面，而POST请求的数据以表单传输，包含在请求体</p>
+</li>
+<li>
+<p>GET的数据只有1024字节，而POST没有限制</p>
+</li>
+</ul>
+</blockquote>
+<p>其他请求方法</p>
+<img title="" src="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png" alt="" data-align="inline">
+<h3 id="请求的网址"><a class="markdownIt-Anchor" href="#请求的网址"></a> 请求的网址</h3>
+<p>请求的网址即URL</p>
+<h3 id="请求头"><a class="markdownIt-Anchor" href="#请求头"></a> 请求头</h3>
+<ul>
+<li>
+<p>Accept:请求报头域，指定客户端接收哪些类型的信息</p>
+</li>
+<li>
+<p>Accept-Language:指定客户端可接受语言类型</p>
+</li>
+<li>
+<p>Host:指定请求资源的主机IP和端口</p>
+</li>
+<li>
+<p>Cookie:储存在用户本地终端上的数据,特定的 web文档关联在一起, 保存了该客户机访问这个Web 文档时的信息, 当客户机再次访问这个 Web 文档时这些信息可供该文档使用。</p>
+</li>
+<li>
+<p>Referer:标识请求是从那个页面发过来的</p>
+</li>
+<li>
+<p>User-Agent:一个特殊字符串头，使得服务器能够识别客户使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎、浏览器语言、浏览器插件等。</p>
+</li>
+<li>
+<p>Content-Type:内容类型，一般是指网页中存在的Content-Type，用于定义网络文件的类型和网页的编码，决定文件接收方将以什么形式、什么编码读取这个文件</p>
+</li>
+</ul>
+<h3 id="请求体"><a class="markdownIt-Anchor" href="#请求体"></a> 请求体</h3>
+<p>请求体承载的是POST的表单数据，对于GET，请求为空</p>
+<hr />
+<h2 id="响应"><a class="markdownIt-Anchor" href="#响应"></a> 响应</h2>
+<h3 id="响应状态码"><a class="markdownIt-Anchor" href="#响应状态码"></a> 响应状态码</h3>
+<p>常见的 HTTP 状态码：</p>
+<ul>
+<li>200 - 请求成功</li>
+<li>301 - 资源（网页等）被永久转移到其它URL</li>
+<li>404 - 请求的资源（网页等）不存在</li>
+<li>500 - 内部服务器错误</li>
+</ul>
+<p>其它可以参考<a href="https://www.runoob.com/http/http-status-codes.html">HTTP 状态码 | 菜鸟教程</a></p>
+<h3 id="响应头"><a class="markdownIt-Anchor" href="#响应头"></a> 响应头</h3>
+<p>响应头包含服务器对请求的应答信息，如Content-Type、Sever、Set-Cookie</p>
+<h3 id="响应体"><a class="markdownIt-Anchor" href="#响应体"></a> 响应体</h3>
+<p>响应体包含响应的正文数据</p>
+<hr />
+<h1 id="网页基础"><a class="markdownIt-Anchor" href="#网页基础"></a> 网页基础</h1>
+<h2 id="网页组成"><a class="markdownIt-Anchor" href="#网页组成"></a> 网页组成</h2>
+<p>网页是由HTML、CSS、JavaScript组成</p>
+<p><em><strong>如果想学爬虫，必须要点Web基础</strong></em></p>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫：川农选课</title>
+    <url>/2022/10/05/%E7%88%AC%E8%99%AB%EF%BC%9A%E5%B7%9D%E5%86%9C%E9%80%89%E8%AF%BE/</url>
+    <content><![CDATA[<pre><code>import time
+
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+browser=webdriver.Edge()
+
+try:
+    browser.get(&quot;https://jiaowu.sicau.edu.cn/&quot;)
+    input=browser.find_element(By.NAME,value='user')
+    input.send_keys('202105930')
+    input=browser.find_element(By.NAME,value='pwd')
+    input.send_keys('05174436')
+    input=browser.find_element(By.XPATH,value='//input[@value=&quot;S&quot;]')
+    input.click()
+    input = browser.find_element(By.NAME, value='pwd')
+    print(input.location)
+    input.send_keys(Keys.ENTER)
+
+
+
+except:
+    print(&quot;error&quot;)
+</code></pre>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络三级笔记</title>
     <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%89%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="第一章-网络系统结构与设计的基本原则"><a class="markdownIt-Anchor" href="#第一章-网络系统结构与设计的基本原则"></a> 第一章 网络系统结构与设计的基本原则</h1>
@@ -3898,44 +4266,6 @@ plt.ylabel(</p>
       </categories>
       <tags>
         <tag>计算机网路</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫：川农选课</title>
-    <url>/2022/10/05/%E7%88%AC%E8%99%AB%EF%BC%9A%E5%B7%9D%E5%86%9C%E9%80%89%E8%AF%BE/</url>
-    <content><![CDATA[<pre><code>import time
-
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
-browser=webdriver.Edge()
-
-try:
-    browser.get(&quot;https://jiaowu.sicau.edu.cn/&quot;)
-    input=browser.find_element(By.NAME,value='user')
-    input.send_keys('202105930')
-    input=browser.find_element(By.NAME,value='pwd')
-    input.send_keys('05174436')
-    input=browser.find_element(By.XPATH,value='//input[@value=&quot;S&quot;]')
-    input.click()
-    input = browser.find_element(By.NAME, value='pwd')
-    print(input.location)
-    input.send_keys(Keys.ENTER)
-
-
-
-except:
-    print(&quot;error&quot;)
-</code></pre>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
       </tags>
   </entry>
 </search>

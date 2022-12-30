@@ -9,6 +9,30 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/2022/12/29/jQuery%E6%95%B4%E7%90%86/</loc>
+        <lastmod>2022-12-29T06:47:42.134Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/2022/12/17/Springboot-%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</loc>
+        <lastmod>2022-12-18T00:11:29.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/2022/11/25/Linux-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</loc>
+        <lastmod>2022-11-25T01:16:54.363Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/2022/11/22/Java-%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA/</loc>
         <lastmod>2022-11-22T08:56:37.177Z</lastmod>
         <changefreq>weekly</changefreq>

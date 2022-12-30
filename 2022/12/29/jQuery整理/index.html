@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Query 是一个 JavaScript 库。jQuery 极大地简化了 JavaScript 编程。jQuery 很容易学习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery整理">
+<meta property="og:url" content="http://www.helicunzai.cn/2022/12/29/jQuery%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Mr Harsh的广阔天地">
+<meta property="og:description" content="Query 是一个 JavaScript 库。jQuery 极大地简化了 JavaScript 编程。jQuery 很容易学习。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-29T03:41:46.000Z">
+<meta property="article:modified_time" content="2022-12-29T06:47:42.134Z">
+<meta property="article:author" content="Mr Harsh">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://www.helicunzai.cn/2022/12/29/jQuery%E6%95%B4%E7%90%86/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/12/29/jQuery%E6%95%B4%E7%90%86/","path":"2022/12/29/jQuery整理/","title":"jQuery整理"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>jQuery整理 | Mr Harsh的广阔天地</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mr Harsh的广阔天地</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">广阔天地，大有作为。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">26</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">45</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jquery%E5%AF%BC%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text"> jQuery导入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cdn%E5%9C%B0%E5%9D%80"><span class="nav-number">1.1.</span> <span class="nav-text"> CDN地址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jquery%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> jQuery语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E5%B0%B1%E7%BB%AA%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text"> 文档就绪事件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jquery%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text"> jQuery选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.1.</span> <span class="nav-text"> 元素选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.2.</span> <span class="nav-text"> id选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#class%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.3.</span> <span class="nav-text"> class选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.4.</span> <span class="nav-text"> 其他选择器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jquery%E4%BA%8B%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text"> jQuery事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81dom%E4%BA%8B%E4%BB%B6"><span class="nav-number">4.1.</span> <span class="nav-text"> 常见DOM事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jquery-%E4%BA%8B%E4%BB%B6%E6%96%B9%E6%B3%95%E8%AF%AD%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text"> jQuery 事件方法语法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jquery-%E6%95%88%E6%9E%9C"><span class="nav-number">5.</span> <span class="nav-text"> jQuery 效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E5%92%8C%E6%98%BE%E7%A4%BA"><span class="nav-number">5.1.</span> <span class="nav-text"> 隐藏和显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA"><span class="nav-number">5.2.</span> <span class="nav-text"> 淡入淡出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fadein-%E6%96%B9%E6%B3%95"><span class="nav-number">5.2.1.</span> <span class="nav-text"> fadeIn() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fadeout-%E6%96%B9%E6%B3%95"><span class="nav-number">5.2.2.</span> <span class="nav-text"> fadeOut() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fadetoggle-%E6%96%B9%E6%B3%95"><span class="nav-number">5.2.3.</span> <span class="nav-text"> fadeToggle() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fadeto-%E6%96%B9%E6%B3%95"><span class="nav-number">5.2.4.</span> <span class="nav-text"> fadeTo() 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8"><span class="nav-number">5.3.</span> <span class="nav-text"> 滑动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#slidedown-%E6%96%B9%E6%B3%95"><span class="nav-number">5.3.1.</span> <span class="nav-text"> slideDown() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slideup-%E6%96%B9%E6%B3%95"><span class="nav-number">5.3.2.</span> <span class="nav-text"> slideUp() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slidetoggle-%E6%96%B9%E6%B3%95"><span class="nav-number">5.3.3.</span> <span class="nav-text"> slideToggle() 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB"><span class="nav-number">5.4.</span> <span class="nav-text"> 动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E5%8A%A8%E7%94%BB"><span class="nav-number">5.5.</span> <span class="nav-text"> 停止动画</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%86%85%E5%AE%B9%E5%92%8C%E5%B1%9E%E6%80%A7"><span class="nav-number">6.</span> <span class="nav-text"> 获取内容和属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E5%86%85%E5%AE%B9-text-html-%E4%BB%A5%E5%8F%8A-val"><span class="nav-number">6.1.</span> <span class="nav-text"> 获得内容 - text()、html() 以及 val()</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mr Harsh"
+      src="https://s2.loli.net/2022/10/17/GtcNw4FPoqS7RZY.jpg">
+  <p class="site-author-name" itemprop="name">Mr Harsh</p>
+  <div class="site-description" itemprop="description">我们将在没有黑暗的地方相见</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MrHarsh10" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MrHarsh10" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://leetcode.cn/u/mrharsh/" title="LeetCode → https:&#x2F;&#x2F;leetcode.cn&#x2F;u&#x2F;mrharsh&#x2F;" rel="noopener" target="_blank"><i class="fa fa-code fa-fw"></i>LeetCode</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_36831734" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_36831734" rel="noopener" target="_blank"><i class="fa fa-rss fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/MrHarsh10" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/12/29/jQuery%E6%95%B4%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/10/17/GtcNw4FPoqS7RZY.jpg">
+      <meta itemprop="name" content="Mr Harsh">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr Harsh的广阔天地">
+      <meta itemprop="description" content="我们将在没有黑暗的地方相见">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="jQuery整理 | Mr Harsh的广阔天地">
+      <meta itemprop="description" content="Query 是一个 JavaScript 库。jQuery 极大地简化了 JavaScript 编程。jQuery 很容易学习。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          jQuery整理
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-12-29 11:41:46 / 修改时间：14:47:42" itemprop="dateCreated datePublished" datetime="2022-12-29T11:41:46+08:00">2022-12-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">Query 是一个 JavaScript 库。jQuery 极大地简化了 JavaScript 编程。jQuery 很容易学习。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="jquery导入"><a class="markdownIt-Anchor" href="#jquery导入"></a> jQuery导入</h1>
+<h2 id="cdn地址"><a class="markdownIt-Anchor" href="#cdn地址"></a> CDN地址</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="jquery语法"><a class="markdownIt-Anchor" href="#jquery语法"></a> jQuery语法</h1>
+<p>jQuery是通过选取HTML元素然后进行某些操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">action</span>()</span><br></pre></td></tr></table></figure>
+<p>如：  <code>$(&quot;p.test&quot;).hide()</code></p>
+<h2 id="文档就绪事件"><a class="markdownIt-Anchor" href="#文档就绪事件"></a> 文档就绪事件</h2>
+<p>所有 jQuery 函数位于一个 document ready 函数中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="comment">// jQuery 代码...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>也可以</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="comment">// jQuery 代码...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="jquery选择器"><a class="markdownIt-Anchor" href="#jquery选择器"></a> jQuery选择器</h1>
+<p>jQuery 选择器允许您对 HTML 元素组或单个元素进行操作。</p>
+<h2 id="元素选择器"><a class="markdownIt-Anchor" href="#元素选择器"></a> 元素选择器</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>)<span class="comment">//选取所有&lt;p&gt; 元素</span></span><br></pre></td></tr></table></figure>
+<h2 id="id选择器"><a class="markdownIt-Anchor" href="#id选择器"></a> id选择器</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#test&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="class选择器"><a class="markdownIt-Anchor" href="#class选择器"></a> class选择器</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;.test&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="其他选择器"><a class="markdownIt-Anchor" href="#其他选择器"></a> 其他选择器</h2>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(“*”)</td>
+<td style="text-align:left">选取所有元素</td>
+</tr>
+<tr>
+<td>$(this)</td>
+<td style="text-align:left">$(this)</td>
+</tr>
+<tr>
+<td>$(“p.intro”)</td>
+<td style="text-align:left">选取 class 为 intro 的 <p> 元素</td>
+</tr>
+<tr>
+<td>$(“p:first”)</td>
+<td style="text-align:left">选取第一个 <p> 元素</td>
+</tr>
+<tr>
+<td>$(“ul li:first”)</td>
+<td style="text-align:left">选取第一个 <ul> 元素的第一个 <li> 元素</td>
+</tr>
+<tr>
+<td>$(“ul li:first-child”)</td>
+<td style="text-align:left">选取每个 <ul> 元素的第一个 <li> 元素</td>
+</tr>
+<tr>
+<td>$(“[href]”)</td>
+<td style="text-align:left">$(“[href]”)</td>
+</tr>
+<tr>
+<td>$(“a[target=‘_blank’]”)</td>
+<td style="text-align:left">$(“a[target=‘_blank’]”)</td>
+</tr>
+<tr>
+<td>$(“a[target=‘_blank’]”)</td>
+<td style="text-align:left">选取所有 target 属性值不等于 “_blank” 的 <a> 元素</td>
+</tr>
+<tr>
+<td>$(“:button”)</td>
+<td style="text-align:left">选取所有 type=“button” 的 <input> 元素 和 <button> 元素</td>
+</tr>
+<tr>
+<td>$(“tr:even”)</td>
+<td style="text-align:left">选取偶数位置的 <tr> 元素</td>
+</tr>
+<tr>
+<td>$(“tr:odd”)</td>
+<td style="text-align:left">选取奇数位置的 <tr> 元素</td>
+</tr>
+</tbody>
+</table>
+<h1 id="jquery事件"><a class="markdownIt-Anchor" href="#jquery事件"></a> jQuery事件</h1>
+<h2 id="常见dom事件"><a class="markdownIt-Anchor" href="#常见dom事件"></a> 常见DOM事件</h2>
+<table>
+<thead>
+<tr>
+<th>鼠标事件</th>
+<th>键盘事件</th>
+<th>表单事件</th>
+<th>文档/窗口事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>keypress</td>
+<td>submit</td>
+<td>submit</td>
+</tr>
+<tr>
+<td>dblclick</td>
+<td>keydown</td>
+<td>change</td>
+<td>resize</td>
+</tr>
+<tr>
+<td>mouseenter</td>
+<td>keydown</td>
+<td>focus</td>
+<td>scroll</td>
+</tr>
+<tr>
+<td>mouseleave</td>
+<td></td>
+<td>blur</td>
+<td>unload</td>
+</tr>
+<tr>
+<td>hover</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="jquery-事件方法语法"><a class="markdownIt-Anchor" href="#jquery-事件方法语法"></a> jQuery 事件方法语法</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">click</span>();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">// 动作触发后执行的代码!!</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="jquery-效果"><a class="markdownIt-Anchor" href="#jquery-效果"></a> jQuery 效果</h1>
+<h2 id="隐藏和显示"><a class="markdownIt-Anchor" href="#隐藏和显示"></a> 隐藏和显示</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#hide&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">hide</span>();</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">$(<span class="string">&quot;#show&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">show</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">toggle</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="淡入淡出"><a class="markdownIt-Anchor" href="#淡入淡出"></a> 淡入淡出</h2>
+<h3 id="fadein-方法"><a class="markdownIt-Anchor" href="#fadein-方法"></a> fadeIn() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeIn</span>(speed,callback);</span><br></pre></td></tr></table></figure>
+<h3 id="fadeout-方法"><a class="markdownIt-Anchor" href="#fadeout-方法"></a> fadeOut() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeOut</span>(speed,callback);</span><br></pre></td></tr></table></figure>
+<h3 id="fadetoggle-方法"><a class="markdownIt-Anchor" href="#fadetoggle-方法"></a> fadeToggle() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeToggle</span>(speed,callback);</span><br></pre></td></tr></table></figure>
+<h3 id="fadeto-方法"><a class="markdownIt-Anchor" href="#fadeto-方法"></a> fadeTo() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeTo</span>(speed,opacity,callback);</span><br></pre></td></tr></table></figure>
+<h2 id="滑动"><a class="markdownIt-Anchor" href="#滑动"></a> 滑动</h2>
+<h3 id="slidedown-方法"><a class="markdownIt-Anchor" href="#slidedown-方法"></a> slideDown() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">slideDown</span>(speed,callback)</span><br></pre></td></tr></table></figure>
+<h3 id="slideup-方法"><a class="markdownIt-Anchor" href="#slideup-方法"></a> slideUp() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">slideUp</span>(speed,callback);</span><br></pre></td></tr></table></figure>
+<h3 id="slidetoggle-方法"><a class="markdownIt-Anchor" href="#slidetoggle-方法"></a> slideToggle() 方法</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">slideToggle</span>(speed,callback);</span><br></pre></td></tr></table></figure>
+<h2 id="动画"><a class="markdownIt-Anchor" href="#动画"></a> 动画</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">animate</span>(&#123;params&#125;,speed,callback);</span><br></pre></td></tr></table></figure>
+<h2 id="停止动画"><a class="markdownIt-Anchor" href="#停止动画"></a> 停止动画</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">stop</span>(stopAll,goToEnd);</span><br></pre></td></tr></table></figure>
+<h1 id="获取内容和属性"><a class="markdownIt-Anchor" href="#获取内容和属性"></a> 获取内容和属性</h1>
+<h2 id="获得内容-text-html-以及-val"><a class="markdownIt-Anchor" href="#获得内容-text-html-以及-val"></a> 获得内容 - text()、html() 以及 val()</h2>
+<ul>
+<li><strong>text()</strong> - 设置或返回所选元素的文本内容</li>
+<li><strong>html()</strong> - 设置或返回所选元素的内容（包括 HTML 标签）</li>
+<li><strong>val()</strong> - 设置或返回表单字段的值</li>
+<li><strong>attr()</strong>- 用于获取属性值。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/12/17/Springboot-%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/" rel="prev" title="Springboot:第一个项目">
+                  <i class="fa fa-chevron-left"></i> Springboot:第一个项目
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022002801号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-bolt"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr Harsh</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.3/mermaid.min.js","integrity":"sha256-TIYL00Rhw/8WaoUhYTLX9SKIEFdXxg+yMWSLVUbhiLg="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.0/katex.min.css" integrity="sha256-uik/hNqHWZldXh/0K35nqOSCff9F61/ZOFReqNOBgB0=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

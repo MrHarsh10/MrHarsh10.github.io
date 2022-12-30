@@ -9,6 +9,27 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/categories/JavaScript/</loc>
+        <lastmod>2022-12-29T06:47:42.134Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/categories/SpringBoot/</loc>
+        <lastmod>2022-12-18T00:11:29.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.helicunzai.cn/categories/C/</loc>
+        <lastmod>2022-11-25T01:16:54.363Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/categories/Java/</loc>
         <lastmod>2022-11-22T08:56:37.177Z</lastmod>
         <changefreq>weekly</changefreq>
