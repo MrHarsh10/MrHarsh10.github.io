@@ -32,8 +32,8 @@
 <meta property="article:modified_time" content="2022-11-20T01:38:58.709Z">
 <meta property="article:author" content="Mr Harsh">
 <meta property="article:tag" content="Python">
-<meta property="article:tag" content="网站开发">
 <meta property="article:tag" content="Flask">
+<meta property="article:tag" content="网站开发">
 <meta name="twitter:card" content="summary">
 
 
@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">19</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">48</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%93%9D%E5%9B%BE"><span class="nav-number">1.</span> <span class="nav-text">创建蓝图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E8%93%9D%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text">注册蓝图</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%93%9D%E5%9B%BE"><span class="nav-number">1.</span> <span class="nav-text"> 创建蓝图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E8%93%9D%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text"> 注册蓝图</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -162,18 +162,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">51</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -289,12 +289,12 @@
         <blockquote>
 <p>蓝图是一个储存操作方法的容器，当它注册到一个应用上后，这些操作就可以被调用。蓝图极大简化了大型应用的工作方式，并给Flask拓展提供了在应用上注册操作的核心方法。</p>
 </blockquote>
-<h1 id="创建蓝图">创建蓝图</h1>
+<h1 id="创建蓝图"><a class="markdownIt-Anchor" href="#创建蓝图"></a> 创建蓝图</h1>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Blueprint</span><br><span class="line"></span><br><span class="line">admin=Blueprint(<span class="string">&quot;admin&quot;</span>,__name__)</span><br><span class="line"><span class="meta">@admin.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&lt;h1&gt;admin&lt;/h1&gt;\n&quot;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Blueprint</span><br><span class="line"></span><br><span class="line">home=Blueprint(<span class="string">&quot;home&quot;</span>,__name__)</span><br><span class="line"><span class="meta">@home.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&lt;h1&gt;home&lt;/h</span></span><br></pre></td></tr></table></figure>
-<h1 id="注册蓝图">注册蓝图</h1>
+<h1 id="注册蓝图"><a class="markdownIt-Anchor" href="#注册蓝图"></a> 注册蓝图</h1>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">```python</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> app.home <span class="keyword">import</span> home <span class="keyword">as</span> home_blueprint</span><br><span class="line"><span class="keyword">from</span> app.admin <span class="keyword">import</span> admin <span class="keyword">as</span> admin_blueprint</span><br><span class="line"></span><br><span class="line">app=Flask(__name__)</span><br><span class="line"></span><br><span class="line">app.register_blueprint(home_blueprint,url_prefix=<span class="string">&#x27;/home&#x27;</span>)</span><br><span class="line">app.register_blueprint(admin_blueprint,url_prefix=<span class="string">&#x27;/admin&#x27;</span>)</span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&lt;h1&gt;index&lt;/h1&gt;&quot;</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
-<pre><code></code></pre>
+<pre class="highlight"><code class=""></code></pre>
 
     </div>
 
@@ -307,8 +307,8 @@
     <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Python/" rel="tag"># Python</a>
-              <a href="/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/" rel="tag"># 网站开发</a>
               <a href="/tags/Flask/" rel="tag"># Flask</a>
+              <a href="/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/" rel="tag"># 网站开发</a>
           </div>
 
         
