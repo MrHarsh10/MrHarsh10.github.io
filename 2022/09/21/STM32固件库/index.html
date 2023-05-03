@@ -94,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">22</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">58</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -151,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BA%E4%BB%B6%E5%BA%93%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什么是固件库？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E5%9F%BA%E4%BA%8E%E5%9B%BA%E4%BB%B6%E5%BA%93%E7%9A%84-MDK5-%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.</span> <span class="nav-text">新建基于固件库的 MDK5 工程模板</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BA%E4%BB%B6%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text"> 什么是固件库？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E5%9F%BA%E4%BA%8E%E5%9B%BA%E4%BB%B6%E5%BA%93%E7%9A%84-mdk5-%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.</span> <span class="nav-text"> 新建基于固件库的 MDK5 工程模板</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -166,18 +166,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -296,7 +296,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="什么是固件库？">什么是固件库？</h1>
+        <h1 id="什么是固件库"><a class="markdownIt-Anchor" href="#什么是固件库"></a> 什么是固件库？</h1>
 <p>STM32 固件库就是函数的集合</p>
 <p>为了能让不同的芯片公司生产的 Cortex-M3 芯片能在软件上基本兼容，和芯片生产商共同提出了一套标准 CMSIS 标准(Cortex Microcontroller Software Interface Standard) ,翻译过来是“ARM Cortex™ 微控制器软件接口标准”。</p>
 <p>CMSIS 分为 3 个基本功能层：</p>
@@ -305,15 +305,15 @@
 <li>中间件访问层:定义访问中间件的通用 API,也是 ARM 公司提供。</li>
 <li>外设访问层：定义硬件寄存器的地址以及外设的访问函数。</li>
 </ol>
-<p>CMSIS 层在整个系统中是处于中间层，向下负责与内核和各个外设直接打交道，向上提供实时操作系统用户程序调用的函数接口。如果没有 CMSIS 标准，那么各个芯片公司就会设计自己喜欢的风格的库函数，而 CMSIS 标准就是要强制规定，芯片生产公司设计的库<br>
+<p>CMSIS 层在整个系统中是处于中间层，向下负责与内核和各个外设直接打交道，向上提供实时操作系统用户程序调用的函数接口。如果没有 CMSIS 标准，那么各个芯片公司就会设计自己喜欢的风格的库函数，而 CMSIS 标准就是要强制规定，芯片生产公司设计的库<br />
 函数必须按照 CMSIS 这套规范来设计。</p>
-<h1 id="新建基于固件库的-MDK5-工程模板">新建基于固件库的 MDK5 工程模板</h1>
+<h1 id="新建基于固件库的-mdk5-工程模板"><a class="markdownIt-Anchor" href="#新建基于固件库的-mdk5-工程模板"></a> 新建基于固件库的 MDK5 工程模板</h1>
 <ol>
 <li>
 <p>建立一个文件夹,并在其下新建USER目录</p>
 </li>
 <li>
-<p>keil5新建项目在USER下<img src="https://s2.loli.net/2022/10/09/QjD8OeUzVG6BE9T.png" alt=""></p>
+<p>keil5新建项目在USER下<img src="https://s2.loli.net/2022/10/09/QjD8OeUzVG6BE9T.png" alt="" /></p>
 </li>
 <li>
 <p>删除USER下的objects和Listings</p>
@@ -322,7 +322,7 @@
 <p>在根目录下新建CORE,OBJ，以及LIB文件夹</p>
 </li>
 <li>
-<p><em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\STM32F10x_StdPeriph_Driver</em> 下面，<br>
+<p><em>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\STM32F10x_StdPeriph_Driver</em> 下面，<br />
 将目录下面的* src,inc 文件夹 *复制 到我们刚才建立的 STM32F10x_FWLib 文件夹下面。</p>
 </li>
 <li>
@@ -342,7 +342,7 @@
 </li>
 <li>
 <p>Project Targets 一栏，我们将 Target 名字修改为 Template,然后在 Groups 一栏删掉一个 Source Group1，建立三个 Groups：USER,CORE,FWLIB。然后点击 OK，可以看到我们的 Target名字以及 Groups 情况。</p>
-<p><img src="C:%5CUsers%5Clym%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2022-09-21-18-22-46-image.png" alt=""></p>
+<p><img src="C:%5CUsers%5Clym%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2022-09-21-18-22-46-image.png" alt="" /></p>
 </li>
 <li>
 <p>选择选择 Manage Components.然后选择需要添加文件的 Group，这里第一步我们选 择 FWLIB ， 然 后 点 击 右 边 的 Add Files, 定 位 到 我 们 刚 才 建 立 的 目 录STM32F10x_FWLib/src 下面，将里面所有的文件选中(Ctrl+A)，然后点击 Add，然后 Close.可以看到 Files 列表下面包含我们添加的文件。</p>
@@ -351,16 +351,16 @@
 <p>将 Groups 定位到 CORE 和 USER 下面，添加需要的文件。这里我们的 CORE 下面需要添加的文件为 core_cm3.c，startup_stm32f10x_hd.s</p>
 </li>
 <li>
-<p>USER 目录下面需要添加的文件为 main.c，stm32f10x_it.c，system_stm32f10x.c. <img src="https://s2.loli.net/2022/10/09/iz13ERkgntP7LuB.png" alt=""></p>
+<p>USER 目录下面需要添加的文件为 main.c，stm32f10x_it.c，system_stm32f10x.c. <img src="https://s2.loli.net/2022/10/09/iz13ERkgntP7LuB.png" alt="" /></p>
 </li>
 <li>
-<p>接下来我们要编译工程，在编译之前我们首先要选择编译中间文件编译后存放目录。<br>
-方法是点击魔术棒，然后选择“Output”选项下面的“Select folder for objects…”,然后选<br>
+<p>接下来我们要编译工程，在编译之前我们首先要选择编译中间文件编译后存放目录。<br />
+方法是点击魔术棒，然后选择“Output”选项下面的“Select folder for objects…”,然后选<br />
 择目录为我们上面新建的 OBJ 目录。这里大家注意，如果我们不设置 Output 路径，那么默认的编译中间文件存放目录就是 MDK 自动生成的 Objects 目录和 Listings 目录</p>
 </li>
 <li>
-<p>对于任何一个工程，我们都需要把工程中引用到的所有头文件的路径都包含到进来。回到工程主菜单，点击魔术棒 ，出来一个菜单，然后点击 c/c++选项.然后点击<br>
-Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我们将图上面的 3 个目录添加进去。记住，keil 只会在一级目录查找，所以如果你的目录下面还有子目录，记得 path一定要定位到最后一级子目录。然后点击 OK<img src="https://s2.loli.net/2022/10/09/lJUjXz8Hy7gNWoa.png" alt=""></p>
+<p>对于任何一个工程，我们都需要把工程中引用到的所有头文件的路径都包含到进来。回到工程主菜单，点击魔术棒 ，出来一个菜单，然后点击 c/c++选项.然后点击<br />
+Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我们将图上面的 3 个目录添加进去。记住，keil 只会在一级目录查找，所以如果你的目录下面还有子目录，记得 path一定要定位到最后一级子目录。然后点击 OK<img src="https://s2.loli.net/2022/10/09/lJUjXz8Hy7gNWoa.png" alt="" /></p>
 </li>
 <li>
 <p>将正点原子的SYSTEM文件将.c和.h文件导入项目</p>
