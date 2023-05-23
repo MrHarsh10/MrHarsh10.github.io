@@ -21,33 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="爬虫需要掌握的基础知识">
+    <meta name="description" content="我们将在没有黑暗的地方相见">
 <meta property="og:type" content="article">
-<meta property="og:title" content="爬虫基础">
-<meta property="og:url" content="http://www.helicunzai.cn/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="STM3入门介绍">
+<meta property="og:url" content="http://www.helicunzai.cn/2023/05/22/STM3%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="Mr Harsh的广阔天地">
-<meta property="og:description" content="爬虫需要掌握的基础知识">
+<meta property="og:description" content="我们将在没有黑暗的地方相见">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp">
-<meta property="og:image" content="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png">
-<meta property="og:image" content="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png">
-<meta property="article:published_time" content="2022-08-09T02:48:02.000Z">
-<meta property="article:modified_time" content="2022-08-09T05:36:50.356Z">
+<meta property="article:published_time" content="2023-05-22T12:40:49.000Z">
+<meta property="article:modified_time" content="2023-05-22T12:40:49.691Z">
 <meta property="article:author" content="Mr Harsh">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="爬虫">
+<meta property="article:tag" content="个人博客,Python,C++,嵌入式,编程,科技,CSDN,Github,编程,博客,blog,机器学习,深度学习,前端,后端,Mr Harsh，高科技">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp">
 
 
-<link rel="canonical" href="http://www.helicunzai.cn/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/">
+<link rel="canonical" href="http://www.helicunzai.cn/2023/05/22/STM3%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/","path":"2022/08/09/爬虫基础/","title":"爬虫基础"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2023/05/22/STM3%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/","path":"2023/05/22/STM3入门介绍/","title":"STM3入门介绍"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>爬虫基础 | Mr Harsh的广阔天地</title>
+<title>STM3入门介绍 | Mr Harsh的广阔天地</title>
   
 
 
@@ -137,7 +132,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -150,7 +145,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#http%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text"> HTTP基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#uri%E5%92%8Curl"><span class="nav-number">1.1.</span> <span class="nav-text"> URI和URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B6%85%E6%96%87%E6%9C%AC"><span class="nav-number">1.2.</span> <span class="nav-text"> 超文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E5%92%8Chttps"><span class="nav-number">1.3.</span> <span class="nav-text"> HTTP和HTTPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http-%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B"><span class="nav-number">1.4.</span> <span class="nav-text"> HTTP 请求过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82"><span class="nav-number">1.5.</span> <span class="nav-text"> 请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.1.</span> <span class="nav-text"> 请求方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E7%9A%84%E7%BD%91%E5%9D%80"><span class="nav-number">1.5.2.</span> <span class="nav-text"> 请求的网址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="nav-number">1.5.3.</span> <span class="nav-text"> 请求头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E4%BD%93"><span class="nav-number">1.5.4.</span> <span class="nav-text"> 请求体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94"><span class="nav-number">1.6.</span> <span class="nav-text"> 响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">1.6.1.</span> <span class="nav-text"> 响应状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%A4%B4"><span class="nav-number">1.6.2.</span> <span class="nav-text"> 响应头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E4%BD%93"><span class="nav-number">1.6.3.</span> <span class="nav-text"> 响应体</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%9F%BA%E7%A1%80"><span class="nav-number">2.</span> <span class="nav-text"> 网页基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E7%BB%84%E6%88%90"><span class="nav-number">2.1.</span> <span class="nav-text"> 网页组成</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -229,7 +223,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/08/09/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2023/05/22/STM3%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/10/17/GtcNw4FPoqS7RZY.jpg">
@@ -242,12 +236,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="爬虫基础 | Mr Harsh的广阔天地">
-      <meta itemprop="description" content="爬虫需要掌握的基础知识">
+      <meta itemprop="name" content="STM3入门介绍 | Mr Harsh的广阔天地">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          爬虫基础
+          STM3入门介绍
         </h1>
 
         <div class="post-meta-container">
@@ -257,18 +251,8 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-08-09 10:48:02 / 修改时间：13:36:50" itemprop="dateCreated datePublished" datetime="2022-08-09T10:48:02+08:00">2022-08-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%88%AC%E8%99%AB/" itemprop="url" rel="index"><span itemprop="name">爬虫</span></a>
-        </span>
+      <time title="创建时间：2023-05-22 20:40:49" itemprop="dateCreated datePublished" datetime="2023-05-22T20:40:49+08:00">2023-05-22</time>
     </span>
 
   
@@ -281,7 +265,6 @@
     </span>
 </div>
 
-            <div class="post-description">爬虫需要掌握的基础知识</div>
         </div>
       </header>
 
@@ -289,146 +272,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="http基本原理"><a class="markdownIt-Anchor" href="#http基本原理"></a> HTTP基本原理</h1>
-<blockquote>
-<p>参考资料：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.runoob.com/http/http-tutorial.html">HTTP 教程 | 菜鸟教程 (runoob.com)</a></li>
-</ul>
-</blockquote>
-<hr />
-<h2 id="uri和url"><a class="markdownIt-Anchor" href="#uri和url"></a> URI和URL</h2>
-<p>URI:统一资源标识符</p>
-<p>URL:统一资源定位符</p>
-<p>URN:统一资源名称</p>
-<blockquote>
-<p>现在互联网，URN用得很少，一般网页链接🔗称为URL</p>
-</blockquote>
-<hr />
-<h2 id="超文本"><a class="markdownIt-Anchor" href="#超文本"></a> 超文本</h2>
-<p>网页源代码HTML称为超文本</p>
-<hr />
-<h2 id="http和https"><a class="markdownIt-Anchor" href="#http和https"></a> HTTP和HTTPS</h2>
-<p>HTTP:超文本传输协议</p>
-<p>HTTPS:HTTP下加入SSL层</p>
-<hr />
-<h2 id="http-请求过程"><a class="markdownIt-Anchor" href="#http-请求过程"></a> HTTP 请求过程</h2>
-<img title="" src="https://s2.loli.net/2022/08/09/h6f4vkV2ICe3uQF.webp" alt="" data-align="inline">
-<p><strong>我们利用浏览器”检查“工具的网络来观察这个过程</strong></p>
-<img title="" src="https://s2.loli.net/2022/08/09/Xhdi1tqQlake73R.png" alt="" data-align="inline">
-<ul>
-<li>
-<p>General部分</p>
-<ul>
-<li>
-<p>Request URL:请求的URL</p>
-</li>
-<li>
-<p>Request Method:请求方法</p>
-</li>
-<li>
-<p>Status Code: 响应状态码</p>
-</li>
-<li>
-<p>Remote Address:远程服务器的地址和端口</p>
-</li>
-<li>
-<p>Referrer Policy:Referrer判别策略</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Response Header:响应头</p>
-</li>
-<li>
-<p>Request Header:请求头</p>
-</li>
-</ul>
-<hr />
-<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
-<blockquote>
-<p>请求由客户端发出，分为4部分</p>
-<blockquote>
-<ul>
-<li>
-<p>请求方法:Request Method</p>
-</li>
-<li>
-<p>请求网址:Request URL</p>
-</li>
-<li>
-<p>请求头:Request Headers</p>
-</li>
-<li>
-<p>请求体:Request Body</p>
-</li>
-</ul>
-</blockquote>
-</blockquote>
-<h3 id="请求方法"><a class="markdownIt-Anchor" href="#请求方法"></a> 请求方法</h3>
-<p>常见的为：GET和POST</p>
-<blockquote>
-<p>GET 与POST区别</p>
-<ul>
-<li>
-<p>GET的参数在URL里面，而POST请求的数据以表单传输，包含在请求体</p>
-</li>
-<li>
-<p>GET的数据只有1024字节，而POST没有限制</p>
-</li>
-</ul>
-</blockquote>
-<p>其他请求方法</p>
-<img title="" src="https://s2.loli.net/2022/08/09/UV5MSGA7DJrgdxs.png" alt="" data-align="inline">
-<h3 id="请求的网址"><a class="markdownIt-Anchor" href="#请求的网址"></a> 请求的网址</h3>
-<p>请求的网址即URL</p>
-<h3 id="请求头"><a class="markdownIt-Anchor" href="#请求头"></a> 请求头</h3>
-<ul>
-<li>
-<p>Accept:请求报头域，指定客户端接收哪些类型的信息</p>
-</li>
-<li>
-<p>Accept-Language:指定客户端可接受语言类型</p>
-</li>
-<li>
-<p>Host:指定请求资源的主机IP和端口</p>
-</li>
-<li>
-<p>Cookie:储存在用户本地终端上的数据,特定的 web文档关联在一起, 保存了该客户机访问这个Web 文档时的信息, 当客户机再次访问这个 Web 文档时这些信息可供该文档使用。</p>
-</li>
-<li>
-<p>Referer:标识请求是从那个页面发过来的</p>
-</li>
-<li>
-<p>User-Agent:一个特殊字符串头，使得服务器能够识别客户使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎、浏览器语言、浏览器插件等。</p>
-</li>
-<li>
-<p>Content-Type:内容类型，一般是指网页中存在的Content-Type，用于定义网络文件的类型和网页的编码，决定文件接收方将以什么形式、什么编码读取这个文件</p>
-</li>
-</ul>
-<h3 id="请求体"><a class="markdownIt-Anchor" href="#请求体"></a> 请求体</h3>
-<p>请求体承载的是POST的表单数据，对于GET，请求为空</p>
-<hr />
-<h2 id="响应"><a class="markdownIt-Anchor" href="#响应"></a> 响应</h2>
-<h3 id="响应状态码"><a class="markdownIt-Anchor" href="#响应状态码"></a> 响应状态码</h3>
-<p>常见的 HTTP 状态码：</p>
-<ul>
-<li>200 - 请求成功</li>
-<li>301 - 资源（网页等）被永久转移到其它URL</li>
-<li>404 - 请求的资源（网页等）不存在</li>
-<li>500 - 内部服务器错误</li>
-</ul>
-<p>其它可以参考<a target="_blank" rel="noopener" href="https://www.runoob.com/http/http-status-codes.html">HTTP 状态码 | 菜鸟教程</a></p>
-<h3 id="响应头"><a class="markdownIt-Anchor" href="#响应头"></a> 响应头</h3>
-<p>响应头包含服务器对请求的应答信息，如Content-Type、Sever、Set-Cookie</p>
-<h3 id="响应体"><a class="markdownIt-Anchor" href="#响应体"></a> 响应体</h3>
-<p>响应体包含响应的正文数据</p>
-<hr />
-<h1 id="网页基础"><a class="markdownIt-Anchor" href="#网页基础"></a> 网页基础</h1>
-<h2 id="网页组成"><a class="markdownIt-Anchor" href="#网页组成"></a> 网页组成</h2>
-<p>网页是由HTML、CSS、JavaScript组成</p>
-<p><em><strong>如果想学爬虫，必须要点Web基础</strong></em></p>
-
+        
     </div>
 
     
@@ -438,20 +282,16 @@
 
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Python/" rel="tag"># Python</a>
-              <a href="/tags/%E7%88%AC%E8%99%AB/" rel="tag"># 爬虫</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2023/05/02/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/08/09/urllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="urllib库的使用">
-                  urllib库的使用 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
