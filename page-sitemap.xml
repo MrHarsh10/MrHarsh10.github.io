@@ -10,6 +10,15 @@
     
     
     <url>
+        <loc>http://www.helicunzai.cn/admin/</loc>
+        <lastmod>2023-06-02T15:53:08.519Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>http://www.helicunzai.cn/about/</loc>
         <lastmod>2022-10-30T13:38:18.955Z</lastmod>
         <changefreq>weekly</changefreq>
