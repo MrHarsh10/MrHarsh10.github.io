@@ -25,7 +25,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习Vue:第三天">
 <meta property="og:url" content="http://www.helicunzai.cn/2023/03/14/%E5%AD%A6%E4%B9%A0Vue-%E7%AC%AC%E4%B8%89%E5%A4%A9/index.html">
-<meta property="og:site_name" content="Mr Harsh的BLog">
+<meta property="og:site_name" content="Mr Harsh的技术笔记">
 <meta property="og:description" content="学习Vue:第三天">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-14T01:43:12.000Z">
@@ -43,7 +43,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://www.helicunzai.cn/2023/03/14/%E5%AD%A6%E4%B9%A0Vue-%E7%AC%AC%E4%B8%89%E5%A4%A9/","path":"2023/03/14/学习Vue-第三天/","title":"学习Vue:第三天"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>学习Vue:第三天 | Mr Harsh的BLog</title>
+<title>学习Vue:第三天 | Mr Harsh的技术笔记</title>
   
 
 
@@ -73,7 +73,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">Mr Harsh的BLog</p>
+      <p class="site-title">Mr Harsh的技术笔记</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">广阔天地，大有作为。</p>
@@ -146,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">事件处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text">事件修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">2.1.</span> <span class="nav-text">Vue中的事件修饰符</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text"> 事件处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text"> 事件修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">2.1.</span> <span class="nav-text"> Vue中的事件修饰符</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -240,12 +240,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr Harsh的BLog">
+      <meta itemprop="name" content="Mr Harsh的技术笔记">
       <meta itemprop="description" content="The Quieter You Are, The More You Hear">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="学习Vue:第三天 | Mr Harsh的BLog">
+      <meta itemprop="name" content="学习Vue:第三天 | Mr Harsh的技术笔记">
       <meta itemprop="description" content="学习Vue:第三天">
     </span>
       <header class="post-header">
@@ -298,11 +298,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="事件处理">事件处理</h1>
+        <h1 id="事件处理"><a class="markdownIt-Anchor" href="#事件处理"></a> 事件处理</h1>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>欢迎来到&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;showInfo(name)&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;showInfo(name)&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> vm=<span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">el</span>:<span class="string">&#x27;#demo&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">name</span>:<span class="string">&quot;Mars&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">            &#125;,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">methods</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="title function_">showInfo</span>(<span class="params">a</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="title function_">alert</span>(a)</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">  </span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="事件修饰符">事件修饰符</h1>
+<h1 id="事件修饰符"><a class="markdownIt-Anchor" href="#事件修饰符"></a> 事件修饰符</h1>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="Vue中的事件修饰符">Vue中的事件修饰符</h2>
+<h2 id="vue中的事件修饰符"><a class="markdownIt-Anchor" href="#vue中的事件修饰符"></a> Vue中的事件修饰符</h2>
 <ol>
 <li>
 <p>prevent：阻止默认事件</p>
