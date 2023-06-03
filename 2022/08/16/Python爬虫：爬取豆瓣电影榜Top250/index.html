@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="爬取豆瓣电影榜Top250">
 <meta property="og:type" content="article">
@@ -149,14 +149,14 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> 实现过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text"> 代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text"> 结果</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">实现过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-8"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text">结果</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mr Harsh"
-      src="https://s2.loli.net/2023/06/03/RpESWG3QFcPYCDv.png">
+      src="/images/XPao6Bwfkjc2drgwolf.png">
   <p class="site-author-name" itemprop="name">Mr Harsh</p>
   <div class="site-description" itemprop="description">The Quieter You Are, The More You Hear</div>
 </div>
@@ -215,6 +215,7 @@
 
     
   <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
   <a href="https://github.com/MrHarsh10" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
@@ -237,7 +238,7 @@
     <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/08/16/Python%E7%88%AC%E8%99%AB%EF%BC%9A%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%A6%9CTop250/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2023/06/03/RpESWG3QFcPYCDv.png">
+      <meta itemprop="image" content="/images/XPao6Bwfkjc2drgwolf.png">
       <meta itemprop="name" content="Mr Harsh">
     </span>
 
@@ -300,9 +301,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+        <h1 id="前言">前言</h1>
 <p>现在很多网站都做了反爬，导致单一使用requests库无法爬到东西，经过全网实验，我发现豆瓣的电影排行榜很容易爬取下来的</p>
-<h1 id="实现过程"><a class="markdownIt-Anchor" href="#实现过程"></a> 实现过程</h1>
+<h1 id="实现过程">实现过程</h1>
 <p>我们使用浏览器<mark>检查</mark>工具</p>
 <img src="https://s2.loli.net/2022/08/17/cm8A7gdG2H691fD.png" title="" alt="" data-align="center">
 <p>分析每一项的HTML代码</p>
@@ -315,9 +316,9 @@
 <p>然后网站是以GET方式25为增量换页的</p>
 <figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://movie.douban.com/top250?start=0&amp;filter=</span><br><span class="line">https://movie.douban.com/top250?start=25&amp;filter=</span><br></pre></td></tr></table></figure>
 <p>有了以上思路就可以完成爬虫了</p>
-<h1 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h1>
+<h1 id="代码-8">代码</h1>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests,re,csv</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getpage</span>(<span class="params">url</span>):</span><br><span class="line">    headers=&#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    response=requests.get(url,headers=headers)</span><br><span class="line">    <span class="keyword">if</span> response.status_code==<span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> response.text</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parsehtml</span>(<span class="params">html</span>):</span><br><span class="line">    pattern=re.<span class="built_in">compile</span>(</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;item&quot;&gt;.*?&lt;em class=&quot;&quot;&gt;(.*?)&lt;/em&gt;.*?&lt;span class=&quot;title&quot;&gt;(.*?)&lt;/span&gt;.*?&lt;br&gt;(.*?) / .*? / (.*?)&lt;/p&gt;.*?property=&quot;v:average&quot;&gt;(.*?)&lt;/span&gt;&#x27;</span>,re.S)</span><br><span class="line">    items=re.findall(pattern,html)</span><br><span class="line">    <span class="keyword">return</span> items;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">write</span>(<span class="params">items</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;豆瓣电影Top250.csv&quot;</span>,mode=<span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8-sig&quot;</span>, newline=<span class="string">&quot;&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        writer = csv.writer(f)</span><br><span class="line">        headerList=[<span class="string">&#x27;排名&#x27;</span>,<span class="string">&#x27;电影名&#x27;</span>,<span class="string">&#x27;上映时间&#x27;</span>,<span class="string">&#x27;分类&#x27;</span>,<span class="string">&#x27;豆瓣评分&#x27;</span>]</span><br><span class="line">        writer.writerow(headerList)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">            tmp=[]</span><br><span class="line">            tmp.append(i[<span class="number">0</span>])</span><br><span class="line">            tmp.append(i[<span class="number">1</span>])</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">2</span>]).strip())</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">3</span>]).strip())</span><br><span class="line">            tmp.append(<span class="built_in">str</span>(i[<span class="number">4</span>]).strip())</span><br><span class="line">            <span class="built_in">print</span>(tmp[<span class="number">0</span>],tmp[<span class="number">1</span>],tmp[<span class="number">2</span>],tmp[<span class="number">3</span>],tmp[<span class="number">4</span>])</span><br><span class="line">            writer.writerow(tmp)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    items=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">250</span>,<span class="number">25</span>):</span><br><span class="line">        url=<span class="string">&#x27;https://movie.douban.com/top250?start=&#123;&#125;&amp;filter=&#x27;</span>.<span class="built_in">format</span>(i)</span><br><span class="line">        text=getpage(url)</span><br><span class="line">        items+=parsehtml(text)</span><br><span class="line">    write(items)</span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
-<h1 id="结果"><a class="markdownIt-Anchor" href="#结果"></a> 结果</h1>
+<h1 id="结果">结果</h1>
 <img src="https://s2.loli.net/2022/08/17/4GgyqDRSI9ljcNv.png" title="" alt="" data-align="center">
 <center>非常基础的爬虫入门例子</center>
 
@@ -401,7 +402,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>

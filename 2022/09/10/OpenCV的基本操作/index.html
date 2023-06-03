@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.helicunzai.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="试一试水深火热的CV">
 <meta property="og:type" content="article">
@@ -149,14 +149,14 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A8%A1%E5%9D%97imgcodecs"><span class="nav-number">1.</span> <span class="nav-text"> 图像输入输出模块imgcodecs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E5%9B%BE%E5%83%8F%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text"> 读取图像文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E7%85%A7%E7%89%87%E7%9A%84%E9%AB%98%E5%BA%A6%E4%B8%8E%E5%AE%BD%E5%BA%A6"><span class="nav-number">1.2.</span> <span class="nav-text"> 读取照片的高度与宽度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E7%85%A7%E7%89%87"><span class="nav-number">1.3.</span> <span class="nav-text"> 保存照片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#opencv%E7%95%8C%E9%9D%A2%E7%BC%96%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> OpenCV界面编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text"> 新建窗口函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E7%AA%97%E5%8F%A3%E6%98%BE%E7%A4%BA%E5%A4%9A%E5%9B%BE%E7%89%87"><span class="nav-number">3.</span> <span class="nav-text"> 单窗口显示多图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%94%80%E6%AF%81%E7%AA%97%E5%8F%A3"><span class="nav-number">4.</span> <span class="nav-text"> 销毁窗口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text"> 鼠标事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E6%9D%A1%E4%BA%8B%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text"> 滑动条事件</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A8%A1%E5%9D%97imgcodecs"><span class="nav-number">1.</span> <span class="nav-text">图像输入输出模块imgcodecs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E5%9B%BE%E5%83%8F%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">读取图像文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E7%85%A7%E7%89%87%E7%9A%84%E9%AB%98%E5%BA%A6%E4%B8%8E%E5%AE%BD%E5%BA%A6"><span class="nav-number">1.2.</span> <span class="nav-text">读取照片的高度与宽度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E7%85%A7%E7%89%87"><span class="nav-number">1.3.</span> <span class="nav-text">保存照片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenCV%E7%95%8C%E9%9D%A2%E7%BC%96%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">OpenCV界面编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">新建窗口函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E7%AA%97%E5%8F%A3%E6%98%BE%E7%A4%BA%E5%A4%9A%E5%9B%BE%E7%89%87"><span class="nav-number">3.</span> <span class="nav-text">单窗口显示多图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%94%80%E6%AF%81%E7%AA%97%E5%8F%A3"><span class="nav-number">4.</span> <span class="nav-text">销毁窗口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">鼠标事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E6%9D%A1%E4%BA%8B%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">滑动条事件</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mr Harsh"
-      src="https://s2.loli.net/2023/06/03/RpESWG3QFcPYCDv.png">
+      src="/images/XPao6Bwfkjc2drgwolf.png">
   <p class="site-author-name" itemprop="name">Mr Harsh</p>
   <div class="site-description" itemprop="description">The Quieter You Are, The More You Hear</div>
 </div>
@@ -215,6 +215,7 @@
 
     
   <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
   <a href="https://github.com/MrHarsh10" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
@@ -237,7 +238,7 @@
     <link itemprop="mainEntityOfPage" href="http://www.helicunzai.cn/2022/09/10/OpenCV%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2023/06/03/RpESWG3QFcPYCDv.png">
+      <meta itemprop="image" content="/images/XPao6Bwfkjc2drgwolf.png">
       <meta itemprop="name" content="Mr Harsh">
     </span>
 
@@ -300,8 +301,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="图像输入输出模块imgcodecs"><a class="markdownIt-Anchor" href="#图像输入输出模块imgcodecs"></a> 图像输入输出模块imgcodecs</h1>
-<h2 id="读取图像文件"><a class="markdownIt-Anchor" href="#读取图像文件"></a> 读取图像文件</h2>
+        <h1 id="图像输入输出模块imgcodecs">图像输入输出模块imgcodecs</h1>
+<h2 id="读取图像文件">读取图像文件</h2>
 <p>读取图片</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.imread(path[, flag])</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -315,13 +316,13 @@
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">image_path = <span class="string">&quot;images.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 <p>读取失败返回None</p>
-<h2 id="读取照片的高度与宽度"><a class="markdownIt-Anchor" href="#读取照片的高度与宽度"></a> 读取照片的高度与宽度</h2>
+<h2 id="读取照片的高度与宽度">读取照片的高度与宽度</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.shape(img))</span><br><span class="line"></span><br><span class="line">height=np.shape(img)[<span class="number">0</span>]</span><br><span class="line">width=np.shape(img)[<span class="number">1</span>]</span><br><span class="line">channles=np.shape(img)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;height:&quot;</span>,height)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;width:&#x27;</span>,width)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;channles:&#x27;</span>,channles)</span><br></pre></td></tr></table></figure>
-<h2 id="保存照片"><a class="markdownIt-Anchor" href="#保存照片"></a> 保存照片</h2>
+<h2 id="保存照片">保存照片</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imwrite(filename,img[,params)-&gt;retval</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">height,width=img.shape[:<span class="number">2</span>]</span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(width,height),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">img=cv.imread(<span class="string">&#x27;output.jpg&#x27;</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;img&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="opencv界面编程"><a class="markdownIt-Anchor" href="#opencv界面编程"></a> OpenCV界面编程</h1>
-<h2 id="新建窗口函数"><a class="markdownIt-Anchor" href="#新建窗口函数"></a> 新建窗口函数</h2>
+<h1 id="OpenCV界面编程">OpenCV界面编程</h1>
+<h2 id="新建窗口函数">新建窗口函数</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">namedWindow(winname[,flags])</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>flags</p>
@@ -335,11 +336,11 @@
 </ul>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;hemo&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;hemo&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">6000</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="单窗口显示多图片"><a class="markdownIt-Anchor" href="#单窗口显示多图片"></a> 单窗口显示多图片</h1>
+<h1 id="单窗口显示多图片">单窗口显示多图片</h1>
 <p>利用numpy的hstack函数合并行数相同的矩阵数组</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.imshow(<span class="string">&#x27;a&#x27;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
 <img title="" src="https://s2.loli.net/2022/10/09/UNlsSDQKXyLdf8a.jpg" alt="" data-align="center">
-<h1 id="销毁窗口"><a class="markdownIt-Anchor" href="#销毁窗口"></a> 销毁窗口</h1>
+<h1 id="销毁窗口">销毁窗口</h1>
 <ul>
 <li>
 <p>cv2.destroyWindow(winname)</p>
@@ -352,43 +353,43 @@
 </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img1=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic2.png&#x27;</span>)</span><br><span class="line">img=np.hstack([img1,img2])</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">cv.resizeWindow(<span class="string">&#x27;1&#x27;</span>,<span class="number">900</span>,<span class="number">300</span>)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line">cv.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h1>
+<h1 id="鼠标事件">鼠标事件</h1>
 <p>OpenCV使用setMousecallback设定</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//设置回调函数</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setMouseCallback</span>(<span class="params">windowName, onMouse, param=<span class="literal">None</span></span>):</span><br><span class="line">//回调函数</span><br><span class="line">void your_mouse_callback(<span class="built_in">int</span> event,<span class="built_in">int</span> x,<span class="built_in">int</span> y,<span class="built_in">int</span> flags,void* param) ;</span><br></pre></td></tr></table></figure>
 <p>鼠标事件event</p>
 <blockquote>
-<p>enum<br />
-{<br />
-EVENT_MOUSEMOVE      =0,   //鼠标移动<br />
-EVENT_LBUTTONDOWN    =1,   //按下左键<br />
-EVENT_RBUTTONDOWN    =2,   //按下右键<br />
-EVENT_MBUTTONDOWN    =3,   //按下中键<br />
-EVENT_LBUTTONUP      =4,   //放开左键<br />
-EVENT_RBUTTONUP      =5,   //放开右键<br />
-EVENT_MBUTTONUP      =6,   //放开中键<br />
-EVENT_LBUTTONDBLCLK  =7,   //左键双击<br />
-EVENT_RBUTTONDBLCLK  =8,   //右键双击<br />
-EVENT_MBUTTONDBLCLK  =9,   //中键双击<br />
-EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br />
+<p>enum<br>
+{<br>
+EVENT_MOUSEMOVE      =0,   //鼠标移动<br>
+EVENT_LBUTTONDOWN    =1,   //按下左键<br>
+EVENT_RBUTTONDOWN    =2,   //按下右键<br>
+EVENT_MBUTTONDOWN    =3,   //按下中键<br>
+EVENT_LBUTTONUP      =4,   //放开左键<br>
+EVENT_RBUTTONUP      =5,   //放开右键<br>
+EVENT_MBUTTONUP      =6,   //放开中键<br>
+EVENT_LBUTTONDBLCLK  =7,   //左键双击<br>
+EVENT_RBUTTONDBLCLK  =8,   //右键双击<br>
+EVENT_MBUTTONDBLCLK  =9,   //中键双击<br>
+EVENT_MOUSEWHEEL     =10,  //滚轮滚动<br>
 };</p>
 </blockquote>
 <p>鼠标事件flags</p>
 <blockquote>
-<p>enum<br />
-{<br />
-CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br />
-CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br />
-CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br />
-CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br />
-CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br />
-CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
+<p>enum<br>
+{<br>
+CV_EVENT_FLAG_LBUTTON   =1,   //左键拖拽<br>
+CV_EVENT_FLAG_RBUTTON   =2,   //右键拖拽<br>
+CV_EVENT_FLAG_MBUTTON   =4,   //中键拖拽<br>
+CV_EVENT_FLAG_CTRLKEY   =8,   //按住CTRL拖拽<br>
+CV_EVENT_FLAG_SHIFTKEY  =16,  //按住Shift拖拽<br>
+CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br>
 };</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=np.zeros((<span class="number">400</span>,<span class="number">400</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">if</span> event==cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        cv.circle(img,(x,y),<span class="number">20</span>,<span class="number">255</span>,-<span class="number">1</span>)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;1&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    n=cv.waitKey(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">        cv.imwrite(<span class="string">&#x27;output.jpg&#x27;</span>,img)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;保存成功&#x27;</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h1 id="滑动条事件"><a class="markdownIt-Anchor" href="#滑动条事件"></a> 滑动条事件</h1>
+<h1 id="滑动条事件">滑动条事件</h1>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">createTrackbar</span>(<span class="params">trackbarName, windowName, value, count, onChange</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">TrackbarCallback</span>(<span class="params">pos,userdata</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getTrackbarPos</span>(<span class="params">trackbarname, winname</span>):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">setTrackbarPos</span>(<span class="params">trackbarname, winname, pos</span>): </span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">alpha=<span class="number">0.3</span></span><br><span class="line">beta=<span class="number">80</span></span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img2=cv.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upadateAlpha</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha,img,img2,beta</span><br><span class="line">    alpha=cv.getTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    alpha=alpha*<span class="number">0.01</span></span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">updateBeta</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">global</span> alpha, img, img2,beta</span><br><span class="line">    beta=cv.getTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    img=np.uint8(np.clip((alpha*img2+beta),<span class="number">0</span>,<span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">cv.namedWindow(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">300</span>,upadateAlpha)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,updateBeta)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Alpha&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">cv.setTrackbarPos(<span class="string">&#x27;Beta&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">&#x27;1&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>)==<span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/SGZxMl649gC5HtI.png" alt="" /></p>
+<p><img src="https://s2.loli.net/2022/10/09/SGZxMl649gC5HtI.png" alt=""></p>
 
     </div>
 
@@ -470,7 +471,7 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
