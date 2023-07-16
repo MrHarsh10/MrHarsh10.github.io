@@ -95,7 +95,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">21</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">55</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -152,7 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8BSTM32-FW%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">1.</span> <span class="nav-text">建立STM32_FW文件夹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%B7%A5%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">建立工程</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8Bstm32_fw%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">1.</span> <span class="nav-text"> 建立STM32_FW文件夹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%B7%A5%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> 建立工程</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,18 +167,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">55</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -298,7 +298,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="建立STM32-FW文件夹">建立STM32_FW文件夹</h1>
+        <h1 id="建立stm32_fw文件夹"><a class="markdownIt-Anchor" href="#建立stm32_fw文件夹"></a> 建立STM32_FW文件夹</h1>
 <ol>
 <li>
 <p>获取ST公司提供的STM32固件库en.stsw-stm32054.zip,得到文件夹<code>STM32F10x_StdPeriph_Lib_V3.5.0</code>。新建文件夹，命名为<code>STM32_FW</code>,在该文件夹下新建7个文件夹，分别命名为<code>boot</code>,<code>cmsis</code>,<code>library</code>,<code>user</code>,<code>obj</code>,<code>list</code>,<code>interrupt</code>.</p>
@@ -319,7 +319,7 @@
 <p>复制<code>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\STM32F10x_StdPeriph_Driver</code>下<code>inc</code>和<code>src</code>到<code>STM32_FW</code>的<code>library</code>中，这两个文件夹为STM32的固件函数库文件。</p>
 </li>
 <li>
-<p>复制<code>STM32F10x_StdPeriph_Lib_V3.5.0\Project\STM32F10x_StdPeriph_Template</code>下<img src="C:%5CUsers%5C13890%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-07-03-13-00-52-image.png" alt=""></p>
+<p>复制<code>STM32F10x_StdPeriph_Lib_V3.5.0\Project\STM32F10x_StdPeriph_Template</code>下<img src="C:%5CUsers%5C13890%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-07-03-13-00-52-image.png" alt="" /></p>
 <p>到<code>STM32_FW</code>的interrupt中，此为STM32在MDK下的中断服务入口函数。</p>
 </li>
 <li>
@@ -355,13 +355,13 @@
 </ul>
 </li>
 </ol>
-<h1 id="建立工程">建立工程</h1>
+<h1 id="建立工程"><a class="markdownIt-Anchor" href="#建立工程"></a> 建立工程</h1>
 <ol>
 <li>
 <p>新建一个文件夹，放本次工程文件，如<code>proj</code>,将<code>STM32_FW</code>的文件夹全部复制到改文件夹目录下。</p>
 </li>
 <li>
-<p>打开keil,选择Project-&gt;New uVision Project,<img src="C:%5CUsers%5C13890%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-07-03-13-30-34-image.png" alt=""></p>
+<p>打开keil,选择Project-&gt;New uVision Project,<img src="C:%5CUsers%5C13890%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-07-03-13-30-34-image.png" alt="" /></p>
 <p>保存后，选择芯片类型，取消添加STM32的Stertup code</p>
 </li>
 <li>
@@ -392,6 +392,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2023/07/03/STM32%E6%A0%87%E5%87%86%E5%BA%93%EF%BC%9A%E5%AE%9E%E7%8E%B0%E6%B5%81%E6%B0%B4%E7%81%AF/" rel="next" title="STM32标准库：实现流水灯">
+                  STM32标准库：实现流水灯 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

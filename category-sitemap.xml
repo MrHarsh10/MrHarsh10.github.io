@@ -9,8 +9,15 @@
 
 
     <url>
+        <loc>http://www.helicunzai.cn/categories/%25E5%25BE%25AE%25E6%259C%25BA%25E5%258E%259F%25E7%2590%2586%25E4%25B8%258E%25E6%258E%25A5%25E5%258F%25A3%25E6%258A%2580%25E6%259C%25AF/</loc>
+        <lastmod>2023-07-16T03:43:27.901Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.helicunzai.cn/categories/STM32/</loc>
-        <lastmod>2023-07-03T05:54:57.318Z</lastmod>
+        <lastmod>2023-07-03T14:01:41.987Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
