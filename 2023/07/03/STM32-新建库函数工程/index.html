@@ -36,8 +36,8 @@
 <meta property="article:published_time" content="2023-07-03T03:18:07.000Z">
 <meta property="article:modified_time" content="2023-07-03T05:54:57.318Z">
 <meta property="article:author" content="Mr Harsh">
-<meta property="article:tag" content="嵌入式">
 <meta property="article:tag" content="STM32">
+<meta property="article:tag" content="嵌入式">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s2.loli.net/2023/07/03/4vxXl1ho3Kkeigj.png">
 
@@ -152,7 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8BSTM32-FW%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">1.</span> <span class="nav-text">建立STM32_FW文件夹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%B7%A5%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">建立工程</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8Bstm32_fw%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">1.</span> <span class="nav-text"> 建立STM32_FW文件夹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%B7%A5%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> 建立工程</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -298,7 +298,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="建立STM32-FW文件夹">建立STM32_FW文件夹</h1>
+        <h1 id="建立stm32_fw文件夹"><a class="markdownIt-Anchor" href="#建立stm32_fw文件夹"></a> 建立STM32_FW文件夹</h1>
 <ol>
 <li>
 <p>获取ST公司提供的STM32固件库en.stsw-stm32054.zip,得到文件夹<code>STM32F10x_StdPeriph_Lib_V3.5.0</code>。新建文件夹，命名为<code>STM32_FW</code>,在该文件夹下新建7个文件夹，分别命名为<code>boot</code>,<code>cmsis</code>,<code>library</code>,<code>user</code>,<code>obj</code>,<code>list</code>,<code>interrupt</code>.</p>
@@ -319,7 +319,7 @@
 <p>复制<code>STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\STM32F10x_StdPeriph_Driver</code>下<code>inc</code>和<code>src</code>到<code>STM32_FW</code>的<code>library</code>中，这两个文件夹为STM32的固件函数库文件。</p>
 </li>
 <li>
-<p>复制<code>STM32F10x_StdPeriph_Lib_V3.5.0\Project\STM32F10x_StdPeriph_Template</code>下<img src="C:%5CUsers%5C13890%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-07-03-13-00-52-image.png" alt=""></p>
+<p>复制<code>STM32F10x_StdPeriph_Lib_V3.5.0\Project\STM32F10x_StdPeriph_Template</code>下<img src="C:%5CUsers%5C13890%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-07-03-13-00-52-image.png" alt="" /></p>
 <p>到<code>STM32_FW</code>的interrupt中，此为STM32在MDK下的中断服务入口函数。</p>
 </li>
 <li>
@@ -355,13 +355,13 @@
 </ul>
 </li>
 </ol>
-<h1 id="建立工程">建立工程</h1>
+<h1 id="建立工程"><a class="markdownIt-Anchor" href="#建立工程"></a> 建立工程</h1>
 <ol>
 <li>
 <p>新建一个文件夹，放本次工程文件，如<code>proj</code>,将<code>STM32_FW</code>的文件夹全部复制到改文件夹目录下。</p>
 </li>
 <li>
-<p>打开keil,选择Project-&gt;New uVision Project,<img src="C:%5CUsers%5C13890%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-07-03-13-30-34-image.png" alt=""></p>
+<p>打开keil,选择Project-&gt;New uVision Project,<img src="C:%5CUsers%5C13890%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-07-03-13-30-34-image.png" alt="" /></p>
 <p>保存后，选择芯片类型，取消添加STM32的Stertup code</p>
 </li>
 <li>
@@ -379,8 +379,8 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"># 嵌入式</a>
               <a href="/tags/STM32/" rel="tag"># STM32</a>
+              <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"># 嵌入式</a>
           </div>
 
         
