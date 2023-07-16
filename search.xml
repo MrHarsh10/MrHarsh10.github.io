@@ -1,268 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CSS选择器</title>
-    <url>/2023/03/26/CSS%E9%80%89%E6%8B%A9%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="css3选择器的分类"><a class="markdownIt-Anchor" href="#css3选择器的分类"></a> CSS3选择器的分类</h1>
-<ol>
-<li>
-<p>基础选择器</p>
-</li>
-<li>
-<p>层次选择器</p>
-</li>
-<li>
-<p>伪类选择器</p>
-</li>
-<li>
-<p>伪元素选择器</p>
-</li>
-<li>
-<p>属性选择器</p>
-</li>
-</ol>
-<h1 id="基础选择器"><a class="markdownIt-Anchor" href="#基础选择器"></a> 基础选择器</h1>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*</td>
-<td>通配选择器</td>
-</tr>
-<tr>
-<td>E</td>
-<td>标签选择器</td>
-</tr>
-<tr>
-<td>#id</td>
-<td>ID选择器</td>
-</tr>
-<tr>
-<td>.class</td>
-<td>类选择器</td>
-</tr>
-<tr>
-<td>selector1,selectorN</td>
-<td>群组选择器</td>
-</tr>
-</tbody>
-</table>
-<h1 id="层次选择器"><a class="markdownIt-Anchor" href="#层次选择器"></a> 层次选择器</h1>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>X Y</td>
-<td>后代选择器</td>
-</tr>
-<tr>
-<td>X &gt; Y</td>
-<td>子选择器</td>
-</tr>
-<tr>
-<td>X + Y</td>
-<td>相邻兄弟选择器</td>
-</tr>
-<tr>
-<td>X ~ Y</td>
-<td>通用兄弟选择器</td>
-</tr>
-</tbody>
-</table>
-<h1 id="伪类选择器"><a class="markdownIt-Anchor" href="#伪类选择器"></a> 伪类选择器</h1>
-<h2 id="动态伪类选择器"><a class="markdownIt-Anchor" href="#动态伪类选择器"></a> 动态伪类选择器</h2>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>E:link</td>
-<td>超链接伪类选择器</td>
-</tr>
-<tr>
-<td>E:visted</td>
-<td>超链接伪类选择器</td>
-</tr>
-<tr>
-<td>E:active</td>
-<td>用户行为伪类选择器</td>
-</tr>
-<tr>
-<td>E:hover</td>
-<td>用户行为伪类选择器</td>
-</tr>
-<tr>
-<td>E:focus</td>
-<td>用户行为伪类选择器</td>
-</tr>
-</tbody>
-</table>
-<h2 id="目标伪类选择器"><a class="markdownIt-Anchor" href="#目标伪类选择器"></a> 目标伪类选择器</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">#about:target&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="语言伪类选择器"><a class="markdownIt-Anchor" href="#语言伪类选择器"></a> 语言伪类选择器</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">E:lang(en)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="ui元素状态伪类选择器"><a class="markdownIt-Anchor" href="#ui元素状态伪类选择器"></a> UI元素状态伪类选择器</h2>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>E:checked</td>
-<td>选中状态伪类选择器</td>
-</tr>
-<tr>
-<td>E:checked</td>
-<td>启用状态伪类选择器</td>
-</tr>
-<tr>
-<td>E:disabled</td>
-<td>不可用状态伪类选择器</td>
-</tr>
-</tbody>
-</table>
-<h2 id="结构伪类选择器"><a class="markdownIt-Anchor" href="#结构伪类选择器"></a> 结构伪类选择器</h2>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>功能描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>E:first-child</td>
-<td>匹配父元素中包含的第一个名称为E的子元素，与E:nth-child(1)相同</td>
-</tr>
-<tr>
-<td>E:last-child</td>
-<td>匹配父元素中包含的最后一个名称为E的子元素，与E:nth-last-child(1)相同</td>
-</tr>
-<tr>
-<td>E:root</td>
-<td>选择匹配元素E所在文档的根元素</td>
-</tr>
-<tr>
-<td>E F:nth-child</td>
-<td>选择父元素E中所包含的第n个子元素F，其中n可以是整数(1、2、3)、关键字（even、odd）,也可以是公式（2n+1,-n+）</td>
-</tr>
-<tr>
-<td>E F:nth-last-child</td>
-<td>选择父元素E中所包含的倒数第n个子元素F</td>
-</tr>
-<tr>
-<td>E:nth-of-type(n)</td>
-<td>选择父元素中所包含的具有指定类型的第n个E元素</td>
-</tr>
-<tr>
-<td>E:nth-last-of-type(n)</td>
-<td>选择父元素中所包含的具有指定类型的倒数第n个元素</td>
-</tr>
-<tr>
-<td>E:first-of-type</td>
-<td>选择父元素中所包含的具体指定类型的第一个E元素，与E:nth-of-type(1)等同</td>
-</tr>
-<tr>
-<td>E:last-of-type</td>
-<td>选择父元素中所包含的具有指定类型的最后一个E元素，与E:nth-last-of-type(1)等同</td>
-</tr>
-<tr>
-<td>E:only-child</td>
-<td>选择父元素中所包含的唯一一个子元素E</td>
-</tr>
-<tr>
-<td>E:only-of-type</td>
-<td>选择父元素中所包含的唯一一个同类型的同级兄弟元素E</td>
-</tr>
-<tr>
-<td>E:empty</td>
-<td>选择不包含任何子元素的E元素，并且该元素也不包含任何文本节点</td>
-</tr>
-</tbody>
-</table>
-<h2 id="否定伪类选择器"><a class="markdownIt-Anchor" href="#否定伪类选择器"></a> 否定伪类选择器</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">E<span class="selector-pseudo">:not</span>(F)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="伪元素"><a class="markdownIt-Anchor" href="#伪元素"></a> 伪元素</h1>
-<ul>
-<li>
-<p><code>::first-letter</code></p>
-</li>
-<li>
-<p><code>::first-line</code></p>
-</li>
-<li>
-<p><code>::before</code>和<code>::after</code></p>
-</li>
-<li>
-<p><code>::selection</code></p>
-</li>
-</ul>
-<h1 id="属性选择器"><a class="markdownIt-Anchor" href="#属性选择器"></a> 属性选择器</h1>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>功能描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>E[attr]</td>
-<td>选择匹配具有属性attr的E元素</td>
-</tr>
-<tr>
-<td>E[attr=val]</td>
-<td>选择匹配具有属性attr的E元素，并且attr的属性值为val</td>
-</tr>
-<tr>
-<td>E[attr|=val]</td>
-<td>选择匹配E元素，并且E元素定义了属性attr,attr属性值是一个具有val或者val-开始的属性值。</td>
-</tr>
-<tr>
-<td>E[attr~=val]</td>
-<td>选择匹配E元素，并且E元素定义了属性attr,attr属性值具有多个空格分隔的值</td>
-</tr>
-<tr>
-<td>E[attr*=val]</td>
-<td>选择匹配E元素，并且E元素定义了属性attr,其属性值任意位置包含了val</td>
-</tr>
-<tr>
-<td>E[attr^=val]</td>
-<td>选择匹配E元素，并且E元素定义了属性attr,其属性是以val开头的任意字符串</td>
-</tr>
-<tr>
-<td>E[attr$=val]</td>
-<td>选择匹配E元素，并且E元素定义了属性attr,其属性值是以val结尾的任意字符串</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++的STL</title>
     <url>/2022/08/10/C-%E7%9A%84STL/</url>
     <content><![CDATA[<h2 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h2>
@@ -980,6 +718,268 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS选择器</title>
+    <url>/2023/03/26/CSS%E9%80%89%E6%8B%A9%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="css3选择器的分类"><a class="markdownIt-Anchor" href="#css3选择器的分类"></a> CSS3选择器的分类</h1>
+<ol>
+<li>
+<p>基础选择器</p>
+</li>
+<li>
+<p>层次选择器</p>
+</li>
+<li>
+<p>伪类选择器</p>
+</li>
+<li>
+<p>伪元素选择器</p>
+</li>
+<li>
+<p>属性选择器</p>
+</li>
+</ol>
+<h1 id="基础选择器"><a class="markdownIt-Anchor" href="#基础选择器"></a> 基础选择器</h1>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>通配选择器</td>
+</tr>
+<tr>
+<td>E</td>
+<td>标签选择器</td>
+</tr>
+<tr>
+<td>#id</td>
+<td>ID选择器</td>
+</tr>
+<tr>
+<td>.class</td>
+<td>类选择器</td>
+</tr>
+<tr>
+<td>selector1,selectorN</td>
+<td>群组选择器</td>
+</tr>
+</tbody>
+</table>
+<h1 id="层次选择器"><a class="markdownIt-Anchor" href="#层次选择器"></a> 层次选择器</h1>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X Y</td>
+<td>后代选择器</td>
+</tr>
+<tr>
+<td>X &gt; Y</td>
+<td>子选择器</td>
+</tr>
+<tr>
+<td>X + Y</td>
+<td>相邻兄弟选择器</td>
+</tr>
+<tr>
+<td>X ~ Y</td>
+<td>通用兄弟选择器</td>
+</tr>
+</tbody>
+</table>
+<h1 id="伪类选择器"><a class="markdownIt-Anchor" href="#伪类选择器"></a> 伪类选择器</h1>
+<h2 id="动态伪类选择器"><a class="markdownIt-Anchor" href="#动态伪类选择器"></a> 动态伪类选择器</h2>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E:link</td>
+<td>超链接伪类选择器</td>
+</tr>
+<tr>
+<td>E:visted</td>
+<td>超链接伪类选择器</td>
+</tr>
+<tr>
+<td>E:active</td>
+<td>用户行为伪类选择器</td>
+</tr>
+<tr>
+<td>E:hover</td>
+<td>用户行为伪类选择器</td>
+</tr>
+<tr>
+<td>E:focus</td>
+<td>用户行为伪类选择器</td>
+</tr>
+</tbody>
+</table>
+<h2 id="目标伪类选择器"><a class="markdownIt-Anchor" href="#目标伪类选择器"></a> 目标伪类选择器</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">#about:target&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="语言伪类选择器"><a class="markdownIt-Anchor" href="#语言伪类选择器"></a> 语言伪类选择器</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">E:lang(en)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ui元素状态伪类选择器"><a class="markdownIt-Anchor" href="#ui元素状态伪类选择器"></a> UI元素状态伪类选择器</h2>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E:checked</td>
+<td>选中状态伪类选择器</td>
+</tr>
+<tr>
+<td>E:checked</td>
+<td>启用状态伪类选择器</td>
+</tr>
+<tr>
+<td>E:disabled</td>
+<td>不可用状态伪类选择器</td>
+</tr>
+</tbody>
+</table>
+<h2 id="结构伪类选择器"><a class="markdownIt-Anchor" href="#结构伪类选择器"></a> 结构伪类选择器</h2>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E:first-child</td>
+<td>匹配父元素中包含的第一个名称为E的子元素，与E:nth-child(1)相同</td>
+</tr>
+<tr>
+<td>E:last-child</td>
+<td>匹配父元素中包含的最后一个名称为E的子元素，与E:nth-last-child(1)相同</td>
+</tr>
+<tr>
+<td>E:root</td>
+<td>选择匹配元素E所在文档的根元素</td>
+</tr>
+<tr>
+<td>E F:nth-child</td>
+<td>选择父元素E中所包含的第n个子元素F，其中n可以是整数(1、2、3)、关键字（even、odd）,也可以是公式（2n+1,-n+）</td>
+</tr>
+<tr>
+<td>E F:nth-last-child</td>
+<td>选择父元素E中所包含的倒数第n个子元素F</td>
+</tr>
+<tr>
+<td>E:nth-of-type(n)</td>
+<td>选择父元素中所包含的具有指定类型的第n个E元素</td>
+</tr>
+<tr>
+<td>E:nth-last-of-type(n)</td>
+<td>选择父元素中所包含的具有指定类型的倒数第n个元素</td>
+</tr>
+<tr>
+<td>E:first-of-type</td>
+<td>选择父元素中所包含的具体指定类型的第一个E元素，与E:nth-of-type(1)等同</td>
+</tr>
+<tr>
+<td>E:last-of-type</td>
+<td>选择父元素中所包含的具有指定类型的最后一个E元素，与E:nth-last-of-type(1)等同</td>
+</tr>
+<tr>
+<td>E:only-child</td>
+<td>选择父元素中所包含的唯一一个子元素E</td>
+</tr>
+<tr>
+<td>E:only-of-type</td>
+<td>选择父元素中所包含的唯一一个同类型的同级兄弟元素E</td>
+</tr>
+<tr>
+<td>E:empty</td>
+<td>选择不包含任何子元素的E元素，并且该元素也不包含任何文本节点</td>
+</tr>
+</tbody>
+</table>
+<h2 id="否定伪类选择器"><a class="markdownIt-Anchor" href="#否定伪类选择器"></a> 否定伪类选择器</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">E<span class="selector-pseudo">:not</span>(F)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="伪元素"><a class="markdownIt-Anchor" href="#伪元素"></a> 伪元素</h1>
+<ul>
+<li>
+<p><code>::first-letter</code></p>
+</li>
+<li>
+<p><code>::first-line</code></p>
+</li>
+<li>
+<p><code>::before</code>和<code>::after</code></p>
+</li>
+<li>
+<p><code>::selection</code></p>
+</li>
+</ul>
+<h1 id="属性选择器"><a class="markdownIt-Anchor" href="#属性选择器"></a> 属性选择器</h1>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E[attr]</td>
+<td>选择匹配具有属性attr的E元素</td>
+</tr>
+<tr>
+<td>E[attr=val]</td>
+<td>选择匹配具有属性attr的E元素，并且attr的属性值为val</td>
+</tr>
+<tr>
+<td>E[attr|=val]</td>
+<td>选择匹配E元素，并且E元素定义了属性attr,attr属性值是一个具有val或者val-开始的属性值。</td>
+</tr>
+<tr>
+<td>E[attr~=val]</td>
+<td>选择匹配E元素，并且E元素定义了属性attr,attr属性值具有多个空格分隔的值</td>
+</tr>
+<tr>
+<td>E[attr*=val]</td>
+<td>选择匹配E元素，并且E元素定义了属性attr,其属性值任意位置包含了val</td>
+</tr>
+<tr>
+<td>E[attr^=val]</td>
+<td>选择匹配E元素，并且E元素定义了属性attr,其属性是以val开头的任意字符串</td>
+</tr>
+<tr>
+<td>E[attr$=val]</td>
+<td>选择匹配E元素，并且E元素定义了属性attr,其属性值是以val结尾的任意字符串</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Django:快速入门介绍</title>
     <url>/2022/10/17/Django-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<h1 id="创建项目"><a class="markdownIt-Anchor" href="#创建项目"></a> 创建项目</h1>
@@ -1101,6 +1101,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Flask:蓝图</title>
+    <url>/2022/11/20/Flask-%E8%93%9D%E5%9B%BE/</url>
+    <content><![CDATA[<blockquote>
+<p>蓝图是一个储存操作方法的容器，当它注册到一个应用上后，这些操作就可以被调用。蓝图极大简化了大型应用的工作方式，并给Flask拓展提供了在应用上注册操作的核心方法。</p>
+</blockquote>
+<h1 id="创建蓝图"><a class="markdownIt-Anchor" href="#创建蓝图"></a> 创建蓝图</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Blueprint</span><br><span class="line"></span><br><span class="line">admin=Blueprint(<span class="string">&quot;admin&quot;</span>,__name__)</span><br><span class="line"><span class="meta">@admin.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&lt;h1&gt;admin&lt;/h1&gt;\n&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Blueprint</span><br><span class="line"></span><br><span class="line">home=Blueprint(<span class="string">&quot;home&quot;</span>,__name__)</span><br><span class="line"><span class="meta">@home.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&lt;h1&gt;home&lt;/h</span></span><br></pre></td></tr></table></figure>
+<h1 id="注册蓝图"><a class="markdownIt-Anchor" href="#注册蓝图"></a> 注册蓝图</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">```python</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> app.home <span class="keyword">import</span> home <span class="keyword">as</span> home_blueprint</span><br><span class="line"><span class="keyword">from</span> app.admin <span class="keyword">import</span> admin <span class="keyword">as</span> admin_blueprint</span><br><span class="line"></span><br><span class="line">app=Flask(__name__)</span><br><span class="line"></span><br><span class="line">app.register_blueprint(home_blueprint,url_prefix=<span class="string">&#x27;/home&#x27;</span>)</span><br><span class="line">app.register_blueprint(admin_blueprint,url_prefix=<span class="string">&#x27;/admin&#x27;</span>)</span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&lt;h1&gt;index&lt;/h1&gt;&quot;</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class=""></code></pre>
+]]></content>
+      <categories>
+        <category>网站开发</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>网站开发</tag>
+        <tag>Flask</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ES6:字符串的拓展</title>
     <url>/2023/04/01/ES6-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8B%93%E5%B1%95/</url>
     <content><![CDATA[<table>
@@ -1158,28 +1180,6 @@
       <tags>
         <tag>前端</tag>
         <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flask:蓝图</title>
-    <url>/2022/11/20/Flask-%E8%93%9D%E5%9B%BE/</url>
-    <content><![CDATA[<blockquote>
-<p>蓝图是一个储存操作方法的容器，当它注册到一个应用上后，这些操作就可以被调用。蓝图极大简化了大型应用的工作方式，并给Flask拓展提供了在应用上注册操作的核心方法。</p>
-</blockquote>
-<h1 id="创建蓝图"><a class="markdownIt-Anchor" href="#创建蓝图"></a> 创建蓝图</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Blueprint</span><br><span class="line"></span><br><span class="line">admin=Blueprint(<span class="string">&quot;admin&quot;</span>,__name__)</span><br><span class="line"><span class="meta">@admin.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&lt;h1&gt;admin&lt;/h1&gt;\n&quot;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Blueprint</span><br><span class="line"></span><br><span class="line">home=Blueprint(<span class="string">&quot;home&quot;</span>,__name__)</span><br><span class="line"><span class="meta">@home.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&lt;h1&gt;home&lt;/h</span></span><br></pre></td></tr></table></figure>
-<h1 id="注册蓝图"><a class="markdownIt-Anchor" href="#注册蓝图"></a> 注册蓝图</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">```python</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> app.home <span class="keyword">import</span> home <span class="keyword">as</span> home_blueprint</span><br><span class="line"><span class="keyword">from</span> app.admin <span class="keyword">import</span> admin <span class="keyword">as</span> admin_blueprint</span><br><span class="line"></span><br><span class="line">app=Flask(__name__)</span><br><span class="line"></span><br><span class="line">app.register_blueprint(home_blueprint,url_prefix=<span class="string">&#x27;/home&#x27;</span>)</span><br><span class="line">app.register_blueprint(admin_blueprint,url_prefix=<span class="string">&#x27;/admin&#x27;</span>)</span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&lt;h1&gt;index&lt;/h1&gt;&quot;</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
-<pre class="highlight"><code class=""></code></pre>
-]]></content>
-      <categories>
-        <category>网站开发</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>网站开发</tag>
-        <tag>Flask</tag>
       </tags>
   </entry>
   <entry>
@@ -1305,142 +1305,46 @@
       </tags>
   </entry>
   <entry>
-    <title>JSP:隐式对象</title>
-    <url>/2022/11/01/JSP-%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/</url>
-    <content><![CDATA[<blockquote>
+    <title>GCC编译器</title>
+    <url>/2023/03/02/GCC%E7%BC%96%E8%AF%91%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="第一次实验"><a class="markdownIt-Anchor" href="#第一次实验"></a> 第一次实验</h1>
+<p>编辑器下输入</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Welcome&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在终端中输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc test.c </span><br></pre></td></tr></table></figure>
+<p>生成a.out。如果加入选项<code>-o</code>进行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc test.c  -o out</span><br></pre></td></tr></table></figure>
+<p>后使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./out</span><br></pre></td></tr></table></figure>
+<h1 id="gcc选项"><a class="markdownIt-Anchor" href="#gcc选项"></a> GCC选项</h1>
+<p>GCC最基本的用法是：</p>
+<p><code>gcc [options] [filenames]</code></p>
+<p>其中options就是编译器所需的参数，filename给出相关的文件名称。</p>
 <ul>
-<li>JSP隐式对象是JSP容器为每个页面提供的Java对象，开发者可以直接使用它们而不用显式声明。JSP隐式对象也被称为预定义变量。</li>
+<li>
+<p>-c,只编译，不链接成为可执行文件，编译器只是由输出的.c等源代码文件生成的.o成为后缀的目标文件，通常用于编译不包含主程序的子程序文件。</p>
+</li>
+<li>
+<p>-o output_filename,确定输出文件的名称为output_filename,同时这个名称不能和源文件同名。如果不给出这个选项，GCC就给出预设的可执行文件a.out。</p>
+</li>
+<li>
+<p>-g，产生符号调试工具所必要的符号资讯，要想对源代码进行调试，就必须加入该选项。</p>
+</li>
+<li>
+<p>-O,对程序进行优化编译、链接，采用这个选项，整个源代码会在编译，链接过程中进行优化处理，这样产生的可执行文件的执行效率可以提高，但是编译、链接的速度就相应地要慢一些。</p>
+</li>
+<li>
+<p>-O2，比-O更好的优化编译、链接，但是整个编译、链接过程会更慢。</p>
+</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th><strong>对象</strong></th>
-<th><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>request</td>
-<td><strong>HttpServletRequest</strong> 接口的实例</td>
-</tr>
-<tr>
-<td>response</td>
-<td><strong>HttpServletResponse</strong> 接口的实例</td>
-</tr>
-<tr>
-<td>out</td>
-<td><strong>JspWriter</strong>类的实例，用于把结果输出至网页上</td>
-</tr>
-<tr>
-<td>session</td>
-<td><strong>HttpSession</strong>类的实例</td>
-</tr>
-<tr>
-<td>application</td>
-<td><strong>ServletContext</strong>类的实例，与应用上下文有关</td>
-</tr>
-<tr>
-<td>config</td>
-<td><strong>ServletConfig</strong>类的实例</td>
-</tr>
-<tr>
-<td>pageContext</td>
-<td><strong>PageContext</strong>类的实例，提供对JSP页面所有对象以及命名空间的访问</td>
-</tr>
-<tr>
-<td>page</td>
-<td>类似于Java类中的this关键字</td>
-</tr>
-<tr>
-<td>Exception</td>
-<td><strong>Exception</strong>类的对象，代表发生错误的JSP页面中对应的异常对象</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<h1 id="request-对象"><a class="markdownIt-Anchor" href="#request-对象"></a> request 对象</h1>
-<h2 id="常用方法"><a class="markdownIt-Anchor" href="#常用方法"></a> 常用方法</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">方法</th>
-<th style="text-align:left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Object getAttribute(String name)</td>
-<td style="text-align:left">返回指定属性的属性值</td>
-</tr>
-<tr>
-<td style="text-align:center">Enumeration getAttributeNames</td>
-<td style="text-align:left">返回所有可用属性名的枚举</td>
-</tr>
-<tr>
-<td style="text-align:center">String getCharaterEncoding</td>
-<td style="text-align:left">返回字符编码方式</td>
-</tr>
-<tr>
-<td style="text-align:center">int getContentLength()</td>
-<td style="text-align:left">返回请求体的字节数</td>
-</tr>
-<tr>
-<td style="text-align:center">String getContentType()</td>
-<td style="text-align:left">返回请求体的MIME类型</td>
-</tr>
-<tr>
-<td style="text-align:center">ServletInputStream getInputStream()</td>
-<td style="text-align:left">返回请求体的一行二进制流</td>
-</tr>
-<tr>
-<td style="text-align:center">String getParameter(String name)</td>
-<td style="text-align:left">返回name指定参数的参数值</td>
-</tr>
-<tr>
-<td style="text-align:center">Enumeration getParameterNames()</td>
-<td style="text-align:left">返回可用参数名的枚举</td>
-</tr>
-<tr>
-<td style="text-align:center">String[] getParameterValues(String name)</td>
-<td style="text-align:left">返回包含参数name的所有值的数组</td>
-</tr>
-<tr>
-<td style="text-align:center">String getProtocol()</td>
-<td style="text-align:left">返回请求用的协议类型及版本号</td>
-</tr>
-<tr>
-<td style="text-align:center">String getServerName()</td>
-<td style="text-align:left">返回接收请求的服务器主机名</td>
-</tr>
-<tr>
-<td style="text-align:center">int getServerPort()</td>
-<td style="text-align:left">返回服务器接收此请求的端口号</td>
-</tr>
-<tr>
-<td style="text-align:center">String getRemoteAddr()</td>
-<td style="text-align:left">返回发送此请求的客户端IP地址</td>
-</tr>
-<tr>
-<td style="text-align:center">String getRemoteHost()</td>
-<td style="text-align:left">返回发送此请求的客户端主机名</td>
-</tr>
-<tr>
-<td style="text-align:center">void setAttribute(String key,Obeject obj)</td>
-<td style="text-align:left">设置属性的属性值</td>
-</tr>
-<tr>
-<td style="text-align:center">String geRealPath(String path)</td>
-<td style="text-align:left">返回一虚拟路径的真实路径</td>
-</tr>
-</tbody>
-</table>
+<h1 id="警告"><a class="markdownIt-Anchor" href="#警告"></a> 警告</h1>
+<p>GCC包含完整的出错检查和警告提示功能。</p>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>编译器</category>
       </categories>
       <tags>
-        <tag>Java</tag>
-        <tag>网站</tag>
+        <tag>GCC</tag>
       </tags>
   </entry>
   <entry>
@@ -1671,57 +1575,142 @@
       </tags>
   </entry>
   <entry>
-    <title>GCC编译器</title>
-    <url>/2023/03/02/GCC%E7%BC%96%E8%AF%91%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="第一次实验"><a class="markdownIt-Anchor" href="#第一次实验"></a> 第一次实验</h1>
-<p>编辑器下输入</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Welcome&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后在终端中输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc test.c </span><br></pre></td></tr></table></figure>
-<p>生成a.out。如果加入选项<code>-o</code>进行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc test.c  -o out</span><br></pre></td></tr></table></figure>
-<p>后使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./out</span><br></pre></td></tr></table></figure>
-<h1 id="gcc选项"><a class="markdownIt-Anchor" href="#gcc选项"></a> GCC选项</h1>
-<p>GCC最基本的用法是：</p>
-<p><code>gcc [options] [filenames]</code></p>
-<p>其中options就是编译器所需的参数，filename给出相关的文件名称。</p>
+    <title>JSP:隐式对象</title>
+    <url>/2022/11/01/JSP-%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<blockquote>
 <ul>
-<li>
-<p>-c,只编译，不链接成为可执行文件，编译器只是由输出的.c等源代码文件生成的.o成为后缀的目标文件，通常用于编译不包含主程序的子程序文件。</p>
-</li>
-<li>
-<p>-o output_filename,确定输出文件的名称为output_filename,同时这个名称不能和源文件同名。如果不给出这个选项，GCC就给出预设的可执行文件a.out。</p>
-</li>
-<li>
-<p>-g，产生符号调试工具所必要的符号资讯，要想对源代码进行调试，就必须加入该选项。</p>
-</li>
-<li>
-<p>-O,对程序进行优化编译、链接，采用这个选项，整个源代码会在编译，链接过程中进行优化处理，这样产生的可执行文件的执行效率可以提高，但是编译、链接的速度就相应地要慢一些。</p>
-</li>
-<li>
-<p>-O2，比-O更好的优化编译、链接，但是整个编译、链接过程会更慢。</p>
-</li>
+<li>JSP隐式对象是JSP容器为每个页面提供的Java对象，开发者可以直接使用它们而不用显式声明。JSP隐式对象也被称为预定义变量。</li>
 </ul>
-<h1 id="警告"><a class="markdownIt-Anchor" href="#警告"></a> 警告</h1>
-<p>GCC包含完整的出错检查和警告提示功能。</p>
+<table>
+<thead>
+<tr>
+<th><strong>对象</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td><strong>HttpServletRequest</strong> 接口的实例</td>
+</tr>
+<tr>
+<td>response</td>
+<td><strong>HttpServletResponse</strong> 接口的实例</td>
+</tr>
+<tr>
+<td>out</td>
+<td><strong>JspWriter</strong>类的实例，用于把结果输出至网页上</td>
+</tr>
+<tr>
+<td>session</td>
+<td><strong>HttpSession</strong>类的实例</td>
+</tr>
+<tr>
+<td>application</td>
+<td><strong>ServletContext</strong>类的实例，与应用上下文有关</td>
+</tr>
+<tr>
+<td>config</td>
+<td><strong>ServletConfig</strong>类的实例</td>
+</tr>
+<tr>
+<td>pageContext</td>
+<td><strong>PageContext</strong>类的实例，提供对JSP页面所有对象以及命名空间的访问</td>
+</tr>
+<tr>
+<td>page</td>
+<td>类似于Java类中的this关键字</td>
+</tr>
+<tr>
+<td>Exception</td>
+<td><strong>Exception</strong>类的对象，代表发生错误的JSP页面中对应的异常对象</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h1 id="request-对象"><a class="markdownIt-Anchor" href="#request-对象"></a> request 对象</h1>
+<h2 id="常用方法"><a class="markdownIt-Anchor" href="#常用方法"></a> 常用方法</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Object getAttribute(String name)</td>
+<td style="text-align:left">返回指定属性的属性值</td>
+</tr>
+<tr>
+<td style="text-align:center">Enumeration getAttributeNames</td>
+<td style="text-align:left">返回所有可用属性名的枚举</td>
+</tr>
+<tr>
+<td style="text-align:center">String getCharaterEncoding</td>
+<td style="text-align:left">返回字符编码方式</td>
+</tr>
+<tr>
+<td style="text-align:center">int getContentLength()</td>
+<td style="text-align:left">返回请求体的字节数</td>
+</tr>
+<tr>
+<td style="text-align:center">String getContentType()</td>
+<td style="text-align:left">返回请求体的MIME类型</td>
+</tr>
+<tr>
+<td style="text-align:center">ServletInputStream getInputStream()</td>
+<td style="text-align:left">返回请求体的一行二进制流</td>
+</tr>
+<tr>
+<td style="text-align:center">String getParameter(String name)</td>
+<td style="text-align:left">返回name指定参数的参数值</td>
+</tr>
+<tr>
+<td style="text-align:center">Enumeration getParameterNames()</td>
+<td style="text-align:left">返回可用参数名的枚举</td>
+</tr>
+<tr>
+<td style="text-align:center">String[] getParameterValues(String name)</td>
+<td style="text-align:left">返回包含参数name的所有值的数组</td>
+</tr>
+<tr>
+<td style="text-align:center">String getProtocol()</td>
+<td style="text-align:left">返回请求用的协议类型及版本号</td>
+</tr>
+<tr>
+<td style="text-align:center">String getServerName()</td>
+<td style="text-align:left">返回接收请求的服务器主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">int getServerPort()</td>
+<td style="text-align:left">返回服务器接收此请求的端口号</td>
+</tr>
+<tr>
+<td style="text-align:center">String getRemoteAddr()</td>
+<td style="text-align:left">返回发送此请求的客户端IP地址</td>
+</tr>
+<tr>
+<td style="text-align:center">String getRemoteHost()</td>
+<td style="text-align:left">返回发送此请求的客户端主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">void setAttribute(String key,Obeject obj)</td>
+<td style="text-align:left">设置属性的属性值</td>
+</tr>
+<tr>
+<td style="text-align:center">String geRealPath(String path)</td>
+<td style="text-align:left">返回一虚拟路径的真实路径</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
-      <categories>
-        <category>编译器</category>
-      </categories>
-      <tags>
-        <tag>GCC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java:线程</title>
-    <url>/2022/11/22/Java-%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>Java</category>
       </categories>
       <tags>
         <tag>Java</tag>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -1801,8 +1790,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Java:输入/输出</title>
-    <url>/2022/11/22/Java-%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA/</url>
+    <title>Java:泛型与集合类</title>
+    <url>/2022/11/22/Java-%E6%B3%9B%E5%9E%8B%E4%B8%8E%E9%9B%86%E5%90%88%E7%B1%BB/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Java</category>
@@ -1812,30 +1801,25 @@
       </tags>
   </entry>
   <entry>
-    <title>K-means聚类算法筛实现鸢尾花聚类</title>
-    <url>/2022/11/04/K-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%AD%9B%E5%AE%9E%E7%8E%B0%E9%B8%A2%E5%B0%BE%E8%8A%B1%E8%81%9A%E7%B1%BB/</url>
-    <content><![CDATA[<blockquote>
-<p>K-means聚类算法筛实现鸢尾花聚类:对于给定的样本集，按照样本之间的距离大小，将样本集划分为K个簇，让簇内的点尽量紧密的连在一起，而让簇间的距离尽量的。聚类属于<strong>无监督算法</strong>，不必专门切分训练集与测试集</p>
-</blockquote>
-<h1 id="导入包"><a class="markdownIt-Anchor" href="#导入包"></a> 导入包</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans </span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets </span><br></pre></td></tr></table></figure>
-<h1 id="sklearndatasets中加载数据集"><a class="markdownIt-Anchor" href="#sklearndatasets中加载数据集"></a> sklearn.datasets中加载数据集</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 直接从sklearn中获取数据集</span></span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line">X = iris.data[:, :<span class="number">4</span>]    <span class="comment"># 表示我们取特征空间中的4个维度</span></span><br><span class="line"><span class="built_in">print</span>(X.shape)</span><br></pre></td></tr></table></figure>
-<h1 id="绘制二维数据分布图"><a class="markdownIt-Anchor" href="#绘制二维数据分布图"></a> 绘制二维数据分布图</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 取前两个维度（萼片长度、萼片宽度），绘制数据分布图</span></span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=<span class="string">&quot;red&quot;</span>, marker=<span class="string">&#x27;o&#x27;</span>, label=<span class="string">&#x27;see&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;sepal length&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;sepal width&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.show() </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="实例化k-means类并且定义训练函数"><a class="markdownIt-Anchor" href="#实例化k-means类并且定义训练函数"></a> 实例化K-means类，并且定义训练函数</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">Model</span>(<span class="params">n_clusters</span>):</span><br><span class="line">    estimator = KMeans(n_clusters=n_clusters)<span class="comment"># 构造聚类器</span></span><br><span class="line">    <span class="keyword">return</span> estimator</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">estimator</span>):</span><br><span class="line">    estimator.fit(X)  <span class="comment"># 聚类</span></span><br></pre></td></tr></table></figure>
-<h1 id="训练"><a class="markdownIt-Anchor" href="#训练"></a> 训练</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化实例，并开启训练拟合</span></span><br><span class="line">estimator=Model(<span class="number">3</span>)     </span><br><span class="line">train(estimator)   </span><br></pre></td></tr></table></figure>
-<h1 id="可视化展示"><a class="markdownIt-Anchor" href="#可视化展示"></a> 可视化展示</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label_pred = estimator.labels_  <span class="comment"># 获取聚类标签</span></span><br><span class="line"><span class="comment"># 绘制k-means结果</span></span><br><span class="line">x0 = X[label_pred == <span class="number">0</span>]</span><br><span class="line">x1 = X[label_pred == <span class="number">1</span>]</span><br><span class="line">x2 = X[label_pred == <span class="number">2</span>]</span><br><span class="line">plt.scatter(x0[:, <span class="number">0</span>], x0[:, <span class="number">1</span>], c=<span class="string">&quot;red&quot;</span>, marker=<span class="string">&#x27;o&#x27;</span>, label=<span class="string">&#x27;label0&#x27;</span>)</span><br><span class="line">plt.scatter(x1[:, <span class="number">0</span>], x1[:, <span class="number">1</span>], c=<span class="string">&quot;green&quot;</span>, marker=<span class="string">&#x27;*&#x27;</span>, label=<span class="string">&#x27;label1&#x27;</span>)</span><br><span class="line">plt.scatter(x2[:, <span class="number">0</span>], x2[:, <span class="number">1</span>], c=<span class="string">&quot;blue&quot;</span>, marker=<span class="string">&#x27;+&#x27;</span>, label=<span class="string">&#x27;label2&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;sepal length&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;sepal width&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.show() </span><br></pre></td></tr></table></figure>
-]]></content>
+    <title>Java:线程</title>
+    <url>/2022/11/22/Java-%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
-        <tag>人工智能</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java:输入/输出</title>
+    <url>/2022/11/22/Java-%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1886,14 +1870,72 @@
       </tags>
   </entry>
   <entry>
-    <title>Java:泛型与集合类</title>
-    <url>/2022/11/22/Java-%E6%B3%9B%E5%9E%8B%E4%B8%8E%E9%9B%86%E5%90%88%E7%B1%BB/</url>
-    <content><![CDATA[]]></content>
+    <title>K-means聚类算法筛实现鸢尾花聚类</title>
+    <url>/2022/11/04/K-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%AD%9B%E5%AE%9E%E7%8E%B0%E9%B8%A2%E5%B0%BE%E8%8A%B1%E8%81%9A%E7%B1%BB/</url>
+    <content><![CDATA[<blockquote>
+<p>K-means聚类算法筛实现鸢尾花聚类:对于给定的样本集，按照样本之间的距离大小，将样本集划分为K个簇，让簇内的点尽量紧密的连在一起，而让簇间的距离尽量的。聚类属于<strong>无监督算法</strong>，不必专门切分训练集与测试集</p>
+</blockquote>
+<h1 id="导入包"><a class="markdownIt-Anchor" href="#导入包"></a> 导入包</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans </span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets </span><br></pre></td></tr></table></figure>
+<h1 id="sklearndatasets中加载数据集"><a class="markdownIt-Anchor" href="#sklearndatasets中加载数据集"></a> sklearn.datasets中加载数据集</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 直接从sklearn中获取数据集</span></span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line">X = iris.data[:, :<span class="number">4</span>]    <span class="comment"># 表示我们取特征空间中的4个维度</span></span><br><span class="line"><span class="built_in">print</span>(X.shape)</span><br></pre></td></tr></table></figure>
+<h1 id="绘制二维数据分布图"><a class="markdownIt-Anchor" href="#绘制二维数据分布图"></a> 绘制二维数据分布图</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 取前两个维度（萼片长度、萼片宽度），绘制数据分布图</span></span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=<span class="string">&quot;red&quot;</span>, marker=<span class="string">&#x27;o&#x27;</span>, label=<span class="string">&#x27;see&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;sepal length&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;sepal width&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.show() </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="实例化k-means类并且定义训练函数"><a class="markdownIt-Anchor" href="#实例化k-means类并且定义训练函数"></a> 实例化K-means类，并且定义训练函数</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">Model</span>(<span class="params">n_clusters</span>):</span><br><span class="line">    estimator = KMeans(n_clusters=n_clusters)<span class="comment"># 构造聚类器</span></span><br><span class="line">    <span class="keyword">return</span> estimator</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">estimator</span>):</span><br><span class="line">    estimator.fit(X)  <span class="comment"># 聚类</span></span><br></pre></td></tr></table></figure>
+<h1 id="训练"><a class="markdownIt-Anchor" href="#训练"></a> 训练</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化实例，并开启训练拟合</span></span><br><span class="line">estimator=Model(<span class="number">3</span>)     </span><br><span class="line">train(estimator)   </span><br></pre></td></tr></table></figure>
+<h1 id="可视化展示"><a class="markdownIt-Anchor" href="#可视化展示"></a> 可视化展示</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label_pred = estimator.labels_  <span class="comment"># 获取聚类标签</span></span><br><span class="line"><span class="comment"># 绘制k-means结果</span></span><br><span class="line">x0 = X[label_pred == <span class="number">0</span>]</span><br><span class="line">x1 = X[label_pred == <span class="number">1</span>]</span><br><span class="line">x2 = X[label_pred == <span class="number">2</span>]</span><br><span class="line">plt.scatter(x0[:, <span class="number">0</span>], x0[:, <span class="number">1</span>], c=<span class="string">&quot;red&quot;</span>, marker=<span class="string">&#x27;o&#x27;</span>, label=<span class="string">&#x27;label0&#x27;</span>)</span><br><span class="line">plt.scatter(x1[:, <span class="number">0</span>], x1[:, <span class="number">1</span>], c=<span class="string">&quot;green&quot;</span>, marker=<span class="string">&#x27;*&#x27;</span>, label=<span class="string">&#x27;label1&#x27;</span>)</span><br><span class="line">plt.scatter(x2[:, <span class="number">0</span>], x2[:, <span class="number">1</span>], c=<span class="string">&quot;blue&quot;</span>, marker=<span class="string">&#x27;+&#x27;</span>, label=<span class="string">&#x27;label2&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;sepal length&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;sepal width&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.show() </span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
-        <category>Java</category>
+        <category>机器学习</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>机器学习</tag>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux C:内存管理</title>
+    <url>/2022/11/25/Linux-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h1 id="动态内存和静态内存"><a class="markdownIt-Anchor" href="#动态内存和静态内存"></a> 动态内存和静态内存</h1>
+<p>动态内存和静态内存分配方式不同</p>
+<ul>
+<li>
+<p>静态内存是在程序编译时候完成的，动态内存是在运行的</p>
+</li>
+<li>
+<p>静态内存是在栈上分配的，而动态内存是在堆上分配的</p>
+</li>
+</ul>
+<h1 id="内存管理基本操作"><a class="markdownIt-Anchor" href="#内存管理基本操作"></a> 内存管理基本操作</h1>
+<h2 id="分配内存"><a class="markdownIt-Anchor" href="#分配内存"></a> 分配内存</h2>
+<h3 id="malloc函数"><a class="markdownIt-Anchor" href="#malloc函数"></a> malloc()函数</h3>
+<p><code>void *malloc(unsigned int size)</code></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> *buffer;</span><br><span class="line">buffer=(<span class="type">long</span>*)<span class="built_in">malloc</span>(<span class="number">500</span>*<span class="keyword">sizeof</span>(<span class="type">long</span>));</span><br><span class="line"><span class="built_in">free</span>(buffer);</span><br></pre></td></tr></table></figure>
+<h3 id="realloc函数"><a class="markdownIt-Anchor" href="#realloc函数"></a> realloc()函数</h3>
+<p><code> void *realloc(void *men_address,unsigned int newsize)</code></p>
+<p>调整men_address所指的内存区域大小为newsize长度</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *p;</span><br><span class="line">p=(<span class="type">char</span>*)<span class="built_in">malloc</span>(<span class="number">100</span>*<span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line">p=(<span class="type">char</span>*)<span class="built_in">realloc</span>(p,<span class="number">200</span>*<span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line"><span class="built_in">free</span>(p); </span><br></pre></td></tr></table></figure>
+<h3 id="calloc函数"><a class="markdownIt-Anchor" href="#calloc函数"></a> calloc()函数</h3>
+<p>分配n个长度为size的内存快</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *p;</span><br><span class="line">p=(<span class="type">char</span>*)<span class="built_in">calloc</span>(<span class="number">200</span>,<span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line"><span class="built_in">free</span>(p);</span><br></pre></td></tr></table></figure>
+<h3 id="memset函数"><a class="markdownIt-Anchor" href="#memset函数"></a> memset()函数</h3>
+<p><code>void *memset(void *s,char ch,unsigned nn)</code></p>
+<p>设置s中所有的字节为ch,s的大小为n</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> s[]=<span class="string">&quot;hello world\n&quot;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line"><span class="built_in">memset</span>(s+<span class="number">6</span>,<span class="string">&#x27;*&#x27;</span>,<span class="number">5</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="释放内存"><a class="markdownIt-Anchor" href="#释放内存"></a> 释放内存</h2>
+<h2 id="free函数"><a class="markdownIt-Anchor" href="#free函数"></a> free()函数</h2>
+<p><code>void free(void *memblock)</code></p>
+<p>要释放的内存快</p>
+]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2454,45 +2496,37 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux C:内存管理</title>
-    <url>/2022/11/25/Linux-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<h1 id="动态内存和静态内存"><a class="markdownIt-Anchor" href="#动态内存和静态内存"></a> 动态内存和静态内存</h1>
-<p>动态内存和静态内存分配方式不同</p>
-<ul>
-<li>
-<p>静态内存是在程序编译时候完成的，动态内存是在运行的</p>
-</li>
-<li>
-<p>静态内存是在栈上分配的，而动态内存是在堆上分配的</p>
-</li>
-</ul>
-<h1 id="内存管理基本操作"><a class="markdownIt-Anchor" href="#内存管理基本操作"></a> 内存管理基本操作</h1>
-<h2 id="分配内存"><a class="markdownIt-Anchor" href="#分配内存"></a> 分配内存</h2>
-<h3 id="malloc函数"><a class="markdownIt-Anchor" href="#malloc函数"></a> malloc()函数</h3>
-<p><code>void *malloc(unsigned int size)</code></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> *buffer;</span><br><span class="line">buffer=(<span class="type">long</span>*)<span class="built_in">malloc</span>(<span class="number">500</span>*<span class="keyword">sizeof</span>(<span class="type">long</span>));</span><br><span class="line"><span class="built_in">free</span>(buffer);</span><br></pre></td></tr></table></figure>
-<h3 id="realloc函数"><a class="markdownIt-Anchor" href="#realloc函数"></a> realloc()函数</h3>
-<p><code> void *realloc(void *men_address,unsigned int newsize)</code></p>
-<p>调整men_address所指的内存区域大小为newsize长度</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *p;</span><br><span class="line">p=(<span class="type">char</span>*)<span class="built_in">malloc</span>(<span class="number">100</span>*<span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line">p=(<span class="type">char</span>*)<span class="built_in">realloc</span>(p,<span class="number">200</span>*<span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line"><span class="built_in">free</span>(p); </span><br></pre></td></tr></table></figure>
-<h3 id="calloc函数"><a class="markdownIt-Anchor" href="#calloc函数"></a> calloc()函数</h3>
-<p>分配n个长度为size的内存快</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *p;</span><br><span class="line">p=(<span class="type">char</span>*)<span class="built_in">calloc</span>(<span class="number">200</span>,<span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line"><span class="built_in">free</span>(p);</span><br></pre></td></tr></table></figure>
-<h3 id="memset函数"><a class="markdownIt-Anchor" href="#memset函数"></a> memset()函数</h3>
-<p><code>void *memset(void *s,char ch,unsigned nn)</code></p>
-<p>设置s中所有的字节为ch,s的大小为n</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> s[]=<span class="string">&quot;hello world\n&quot;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line"><span class="built_in">memset</span>(s+<span class="number">6</span>,<span class="string">&#x27;*&#x27;</span>,<span class="number">5</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="释放内存"><a class="markdownIt-Anchor" href="#释放内存"></a> 释放内存</h2>
-<h2 id="free函数"><a class="markdownIt-Anchor" href="#free函数"></a> free()函数</h2>
-<p><code>void free(void *memblock)</code></p>
-<p>要释放的内存快</p>
+    <title>OpenCV:图像处理</title>
+    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h1 id="颜色变换cvtcolor"><a class="markdownIt-Anchor" href="#颜色变换cvtcolor"></a> 颜色变换cvtColor</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt="" /></p>
+<h1 id="画基本图形"><a class="markdownIt-Anchor" href="#画基本图形"></a> 画基本图形</h1>
+<h2 id="画矩形"><a class="markdownIt-Anchor" href="#画矩形"></a> 画矩形</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画圆"><a class="markdownIt-Anchor" href="#画圆"></a> 画圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画椭圆"><a class="markdownIt-Anchor" href="#画椭圆"></a> 画椭圆</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ellipse</span>(<span class="params">img, center, axes, angle, startAngle, endAngle, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="画线段"><a class="markdownIt-Anchor" href="#画线段"></a> 画线段</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">line</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.line(img,[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">300</span>,<span class="number">200</span>],(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h1 id="画多边形"><a class="markdownIt-Anchor" href="#画多边形"></a> 画多边形</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">polylines</span>(<span class="params">img, pts, isClosed, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.polylines(img,[Pts],<span class="literal">True</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
+<h2 id="填充多边形"><a class="markdownIt-Anchor" href="#填充多边形"></a> 填充多边形</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fillPoly</span>(<span class="params">img, pts, color, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span>, offset=<span class="literal">None</span></span>): </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.fillPoly(img,[Pts],(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>C</category>
+        <category>Python</category>
       </categories>
       <tags>
-        <tag>C</tag>
-        <tag>Linux</tag>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
       </tags>
   </entry>
   <entry>
@@ -2983,40 +3017,6 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
-    <title>OpenCV:图像处理</title>
-    <url>/2022/09/12/OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1 id="颜色变换cvtcolor"><a class="markdownIt-Anchor" href="#颜色变换cvtcolor"></a> 颜色变换cvtColor</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)</span><br><span class="line">hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line">rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;hsv&quot;</span>,hsv_img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;RGB&quot;</span>,rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/09/12/i3HnX974xZhBYuT.png" alt="" /></p>
-<h1 id="画基本图形"><a class="markdownIt-Anchor" href="#画基本图形"></a> 画基本图形</h1>
-<h2 id="画矩形"><a class="markdownIt-Anchor" href="#画矩形"></a> 画矩形</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rectangle</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.rectangle(img,(<span class="number">100</span>,<span class="number">100</span>),(<span class="number">300</span>,<span class="number">400</span>),(<span class="number">255</span>,<span class="number">14</span>,<span class="number">65</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画圆"><a class="markdownIt-Anchor" href="#画圆"></a> 画圆</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">circle</span>(<span class="params">img, center, radius, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.circle(img,(<span class="number">300</span>,<span class="number">200</span>),<span class="number">100</span>,(<span class="number">155</span>,<span class="number">64</span>,<span class="number">240</span>),-<span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画椭圆"><a class="markdownIt-Anchor" href="#画椭圆"></a> 画椭圆</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ellipse</span>(<span class="params">img, center, axes, angle, startAngle, endAngle, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">img=cv2.ellipse(img,(<span class="number">100</span>,<span class="number">200</span>),(<span class="number">50</span>,<span class="number">20</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">360</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),-<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="画线段"><a class="markdownIt-Anchor" href="#画线段"></a> 画线段</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">line</span>(<span class="params">img, pt1, pt2, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.line(img,[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">300</span>,<span class="number">200</span>],(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h1 id="画多边形"><a class="markdownIt-Anchor" href="#画多边形"></a> 画多边形</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">polylines</span>(<span class="params">img, pts, isClosed, color, thickness=<span class="literal">None</span>, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span></span>):</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.polylines(img,[Pts],<span class="literal">True</span>,(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">6</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-<h2 id="填充多边形"><a class="markdownIt-Anchor" href="#填充多边形"></a> 填充多边形</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fillPoly</span>(<span class="params">img, pts, color, lineType=<span class="literal">None</span>, shift=<span class="literal">None</span>, offset=<span class="literal">None</span></span>): </span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">&#x27;pic.png&#x27;</span>)</span><br><span class="line">Pts=np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]],np.int32)</span><br><span class="line">img=cv2.fillPoly(img,[Pts],(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line">cv2.imshow(<span class="string">&quot;1&quot;</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyWindow()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python爬虫：爬取豆瓣电影榜Top250</title>
     <url>/2022/08/16/Python%E7%88%AC%E8%99%AB%EF%BC%9A%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%A6%9CTop250/</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
@@ -3226,80 +3226,6 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
       </tags>
   </entry>
   <entry>
-    <title>STM32F1软件仿真</title>
-    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
-    <content><![CDATA[<blockquote>
-<p>MDK 的一个强大的功能就是提供软件仿真，通过软件仿真，我们可以发现很多将要出现<br />
-的问题，避免了下载到 STM32 里面来查这些错误，这样最大的好处是能很方便的检查程序存<br />
-在的问题，因为在 MDK 的仿真下面，你可以查看很多硬件相关的寄存器，通过观察这些寄存<br />
-器，你可以知道代码是不是真正有效。另外一个优点是不必频繁的刷机，从而延长了 STM32<br />
-的 FLASH 寿命（STM32 的 FLASH 寿命≥1W 次）。当然，软件仿真不是万能的，很多问题还<br />
-是要到在线调试才能发现。</p>
-</blockquote>
-<h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
-<p>如下图</p>
-<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
-<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
-<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
-编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：***DARMSTM.DLL ****</p>
-<p>和 <strong>TARMSTM.DLL</strong>，</p>
-<p>Parameter 均为：</p>
-<pre><code>-pSTM32F103ZE
-</code></pre>
-<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
-<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
-<p><img src="https://s2.loli.net/2022/10/09/86fWKslAZo7QOhR.png" alt="" /></p>
-<h1 id="开始仿真"><a class="markdownIt-Anchor" href="#开始仿真"></a> 开始仿真</h1>
-<p>我们点击<img src="https://s2.loli.net/2022/10/15/nRefBgi2JPs3odS.png" alt="" />开始仿真,进入仿真界面</p>
-<p><img src="https://s2.loli.net/2022/10/15/RQgjkE3pmd9KbaG.png" alt="" /></p>
-<h2 id="debug工具条"><a class="markdownIt-Anchor" href="#debug工具条"></a> Debug工具条</h2>
-<p><img src="https://s2.loli.net/2022/10/15/unwMt8CkGZXRqrU.png" alt="" /></p>
-<ul>
-<li>
-<p>复位：相当于硬件复位按键，从头开始</p>
-</li>
-<li>
-<p>执行到断点处：该按钮用来快速执行到断点处</p>
-</li>
-<li>
-<p>挂起：可以使程序停止下来，<br />
-进入到单步调试状态</p>
-</li>
-<li>
-<p>执行进去：实现执行到某个函数里面去的功能，在没有函数的情况下，是等同于执行过去按钮的</p>
-</li>
-<li>
-<p>执行过去：在碰到有函数的地方，通过该按钮就可以单步执行过这个函数，而不进入这个函数单步执行</p>
-</li>
-<li>
-<p>执行出去：该按钮是在进入了函数单步调试的时候，有时候你可能不必再执行该函数的剩余部分了，通过该按钮就直接一步执行完函数余下的部分，并跳出函数，回到函数被调用的位置。</p>
-</li>
-<li>
-<p>执行到光标处：可以迅速的使程序运行到光标处，其实是挺像执行到断点处按钮功能，但是两者是有区别的，断点可以有多个，但是光标所在处只有一个。</p>
-</li>
-<li>
-<p>汇编窗口：可以查看汇编代码，这对分析程序很有用。</p>
-</li>
-<li>
-<p>观看变量/堆栈窗口：显示变量的窗口，在里面可以查看各种你想要看的变量值，也是很常用的一个调试窗口。</p>
-</li>
-<li>
-<p>性能分析窗口：观看各个函数执行时间和所占百分比的窗口，用来分析函数的性能</p>
-</li>
-<li>
-<p>逻辑分析窗口：按下该按钮会弹出一个逻辑分析窗口，通过 SETUP 按钮新建一些 IO 口，就可以观察这些 IO 口的电平变化情况，以多种形式显示出来，比较直观。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>STM32</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>嵌入式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Requests:登录课程平台</title>
     <url>/2022/10/07/Requests-%E7%99%BB%E5%BD%95%E8%AF%BE%E7%A8%8B%E5%B9%B3%E5%8F%B0/</url>
     <content><![CDATA[]]></content>
@@ -3382,8 +3308,82 @@ CV_EVENT_FLAG_ALTKEY    =32   //按住ALT拖拽<br />
         <category>STM32</category>
       </categories>
       <tags>
-        <tag>STM32</tag>
         <tag>嵌入式</tag>
+        <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32F1软件仿真</title>
+    <url>/2022/09/23/STM32F1%E8%BD%AF%E4%BB%B6%E4%BB%BF%E7%9C%9F/</url>
+    <content><![CDATA[<blockquote>
+<p>MDK 的一个强大的功能就是提供软件仿真，通过软件仿真，我们可以发现很多将要出现<br />
+的问题，避免了下载到 STM32 里面来查这些错误，这样最大的好处是能很方便的检查程序存<br />
+在的问题，因为在 MDK 的仿真下面，你可以查看很多硬件相关的寄存器，通过观察这些寄存<br />
+器，你可以知道代码是不是真正有效。另外一个优点是不必频繁的刷机，从而延长了 STM32<br />
+的 FLASH 寿命（STM32 的 FLASH 寿命≥1W 次）。当然，软件仿真不是万能的，很多问题还<br />
+是要到在线调试才能发现。</p>
+</blockquote>
+<h1 id="检查配置"><a class="markdownIt-Anchor" href="#检查配置"></a> 检查配置</h1>
+<p>如下图</p>
+<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
+<h1 id="debug-选项卡"><a class="markdownIt-Anchor" href="#debug-选项卡"></a> Debug 选项卡</h1>
+<p>Use Simulator，即使用软件仿真。选择：Run to main()，即跳过汇<br />
+编代码，直接跳转到 main 函数开始仿真。设置下方的：Dialog DLL 分别为：***DARMSTM.DLL ****</p>
+<p>和 <strong>TARMSTM.DLL</strong>，</p>
+<p>Parameter 均为：</p>
+<pre><code>-pSTM32F103ZE
+</code></pre>
+<p>，用于设置支持 STM32F103ZE 的软硬件仿真（即可以通过Peripherals 选择对应外设的对话框观察仿真结果）。最后点击 OK，完成设置。</p>
+<p><img src="https://s2.loli.net/2022/10/09/iAeBsQdEHIbORKn.png" alt="" /></p>
+<p><img src="https://s2.loli.net/2022/10/09/86fWKslAZo7QOhR.png" alt="" /></p>
+<h1 id="开始仿真"><a class="markdownIt-Anchor" href="#开始仿真"></a> 开始仿真</h1>
+<p>我们点击<img src="https://s2.loli.net/2022/10/15/nRefBgi2JPs3odS.png" alt="" />开始仿真,进入仿真界面</p>
+<p><img src="https://s2.loli.net/2022/10/15/RQgjkE3pmd9KbaG.png" alt="" /></p>
+<h2 id="debug工具条"><a class="markdownIt-Anchor" href="#debug工具条"></a> Debug工具条</h2>
+<p><img src="https://s2.loli.net/2022/10/15/unwMt8CkGZXRqrU.png" alt="" /></p>
+<ul>
+<li>
+<p>复位：相当于硬件复位按键，从头开始</p>
+</li>
+<li>
+<p>执行到断点处：该按钮用来快速执行到断点处</p>
+</li>
+<li>
+<p>挂起：可以使程序停止下来，<br />
+进入到单步调试状态</p>
+</li>
+<li>
+<p>执行进去：实现执行到某个函数里面去的功能，在没有函数的情况下，是等同于执行过去按钮的</p>
+</li>
+<li>
+<p>执行过去：在碰到有函数的地方，通过该按钮就可以单步执行过这个函数，而不进入这个函数单步执行</p>
+</li>
+<li>
+<p>执行出去：该按钮是在进入了函数单步调试的时候，有时候你可能不必再执行该函数的剩余部分了，通过该按钮就直接一步执行完函数余下的部分，并跳出函数，回到函数被调用的位置。</p>
+</li>
+<li>
+<p>执行到光标处：可以迅速的使程序运行到光标处，其实是挺像执行到断点处按钮功能，但是两者是有区别的，断点可以有多个，但是光标所在处只有一个。</p>
+</li>
+<li>
+<p>汇编窗口：可以查看汇编代码，这对分析程序很有用。</p>
+</li>
+<li>
+<p>观看变量/堆栈窗口：显示变量的窗口，在里面可以查看各种你想要看的变量值，也是很常用的一个调试窗口。</p>
+</li>
+<li>
+<p>性能分析窗口：观看各个函数执行时间和所占百分比的窗口，用来分析函数的性能</p>
+</li>
+<li>
+<p>逻辑分析窗口：按下该按钮会弹出一个逻辑分析窗口，通过 SETUP 按钮新建一些 IO 口，就可以观察这些 IO 口的电平变化情况，以多种形式显示出来，比较直观。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>嵌入式</tag>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -3465,8 +3465,8 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
         <category>STM32</category>
       </categories>
       <tags>
-        <tag>STM32</tag>
         <tag>嵌入式</tag>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -3479,123 +3479,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </categories>
       <tags>
         <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Springboot:第一个项目</title>
-    <url>/2022/12/17/Springboot-%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="idea专业版创建项目"><a class="markdownIt-Anchor" href="#idea专业版创建项目"></a> IDEA专业版创建项目</h1>
-<p><img src="https://s2.loli.net/2022/12/17/rlEMdvU1xaDP9Qn.jpg" alt="" /></p>
-<p><img src="https://s2.loli.net/2022/12/17/PFKIZOtpB3JXqem.jpg" alt="" /></p>
-<h1 id="项目结构"><a class="markdownIt-Anchor" href="#项目结构"></a> 项目结构</h1>
-<p>Spring Boot的基础结构有3个主要目录</p>
-<ul>
-<li>
-<p>src/main/java:程序开发以及主程序目录</p>
-</li>
-<li>
-<p>src/main/resourse:配置文件和资源文件目录</p>
-</li>
-<li>
-<p>src/test/java:测试程序目录</p>
-</li>
-</ul>
-<h2 id="建议目录"><a class="markdownIt-Anchor" href="#建议目录"></a> 建议目录</h2>
-<p><img src="https://s2.loli.net/2022/12/17/iMvfE7wqtHjz3dU.jpg" alt="" /></p>
-<h3 id="java根目录"><a class="markdownIt-Anchor" href="#java根目录"></a> java根目录</h3>
-<ul>
-<li>
-<p>Application.java:建议放在根目录下，是项目的启动类</p>
-</li>
-<li>
-<p>comm:建议放置公共类，如全局的配置文件、工具类</p>
-</li>
-<li>
-<p>models:主要用于实体(Entity)</p>
-</li>
-<li>
-<p>repository:主要是数据库访问层代码</p>
-</li>
-<li>
-<p>service:主要是业务类代码</p>
-</li>
-</ul>
-<h3 id="resources目录"><a class="markdownIt-Anchor" href="#resources目录"></a> resources目录</h3>
-<ul>
-<li>
-<p>static:存在Web访问的静态资源，如JS、CSS、图片</p>
-</li>
-<li>
-<p>templates:存放项目页面</p>
-</li>
-<li>
-<p>appplication.properties:存放项目配置信息</p>
-</li>
-</ul>
-<h1 id="pomxml详解"><a class="markdownIt-Anchor" href="#pomxml详解"></a> pom.xml详解</h1>
-<p>Spring Boot项目根目录下的pom.xml是Maven项目中非常重要的配置文件，主要描述项目包的依赖和项目构建时的配置。</p>
-<h2 id="项目的描述信息"><a class="markdownIt-Anchor" href="#项目的描述信息"></a> 项目的描述信息</h2>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span>       </span><br><span class="line"><span class="tag">&lt;<span class="name">packageing</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packageing</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>groupId:项目的包路径</p>
-</li>
-<li>
-<p>artifactId:项目名称</p>
-</li>
-<li>
-<p>version:项目版本号</p>
-</li>
-<li>
-<p>packageing:一般有jar、war两个值</p>
-</li>
-<li>
-<p>name:项目名称</p>
-</li>
-<li>
-<p>description：项目描述</p>
-</li>
-</ul>
-<h2 id="项目的依赖配置信息"><a class="markdownIt-Anchor" href="#项目的依赖配置信息"></a> 项目的依赖配置信息</h2>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">name</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">description</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>17<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>parent:配置父级项目的信息。Maven支持项目的父子结构，引入后会默认继承父级的配置。</p>
-</li>
-<li>
-<p>depencies:配置项目所需的依赖包，SpringBoot体系内的依赖组件不需要填写版本号，spring-boot-starter-parent维护了体系内所有依赖包的版本信息</p>
-</li>
-</ul>
-<h2 id="构建时需要的公共变量"><a class="markdownIt-Anchor" href="#构建时需要的公共变量"></a> 构建时需要的公共变量</h2>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>17<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="构建配置"><a class="markdownIt-Anchor" href="#构建配置"></a> 构建配置</h1>
-<p>此部分为构建配置，这里使用Maven构建Springboot,所以必须在<code>&lt;plugins&gt;</code>中添加<code>spring-boot-maven-plugin</code>插件，它能够使Maven的方式为应用SpringBoot支持。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上面配置<code>spring-boot-maven-plugin</code>构建插件，将springboot应用打包为可执行的Jar或War文件，然后以简单的方式运行Springboot应用。</p>
-<h1 id="第一个helloworld程序"><a class="markdownIt-Anchor" href="#第一个helloworld程序"></a> 第一个helloworld程序</h1>
-<p>我们在controller下创建HelloController.java</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloController</span> &#123;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello springframework&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="单元测试"><a class="markdownIt-Anchor" href="#单元测试"></a> 单元测试</h1>
-<p>单元测试在日常项目开发中必不可少，Springboot提供了完善的单元测试框架和工具用于测试开发的应用。</p>
-<h2 id="spring-boot集成单元测试"><a class="markdownIt-Anchor" href="#spring-boot集成单元测试"></a> Spring Boot集成单元测试</h2>
-<p>单元测试主要用于测试单个代码组件</p>
-<h3 id="引入依赖"><a class="markdownIt-Anchor" href="#引入依赖"></a> 引入依赖</h3>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="创建单元测试"><a class="markdownIt-Anchor" href="#创建单元测试"></a> 创建单元测试</h3>
-<p>在src/test目录下新建一个HelloTest类。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DemoApplicationTests</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">contextLoads</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="运行单元测试"><a class="markdownIt-Anchor" href="#运行单元测试"></a> 运行单元测试</h3>
-<p><img src="https://s2.loli.net/2022/12/18/iS7b2vBpQ5fwHFh.jpg" alt="" /></p>
-<h2 id="测试service方法"><a class="markdownIt-Anchor" href="#测试service方法"></a> 测试Service方法</h2>
-<h3 id="创建service测试类"><a class="markdownIt-Anchor" href="#创建service测试类"></a> 创建Service测试类</h3>
-<p>一般使用Spring Boot进行单元测试主要针对Service和API进行。</p>
-]]></content>
-      <categories>
-        <category>SpringBoot</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>SpringBoot</tag>
       </tags>
   </entry>
   <entry>
@@ -3867,6 +3750,123 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
+    <title>Springboot:第一个项目</title>
+    <url>/2022/12/17/Springboot-%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="idea专业版创建项目"><a class="markdownIt-Anchor" href="#idea专业版创建项目"></a> IDEA专业版创建项目</h1>
+<p><img src="https://s2.loli.net/2022/12/17/rlEMdvU1xaDP9Qn.jpg" alt="" /></p>
+<p><img src="https://s2.loli.net/2022/12/17/PFKIZOtpB3JXqem.jpg" alt="" /></p>
+<h1 id="项目结构"><a class="markdownIt-Anchor" href="#项目结构"></a> 项目结构</h1>
+<p>Spring Boot的基础结构有3个主要目录</p>
+<ul>
+<li>
+<p>src/main/java:程序开发以及主程序目录</p>
+</li>
+<li>
+<p>src/main/resourse:配置文件和资源文件目录</p>
+</li>
+<li>
+<p>src/test/java:测试程序目录</p>
+</li>
+</ul>
+<h2 id="建议目录"><a class="markdownIt-Anchor" href="#建议目录"></a> 建议目录</h2>
+<p><img src="https://s2.loli.net/2022/12/17/iMvfE7wqtHjz3dU.jpg" alt="" /></p>
+<h3 id="java根目录"><a class="markdownIt-Anchor" href="#java根目录"></a> java根目录</h3>
+<ul>
+<li>
+<p>Application.java:建议放在根目录下，是项目的启动类</p>
+</li>
+<li>
+<p>comm:建议放置公共类，如全局的配置文件、工具类</p>
+</li>
+<li>
+<p>models:主要用于实体(Entity)</p>
+</li>
+<li>
+<p>repository:主要是数据库访问层代码</p>
+</li>
+<li>
+<p>service:主要是业务类代码</p>
+</li>
+</ul>
+<h3 id="resources目录"><a class="markdownIt-Anchor" href="#resources目录"></a> resources目录</h3>
+<ul>
+<li>
+<p>static:存在Web访问的静态资源，如JS、CSS、图片</p>
+</li>
+<li>
+<p>templates:存放项目页面</p>
+</li>
+<li>
+<p>appplication.properties:存放项目配置信息</p>
+</li>
+</ul>
+<h1 id="pomxml详解"><a class="markdownIt-Anchor" href="#pomxml详解"></a> pom.xml详解</h1>
+<p>Spring Boot项目根目录下的pom.xml是Maven项目中非常重要的配置文件，主要描述项目包的依赖和项目构建时的配置。</p>
+<h2 id="项目的描述信息"><a class="markdownIt-Anchor" href="#项目的描述信息"></a> 项目的描述信息</h2>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span>       </span><br><span class="line"><span class="tag">&lt;<span class="name">packageing</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packageing</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>groupId:项目的包路径</p>
+</li>
+<li>
+<p>artifactId:项目名称</p>
+</li>
+<li>
+<p>version:项目版本号</p>
+</li>
+<li>
+<p>packageing:一般有jar、war两个值</p>
+</li>
+<li>
+<p>name:项目名称</p>
+</li>
+<li>
+<p>description：项目描述</p>
+</li>
+</ul>
+<h2 id="项目的依赖配置信息"><a class="markdownIt-Anchor" href="#项目的依赖配置信息"></a> 项目的依赖配置信息</h2>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">name</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">description</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>17<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>parent:配置父级项目的信息。Maven支持项目的父子结构，引入后会默认继承父级的配置。</p>
+</li>
+<li>
+<p>depencies:配置项目所需的依赖包，SpringBoot体系内的依赖组件不需要填写版本号，spring-boot-starter-parent维护了体系内所有依赖包的版本信息</p>
+</li>
+</ul>
+<h2 id="构建时需要的公共变量"><a class="markdownIt-Anchor" href="#构建时需要的公共变量"></a> 构建时需要的公共变量</h2>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>17<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="构建配置"><a class="markdownIt-Anchor" href="#构建配置"></a> 构建配置</h1>
+<p>此部分为构建配置，这里使用Maven构建Springboot,所以必须在<code>&lt;plugins&gt;</code>中添加<code>spring-boot-maven-plugin</code>插件，它能够使Maven的方式为应用SpringBoot支持。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上面配置<code>spring-boot-maven-plugin</code>构建插件，将springboot应用打包为可执行的Jar或War文件，然后以简单的方式运行Springboot应用。</p>
+<h1 id="第一个helloworld程序"><a class="markdownIt-Anchor" href="#第一个helloworld程序"></a> 第一个helloworld程序</h1>
+<p>我们在controller下创建HelloController.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloController</span> &#123;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello springframework&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="单元测试"><a class="markdownIt-Anchor" href="#单元测试"></a> 单元测试</h1>
+<p>单元测试在日常项目开发中必不可少，Springboot提供了完善的单元测试框架和工具用于测试开发的应用。</p>
+<h2 id="spring-boot集成单元测试"><a class="markdownIt-Anchor" href="#spring-boot集成单元测试"></a> Spring Boot集成单元测试</h2>
+<p>单元测试主要用于测试单个代码组件</p>
+<h3 id="引入依赖"><a class="markdownIt-Anchor" href="#引入依赖"></a> 引入依赖</h3>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建单元测试"><a class="markdownIt-Anchor" href="#创建单元测试"></a> 创建单元测试</h3>
+<p>在src/test目录下新建一个HelloTest类。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DemoApplicationTests</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">contextLoads</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="运行单元测试"><a class="markdownIt-Anchor" href="#运行单元测试"></a> 运行单元测试</h3>
+<p><img src="https://s2.loli.net/2022/12/18/iS7b2vBpQ5fwHFh.jpg" alt="" /></p>
+<h2 id="测试service方法"><a class="markdownIt-Anchor" href="#测试service方法"></a> 测试Service方法</h2>
+<h3 id="创建service测试类"><a class="markdownIt-Anchor" href="#创建service测试类"></a> 创建Service测试类</h3>
+<p>一般使用Spring Boot进行单元测试主要针对Service和API进行。</p>
+]]></content>
+      <categories>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>jQuery整理</title>
     <url>/2022/12/29/jQuery%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<h1 id="jquery导入"><a class="markdownIt-Anchor" href="#jquery导入"></a> jQuery导入</h1>
@@ -4038,43 +4038,6 @@ Include Paths 右边的按钮。弹出一个添加 path 的对话框，然后我
       </tags>
   </entry>
   <entry>
-    <title>matplotlib的使用</title>
-    <url>/2022/11/20/matplotlib%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="单一数据的可视化"><a class="markdownIt-Anchor" href="#单一数据的可视化"></a> 单一数据的可视化</h1>
-<h2 id="在图表中绘制数据"><a class="markdownIt-Anchor" href="#在图表中绘制数据"></a> 在图表中绘制数据</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">2</span>*np.pi)</span><br><span class="line">y=np.sin(x)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<h2 id="设置图表的显示范围"><a class="markdownIt-Anchor" href="#设置图表的显示范围"></a> 设置图表的显示范围</h2>
-<p>使用matplotlib.pylot绘制图表时，自动设置图表的显示范围</p>
-<p>当然有时候可以使用<code>matplotlib.pylot.xlim([])</code>来指定范围</p>
-<blockquote>
-<p>plt.ylim([0,5])<br />
-plt.xlim([0,np.pi])</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">2</span>*np.pi)</span><br><span class="line">y=np.sin(x)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.ylim([<span class="number">0</span>,<span class="number">5</span>])</span><br><span class="line">plt.xlim([<span class="number">0</span>,np.pi])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<h2 id="设置图表元素的名称"><a class="markdownIt-Anchor" href="#设置图表元素的名称"></a> 设置图表元素的名称</h2>
-<blockquote>
-<p>plt.xlabel(“x-axis”)<br />
-plt.ylabel(</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">2</span>*np.pi)</span><br><span class="line">y=np.sin(x)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.title(<span class="string">&quot;sin&quot;</span>)</span><br><span class="line">plt.ylim([<span class="number">0</span>,<span class="number">5</span>])</span><br><span class="line">plt.xlabel(<span class="string">&quot;x-axis&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;y-axis&quot;</span>)</span><br><span class="line">plt.xlim([<span class="number">0</span>,np.pi])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<h2 id="在图表中显示网格"><a class="markdownIt-Anchor" href="#在图表中显示网格"></a> 在图表中显示网格</h2>
-<blockquote>
-<p>plt.grid(True)</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">2</span>*np.pi)</span><br><span class="line">y=np.sin(x)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.title(<span class="string">&quot;sin&quot;</span>)</span><br><span class="line">plt.ylim([<span class="number">0</span>,<span class="number">5</span>])</span><br><span class="line">plt.xlabel(<span class="string">&quot;x-axis&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;y-axis&quot;</span>)</span><br><span class="line">plt.xlim([<span class="number">0</span>,np.pi])</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<h2 id="在图表轴上设置刻度"><a class="markdownIt-Anchor" href="#在图表轴上设置刻度"></a> 在图表轴上设置刻度</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">2</span> * np.pi)</span><br><span class="line">y = np.sin(x)</span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.title(<span class="string">&quot;sin&quot;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&quot;x-axis&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;y-axis&quot;</span>)</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">positions = [<span class="number">0</span>, np.pi * <span class="number">0.5</span>, np.pi, np.pi * <span class="number">1.5</span>, np.pi * <span class="number">2</span>]</span><br><span class="line">labes = [<span class="string">&quot;0&quot;</span>, <span class="string">&quot;90&quot;</span>, <span class="string">&quot;180&quot;</span>, <span class="string">&quot;270&quot;</span>, <span class="string">&quot;360&quot;</span>]</span><br><span class="line">plt.xticks(positions, labes)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<h1 id="多个数据的可视化处理"><a class="markdownIt-Anchor" href="#多个数据的可视化处理"></a> 多个数据的可视化处理</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>requests库的使用</title>
     <url>/2022/08/13/requests%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="请求"><a class="markdownIt-Anchor" href="#请求"></a> 请求</h2>
@@ -4118,15 +4081,40 @@ plt.ylabel(</p>
       </tags>
   </entry>
   <entry>
-    <title>使用Python和NumPy构建神经网络模型</title>
-    <url>/2022/09/26/%E4%BD%BF%E7%94%A8Python%E5%92%8CNumPy%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[]]></content>
+    <title>matplotlib的使用</title>
+    <url>/2022/11/20/matplotlib%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="单一数据的可视化"><a class="markdownIt-Anchor" href="#单一数据的可视化"></a> 单一数据的可视化</h1>
+<h2 id="在图表中绘制数据"><a class="markdownIt-Anchor" href="#在图表中绘制数据"></a> 在图表中绘制数据</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">2</span>*np.pi)</span><br><span class="line">y=np.sin(x)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h2 id="设置图表的显示范围"><a class="markdownIt-Anchor" href="#设置图表的显示范围"></a> 设置图表的显示范围</h2>
+<p>使用matplotlib.pylot绘制图表时，自动设置图表的显示范围</p>
+<p>当然有时候可以使用<code>matplotlib.pylot.xlim([])</code>来指定范围</p>
+<blockquote>
+<p>plt.ylim([0,5])<br />
+plt.xlim([0,np.pi])</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">2</span>*np.pi)</span><br><span class="line">y=np.sin(x)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.ylim([<span class="number">0</span>,<span class="number">5</span>])</span><br><span class="line">plt.xlim([<span class="number">0</span>,np.pi])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h2 id="设置图表元素的名称"><a class="markdownIt-Anchor" href="#设置图表元素的名称"></a> 设置图表元素的名称</h2>
+<blockquote>
+<p>plt.xlabel(“x-axis”)<br />
+plt.ylabel(</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">2</span>*np.pi)</span><br><span class="line">y=np.sin(x)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.title(<span class="string">&quot;sin&quot;</span>)</span><br><span class="line">plt.ylim([<span class="number">0</span>,<span class="number">5</span>])</span><br><span class="line">plt.xlabel(<span class="string">&quot;x-axis&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;y-axis&quot;</span>)</span><br><span class="line">plt.xlim([<span class="number">0</span>,np.pi])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h2 id="在图表中显示网格"><a class="markdownIt-Anchor" href="#在图表中显示网格"></a> 在图表中显示网格</h2>
+<blockquote>
+<p>plt.grid(True)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x=np.linspace(<span class="number">0</span>,<span class="number">2</span>*np.pi)</span><br><span class="line">y=np.sin(x)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.title(<span class="string">&quot;sin&quot;</span>)</span><br><span class="line">plt.ylim([<span class="number">0</span>,<span class="number">5</span>])</span><br><span class="line">plt.xlabel(<span class="string">&quot;x-axis&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;y-axis&quot;</span>)</span><br><span class="line">plt.xlim([<span class="number">0</span>,np.pi])</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h2 id="在图表轴上设置刻度"><a class="markdownIt-Anchor" href="#在图表轴上设置刻度"></a> 在图表轴上设置刻度</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">2</span> * np.pi)</span><br><span class="line">y = np.sin(x)</span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.title(<span class="string">&quot;sin&quot;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&quot;x-axis&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;y-axis&quot;</span>)</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">positions = [<span class="number">0</span>, np.pi * <span class="number">0.5</span>, np.pi, np.pi * <span class="number">1.5</span>, np.pi * <span class="number">2</span>]</span><br><span class="line">labes = [<span class="string">&quot;0&quot;</span>, <span class="string">&quot;90&quot;</span>, <span class="string">&quot;180&quot;</span>, <span class="string">&quot;270&quot;</span>, <span class="string">&quot;360&quot;</span>]</span><br><span class="line">plt.xticks(positions, labes)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h1 id="多个数据的可视化处理"><a class="markdownIt-Anchor" href="#多个数据的可视化处理"></a> 多个数据的可视化处理</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
-        <category>人工智能</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>人工智能</tag>
       </tags>
   </entry>
   <entry>
@@ -4299,6 +4287,55 @@ plt.ylabel(</p>
       </tags>
   </entry>
   <entry>
+    <title>使用Python和NumPy构建神经网络模型</title>
+    <url>/2022/09/26/%E4%BD%BF%E7%94%A8Python%E5%92%8CNumPy%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>人工智能</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习Vue:第三天</title>
+    <url>/2023/03/14/%E5%AD%A6%E4%B9%A0Vue-%E7%AC%AC%E4%B8%89%E5%A4%A9/</url>
+    <content><![CDATA[<h1 id="事件处理"><a class="markdownIt-Anchor" href="#事件处理"></a> 事件处理</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>欢迎来到&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;showInfo(name)&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;showInfo(name)&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> vm=<span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">el</span>:<span class="string">&#x27;#demo&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">name</span>:<span class="string">&quot;Mars&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">            &#125;,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">methods</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="title function_">showInfo</span>(<span class="params">a</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="title function_">alert</span>(a)</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">  </span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="事件修饰符"><a class="markdownIt-Anchor" href="#事件修饰符"></a> 事件修饰符</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="vue中的事件修饰符"><a class="markdownIt-Anchor" href="#vue中的事件修饰符"></a> Vue中的事件修饰符</h2>
+<ol>
+<li>
+<p>prevent：阻止默认事件</p>
+</li>
+<li>
+<p>stop：阻止事件冒泡</p>
+</li>
+<li>
+<p>onece：事件只触发一次</p>
+</li>
+<li>
+<p>capture：使用事件的捕获模式</p>
+</li>
+<li>
+<p>self：只有self.target是当前操作的元素才触发事件</p>
+</li>
+<li>
+<p>passive：事件的默认行为立即执行，无需等待事件回调执行完毕</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>刷题笔记㈠</title>
     <url>/2022/08/11/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E3%88%A0/</url>
     <content><![CDATA[<h1 id="额感觉这很奇怪下次不写了"><a class="markdownIt-Anchor" href="#额感觉这很奇怪下次不写了"></a> <em>额，感觉这很奇怪，下次不写了</em></h1>
@@ -4348,6 +4385,33 @@ plt.ylabel(</p>
       </tags>
   </entry>
   <entry>
+    <title>学习Vue:第二天</title>
+    <url>/2023/03/11/%E5%AD%A6%E4%B9%A0Vue-%E7%AC%AC%E4%BA%8C%E5%A4%A9/</url>
+    <content><![CDATA[<h1 id="objectdefineproperty"><a class="markdownIt-Anchor" href="#objectdefineproperty"></a> Object.defineProperty</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">value</span>:<span class="string">&quot;男&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>无法枚举</p>
+<h1 id="enumerable配置项"><a class="markdownIt-Anchor" href="#enumerable配置项"></a> enumerable配置项</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">value</span>:<span class="string">&quot;男&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">enumerable</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="writable配置项"><a class="markdownIt-Anchor" href="#writable配置项"></a> writable配置项</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">value</span>:<span class="string">&quot;男&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">enumerable</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">writable</span>:<span class="literal">true</span></span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="configurable配置项"><a class="markdownIt-Anchor" href="#configurable配置项"></a> configurable配置项</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">value</span>:<span class="string">&quot;男&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">enumerable</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">writable</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">configurable</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="get配置项"><a class="markdownIt-Anchor" href="#get配置项"></a> get配置项</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> number=<span class="string">&quot;男&quot;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">get</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> number</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="set配置项"><a class="markdownIt-Anchor" href="#set配置项"></a> set配置项</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> number=<span class="string">&quot;男&quot;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">get</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> number</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">set</span>:<span class="keyword">function</span>(<span class="params">value</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;sex change&quot;</span>+value)</span></span><br><span class="line"><span class="language-javascript">            number = value</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="数据代理"><a class="markdownIt-Anchor" href="#数据代理"></a> 数据代理</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> obj=&#123;<span class="attr">x</span>:<span class="number">100</span>&#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> obj2=&#123;<span class="attr">y</span>:<span class="number">100</span>&#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(obj2,<span class="string">&#x27;x&#x27;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">get</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> obj.<span class="property">x</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">set</span>(<span class="params">value</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            obj.<span class="property">x</span>=value</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>学习Vue:第一天</title>
     <url>/2023/03/05/%E5%AD%A6%E4%B9%A0Vue-%E7%AC%AC%E4%B8%80%E5%A4%A9/</url>
     <content><![CDATA[<h1 id="hello案例"><a class="markdownIt-Anchor" href="#hello案例"></a> hello案例</h1>
@@ -4376,84 +4440,6 @@ plt.ylabel(</p>
       <tags>
         <tag>前端</tag>
         <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学习Vue:第三天</title>
-    <url>/2023/03/14/%E5%AD%A6%E4%B9%A0Vue-%E7%AC%AC%E4%B8%89%E5%A4%A9/</url>
-    <content><![CDATA[<h1 id="事件处理"><a class="markdownIt-Anchor" href="#事件处理"></a> 事件处理</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>欢迎来到&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;showInfo(name)&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;showInfo(name)&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> vm=<span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">el</span>:<span class="string">&#x27;#demo&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">name</span>:<span class="string">&quot;Mars&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">            &#125;,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">methods</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="title function_">showInfo</span>(<span class="params">a</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="title function_">alert</span>(a)</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">  </span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="事件修饰符"><a class="markdownIt-Anchor" href="#事件修饰符"></a> 事件修饰符</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="vue中的事件修饰符"><a class="markdownIt-Anchor" href="#vue中的事件修饰符"></a> Vue中的事件修饰符</h2>
-<ol>
-<li>
-<p>prevent：阻止默认事件</p>
-</li>
-<li>
-<p>stop：阻止事件冒泡</p>
-</li>
-<li>
-<p>onece：事件只触发一次</p>
-</li>
-<li>
-<p>capture：使用事件的捕获模式</p>
-</li>
-<li>
-<p>self：只有self.target是当前操作的元素才触发事件</p>
-</li>
-<li>
-<p>passive：事件的默认行为立即执行，无需等待事件回调执行完毕</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微型计算机系统笔记</title>
-    <url>/2023/07/16/%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="微机系统"><a class="markdownIt-Anchor" href="#微机系统"></a> 微机系统</h1>
-<div class="pdf-container" data-target="/admin/第2讲微型计算机系统.pdf" data-height="500px"></div>
-]]></content>
-      <categories>
-        <category>微机原理与接口技术</category>
-      </categories>
-      <tags>
-        <tag>微机原理与接口技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV:灰度变换和直方图修正</title>
-    <url>/2022/09/16/%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3/</url>
-    <content><![CDATA[<h1 id="灰度化"><a class="markdownIt-Anchor" href="#灰度化"></a> 灰度化</h1>
-<h2 id="加权平均值实现"><a class="markdownIt-Anchor" href="#加权平均值实现"></a> 加权平均值实现</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="number">0.3</span>*image[i,j][<span class="number">0</span>]+<span class="number">0.59</span>*image[i,j][<span class="number">1</span>]+<span class="number">0.11</span>*image[i,j][<span class="number">2</span>]</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/Mq5tuSURyH9XZds.png" alt="" /></p>
-<h2 id="最大法实现"><a class="markdownIt-Anchor" href="#最大法实现"></a> 最大法实现</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="built_in">max</span>(image[i,j][<span class="number">0</span>],image[i,j][<span class="number">1</span>],image[i,j][<span class="number">2</span>])</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/Mq5tuSURyH9XZds.png" alt="" /></p>
-<h2 id="平均法实现"><a class="markdownIt-Anchor" href="#平均法实现"></a> 平均法实现</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=(image[i,j][<span class="number">0</span>]+image[i,j][<span class="number">1</span>]+image[i,j][<span class="number">2</span>])/<span class="number">3</span></span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/1VDUxs2E4eiT9XF.png" alt="" /></p>
-<h2 id="灰度线性变换"><a class="markdownIt-Anchor" href="#灰度线性变换"></a> 灰度线性变换</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">out=<span class="number">1.8</span>*img</span><br><span class="line">out[out&gt;<span class="number">255</span>]=<span class="number">255</span></span><br><span class="line">out=np.around(out)</span><br><span class="line">out=out.astype(np.uint8)</span><br><span class="line">cv.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv.imshow(<span class="string">&quot;out&quot;</span>,out)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/10/09/1VDUxs2E4eiT9XF.png" alt="" /></p>
-<h2 id="分段线性变换"><a class="markdownIt-Anchor" href="#分段线性变换"></a> 分段线性变换</h2>
-<p><img src="https://s2.loli.net/2022/10/09/xfiNWtIpkXgPh8E.png" alt="" /></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>OpenCV</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
       </tags>
   </entry>
   <entry>
@@ -4678,6 +4664,47 @@ plt.ylabel(</p>
       </tags>
   </entry>
   <entry>
+    <title>微型计算机系统笔记</title>
+    <url>/2023/07/16/%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="微机系统"><a class="markdownIt-Anchor" href="#微机系统"></a> 微机系统</h1>
+<div class="pdf-container" data-target="/admin/第2讲微型计算机系统.pdf" data-height="500px"></div>
+]]></content>
+      <categories>
+        <category>微机原理与接口技术</category>
+      </categories>
+      <tags>
+        <tag>微机原理与接口技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV:灰度变换和直方图修正</title>
+    <url>/2022/09/16/%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3/</url>
+    <content><![CDATA[<h1 id="灰度化"><a class="markdownIt-Anchor" href="#灰度化"></a> 灰度化</h1>
+<h2 id="加权平均值实现"><a class="markdownIt-Anchor" href="#加权平均值实现"></a> 加权平均值实现</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="number">0.3</span>*image[i,j][<span class="number">0</span>]+<span class="number">0.59</span>*image[i,j][<span class="number">1</span>]+<span class="number">0.11</span>*image[i,j][<span class="number">2</span>]</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/Mq5tuSURyH9XZds.png" alt="" /></p>
+<h2 id="最大法实现"><a class="markdownIt-Anchor" href="#最大法实现"></a> 最大法实现</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=<span class="built_in">max</span>(image[i,j][<span class="number">0</span>],image[i,j][<span class="number">1</span>],image[i,j][<span class="number">2</span>])</span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/Mq5tuSURyH9XZds.png" alt="" /></p>
+<h2 id="平均法实现"><a class="markdownIt-Anchor" href="#平均法实现"></a> 平均法实现</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">image=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">h=np.shape(image)[<span class="number">0</span>]</span><br><span class="line">w=np.shape(image)[<span class="number">1</span>]</span><br><span class="line">gray_img=np.zeros((h,w,<span class="number">3</span>),np.uint8)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">        gray_img[i,j]=(image[i,j][<span class="number">0</span>]+image[i,j][<span class="number">1</span>]+image[i,j][<span class="number">2</span>])/<span class="number">3</span></span><br><span class="line">cv.imshow(<span class="string">&quot;src&quot;</span>,image)</span><br><span class="line">cv.imshow(<span class="string">&quot;gray&quot;</span>,gray_img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/1VDUxs2E4eiT9XF.png" alt="" /></p>
+<h2 id="灰度线性变换"><a class="markdownIt-Anchor" href="#灰度线性变换"></a> 灰度线性变换</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv.imread(<span class="string">&quot;pic.png&quot;</span>)</span><br><span class="line">out=<span class="number">1.8</span>*img</span><br><span class="line">out[out&gt;<span class="number">255</span>]=<span class="number">255</span></span><br><span class="line">out=np.around(out)</span><br><span class="line">out=out.astype(np.uint8)</span><br><span class="line">cv.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">cv.imshow(<span class="string">&quot;out&quot;</span>,out)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/10/09/1VDUxs2E4eiT9XF.png" alt="" /></p>
+<h2 id="分段线性变换"><a class="markdownIt-Anchor" href="#分段线性变换"></a> 分段线性变换</h2>
+<p><img src="https://s2.loli.net/2022/10/09/xfiNWtIpkXgPh8E.png" alt="" /></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>OpenCV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习:性能评价指标与PR曲线</title>
     <url>/2022/11/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87%E4%B8%8EPR%E6%9B%B2%E7%BA%BF/</url>
     <content><![CDATA[<h2 id="混淆矩阵"><a class="markdownIt-Anchor" href="#混淆矩阵"></a> 混淆矩阵</h2>
@@ -4729,44 +4756,6 @@ plt.ylabel(</p>
       <tags>
         <tag>机器学习</tag>
         <tag>人工智能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫：川农选课</title>
-    <url>/2022/10/05/%E7%88%AC%E8%99%AB%EF%BC%9A%E5%B7%9D%E5%86%9C%E9%80%89%E8%AF%BE/</url>
-    <content><![CDATA[<pre><code>import time
-
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
-browser=webdriver.Edge()
-
-try:
-    browser.get(&quot;https://jiaowu.sicau.edu.cn/&quot;)
-    input=browser.find_element(By.NAME,value='user')
-    input.send_keys('202105930')
-    input=browser.find_element(By.NAME,value='pwd')
-    input.send_keys('05174436')
-    input=browser.find_element(By.XPATH,value='//input[@value=&quot;S&quot;]')
-    input.click()
-    input = browser.find_element(By.NAME, value='pwd')
-    print(input.location)
-    input.send_keys(Keys.ENTER)
-
-
-
-except:
-    print(&quot;error&quot;)
-</code></pre>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -5034,30 +5023,41 @@ except:
       </tags>
   </entry>
   <entry>
-    <title>学习Vue:第二天</title>
-    <url>/2023/03/11/%E5%AD%A6%E4%B9%A0Vue-%E7%AC%AC%E4%BA%8C%E5%A4%A9/</url>
-    <content><![CDATA[<h1 id="objectdefineproperty"><a class="markdownIt-Anchor" href="#objectdefineproperty"></a> Object.defineProperty</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">value</span>:<span class="string">&quot;男&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>无法枚举</p>
-<h1 id="enumerable配置项"><a class="markdownIt-Anchor" href="#enumerable配置项"></a> enumerable配置项</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">value</span>:<span class="string">&quot;男&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">enumerable</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="writable配置项"><a class="markdownIt-Anchor" href="#writable配置项"></a> writable配置项</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">value</span>:<span class="string">&quot;男&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">enumerable</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">writable</span>:<span class="literal">true</span></span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="configurable配置项"><a class="markdownIt-Anchor" href="#configurable配置项"></a> configurable配置项</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">value</span>:<span class="string">&quot;男&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">enumerable</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">writable</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">configurable</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="get配置项"><a class="markdownIt-Anchor" href="#get配置项"></a> get配置项</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> number=<span class="string">&quot;男&quot;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">get</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> number</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="set配置项"><a class="markdownIt-Anchor" href="#set配置项"></a> set配置项</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> person =&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> number=<span class="string">&quot;男&quot;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&quot;sex&quot;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">get</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> number</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">set</span>:<span class="keyword">function</span>(<span class="params">value</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;sex change&quot;</span>+value)</span></span><br><span class="line"><span class="language-javascript">            number = value</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(person)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="数据代理"><a class="markdownIt-Anchor" href="#数据代理"></a> 数据代理</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> obj=&#123;<span class="attr">x</span>:<span class="number">100</span>&#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> obj2=&#123;<span class="attr">y</span>:<span class="number">100</span>&#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(obj2,<span class="string">&#x27;x&#x27;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">get</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> obj.<span class="property">x</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">set</span>(<span class="params">value</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            obj.<span class="property">x</span>=value</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>爬虫：川农选课</title>
+    <url>/2022/10/05/%E7%88%AC%E8%99%AB%EF%BC%9A%E5%B7%9D%E5%86%9C%E9%80%89%E8%AF%BE/</url>
+    <content><![CDATA[<pre><code>import time
+
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+browser=webdriver.Edge()
+
+try:
+    browser.get(&quot;https://jiaowu.sicau.edu.cn/&quot;)
+    input=browser.find_element(By.NAME,value='user')
+    input.send_keys('202105930')
+    input=browser.find_element(By.NAME,value='pwd')
+    input.send_keys('05174436')
+    input=browser.find_element(By.XPATH,value='//input[@value=&quot;S&quot;]')
+    input.click()
+    input = browser.find_element(By.NAME, value='pwd')
+    print(input.location)
+    input.send_keys(Keys.ENTER)
+
+
+
+except:
+    print(&quot;error&quot;)
+</code></pre>
 ]]></content>
       <categories>
-        <category>Vue</category>
+        <category>爬虫</category>
       </categories>
       <tags>
-        <tag>前端</tag>
-        <tag>Vue</tag>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
 </search>
